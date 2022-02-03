@@ -45,4 +45,19 @@ router.delete(
 );//Notice how asyncHandler wasn't used to wrap the route handler. This is because the route handler is not async.
 //You should see the token cookie disappear from the list of cookies in your
 
+//Restore session user
+//The GET /api/session get session user route will return the session user as JSON under the key of user . If there is not a session, it will return a JSON with an empty object. To get the session user, connect the restoreUser middleware.
+router.get(
+  '/',
+  restoreUser,
+  (req, res) => {
+    const { user } = req;
+    if (user) {
+      return res.json({
+        user: user.toSafeObject()
+      });
+    } else return res.json({});
+  }
+);//You should see the current session user information if you have the token cookie. If you don't have a token cookie, you should see an empty object returned.
+
 module.exports = router
