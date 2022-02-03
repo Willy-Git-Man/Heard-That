@@ -279,3 +279,107 @@ Signup: POST /api/users
 Get session user: GET /api/session
 
 ------------------------------------------------------------------------------------------------------------------------------------
+Update node:
+
+nvm use 14
+------------------------------------------------------------------------------------------------------------------------------------
+Create REact act from scratch:
+
+npx create-react-app . --template @appacademy/react-v17 --use-npm
+--in the front end folder
+
+
+In the frontend folder, npm install the following packages as dependencies:
+
+js-cookie - extracts cookies
+react-redux - React components and hooks for Redux
+react-router-dom@^5 - routing for React
+redux - Redux
+redux-thunk - add Redux thunk
+npm install -D the following packages as dev-dependencies:
+
+redux-logger - log Redux actions in the browser's dev tools console
+
+
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+
+const rootReducer = combineReducers({
+});
+
+^into /store/index.js
+
+
+Initialize an enhancer variable that will be set to different store enhancers depending on if the Node environment is in development or production.
+
+In production, the enhancer should only apply the thunk middleware.
+
+
+
+In development, the logger middleware and Redux dev tools compose enhancer as well. To use these tools, create a logger variable that uses the default export of redux-logger. Then, grab the Redux dev tools compose enhancer with window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ and store it in a variable called composeEnhancers. You can use an or || to keep the Redux's original compose as a fallback. Then set the enhancer variable to the return of the composeEnhancers function passing in applyMiddleware invoked with thunk then logger.
+
+^
+let enhancer;
+
+if (process.env.NODE_ENV === 'production') {
+  enhancer = applyMiddleware(thunk);
+} else {
+  const logger = require('redux-logger').default;
+  const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  enhancer = composeEnhancers(applyMiddleware(thunk, logger));
+}
+
+
+
+Next, create a configureStore function that takes in an optional preloadedState. Return createStore invoked with the rootReducer, the preloadedState, and the enhancer.
+
+const configureStore = (preloadedState) => {
+  return createStore(rootReducer, preloadedState, enhancer);
+};
+
+export default configureStore;
+
+
+Your imports should now look something like this:
+
+// frontend/src/index.js
+import React from 'react';
+
+import './index.css';
+
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+
+import configureStore from './store';
+
+Create a variable to access your store and expose it to the window. It should not be exposed in production, be sure this is only set in development.
+
+// frontend/src/index.js
+// ...
+const store = configureStore();
+
+if (process.env.NODE_ENV !== 'production') {
+  window.store = store;
+}
+
+
+function Root() {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  );
+}
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Root />
+  </React.StrictMode>,
+  document.getElementById('root'),
+);
+------------------------------------------------------------------------------------------------------------------------------------
