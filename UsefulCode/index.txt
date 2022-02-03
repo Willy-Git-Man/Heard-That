@@ -1,0 +1,11 @@
+Fetch request for console testing:
+fetch('/api/test', {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `4PGphMEd-KTU2vmsLmrhGH-PVg9uFGSV1I60`
+  },
+  body: JSON.stringify({ hello: 'world' })
+}).then(res => res.json()).then(data => console.log(data));
+
+-------------------------------------------------------
