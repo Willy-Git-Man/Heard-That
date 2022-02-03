@@ -8,13 +8,15 @@ fetch('/api/test', {
   body: JSON.stringify({ hello: 'world' })
 }).then(res => res.json()).then(data => console.log(data));
 
--------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+
 
 Test your get request in postman:
 
 postman-echo.com/get
 
---------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 User Table Migration:
@@ -60,4 +62,124 @@ Check your database to see if the users have been successfully created by runnin
 
 psql <database name> -c 'SELECT * FROM "Users"'
 
---------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+---
+Useful Websites:
+
+Model Scopes: https://sequelize.org/master/manual/scopes.html
+
+Sequelize validations and constraints: https://sequelize.org/master/manual/validations-and-constraints.html
+
+Express Error Handling MiddleWare: https://expressjs.com/en/guide/using-middleware.html#middleware.error-handling
+
+Helmet Package: https://www.npmjs.com/package/helmet
+
+PostMan Docs: https://learning.postman.com/
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Authentication Flow Notes:
+
+Authentication Flow:
+The backend login flow in this project will be based on the following plan:
+
+The API login route will be hit with a request body holding a valid credential (either username or email) and password combination.
+The API login handler will look for a User with the input credential in either the username or email columns.
+Then the hashedPassword for that found User will be compared with the input password for a match.
+If there is a match, the API login route should send back a JWT in an HTTP-only cookie and a response body. The JWT and the body will hold the user's id, username, and email.
+
+
+Backend Signup Flow:
+The backend sign-up flow in this project will be based on the following plan:
+
+The API signup route will be hit with a request body holding a username, email, and password.
+The API signup handler will create a User with the username, an email, and a hashedPassword created from the input password.
+If the creation is successful, the API signup route should send back a JWT in an HTTP-only cookie and a response body. The JWT and the body will hold the user's id, username, and email.
+
+
+Backend Logout Flow
+The backend logout flow will be based on the following plan:
+
+The API logout route will be hit with a request.
+The API logout handler will remove the JWT cookie set by the login or signup API routes and return a JSON success message.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+Test User Auth Middlewares: follow these instructions from the part one to make sure everything is working with user Auth
+
+Add a test route in your backend/routes/api/index.js file that will test the setTokenCookie function by getting the demo user and calling setTokenCookie.
+
+// backend/routes/api/index.js
+// ...
+
+// GET /api/set-token-cookie
+const asyncHandler = require('express-async-handler');
+const { setTokenCookie } = require('../../utils/auth.js');
+const { User } = require('../../db/models');
+router.get('/set-token-cookie', asyncHandler(async (_req, res) => {
+  const user = await User.findOne({
+      where: {
+        username: 'Demo-lition'
+      }
+    });
+  setTokenCookie(res, user);
+  return res.json({ user });
+}));
+
+// ...
+
+Go to http://localhost:5000/api/set-token-cookie and see if there is a token cookie set in your browser's DevTools. If there isn't, then check your backend server logs in the terminal where you ran npm start. Also, check the syntax of your setTokenCookie function as well as the test route.
+
+Next, add a test route in your backend/routes/api/index.js file that will test the restoreUser middleware by connecting the middleware and checking whether or not the req.user key has been populated by the middleware properly.
+
+// backend/routes/api/index.js
+// ...
+
+// GET /api/restore-user
+const { restoreUser } = require('../../utils/auth.js');
+router.get(
+  '/restore-user',
+  restoreUser,
+  (req, res) => {
+    return res.json(req.user);
+  }
+);
+
+// ...
+Go to http://localhost:5000/api/restore-user and see if the response has the demo user information returned as JSON. Then, remove the token cookie manually in your browser's DevTools and refresh. The JSON response should be empty.
+
+If this isn't the behavior, then check your backend server logs in the terminal where you ran npm start as well as the syntax of your restoreUser middleware and test route.
+
+To set the token cookie back, just go to the GET /api/set-token-cookie route again: http://localhost:5000/api/set-token-cookie.
+
+Lastly, test your requireAuth middleware by adding a test route in your backend/routes/api/index.js file. If there is no session user, the route will return an error. Otherwise it will return the session user's information.
+
+// backend/routes/api/index.js
+// ...
+
+// GET /api/require-auth
+const { requireAuth } = require('../../utils/auth.js');
+router.get(
+  '/require-auth',
+  requireAuth,
+  (req, res) => {
+    return res.json(req.user);
+  }
+);
+
+// ...
+Set the token cookie back by accessing the GET /api/set-token-cookie route again: http://localhost:5000/api/set-token-cookie.
+
+Go to http://localhost:5000/api/require-auth and see if the response has the demo user's information returned as JSON. Then, remove the token cookie manually in your browser's DevTools and refresh. The JSON response should now be an "Unauthorized" error.
+
+If this isn't the behavior, then check your backend server logs in the terminal where you ran npm start as well as the syntax of your requireAuth middleware and test route.
+
+To set the token cookie back, just go to the GET /api/set-token-cookie route again: http://localhost:5000/api/set-token-cookie.
+
+
+------------------------------------------------------------------------------------------------------------------------------------
