@@ -15,3 +15,49 @@ Test your get request in postman:
 postman-echo.com/get
 
 --------------------------------------------------------
+
+
+User Table Migration:
+
+npx sequelize model:generate --name User --attributes username:string,email:string,hashedPassword:string
+
+
+Mirgrate the User Table:
+
+npx dotenv sequelize db:migrate
+
+
+Undo the Migration:
+
+npx dotenv sequelize db:migrate:undo
+
+
+Checkout the table schema in psql:
+
+psql <database name> -c '\d "Users"'
+
+
+Generate User Seeder File for Demo user:
+
+npx sequelize seed:generate --name demo-user
+
+
+Migrate the Seed File:
+
+npx dotenv sequelize db:seed:all
+
+
+
+If there is no error in seeding but you want to change the seed file, remember to undo the seed first, change the file, then seed again.
+
+Command to undo the migration for the most recent seed file:
+
+npx dotenv sequelize db:seed:undo
+Command to undo the migrations for all the seed files:
+
+npx dotenv sequelize db:seed:undo:all
+Check your database to see if the users have been successfully created by running:
+
+psql <database name> -c 'SELECT * FROM "Users"'
+
+--------------------------------------------------------
