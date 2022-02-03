@@ -32,6 +32,31 @@ fetch('/api/session', {
   body: JSON.stringify({ credential: 'demo@user.io', password: 'password' })
 }).then(res => res.json()).then(data => console.log(data));
 
+Fetch request for loute route:
+
+fetch('/api/session', {
+  method: 'DELETE',
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `<value of XSRF-TOKEN cookie>`
+  }
+}).then(res => res.json()).then(data => console.log(data));
+
+Fetch request to signup a new valid user:
+
+fetch('/api/users', {
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `<value of XSRF-TOKEN cookie>`
+  },
+  body: JSON.stringify({
+    email: 'spidey@spider.man',
+    username: 'Spidey',
+    password: 'password'
+  })
+}).then(res => res.json()).then(data => console.log(data));
+
 
 
 ------------------------------------------------------------------------------------------------------------------------------------
