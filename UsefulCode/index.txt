@@ -79,6 +79,21 @@ fetch('/api/session', {
   body: JSON.stringify({ credential: 'Demo-lition', password: '' })
 }).then(res => res.json()).then(data => console.log(data));
 
+Fetch request to check valid password on signup:
+
+fetch('/api/users', {
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `<value of XSRF-TOKEN cookie>`
+  },
+  body: JSON.stringify({
+    email: 'firestar@spider.man',
+    username: 'Firestar',
+    password: ''
+  })
+}).then(res => res.json()).then(data => console.log(data));
+
 
 
 ------------------------------------------------------------------------------------------------------------------------------------

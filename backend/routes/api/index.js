@@ -11,9 +11,9 @@ router.post('/test', (req, res) => {
 });
 
 
-router.get('/test', function(req, res) {
-  res.json("Will");
-});
+// router.get('/test', function(req, res) {
+//   res.json("Will");
+// });
 
 
 
