@@ -28,7 +28,7 @@ function Root() {
 }
 
 ReactDOM.render(
-  <React.StrictMode>``
+  <React.StrictMode>
     <Root />
   </React.StrictMode>,
   document.getElementById('root'),
