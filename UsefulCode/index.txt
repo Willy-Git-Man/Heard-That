@@ -9,3 +9,9 @@ fetch('/api/test', {
 }).then(res => res.json()).then(data => console.log(data));
 
 -------------------------------------------------------
+
+Test your get request in postman:
+
+postman-echo.com/get
+
+--------------------------------------------------------
