@@ -486,3 +486,164 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 ------------------------------------------------------------------------------------------------------------------------------------
+
+test session actions and reducers:
+// frontend/src/index.js
+// ... other imports
+import * as sessionActions from './store/session';
+
+const store = configureStore();
+
+if (process.env.NODE_ENV !== 'production') {
+  restoreCSRF();
+
+  window.csrfFetch = csrfFetch;
+  window.store = store;
+  window.sessionActions = sessionActions;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+import { csrfFetch } from './csrf';
+
+const SET_USER = 'session/setUser';
+const REMOVE_USER = 'session/removeUser';
+
+const setUser = (user) => {
+  return {
+    type: SET_USER,
+    payload: user,
+  };
+};
+
+const removeUser = () => {
+  return {
+    type: REMOVE_USER,
+  };
+};
+
+export const login = (user) => async (dispatch) => {
+  const { credential, password } = user;
+  const response = await csrfFetch('/api/session', {
+    method: 'POST',
+    body: JSON.stringify({
+      credential,
+      password,
+    }),
+  });
+  const data = await response.json();
+  dispatch(setUser(data.user));
+  return response;
+};
+
+const initialState = { user: null };
+
+const sessionReducer = (state = initialState, action) => {
+  let newState;
+  switch (action.type) {
+    case SET_USER:
+      newState = Object.assign({}, state);
+      newState.user = action.payload;
+      return newState;
+    case REMOVE_USER:
+      newState = Object.assign({}, state);
+      newState.user = null;
+      return newState;
+    default:
+      return state;
+  }
+};
+
+export default sessionReducer;
+
+Here's an example for the rootReducer setup:
+
+// frontend/src/store/index.js
+// ...
+import sessionReducer from './session';
+
+const rootReducer = combineReducers({
+  session: sessionReducer,
+});
+// ...
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+LoginForm components:
+
+import React, { useState } from 'react';
+import * as sessionActions from '../../store/session';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+
+function LoginFormPage() {
+  const dispatch = useDispatch();
+  const sessionUser = useSelector(state => state.session.user);
+  const [credential, setCredential] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState([]);
+
+  if (sessionUser) return (
+    <Redirect to="/" />
+  );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    return dispatch(sessionActions.login({ credential, password }))
+      .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      });
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <ul>
+        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+      </ul>
+      <label>
+        Username or Email
+        <input
+          type="text"
+          value={credential}
+          onChange={(e) => setCredential(e.target.value)}
+          required
+        />
+      </label>
+      <label>
+        Password
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </label>
+      <button type="submit">Log In</button>
+    </form>
+  );
+}
+
+export default LoginFormPage;
+
+App.js w/ component for login:
+
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import LoginFormPage from './components/LoginFormPage';
+
+function App() {
+  return (
+    <Switch>
+      <Route path="/login">
+        <LoginFormPage />
+      </Route>
+    </Switch>
+  );
+}
+
+export default App;
+
+
