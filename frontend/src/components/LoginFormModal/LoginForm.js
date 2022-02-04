@@ -55,7 +55,7 @@ function LoginForm() {
           className={"demoButton"}
           type="submit"
           onClick={() => {
-            setCredential("Demo");
+            setCredential("Demo-lition");
             setPassword("password");
           }}
         >
