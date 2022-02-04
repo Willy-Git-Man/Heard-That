@@ -6,6 +6,9 @@ import App from './App';
 
 import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
+
+import { ModalProvider } from "./context/Modal";
+
 import './index.css';
 
 const store = configureStore();
@@ -20,9 +23,13 @@ if (process.env.NODE_ENV !== 'production') {
 function Root() {
   return (
     <Provider store={store}>
+      <ModalProvider>
+
       <BrowserRouter>
         <App />
       </BrowserRouter>
+      </ModalProvider>
+
     </Provider>
   );
 }
