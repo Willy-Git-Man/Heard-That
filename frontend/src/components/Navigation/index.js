@@ -6,6 +6,8 @@ import './Navigation.css';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 
+import NavLinks from '../NavLinks/navLinks';
+
 
 
 function Navigation({ isLoaded }){
@@ -15,7 +17,10 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
 
     sessionLinks = (
+      <>
       <ProfileButton user={sessionUser} />
+      <NavLinks />
+      </>
     );
   } else {
 
