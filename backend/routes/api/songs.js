@@ -20,6 +20,7 @@ router.post(
     const createSong = await Songs.create(req.body);
     // console.log('createSong:', createSong)
 
+    res.json({ message: `${createSong.songName} had been successfully added!`})
     return res.json({
       createSong,
     });
