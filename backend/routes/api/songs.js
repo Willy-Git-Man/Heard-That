@@ -38,9 +38,11 @@ router.put(
       },
     });
 
+    res.json({ message: `${songChanges.songName} had been successfully updated!`})
     return res.json(songChanges);
   })
 );
+//I am getting this error 'Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client' when I update albeit it is updating successfully
 
 router.delete(
   '/:id',
