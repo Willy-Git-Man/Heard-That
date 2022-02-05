@@ -2,7 +2,8 @@ import { csrfFetch } from "./csrf";
 
 const GET_ALL_SONGS = "songs/GET_ALL_SONGS";
 const ADD_SONG = "songs/ADD_SONG";
-const UPDATE_SONG ="songs/UPDATE_SONG"
+const UPDATE_SONG = "songs/UPDATE_SONG";
+const DELETE_SONG = "songs/DELETE_SONGS";
 
 const getAllSongs = (allSongs) => ({
   type: GET_ALL_SONGS,
@@ -16,8 +17,13 @@ const addSong = (newSong) => ({
 
 const updateSong = (updatedSong) => ({
   type: UPDATE_SONG,
-  payload: updatedSong
-})
+  payload: updatedSong,
+});
+
+const deleteSong = (songToDelete) => ({
+  type: DELETE_SONG,
+  payload: songToDelete,
+});
 
 export const getAllSongsThunk = () => async (dispatch) => {
   const response = await csrfFetch("/api/songs");
@@ -44,11 +50,21 @@ export const addSongThunk = (newSong) => async (dispatch) => {
 
 export const updateSongThunk = (updatedSong) => async (dispatch) => {
   const response = await csrfFetch(`/api/songs/${+updatedSong.id}`, {
-    method: 'PUT',
-    body: JSON.stringify(updatedSong)
-  })
+    method: "PUT",
+    body: JSON.stringify(updatedSong),
+  });
   if (response.ok) {
-    const updatedSongRequest = await response.json()
-    dispatch(updateSong(updatedSongRequest))
+    const updatedSongRequest = await response.json();
+    dispatch(updateSong(updatedSongRequest));
   }
-}
+};
+
+export const deleteSongThunk = (songIdToDelete) => async (dispatch) => {
+  const response = await csrfFetch(`/api/events/${songIdToDelete}`, {
+    methood: "DELETE",
+  });
+  if (response.ok) {
+    dispatch(deleteSong(songIdToDelete));
+  }
+};
+//seems like I need to grab the id from the argument not the whole thing
