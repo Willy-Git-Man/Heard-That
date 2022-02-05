@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const GET_ALL_SONGS = "songs/GET_ALL_SONGS";
 const ADD_SONG = "songs/ADD_SONG";
+const UPDATE_SONG ="songs/UPDATE_SONG"
 
 const getAllSongs = (allSongs) => ({
   type: GET_ALL_SONGS,
@@ -12,6 +13,11 @@ const addSong = (newSong) => ({
   type: ADD_SONG,
   payload: newSong,
 });
+
+const updateSong = (updatedSong) => ({
+  type: UPDATE_SONG,
+  payload: updatedSong
+})
 
 export const getAllSongsThunk = () => async (dispatch) => {
   const response = await csrfFetch("/api/songs");
@@ -35,3 +41,14 @@ export const addSongThunk = (newSong) => async (dispatch) => {
     return songRequest;
   }
 };
+
+export const updateSongThunk = (updatedSong) => async (dispatch) => {
+  const response = await csrfFetch(`/api/songs/${+updatedSong.id}`, {
+    method: 'PUT',
+    body: JSON.stringify(updatedSong)
+  })
+  if (response.ok) {
+    const updatedSongRequest = await response.json()
+    dispatch(updateSong(updatedSongRequest))
+  }
+}
