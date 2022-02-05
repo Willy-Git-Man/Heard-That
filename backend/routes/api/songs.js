@@ -19,6 +19,16 @@ asyncHandler(async (req,res) => {
 )
 
 
+router.post(
+  "/",
+  asyncHandler(async (req, res) => {
+    const createSong = await Songs.create(req.body);
+    
+    return res.json({
+      createSong,
+    });
+  })
+);
 
 
 module.exports = router;
