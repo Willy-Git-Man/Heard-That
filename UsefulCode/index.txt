@@ -688,6 +688,19 @@ asyncHandler(async (req, res) => {
   return res.json(songChanges);
 });
 
+router.delete(
+  '/:id',
+  asyncHandler( async (req,res) => {
+    const songId = req.params.id
+    const songToDelete = await Songs.findByPk(songId)
+
+    await songToDelete.destroy()
+    res.json({ message: `${songToDelete.songName} had been successfully deleted!`})
+  })
+)
+
+
+
 3. Send fetch request in the console
 
 
@@ -715,4 +728,12 @@ fetch('/api/songs/1', {
   body: JSON.stringify( { userId: 1, albumId: 1, songName: 'Party in the USA',artistName: 'Miley Cyrus', songUrl: "www.howdoIfindsongurl.com", createdAt: new Date(), updatedAt: new Date()})
 }).then(res => res.json()).then(data => console.log(data));
 
+Delete: Send to console
 
+fetch('/api/songs/7', {
+  method: 'DELETE',
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `p7vJWTJI-UqPa94VCTmnQ5zMFnicTvDKNt1I`
+  }
+}).then(res => res.json()).then(data => console.log(data));
