@@ -6,10 +6,12 @@ const asyncHandler = require("express-async-handler");
 router.get(
   '/',
   asyncHandler(async (req, res) => {
-    const songs = await Songs.findAll();
+    const getAllSongs = await Songs.findAll();
 
+
+    res.json({ message: `The general get route for all songs is working!`})
     return res.json({
-      songs,
+      getAllSongs,
     });
   })
 );
