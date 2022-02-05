@@ -645,3 +645,74 @@ function App() {
 }
 
 export default App;
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Directions for setting up express routes
+
+1. Add the app.use('/____') to the routes/api/index
+
+2. Write route handler in routes/api/____
+
+router.get(
+  "/",
+  asyncHandler(async (req, res) => {
+    const songs = await Songs.findAll();
+
+    return res.json({
+      songs,
+    });
+  })
+);
+
+router.post(
+  "/",
+  asyncHandler(async (req, res) => {
+    const createSong = await Songs.create(req.body);
+
+    return res.json({
+      createSong,
+    });
+  })
+);
+
+router.put("/:id");
+asyncHandler(async (req, res) => {
+  const songChanges = req.body;
+
+  await Songs.update(songChanges, {
+    where: {
+      id: req.params.id,
+    },
+  });
+  return res.json(songChanges);
+});
+
+3. Send fetch request in the console
+
+
+Get: Send get request in postman
+
+Post: Send to console, postman being difficult something to do w/ csrf ask on monday
+
+fetch('/api/songs', {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `lwNHBy7Z-mPGjlq0ScoiI5l43p2xJLLGTogc`
+  },
+  body: JSON.stringify( { userId: 1, albumId: 1, songName: 'Party in the USA',artistName: 'Miley Cyrus', songUrl: "www.howdoIfindsongurl.com", createdAt: new Date(), updatedAt: new Date()})
+}).then(res => res.json()).then(data => console.log(data));
+
+Put: Send to console
+
+fetch('/api/songs/1', {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `2k4JjptN-Mo_wHyJG75FqaRXEIV-cYHjk-1k`
+  },
+  body: JSON.stringify( { userId: 1, albumId: 1, songName: 'Party in the USA',artistName: 'Miley Cyrus', songUrl: "www.howdoIfindsongurl.com", createdAt: new Date(), updatedAt: new Date()})
+}).then(res => res.json()).then(data => console.log(data));
+
+
