@@ -30,7 +30,9 @@ export const getAllSongsThunk = () => async (dispatch) => {
 
   if (response.ok) {
     const songs = await response.json();
-    dispatch(getAllSongs(songs.songs));
+    // console.log(songs.songs)
+   console.log(' songsThunkTest:',  getAllSongs(songs))
+    dispatch(getAllSongs(songs));
   }
   return response;
 };
@@ -68,3 +70,20 @@ export const deleteSongThunk = (songIdToDelete) => async (dispatch) => {
   }
 };
 //seems like I need to grab the id from the argument not the whole thing
+
+const initialState = {};
+
+const songsReducer = (state = initialState, action) => {
+  let newState;
+
+  switch (action.type) {
+    case GET_ALL_SONGS:
+      // newState = Object.assign({}, initialState);
+      newState = action.payload;
+      return newState;
+    default:
+      return initialState;
+  }
+};
+
+export default songsReducer

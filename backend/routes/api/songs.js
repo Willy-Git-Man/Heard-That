@@ -9,7 +9,7 @@ router.get(
     const getAllSongs = await Songs.findAll();
 
 
-    res.json({ message: `The general get route for all songs is working!`})
+    // res.json({ message: `The general get route for all songs is working!`})
     return res.json({
       getAllSongs,
     });

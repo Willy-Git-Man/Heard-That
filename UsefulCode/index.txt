@@ -759,3 +759,34 @@ Directions for Song component:
 Wrote the function component with no logic just a div and h1 saying Song Div
 
 Imported the funcitonal component into App.js and rendered it at the path that the song navlink takes you to
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Directions for getting the get route working
+
+1. Wrote the reducer section for get
+
+case GET_ALL_SONGS:
+      // newState = Object.assign({}, initialState);
+      newState = action.payload;
+      return newState;
+
+2. grabbed the Song state from useSelector
+
+  const allSongs = useSelector((state) => state.songs.getAllSongs);
+  console.log("All Current Songs:", allSongs);
+
+
+3. turned the aforementioned state into a slice of state by spreading it into an array and mapping through it
+
+   {allSongs?.map((song) => (
+        <div className="allSongsDivTest" key={song.id}>
+            <ul>
+              <li>{song.songName} --- by the legendary --- {song.artistName}</li>
+            </ul>
+        </div>
+      ))}
+
+
+4. Before mapping dispatch the getSongsThunk
