@@ -118,7 +118,7 @@ postman-echo.com/get
 User Table Migration:
 
 npx sequelize model:generate --name User --attributes username:string,email:string,hashedPassword:string
-
+npx sequelize model:generate --name Songs --attributes userId:integer,albumId:integer,songName:string,artistName:string,songUrl:string;
 
 Mirgrate the User Table:
 
@@ -645,5 +645,3 @@ function App() {
 }
 
 export default App;
-
-
