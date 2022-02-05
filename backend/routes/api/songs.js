@@ -42,4 +42,15 @@ router.put(
   })
 );
 
+router.delete(
+  '/:id',
+  asyncHandler( async (req,res) => {
+    const songId = req.params.id
+    const songToDelete = await Songs.findByPk(songId)
+
+    await songToDelete.destroy()
+    res.json({ message: `${songToDelete.songName} had been successfully deleted!`})
+  })
+)
+
 module.exports = router;
