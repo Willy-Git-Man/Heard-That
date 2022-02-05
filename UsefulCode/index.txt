@@ -750,3 +750,12 @@ Added a NAvlink to /songs with active class name
 Added navLinks.css to set the navLink being clicked to green while on route
 
 Added the Navlink component to the if (sessionUser) next to profile button
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Directions for Song component:
+
+Wrote the function component with no logic just a div and h1 saying Song Div
+
+Imported the funcitonal component into App.js and rendered it at the path that the song navlink takes you to
