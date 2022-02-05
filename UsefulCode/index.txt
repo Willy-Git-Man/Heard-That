@@ -737,3 +737,16 @@ fetch('/api/songs/7', {
     "XSRF-TOKEN": `p7vJWTJI-UqPa94VCTmnQ5zMFnicTvDKNt1I`
   }
 }).then(res => res.json()).then(data => console.log(data));
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Directions for NavLink
+
+Added a component called NavLinks
+
+Added a NAvlink to /songs with active class name
+
+Added navLinks.css to set the navLink being clicked to green while on route
+
+Added the Navlink component to the if (sessionUser) next to profile button
