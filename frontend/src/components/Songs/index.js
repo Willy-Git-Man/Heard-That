@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllSongsThunk } from "../../store/songs";
-import CreateSong from "./createSong";
 import SongFormNavLink from "./songNavLinks";
 
 export default function Songs() {
@@ -32,6 +31,7 @@ export default function Songs() {
         <div className="allSongsDivTest" key={song.id}>
             <ul>
               <li>{song.songName} --- by the legendary --- {song.artistName}</li>
+              <img src={song.imageUrl} />
             </ul>
 
         </div>
