@@ -28,7 +28,7 @@ module.exports = {
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
 
-      Example:
+      Example: test
       */
       return queryInterface.bulkDelete('Songs', null, {});
   }

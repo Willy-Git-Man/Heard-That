@@ -791,4 +791,15 @@ case GET_ALL_SONGS:
 
 4. Before mapping dispatch the getSongsThunk
 
-//fake comment fake fake 
+//fake comment fake fake
+
+------------------------------------------------------------------------------------------------------------------------------------
+Heroku Database
+Migrate:
+
+heroku run npm run sequelize db:migrate
+
+
+Seed:
+
+heroku run npm run sequelize db:seed:all
