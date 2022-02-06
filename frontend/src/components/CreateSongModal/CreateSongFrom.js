@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 import { addSongThunk } from "../../store/songs"
 
 
-export default function CreateSongForm() {
+export default function CreateSongForm({userInfo}) {
 
   const [songName, setSongName] = useState("Fake Song")
   const [artistName, setArtistName] = useState("Fake Artist")
@@ -19,11 +19,13 @@ export default function CreateSongForm() {
   const newAlbumId = (e) => setAlumbId(e.target.value)
 
 
+
 const history = useHistory()
 const dispatch = useDispatch()
 
 const handleSubmit = async (e) => {
   e.preventDefault()
+
 
   const newSongPayload = {
     songName,
@@ -31,7 +33,7 @@ const handleSubmit = async (e) => {
     songUrl,
     imageUrl,
     albumId,
-    userId: 1
+    userId: userInfo.id
   }
   dispatch(addSongThunk(newSongPayload))
   history.push('/Songs')

@@ -1,3 +1,7 @@
 .currentNavRoute {
   color: green;
 }
+
+.navigationLinks {
+  outline: black solid 5px;
+}
