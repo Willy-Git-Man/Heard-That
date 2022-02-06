@@ -35,8 +35,19 @@ const handleSubmit = async (e) => {
     albumId,
     userId: userInfo.id
   }
-  dispatch(addSongThunk(newSongPayload))
-  history.push('/Songs')
+
+
+//  const test = await dispatch(addSongThunk(newSongPayload))
+//  if (test)
+//     history.push('/Songs')
+
+const newSong = dispatch(addSongThunk(newSongPayload))
+if (newSong){
+  history.push('/AllSongs')
+//I have to push to AllSongs as it wont exit modal for some reason if I route to /songs 
+}
+
+
 
 }
   return (

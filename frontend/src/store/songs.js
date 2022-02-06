@@ -81,6 +81,11 @@ const songsReducer = (state = initialState, action) => {
       // newState = Object.assign({}, initialState);
       newState = action.payload;
       return newState;
+
+    case ADD_SONG:
+        newState = action.payload
+        return [...state, newState]
+
     default:
       return initialState;
   }

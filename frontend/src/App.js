@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation";
 // import Songs from "./components/Songs";
 import CreateSongModal from "./components/CreateSongModal";
 import MySongs from "./components/Songs";
-import AllSongs from "./components/Songs/allSongs";
+// import AllSongs from "./components/Songs/allSongs";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,7 +34,8 @@ function App() {
           </Route>
 
           <Route path="/AllSongs">
-            <AllSongs />
+            {/* <AllSongs /> */}
+            {/* <MySongs /> */}
           </Route>
 
           {/* <Route path="/CreateSongForm">

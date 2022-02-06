@@ -11,7 +11,16 @@ export default function MySongs({ userInfo }) {
   const allSongs = useSelector((state) => state.songs.getAllSongs);
   console.log("All Current Songs:", allSongs);
 
+
+
   // const el = "will";
+
+  // const songArray = [el, ...allSongs]
+  // console.log("All Current Songsffff:", songArray);
+  // console.log("All Current Songs:", allSongs);
+
+
+
   // const allSongsObject = { el, ...allSongs };
   // console.log("allSongsObject:", allSongsObject[0]);
 

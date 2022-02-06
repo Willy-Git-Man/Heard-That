@@ -22,7 +22,7 @@ router.post(
     const createSong = await Songs.create(req.body);
     // console.log('createSong:', createSong)
 
-    res.json({ message: `${createSong.songName} had been successfully added!`})
+    // res.json({ message: `${createSong.songName} had been successfully added!`})
     return res.json({
       createSong,
     });
@@ -42,7 +42,7 @@ router.put(
       },
     });
 
-    res.json({ message: `${songChanges.songName} had been successfully updated!`})
+    // res.json({ message: `${songChanges.songName} had been successfully updated!`})
     return res.json(songChanges);
   })
 );
@@ -55,7 +55,7 @@ router.delete(
     const songToDelete = await Songs.findByPk(songId)
 
     await songToDelete.destroy()
-    res.json({ message: `${songToDelete.songName} had been successfully deleted!`})
+    // res.json({ message: `${songToDelete.songName} had been successfully deleted!`})
   })
 )
 
