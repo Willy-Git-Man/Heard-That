@@ -7,6 +7,7 @@ import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 
 import NavLinks from '../NavLinks/navLinks';
+import CreateSongModal from '../CreateSongModal';
 
 
 
@@ -20,6 +21,7 @@ function Navigation({ isLoaded }){
       <>
       <ProfileButton user={sessionUser} />
       <NavLinks />
+      {/* <CreateSongModal /> */}
       </>
     );
   } else {

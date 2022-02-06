@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllSongsThunk } from "../../store/songs";
+import CreateSongModal from "../CreateSongModal";
 import SongFormNavLink from "./songNavLinks";
 
 export default function Songs() {
@@ -25,13 +26,21 @@ export default function Songs() {
   return (
     <div className="songsMainDiv">
       <h1>Songs Div</h1>
-      <SongFormNavLink />
+      {/* <SongFormNavLink /> */}
+      <CreateSongModal />
 
       {allSongs?.map((song) => (
-        <div className="allSongsDivTest" key={song.id}>
-            <ul>
-              <li>{song.songName} --- by the legendary --- {song.artistName}</li>
-              <img src={song.imageUrl} />
+        <div className="songListDiv" key={song.id}>
+              <img className="songImage" src={song.imageUrl} alt="Sorry No go on the load yo"/>
+            <ul className="songUl">
+              <li className="songListItem" > <i className="fab fa-grav"></i>{song.songName}</li>
+
+
+              <li className="songListItem" > <i className="fab fa-grav"></i>{song.artistName}</li>
+
+              <li className="songListItem" > <i className="fab fa-grav"></i>{song.songUrl}</li>
+
+
             </ul>
 
         </div>
