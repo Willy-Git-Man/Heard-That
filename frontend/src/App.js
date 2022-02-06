@@ -4,6 +4,7 @@ import {  Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Songs from "./components/Songs";
+import CreateSong from "./components/Songs/createSong";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,10 @@ function App() {
 
           <Route path="/Songs">
             <Songs />
+          </Route>
+
+          <Route path="/CreateSongForm">
+            <CreateSong />
           </Route>
 
 

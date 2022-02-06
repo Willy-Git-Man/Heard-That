@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllSongsThunk } from "../../store/songs";
+import CreateSong from "./createSong";
+import SongFormNavLink from "./songNavLinks";
 
 export default function Songs() {
   // const currentUser = useSelector(state => state.session.user)
   // console.log('curent user:', currentUser)
 
-  
+
   const allSongs = useSelector((state) => state.songs.getAllSongs);
   console.log("All Current Songs:", allSongs);
 
@@ -24,12 +26,14 @@ export default function Songs() {
   return (
     <div className="songsMainDiv">
       <h1>Songs Div</h1>
+      <SongFormNavLink />
 
       {allSongs?.map((song) => (
         <div className="allSongsDivTest" key={song.id}>
             <ul>
               <li>{song.songName} --- by the legendary --- {song.artistName}</li>
             </ul>
+
         </div>
       ))}
     </div>
