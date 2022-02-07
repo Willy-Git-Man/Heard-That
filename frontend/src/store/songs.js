@@ -62,7 +62,7 @@ export const updateSongThunk = (updatedSong) => async (dispatch) => {
 };
 
 export const deleteSongThunk = (songIdToDelete) => async (dispatch) => {
-  const response = await csrfFetch(`/api/events/${songIdToDelete}`, {
+  const response = await csrfFetch(`/api/songs/${songIdToDelete}`, {
     methood: "DELETE",
   });
   if (response.ok) {
@@ -71,24 +71,27 @@ export const deleteSongThunk = (songIdToDelete) => async (dispatch) => {
 };
 //seems like I need to grab the id from the argument not the whole thing
 
-const initialState = {};
+const initialState = [];
 
 const songsReducer = (state = initialState, action) => {
   let newState;
 
   switch (action.type) {
     case GET_ALL_SONGS:
-      // newState = Object.assign({}, initialState);
       newState = action.payload;
       return newState;
 
     case ADD_SONG:
         newState = action.payload
-        return [...state, newState]
+        return [...state, {newState}]
+
+    case DELETE_SONG:
+      newState = [...state]
+      return newState.filter(song => song.id !== action.payload)
 
     default:
       return initialState;
-  }
+  }//look into Object.assign
 };
 
 export default songsReducer

@@ -43,8 +43,8 @@ const handleSubmit = async (e) => {
 
 const newSong = dispatch(addSongThunk(newSongPayload))
 if (newSong){
-  history.push('/AllSongs')
-//I have to push to AllSongs as it wont exit modal for some reason if I route to /songs 
+  history.push('/Songs')
+//I have to push to AllSongs as it wont exit modal for some reason if I route to /songs
 }
 
 
@@ -70,7 +70,7 @@ if (newSong){
         <label htmlFor="albumIdLabel">Ablum Id: </label>
         <input type="text" name="albumId" value={albumId} onChange={newAlbumId} required />
 
-        <button>Create Song</button>
+        <button type="submit" >Create Song</button>
       </form>
     </div>
     </>

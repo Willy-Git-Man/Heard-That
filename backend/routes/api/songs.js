@@ -16,6 +16,16 @@ router.get(
   })
 );
 
+router.get('/:id(\\d+)',
+asyncHandler( async (req, res) => {
+  const id = parseInt(req.params.id)
+  const targetSong = await Songs.findByPk(id)
+  return res.json({targetSong})
+})
+)
+
+
+
 router.post(
   '/',
   asyncHandler(async (req, res) => {
@@ -54,8 +64,8 @@ router.delete(
     const songId = req.params.id
     const songToDelete = await Songs.findByPk(songId)
 
-    await songToDelete.destroy()
-    // res.json({ message: `${songToDelete.songName} had been successfully deleted!`})
+    songToDelete.destroy()
+    res.json({ message: `${songToDelete.songName} had been successfully deleted!`})
   })
 )
 
