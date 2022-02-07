@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom"
 import { updateSongThunk } from "../../store/songs"
 
 export default function UpdateSong({userInfo}) {
-  const id = useParams()
+  const {id} = useParams()
   console.log(id)
 
   const sessionUser = useSelector((state) => state.session.user);
@@ -42,7 +42,7 @@ const handleSubmit = async (e) => {
     songUrl,
     imageUrl,
     albumId,
-    id: 8
+    id
 
 
   }
