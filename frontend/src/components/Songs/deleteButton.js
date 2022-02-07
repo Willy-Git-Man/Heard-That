@@ -5,16 +5,16 @@ import { deleteSongThunk } from "../../store/songs"
 export default function DeleteSong() {
   const dispatch = useDispatch()
 
-  const dispatchSongRemoval = (song) => {
-    dispatch(deleteSongThunk(song))
+  const dispatchSongRemoval = (songId) => {
+    dispatch(deleteSongThunk(songId))
   }
 
-  const id = useParams()
+  const {id} = useParams()
 
-  console.log('id:', id)
+  // console.log('id:', id)
   return (
     <>
-    <button classNAme="deleteSongButton" onClick={() => dispatchSongRemoval(70)}>
+    <button className="deleteSongButton" onClick={() => dispatchSongRemoval(50)}>
       Delete Song
     </button>
     </>

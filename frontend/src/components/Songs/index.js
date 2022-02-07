@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { deleteSongThunk, getAllSongsThunk } from "../../store/songs";
 import DeleteSong from "./deleteButton";
 // import CreateSongModal from "../CreateSongModal";
+
 
 import "./songs.css";
 
@@ -65,28 +66,30 @@ const deleteDispatch = (songId) => {
               />
               <ul className="songUl">
                 <li className="songListItem">
-                  {" "}
+
                   <i className="fab fa-grav"></i>
                   {song.songName}
                 </li>
 
                 <li className="songListItem">
-                  {" "}
+
                   <i className="fab fa-grav"></i>
                   {song.artistName}
                 </li>
 
                 <li className="songListItem">
-                  {" "}
+
                   <i className="fab fa-grav"></i>
                   {song.songUrl}
                 </li>
               </ul>
-              {/* <DeleteSong /> */}
+              <DeleteSong />
 
               <button  onClick={() => {
           history.push(`/UpdateSongForm/${song.id}`);
         }}>Update</button>
+
+
               <button className="deleteSongButton" onClick={() => deleteDispatch(song.id)}>
       Delete Song
     </button>

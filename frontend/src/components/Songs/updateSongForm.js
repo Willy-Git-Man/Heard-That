@@ -4,14 +4,20 @@ import { useHistory, useParams } from "react-router-dom"
 import { updateSongThunk } from "../../store/songs"
 
 export default function UpdateSong({userInfo}) {
-  const {id} = useParams()
-  console.log(id)
+
+  const history = useHistory()
+  const dispatch = useDispatch()
 
   const sessionUser = useSelector((state) => state.session.user);
+  // const songTest = useSelector((state) => state.songs.getAllSongs[3]);
+
+//  console.log(' songTest:',  songTest)
 
 
-  // const [id, setId] = useState(2)
-  const [songName, setSongName] = useState("Fake Song")
+  const {id} = useParams()
+
+
+  const [songName, setSongName] = useState("songTest")
   const [artistName, setArtistName] = useState("Fake Artist")
   const [songUrl, setSongUrl] = useState("Fake song url")
   const [imageUrl, setImageUrl] = useState("https://upload.wikimedia.org/wikipedia/en/1/1c/LightningBoltSkull.gif")
@@ -24,27 +30,17 @@ export default function UpdateSong({userInfo}) {
   const newAlbumId = (e) => setAlumbId(e.target.value)
 
 
-
-
-  const history = useHistory()
-const dispatch = useDispatch()
-// const id = useParams()
-
 const handleSubmit = async (e) => {
   e.preventDefault()
 
-
   const newSongPayload = {
-    // id,
+    id,
     userId: sessionUser.id,
     songName,
     artistName,
     songUrl,
     imageUrl,
     albumId,
-    id
-
-
   }
 
   const songUpdate = await dispatch(updateSongThunk(newSongPayload))

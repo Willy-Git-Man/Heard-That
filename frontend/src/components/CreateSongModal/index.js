@@ -6,7 +6,7 @@ import CreateSongForm from './CreateSongFrom';
 
 function CreateSongModal({userInfo}) {
   const [showModal, setShowModal] = useState(false);
-console.log('userInfofvvv:', userInfo)
+// console.log('userInfofvvv:', userInfo)
   return (
     <>
       <button className={'loginModalButton'} onClick={() => setShowModal(true)}>Create Song</button>
