@@ -69,7 +69,7 @@ export default function MySongs({ userInfo }) {
                   {song.songUrl}
                 </li>
               </ul>
-              <DeleteSong />
+              {/* <DeleteSong /> */}
 
 
               <button
@@ -78,7 +78,7 @@ export default function MySongs({ userInfo }) {
               >
                 Delete Song
               </button>
-              
+
               <button
                 onClick={() => {
                   history.push(`/UpdateSongForm/${song.id}`);

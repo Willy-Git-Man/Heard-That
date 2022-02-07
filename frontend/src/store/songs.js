@@ -63,7 +63,7 @@ export const updateSongThunk = (updatedSong) => async (dispatch) => {
 
 export const deleteSongThunk = (songIdToDelete) => async (dispatch) => {
   const response = await csrfFetch(`/api/songs/${songIdToDelete}`, {
-    methood: "DELETE",
+    method: "DELETE",
   });
   if (response.ok) {
     dispatch(deleteSong(songIdToDelete));
