@@ -5,47 +5,27 @@ import { deleteSongThunk, getAllSongsThunk } from "../../store/songs";
 import DeleteSong from "./deleteButton";
 // import CreateSongModal from "../CreateSongModal";
 
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 import "./songs.css";
 
 export default function MySongs({ userInfo }) {
+  const history = useHistory();
+  const dispatch = useDispatch();
 
-  const history = useHistory()
   console.log("userInfo:", userInfo);
 
   const allSongs = useSelector((state) => state.songs.getAllSongs);
   console.log("All Current Songs:", allSongs);
 
-
-
-
-
-
-
-  // const el = "will";
-
-  // const songArray = [el, ...allSongs]
-  // console.log("All Current Songsffff:", songArray);
-  // console.log("All Current Songs:", allSongs);
-
-
-
-  // const allSongsObject = { el, ...allSongs };
-  // console.log("allSongsObject:", allSongsObject[0]);
-
-  const dispatch = useDispatch();
-
-
-
-
   useEffect(() => {
     dispatch(getAllSongsThunk());
   }, [dispatch]);
 
-
-const deleteDispatch = (songId) => {
-  dispatch(deleteSongThunk(songId))
-}
+  const deleteDispatch = (songId) => {
+    dispatch(deleteSongThunk(songId));
+  };
 
   return (
     <div className="songsMainDiv">
@@ -66,33 +46,46 @@ const deleteDispatch = (songId) => {
               />
               <ul className="songUl">
                 <li className="songListItem">
-
                   <i className="fab fa-grav"></i>
                   {song.songName}
                 </li>
 
-                <li className="songListItem">
+                <AudioPlayer
+                  className="audioPlayer"
+                  autoPlay
+                  src={song.songUrl}
+                  onPlay={(e) => console.log("onPlay")}
+                />
 
+
+
+                <li className="songListItem">
                   <i className="fab fa-grav"></i>
                   {song.artistName}
                 </li>
 
                 <li className="songListItem">
-
                   <i className="fab fa-grav"></i>
                   {song.songUrl}
                 </li>
               </ul>
               <DeleteSong />
 
-              <button  onClick={() => {
-          history.push(`/UpdateSongForm/${song.id}`);
-        }}>Update</button>
 
-
-              <button className="deleteSongButton" onClick={() => deleteDispatch(song.id)}>
-      Delete Song
-    </button>
+              <button
+                className="deleteSongButton"
+                onClick={() => deleteDispatch(song.id)}
+              >
+                Delete Song
+              </button>
+              
+              <button
+                onClick={() => {
+                  history.push(`/UpdateSongForm/${song.id}`);
+                }}
+              >
+                Update
+              </button>
             </div>
           ))}
       </div>

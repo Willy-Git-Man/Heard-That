@@ -22,6 +22,8 @@
   "bugs": {
     "url": "https://github.com/Willy-Git-Man/Solo-Project/issues"
   },
-  "homepage": "https://github.com/Willy-Git-Man/Solo-Project#readme"
+  "homepage": "https://github.com/Willy-Git-Man/Solo-Project#readme",
+  "dependencies": {
+    "react-h5-audio-player": "^3.8.2"
+  }
 }
-

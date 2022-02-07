@@ -85,9 +85,21 @@ const songsReducer = (state = initialState, action) => {
         newState = action.payload
         return [...state, {newState}]
 
-    // case DELETE_SONG:
-    //   newState = [...state]
-    //   return newState.filter(song => song.id !== action.payload)
+    case DELETE_SONG:
+      newState = [...state]
+      return newState.filter(song => song.id !== action.payload)
+
+    // case UPDATE_SONG:
+    //   newState = action.payload;
+
+    //   return state.map((song) => {
+    //     if (song.id === newState.id) {
+    //       return newState
+    //     } else {
+    //       return song
+    //     }
+    //   })
+
 
     default:
       return initialState;
