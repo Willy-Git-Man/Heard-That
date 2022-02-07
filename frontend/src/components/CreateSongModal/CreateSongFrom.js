@@ -8,7 +8,7 @@ export default function CreateSongForm({userInfo}) {
 
   const [songName, setSongName] = useState("Fake Song")
   const [artistName, setArtistName] = useState("Fake Artist")
-  const [songUrl, setSongUrl] = useState("Fake song url")
+  const [songUrl, setSongUrl] = useState("https://soundcloud.com/rubywatersmusic/quantum-physics-ruby-waters")
   const [imageUrl, setImageUrl] = useState("https://upload.wikimedia.org/wikipedia/en/1/1c/LightningBoltSkull.gif")
   const [albumId, setAlumbId] = useState(1)
 

@@ -54,6 +54,8 @@ export default function MySongs({ userInfo }) {
                   className="audioPlayer"
                   autoPlay
                   src={song.songUrl}
+                  // url={song.songUrl}
+
                   onPlay={(e) => console.log("onPlay")}
                 />
 
