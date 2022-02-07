@@ -52,9 +52,14 @@ export default function MySongs({ userInfo }) {
 
                 <AudioPlayer
                   className="audioPlayer"
-                  autoPlay
-                  src={song.songUrl}
+                  // autoPlay
+                  // src={song.songUrl}
                   // url={song.songUrl}
+                  src={song ? song.songUrl : null}
+                  // src={" https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3"}
+                  // src={" https://jamout.s3.us-west-1.amazonaws.com/18.mp3"}
+
+                  // url="https://soundcloud.com/rubywatersmusic/quantum-physics-ruby-waters"
 
                   onPlay={(e) => console.log("onPlay")}
                 />
