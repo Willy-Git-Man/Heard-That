@@ -6,12 +6,9 @@ import { getAllSongsThunk } from "../../store/songs";
 import "./songs.css";
 
 export default function AllSongs({ userInfo }) {
-
+  const dispatch = useDispatch();
 
   const allSongs = useSelector((state) => state.songs.getAllSongs);
-
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllSongsThunk());

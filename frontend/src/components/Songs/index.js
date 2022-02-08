@@ -14,10 +14,12 @@ export default function MySongs({ userInfo }) {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  console.log("userInfo:", userInfo);
-
   const allSongs = useSelector((state) => state.songs.getAllSongs);
   console.log("All Current Songs:", allSongs);
+
+  // const testArray = ['hello', ...allSongs.filter((song) => song.songName === 'The Real Slim Shady')]
+  // const allSongsArrayCopy = [...allSongs]
+  // console.log('testArray:', testArray)
 
   useEffect(() => {
     dispatch(getAllSongsThunk());
@@ -29,10 +31,7 @@ export default function MySongs({ userInfo }) {
 
   return (
     <div className="songsMainDiv">
-      {/* <h2 className="songDivTitle">Songs Div</h2> */}
-      {/* <SongFormNavLink /> */}
       {/* <CreateSongModal /> */}
-
       <div className="songsDiv">
         {allSongs
           ?.filter((song) => song.userId === userInfo.id)
@@ -40,12 +39,6 @@ export default function MySongs({ userInfo }) {
             // <h1>hello</h1>
             <div className="songListDiv" key={song.id}>
               <ul className="songUl">
-
-              {/* <div className="audioDiv"> */}
-
-                {/* </div> */}
-
-
 
                 <li className="songListItem">
                   <i className="fab fa-grav"></i>
@@ -67,36 +60,29 @@ export default function MySongs({ userInfo }) {
               <AudioPlayer
                 className="audioPlayer"
                 // autoPlay
-                // src={song.songUrl}
-                // url={song.songUrl}
                 src={song ? song.songUrl : null}
-
                 onPlay={(e) => console.log("onPlay")}
-                />
-                <img
-                  className="songImage"
-                  src={song.imageUrl}
-                  alt="Sorry No go on the load yo"
-                />
+              />
+              <img
+                className="songImage"
+                src={song.imageUrl}
+                alt="Sorry No go on the load yo"
+              />
 
               <button
                 className="deleteSongButton"
                 onClick={() => deleteDispatch(song.id)}
               >
-                {/* Delete */}
-                {/* <i class="fas fa-wrench"></i> */}
                 <i className="far fa-trash-alt"></i>
               </button>
 
               <button
-              className="updateSongButton"
+                className="updateSongButton"
                 onClick={() => {
                   history.push(`/UpdateSongForm/${song.id}`);
                 }}
               >
-                {/* Update */}
                 <i className="fas fa-wrench"></i>
-
               </button>
             </div>
           ))}

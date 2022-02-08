@@ -13,7 +13,9 @@ export default function NavLinks() {
     <NavLink activeClassName="currentNavRoute" to='/AllSongs'>All Songs</NavLink>
     ------
     <NavLink exact to="/">Home</NavLink>
-   
+
+    {/* <CreateSongModal/> */}
+
 
     </nav>
   )

@@ -31,7 +31,7 @@ export const getAllSongsThunk = () => async (dispatch) => {
   if (response.ok) {
     const songs = await response.json();
     // console.log(songs.songs)
-   console.log(' songsThunkTest:',  getAllSongs(songs))
+    console.log(" songsThunkTest:", getAllSongs(songs));
     dispatch(getAllSongs(songs));
   }
   return response;
@@ -82,12 +82,19 @@ const songsReducer = (state = initialState, action) => {
       return newState;
 
     case ADD_SONG:
-        newState = action.payload
-        return [...state, {newState}]
+      newState = Object.assign({}, state);
+      newState= action.payload;
+      return newState;
+    // newState = action.payload;
+    // return {...state, newState};
 
     case DELETE_SONG:
-      newState = [...state]
-      return newState.filter(song => song.id !== action.payload)
+      newState = Object.assign({}, state);
+      newState.id  = null;
+      return newState;
+
+    // newState = [...state]
+    // return state.filter(song => song.id !== action.payload)
 
     // case UPDATE_SONG:
     //   newState = action.payload;
@@ -100,10 +107,12 @@ const songsReducer = (state = initialState, action) => {
     //     }
     //   })
 
-
     default:
       return initialState;
-  }//look into Object.assign
+  } //look into Object.assign
 };
 
-export default songsReducer
+
+
+
+export default songsReducer;

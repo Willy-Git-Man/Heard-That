@@ -33,7 +33,7 @@ function App() {
           <Route path="/Songs">
             {/* <CreateSongModal /> */}
             <MySongs userInfo={userInfo}/>
-            {/* <CreateSongModal userInfo={userInfo}/> */}
+            <CreateSongModal userInfo={userInfo}/>
           </Route>
 
           <Route path="/AllSongs">
