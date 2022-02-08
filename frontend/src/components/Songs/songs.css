@@ -144,11 +144,44 @@ z-index: 1;
 
 
   .audioPlayer {
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    position: relative;
     background-color: rgba(50, 80, 150, .9);
     /* margin-top: 50px; */
     bottom: 0;
     color: black;
     position: absolute;
     height: 40%;
+    /* height: fit-content; */
     /* margin-left: 10%; */
   }
+
+  svg {
+    /* position: absolute; */
+    /* position: relative; */
+    /* bottom: 0; */
+  }
+
+
+ .rhap_controls-section {
+  background-color: black;
+  /* margin-top: 0; */
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+ }
+
+ .rhap_main.rhap_stacked {
+  background-color: rgb(243, 235, 235);
+  padding: 0;
+
+ }
+
+ .rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
+   /* background-color: black; */
+   padding-bottom: 0;
+   padding: 0;
+   outline: black solid 5px;
+
+ }

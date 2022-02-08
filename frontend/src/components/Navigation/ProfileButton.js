@@ -45,7 +45,7 @@ function ProfileButton({ user }) {
             <h1 className={"userName"}>{user.username}</h1>
             <h1 className={"email"}>{user.email}</h1>
 
-            <li>
+            {/* <li>
               <a
                 className={"linkedIn"}
                 href="https://www.linkedin.com/in/william-b-grossman/"
@@ -61,7 +61,7 @@ function ProfileButton({ user }) {
               >
                 GitHub
               </a>
-            </li>
+            </li> */}
 
             <li>
               <button className={"logoutButton"} onClick={logout}>
