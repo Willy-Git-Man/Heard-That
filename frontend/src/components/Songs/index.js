@@ -85,7 +85,7 @@ export default function MySongs({ userInfo }) {
               >
                 {/* Delete */}
                 {/* <i class="fas fa-wrench"></i> */}
-                <i class="far fa-trash-alt"></i>
+                <i className="far fa-trash-alt"></i>
               </button>
 
               <button
@@ -95,7 +95,7 @@ export default function MySongs({ userInfo }) {
                 }}
               >
                 {/* Update */}
-                <i class="fas fa-wrench"></i>
+                <i className="fas fa-wrench"></i>
 
               </button>
             </div>
