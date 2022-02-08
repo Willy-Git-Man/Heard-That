@@ -14,8 +14,11 @@ export default function MySongs({ userInfo }) {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const allSongs = useSelector((state) => state.songs.getAllSongs);
+  const allSongs = useSelector((state) => state.songs.songs);
+  const allSongsObjectKeys = Object.keys(allSongs)
   console.log("All Current Songs:", allSongs);
+
+  let song;
 
   // const testArray = ['hello', ...allSongs.filter((song) => song.songName === 'The Real Slim Shady')]
   // const allSongsArrayCopy = [...allSongs]
@@ -29,30 +32,38 @@ export default function MySongs({ userInfo }) {
     dispatch(deleteSongThunk(songId));
   };
 
+  if (!Object.keys(allSongs).length) {
+    return null
+  } else
   return (
     <div className="songsMainDiv">
       {/* <CreateSongModal /> */}
       <div className="songsDiv">
-        {allSongs
-          ?.filter((song) => song.userId === userInfo.id)
-          .map((song) => (
+        {allSongsObjectKeys
+          ?.filter((key) => allSongs[key]?.userId === userInfo.id) // filter out keys for correct user songs
+          .map((key) => (
+
             // <h1>hello</h1>
-            <div className="songListDiv" key={song.id}>
+            <div className="songListDiv" key={allSongs[key].id}>
               <ul className="songUl">
 
                 <li className="songListItem">
                   <i className="fab fa-grav"></i>
-                  {song.songName}
+                  {/* {song.songName} */}
+                  {allSongs[key].songName}
+                  {/* {allSongs[key].songName} */}
+
+
                 </li>
 
                 <li className="songListItem">
                   <i className="fab fa-grav"></i>
-                  {song.artistName}
+                  {allSongs[key].artistName}
                 </li>
 
                 <li className="songListItemUrl">
                   <i className="fab fa-grav"></i>
-                  {song.songUrl}
+                  {allSongs[key].songUrl}
                 </li>
               </ul>
               {/* <DeleteSong /> */}
@@ -60,18 +71,18 @@ export default function MySongs({ userInfo }) {
               <AudioPlayer
                 className="audioPlayer"
                 // autoPlay
-                src={song ? song.songUrl : null}
+                src={allSongs[key] ? allSongs[key].songUrl : null}
                 onPlay={(e) => console.log("onPlay")}
               />
               <img
                 className="songImage"
-                src={song.imageUrl}
+                src={allSongs[key].imageUrl}
                 alt="Sorry No go on the load yo"
               />
 
               <button
                 className="deleteSongButton"
-                onClick={() => deleteDispatch(song.id)}
+                onClick={() => deleteDispatch(allSongs[key].id)}
               >
                 <i className="far fa-trash-alt"></i>
               </button>
@@ -79,7 +90,7 @@ export default function MySongs({ userInfo }) {
               <button
                 className="updateSongButton"
                 onClick={() => {
-                  history.push(`/UpdateSongForm/${song.id}`);
+                  history.push(`/UpdateSongForm/${allSongs[key].id}`);
                 }}
               >
                 <i className="fas fa-wrench"></i>

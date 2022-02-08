@@ -24,9 +24,9 @@ router.get(
 
 
     // res.json({ message: `The general get route for all songs is working!`})
-    return res.json({
+    return res.json(
       getAllSongs,
-    });
+    );
   })
 );
 

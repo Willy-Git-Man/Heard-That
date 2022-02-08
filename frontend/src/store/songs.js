@@ -71,26 +71,31 @@ export const deleteSongThunk = (songIdToDelete) => async (dispatch) => {
 };
 //seems like I need to grab the id from the argument not the whole thing
 
-const initialState = {};
+const initialState = {songs: {}};
 
 const songsReducer = (state = initialState, action) => {
   let newState;
 
   switch (action.type) {
     case GET_ALL_SONGS:
-      newState = action.payload;
+      newState = {...state}
+      console.log('newstate:', newState)
+      action.payload.forEach((song) => newState.songs[song.id] = song)
       return newState;
 
     case ADD_SONG:
-      newState = Object.assign({}, state);
-      newState= action.payload;
+      newState= {...state, songs: {...state.songs}};
+      newState.songs[action.payload.createSong.id] = {...action.payload.createSong}
+      console.log('action.payload:', action.payload)
       return newState;
     // newState = action.payload;
     // return {...state, newState};
 
     case DELETE_SONG:
-      newState = Object.assign({}, state);
-      newState.id  = null;
+      newState = {...state};
+      console.log('action.payload:', action.payload)
+      const id = action.payload
+      delete newState.songs[id]
       return newState;
 
     // newState = [...state]

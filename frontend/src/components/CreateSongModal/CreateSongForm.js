@@ -5,7 +5,7 @@ import { addSongThunk } from "../../store/songs";
 
 import "./CreateSongForm.css";
 
-export default function CreateSongForm({ userInfo }) {
+export default function CreateSongForm({ userInfo, setShowModal }) {
   const [songName, setSongName] = useState("The Real Slim Shady");
   const [artistName, setArtistName] = useState("Eminem");
   const [songUrl, setSongUrl] = useState(
@@ -37,8 +37,10 @@ export default function CreateSongForm({ userInfo }) {
       userId: userInfo.id,
     };
 
-    const newSong = dispatch(addSongThunk(newSongPayload));
+    const newSong = await dispatch(addSongThunk(newSongPayload));
+   console.log(' newSong:',  newSong)
     if (newSong) {
+      setShowModal(false)
       history.push("/Songs");
       //I have to push to AllSongs as it wont exit modal for some reason if I route to /songs
     }
