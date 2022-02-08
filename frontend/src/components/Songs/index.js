@@ -29,7 +29,7 @@ export default function MySongs({ userInfo }) {
 
   return (
     <div className="songsMainDiv">
-      <h1 className="songDivTitle">Songs Div</h1>
+      {/* <h2 className="songDivTitle">Songs Div</h2> */}
       {/* <SongFormNavLink /> */}
       {/* <CreateSongModal /> */}
 
@@ -39,11 +39,6 @@ export default function MySongs({ userInfo }) {
           .map((song) => (
             // <h1>hello</h1>
             <div className="songListDiv" key={song.id}>
-              <img
-                className="songImage"
-                src={song.imageUrl}
-                alt="Sorry No go on the load yo"
-              />
               <ul className="songUl">
 
               {/* <div className="audioDiv"> */}
@@ -62,7 +57,7 @@ export default function MySongs({ userInfo }) {
                   {song.artistName}
                 </li>
 
-                <li className="songListItem">
+                <li className="songListItemUrl">
                   <i className="fab fa-grav"></i>
                   {song.songUrl}
                 </li>
@@ -78,12 +73,19 @@ export default function MySongs({ userInfo }) {
 
                 onPlay={(e) => console.log("onPlay")}
                 />
+                <img
+                  className="songImage"
+                  src={song.imageUrl}
+                  alt="Sorry No go on the load yo"
+                />
 
               <button
                 className="deleteSongButton"
                 onClick={() => deleteDispatch(song.id)}
               >
-                Delete Song
+                {/* Delete */}
+                {/* <i class="fas fa-wrench"></i> */}
+                <i class="far fa-trash-alt"></i>
               </button>
 
               <button
@@ -92,7 +94,9 @@ export default function MySongs({ userInfo }) {
                   history.push(`/UpdateSongForm/${song.id}`);
                 }}
               >
-                Update
+                {/* Update */}
+                <i class="fas fa-wrench"></i>
+
               </button>
             </div>
           ))}
