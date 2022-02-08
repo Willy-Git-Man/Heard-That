@@ -1,11 +1,12 @@
 .currentNavRoute {
   color: green;
+  /* margin-right: 10%; */
 }
 
 .navigationLinks {
   /* outline: black solid 5px; */
   /* background-color: aquamarine; */
-  position: absolute;
+  /* position: absolute; */
   font-size: 200%;
 
 }
