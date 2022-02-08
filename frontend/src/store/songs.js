@@ -89,14 +89,19 @@ const songsReducer = (state = initialState, action) => {
 
     case DELETE_SONG:
       newState = {...state};
+
       const id = action.payload
       delete newState.songs[id]
       return newState;
 
-    // case UPDATE_SONG:
-      // newState = {...state};
-      // console.log('state:', newState)
-      // console.log('newStateUpdate:', action.payload)
+      // case UPDATE_SONG:
+      //   newState = {...state};
+      //   console.log('newStatef:', newState.songs)
+      // // console.log('state:', newState)
+      // // console.log('newStateUpdate:', action.payload)
+
+      // // return
+      // console.log('newStatef:', newState)
 
       // return
 
