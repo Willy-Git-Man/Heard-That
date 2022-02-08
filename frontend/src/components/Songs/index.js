@@ -48,15 +48,6 @@ export default function MySongs({ userInfo }) {
 
               {/* <div className="audioDiv"> */}
 
-                <AudioPlayer
-                  className="audioPlayer"
-                  // autoPlay
-                  // src={song.songUrl}
-                  // url={song.songUrl}
-                  src={song ? song.songUrl : null}
-
-                  onPlay={(e) => console.log("onPlay")}
-                  />
                 {/* </div> */}
 
 
@@ -78,6 +69,15 @@ export default function MySongs({ userInfo }) {
               </ul>
               {/* <DeleteSong /> */}
 
+              <AudioPlayer
+                className="audioPlayer"
+                // autoPlay
+                // src={song.songUrl}
+                // url={song.songUrl}
+                src={song ? song.songUrl : null}
+
+                onPlay={(e) => console.log("onPlay")}
+                />
 
               <button
                 className="deleteSongButton"

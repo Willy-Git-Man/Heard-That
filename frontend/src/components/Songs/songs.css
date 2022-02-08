@@ -19,10 +19,11 @@
 }
 
 .songImage {
-height: 90%;
+height: 100%;
 position:absolute;
+opacity: .3;
 /* height: 25vh; */
-z-index: -1;
+z-index: 1;
 /* margin-bottom: 10%; */
 }
 
@@ -30,9 +31,11 @@ z-index: -1;
   display: inline block;
   width: fill;
   padding-left: 0;
-  margin: 0;
+  /* margin: 0; */
   position: absolute;
-  bottom: 0
+  top: 0;
+  height: 50%;
+
   /* position: absolute; */
   /* overflow: hidden; */
 }
@@ -105,6 +108,9 @@ z-index: -1;
 
   .audioPlayer {
     background-color: rgba(50, 80, 150, .9);
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    bottom: 0;
     color: black;
+    position: absolute;
+    height: 50%;
   }
