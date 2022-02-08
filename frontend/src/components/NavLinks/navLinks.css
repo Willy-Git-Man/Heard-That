@@ -3,5 +3,9 @@
 }
 
 .navigationLinks {
-  outline: black solid 5px;
+  /* outline: black solid 5px; */
+  /* background-color: aquamarine; */
+  position: absolute;
+  font-size: 200%;
+
 }

@@ -18,11 +18,11 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
 
     sessionLinks = (
-      <>
+      <div className="navDiv">
       <ProfileButton user={sessionUser} />
       <NavLinks />
       {/* <CreateSongModal /> */}
-      </>
+      </div>
     );
   } else {
 
@@ -38,9 +38,9 @@ function Navigation({ isLoaded }){
   return (
     <>
 
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
+    <ul className="navUl">
+      <li className="navLi">
+        {/* <NavLink exact to="/">Home</NavLink> */}
 
         {isLoaded && sessionLinks}
       </li>
