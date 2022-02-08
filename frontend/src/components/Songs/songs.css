@@ -20,8 +20,8 @@
   background-color: rgba(100, 50, 150, .8);
   flex-direction: row-reverse;
   border: black solid 5px;
-  height: 25vh;
-  height: 250px;
+  height: 20vh;
+  min-height: 250px;
   /* width: %; */
   /* width: 75%; */
   /* margin-top: 50px; */
@@ -219,9 +219,12 @@ z-index: 1;
  }
 
  .rhap_container.rhap_loop--off.rhap_play-status--playing.audioPlayer {
+  padding-bottom: 0;
   padding: 0;
   outline: black solid 5px;
-
+  background-color: black;
+  color: black;
+  z-index: 150;
  }
 
  .rhap_progress-section {

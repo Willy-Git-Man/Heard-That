@@ -53,6 +53,7 @@ align-items: center;
 .navDiv {
   position: relative;
   height: 5vh;
+  min-height: 50px;
   display: flex;
   align-items: center;
   /* justify-content: space-between; */
