@@ -148,7 +148,7 @@ z-index: 1;
     /* align-items: center; */
     /* justify-content: center; */
     position: relative;
-    background-color: rgba(50, 80, 150, .9);
+    /* background-color: rgba(50, 80, 150, .9); */
     /* margin-top: 50px; */
     bottom: 0;
     color: black;
@@ -156,6 +156,7 @@ z-index: 1;
     height: 40%;
     /* height: fit-content; */
     /* margin-left: 10%; */
+    z-index: 10;
   }
 
   svg {
@@ -172,16 +173,36 @@ z-index: 1;
   padding-left: 2.5%;
  }
 
+ .rhap_controls-section button {
+  /* background-color: black; */
+  /* background-color: white; */
+  /* margin-top: 0; */
+  color: green;
+  /* padding-right: 2.5%; */
+  /* padding-left: 2.5%; */
+ }
+
  .rhap_main.rhap_stacked {
   background-color: rgb(243, 235, 235);
   padding: 0;
+  /* width: 100%; */
 
  }
+
+
 
  .rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
    /* background-color: black; */
    padding-bottom: 0;
    padding: 0;
    outline: black solid 5px;
+   background-color: black;
+   color: black;
+
+ }
+
+ .rhap_container.rhap_loop--off.rhap_play-status--playing.audioPlayer {
+  padding: 0;
+  outline: black solid 5px;
 
  }
