@@ -4,7 +4,9 @@ import { Modal } from '../../context/Modal';
 
 import SignupForm from "./SignupForm";
 
-import './SignupForm.css'
+import "../Songs/songs.css";
+
+// import './SignupForm.css'
 // import '../LoginFormModal/LoginForm.css'
 
 function SignupFormModal() {

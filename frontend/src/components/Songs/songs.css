@@ -59,11 +59,6 @@ z-index: -1;
   }
 
 
-  .audioPlayer {
-  outline: solid black 5px;
-  position: absolute;
-  bottom: 0;
-  }
 
   .deleteSongButton {
     height: 50%;
@@ -84,8 +79,32 @@ z-index: -1;
   }
 
 
-  .audioPlayer {
-    background-color: aquamarine;
-    bottom: 0;
+
+  .loginModalButton {
+    background-color: aqua;
     position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20%;
+    width: 25%;
+    color: white;
+    font-size: 50px;
+  }
+
+  .signupFormButton {
+    background-color: aqua;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 20%;
+    width: 25%;
+    color: white;
+    font-size: 50px;
+  }
+
+
+  .audioPlayer {
+    background-color: rgba(50, 80, 150, .9);
+    margin-top: 50px;
+    color: black;
   }

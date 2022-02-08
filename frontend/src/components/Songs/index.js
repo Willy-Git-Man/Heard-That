@@ -46,7 +46,7 @@ export default function MySongs({ userInfo }) {
               />
               <ul className="songUl">
 
-              <div className="audioDiv">
+              {/* <div className="audioDiv"> */}
 
                 <AudioPlayer
                   className="audioPlayer"
@@ -57,7 +57,7 @@ export default function MySongs({ userInfo }) {
 
                   onPlay={(e) => console.log("onPlay")}
                   />
-                </div>
+                {/* </div> */}
 
 
 
@@ -71,10 +71,10 @@ export default function MySongs({ userInfo }) {
                   {song.artistName}
                 </li>
 
-                {/* <li className="songListItem">
+                <li className="songListItem">
                   <i className="fab fa-grav"></i>
                   {song.songUrl}
-                </li> */}
+                </li>
               </ul>
               {/* <DeleteSong /> */}
 
