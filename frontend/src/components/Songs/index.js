@@ -45,13 +45,8 @@ export default function MySongs({ userInfo }) {
                 alt="Sorry No go on the load yo"
               />
               <ul className="songUl">
-                <li className="songListItem">
-                  <i className="fab fa-grav"></i>
-                  {song.songName}
-                </li>
 
-
-<div className="audioDiv">
+              <div className="audioDiv">
 
                 <AudioPlayer
                   className="audioPlayer"
@@ -62,19 +57,24 @@ export default function MySongs({ userInfo }) {
 
                   onPlay={(e) => console.log("onPlay")}
                   />
-                  </div>
+                </div>
 
 
+
+                <li className="songListItem">
+                  <i className="fab fa-grav"></i>
+                  {song.songName}
+                </li>
 
                 <li className="songListItem">
                   <i className="fab fa-grav"></i>
                   {song.artistName}
                 </li>
 
-                <li className="songListItem">
+                {/* <li className="songListItem">
                   <i className="fab fa-grav"></i>
                   {song.songUrl}
-                </li>
+                </li> */}
               </ul>
               {/* <DeleteSong /> */}
 

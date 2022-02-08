@@ -8,6 +8,7 @@
 .songListDiv {
   /* height: 2200px; */
   display: flex;
+  background-color: rgba(100, 50, 150, .8);
   flex-direction: row-reverse;
   border: black solid 5px;
   height: 25vh;
@@ -31,7 +32,7 @@ z-index: -1;
   padding-left: 0;
   margin: 0;
   position: absolute;
-  bottom: 0;
+  bottom: 0
   /* position: absolute; */
   /* overflow: hidden; */
 }
@@ -43,7 +44,9 @@ z-index: -1;
   list-style: none;
   padding-left: 0;
   font-size: 1.5em;
-  margin-left: 50%;
+  margin-left: 30%;
+  position: relative;
+  /* margin-bottom: 2.5%; */
   }
 
   .songDivTitle {
