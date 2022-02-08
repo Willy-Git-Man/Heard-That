@@ -79,42 +79,38 @@ const songsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_SONGS:
       newState = {...state}
-      console.log('newstate:', newState)
       action.payload.forEach((song) => newState.songs[song.id] = song)
       return newState;
 
     case ADD_SONG:
       newState= {...state, songs: {...state.songs}};
       newState.songs[action.payload.createSong.id] = {...action.payload.createSong}
-      console.log('action.payload:', action.payload)
       return newState;
-    // newState = action.payload;
-    // return {...state, newState};
 
     case DELETE_SONG:
       newState = {...state};
-      console.log('action.payload:', action.payload)
       const id = action.payload
       delete newState.songs[id]
       return newState;
 
-    // newState = [...state]
-    // return state.filter(song => song.id !== action.payload)
-
     // case UPDATE_SONG:
-    //   newState = action.payload;
+      // newState = {...state};
+      // console.log('state:', newState)
+      // console.log('newStateUpdate:', action.payload)
 
-    //   return state.map((song) => {
-    //     if (song.id === newState.id) {
-    //       return newState
-    //     } else {
-    //       return song
-    //     }
-    //   })
+      // return
+
+      // return newState.map((song) => {
+      //   if (song.id === newState.id) {
+      //     return newState
+      //   } else {
+      //     return song
+      //   }
+      // })
 
     default:
       return initialState;
-  } //look into Object.assign
+  }
 };
 
 

@@ -2,12 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { deleteSongThunk, getAllSongsThunk } from "../../store/songs";
-import DeleteSong from "./deleteButton";
-// import CreateSongModal from "../CreateSongModal";
-
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-
 import "./songs.css";
 
 export default function MySongs({ userInfo }) {
@@ -17,12 +13,6 @@ export default function MySongs({ userInfo }) {
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectKeys = Object.keys(allSongs)
   console.log("All Current Songs:", allSongs);
-
-  let song;
-
-  // const testArray = ['hello', ...allSongs.filter((song) => song.songName === 'The Real Slim Shady')]
-  // const allSongsArrayCopy = [...allSongs]
-  // console.log('testArray:', testArray)
 
   useEffect(() => {
     dispatch(getAllSongsThunk());
@@ -37,7 +27,6 @@ export default function MySongs({ userInfo }) {
   } else
   return (
     <div className="songsMainDiv">
-      {/* <CreateSongModal /> */}
       <div className="songsDiv">
         {allSongsObjectKeys
           ?.filter((key) => allSongs[key]?.userId === userInfo.id) // filter out keys for correct user songs
@@ -66,7 +55,6 @@ export default function MySongs({ userInfo }) {
                   {allSongs[key].songUrl}
                 </li>
               </ul>
-              {/* <DeleteSong /> */}
 
               <AudioPlayer
                 className="audioPlayer"
@@ -95,6 +83,7 @@ export default function MySongs({ userInfo }) {
               >
                 <i className="fas fa-wrench"></i>
               </button>
+
             </div>
           ))}
       </div>
