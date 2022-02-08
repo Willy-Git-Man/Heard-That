@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory, useParams } from "react-router-dom"
 import { updateSongThunk } from "../../store/songs"
+import "./songs.css";
 
 export default function UpdateSong({userInfo}) {
 
@@ -45,7 +46,7 @@ const handleSubmit = async (e) => {
 
   const songUpdate = await dispatch(updateSongThunk(newSongPayload))
   if (songUpdate) {
-    history.push('/api/events')
+    history.push('/api/Songs')
   }
 
   history.push('/Songs')
@@ -76,7 +77,7 @@ return (
           // dispatch(updateSongThunk())
           history.push('/UpdateSongForm')
         } >Update Song</button> */}
-        <button>Update</button>
+        <button >Update</button>
       </form>
 
       <h1>hello</h1>
