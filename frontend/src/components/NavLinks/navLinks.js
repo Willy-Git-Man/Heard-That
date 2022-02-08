@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import CreateSongModal from '../CreateSongModal'
 import './navLinks.css'
 
 export default function NavLinks() {
@@ -12,6 +13,7 @@ export default function NavLinks() {
     <NavLink activeClassName="currentNavRoute" to='/AllSongs'>All Songs</NavLink>
     ------
     <NavLink exact to="/">Home</NavLink>
+    ------
 
     </nav>
   )

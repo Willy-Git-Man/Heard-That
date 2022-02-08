@@ -3,6 +3,20 @@ const router = express.Router();
 const { User, Songs } = require("../../db/models");
 const asyncHandler = require("express-async-handler");
 
+// const validateSongCreate = [
+
+//     check('songName')
+//       .exists({ checkFalsy: true })
+//     .isLength({ min: 4 })
+
+//       .notEmpty()
+//       .withMessage('Please provide a valid email or username.'),
+//     check('artistName')
+//       .exists({ checkFalsy: true })
+//       .withMessage('Please provide a password.'),
+//     handleValidationErrors
+//   ];
+
 router.get(
   '/',
   asyncHandler(async (req, res) => {
@@ -28,7 +42,11 @@ asyncHandler( async (req, res) => {
 
 router.post(
   '/',
+  // validateSongCreate,
   asyncHandler(async (req, res) => {
+    // const { songName, password, username } = req.body;
+    console.log('req.body:', req.body)
+
     const createSong = await Songs.create(req.body);
     // console.log('createSong:', createSong)
 

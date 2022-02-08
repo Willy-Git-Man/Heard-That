@@ -71,7 +71,7 @@ export const deleteSongThunk = (songIdToDelete) => async (dispatch) => {
 };
 //seems like I need to grab the id from the argument not the whole thing
 
-const initialState = [];
+const initialState = {};
 
 const songsReducer = (state = initialState, action) => {
   let newState;

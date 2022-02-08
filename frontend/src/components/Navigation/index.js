@@ -21,6 +21,7 @@ function Navigation({ isLoaded }){
       <div className="navDiv">
       <NavLinks />
       <ProfileButton user={sessionUser} />
+      <CreateSongModal />
       {/* <CreateSongModal /> */}
       </div>
     );

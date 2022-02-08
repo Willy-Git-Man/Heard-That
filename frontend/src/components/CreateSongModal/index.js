@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import CreateSongForm from './CreateSongFrom';
+import CreateSongForm from './CreateSongForm';
 
-// import './CreateSongForm.css'
+import './CreateSongForm.css'
 
 function CreateSongModal({userInfo}) {
   const [showModal, setShowModal] = useState(false);
 // console.log('userInfofvvv:', userInfo)
   return (
     <>
-      <button className={'loginModalButton'} onClick={() => setShowModal(true)}>Create Song</button>
+      <button className={'createSongModalButton'} onClick={() => setShowModal(true)}>Create Song</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <CreateSongForm userInfo={userInfo}/>

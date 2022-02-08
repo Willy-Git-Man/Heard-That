@@ -3,13 +3,16 @@ import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { addSongThunk } from "../../store/songs"
 
+import './CreateSongForm.css'
+
+
 
 export default function CreateSongForm({userInfo}) {
 
-  const [songName, setSongName] = useState("Fake Song")
-  const [artistName, setArtistName] = useState("Fake Artist")
-  const [songUrl, setSongUrl] = useState("https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3")
-  const [imageUrl, setImageUrl] = useState("https://upload.wikimedia.org/wikipedia/en/1/1c/LightningBoltSkull.gif")
+  const [songName, setSongName] = useState("The Real Slim Shady")
+  const [artistName, setArtistName] = useState("Eminem")
+  const [songUrl, setSongUrl] = useState("https://www.mboxdrive.com/Eminem_-_The_Real_Slim_Shady_47829433.mp3")
+  const [imageUrl, setImageUrl] = useState("https://upload.wikimedia.org/wikipedia/en/6/69/Eminem_-_The_Real_Slim_Shady_CD_cover.jpg")
   const [albumId, setAlumbId] = useState(1)
 
   const newSongName = (e) => setSongName(e.target.value)
