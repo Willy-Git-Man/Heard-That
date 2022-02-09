@@ -83,7 +83,7 @@ router.delete(
     const songToDelete = await Songs.findByPk(songId)
 
     songToDelete.destroy()
-    res.json({ message: `${songToDelete.songName} had been successfully deleted!`})
+    res.json({ message: `${songToDelete.songName} has been successfully deleted!`})
   })
 )
 
