@@ -23,7 +23,7 @@ function App() {
 
   // console.log('userInfo:', userInfo.username)
 
-  // const currentUser = useSelector(state => state.session.user)
+  // const currentUser = useSelector(state => state.session.user)/
 
   return (
     <>
