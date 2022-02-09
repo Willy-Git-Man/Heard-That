@@ -94,7 +94,11 @@ const songsReducer = (state = initialState, action) => {
       delete newState.songs[id]
       return newState;
 
-      // case UPDATE_SONG:
+      case UPDATE_SONG:
+      newState = {...state, songs: {...state.songs}};
+      newState.songs[action.payload.id] = {...action.payload}
+      return newState
+
       //   newState = {...state};
       //   console.log('newStatef:', newState.songs)
       // // console.log('state:', newState)

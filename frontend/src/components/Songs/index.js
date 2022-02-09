@@ -5,6 +5,7 @@ import { deleteSongThunk, getAllSongsThunk } from "../../store/songs";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "./songs.css";
+import UpdateSongModal from "../UpdateSongModal";
 
 export default function MySongs({ userInfo }) {
   const history = useHistory();
@@ -67,6 +68,9 @@ export default function MySongs({ userInfo }) {
                 src={allSongs[key].imageUrl}
                 alt="Sorry No go on the load yo"
               />
+
+              <UpdateSongModal  />
+
 
               <button
                 className="deleteSongButton"

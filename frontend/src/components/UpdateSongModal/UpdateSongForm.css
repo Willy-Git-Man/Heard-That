@@ -1,0 +1,5 @@
+.updateSongModalButton {
+  z-index: 1000;
+  /* position: absolute; */
+  right: 0;
+}
