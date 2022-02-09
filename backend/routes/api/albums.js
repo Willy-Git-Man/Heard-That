@@ -21,4 +21,17 @@ router.post(
   })
 )
 
+router.put(
+  '/:id',
+  asyncHandler( async (req,res) => {
+    const albumChanges = req.body
+
+    await Albums.update(albumChanges, {
+      where: {id: req.params.id}
+    })
+
+    return res.json(albumChanges)
+  })
+)
+
 module.exports = router

@@ -13,6 +13,8 @@ module.exports = {
         {userId: 1, title: 'My Songs', imageUrl:"https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg", createdAt: new Date(), updatedAt: new Date(),},
         {userId: 1, title: 'The Wall', imageUrl:"https://i1.sndcdn.com/artworks-kpswMSYYQ4osELsK-jbOC2w-t500x500.jpg", createdAt: new Date(), updatedAt: new Date(),},
         //{userId: 1, title: 'Post Test', imageUrl:"https://i1.sndcdn.com/artworks-kpswMSYYQ4osELsK-jbOC2w-t500x500.jpg", createdAt: new Date(), updatedAt: new Date(),},
+        //{userId: 1, title: 'Update Test', imageUrl:"https://i1.sndcdn.com/artworks-kpswMSYYQ4osELsK-jbOC2w-t500x500.jpg", createdAt: new Date(), updatedAt: new Date(),},
+
 
       ], {});
   },
