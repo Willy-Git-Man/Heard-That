@@ -85,14 +85,14 @@ export default function MySongs({ userInfo, setShowModal }) {
                 <i className="far fa-trash-alt"></i>
               </button>
 
-              <button
+              {/* <button
                 className="updateSongButton"
                 onClick={() => {
                   history.push(`/UpdateSongForm/${allSongs[key].id}`);
                 }}
               >
                 <i className="fas fa-wrench"></i>
-              </button>
+              </button> */}
 
             </div>
           ))}

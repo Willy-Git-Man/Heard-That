@@ -13,7 +13,9 @@ function UpdateSongModal({ userInfo, songId }) {
         className={"updateSongModalButton"}
         onClick={() => setShowModal(true)}
       >
-        Update Song
+        {/* Update Song */}
+        <i className="fas fa-wrench"></i>
+
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
