@@ -119,6 +119,8 @@ User Table Migration:
 
 npx sequelize model:generate --name User --attributes username:string,email:string,hashedPassword:string
 npx sequelize model:generate --name Songs --attributes userId:integer,albumId:integer,songName:string,artistName:string,songUrl:string;
+npx sequelize model:generate --name Albums --attributes userId:integer,title:string,imageUrl:string
+
 
 Mirgrate the User Table:
 
@@ -138,6 +140,9 @@ psql <database name> -c '\d "Users"'
 Generate User Seeder File for Demo user:
 
 npx sequelize seed:generate --name demo-user
+
+npx sequelize seed:generate --name demo-albums
+
 
 
 Migrate the Seed File:
