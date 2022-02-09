@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory, useParams } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import { deleteSongThunk, getAllSongsThunk } from "../../store/songs";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
@@ -74,7 +74,8 @@ export default function MySongs({ userInfo, setShowModal }) {
                 alt="Sorry No go on the load yo"
               />
 
-              <UpdateSongModal  setShowModal={setShowModal}/>
+              {/* <UpdateSongModal  /> */}
+              <UpdateSongModal />
 
 
               <button

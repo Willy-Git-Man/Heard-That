@@ -8,21 +8,23 @@ export default function UpdateSong({userInfo}) {
 
   const history = useHistory()
   const dispatch = useDispatch()
+  const {id} = useParams()
 
   const sessionUser = useSelector((state) => state.session.user);
-  // const songTest = useSelector((state) => state.songs.getAllSongs[3]);
+//   const songTest = useSelector((state) => state.songs.getAllSongs[3]);
+const songTest = useSelector((state) => state.songs.songs[id])
+console.log('songTest:', songTest)
 
 //  console.log(' songTest:',  songTest)
 
 
-  const {id} = useParams()
 
 
-  const [songName, setSongName] = useState("songTest")
-  const [artistName, setArtistName] = useState("Fake Artist")
-  const [songUrl, setSongUrl] = useState("https://soundcloud.com/rubywatersmusic/quantum-physics-ruby-waters")
-  const [imageUrl, setImageUrl] = useState("https://upload.wikimedia.org/wikipedia/en/1/1c/LightningBoltSkull.gif")
-  const [albumId, setAlumbId] = useState(1)
+  const [songName, setSongName] = useState(songTest.songName)
+  const [artistName, setArtistName] = useState(songTest.artistName)
+  const [songUrl, setSongUrl] = useState(songTest.songUrl)
+  const [imageUrl, setImageUrl] = useState(songTest.imageUrl)
+  const [albumId, setAlumbId] = useState(songTest.albumId)
 
   const newSongName = (e) => setSongName(e.target.value)
   const newArtistName = (e) => setArtistName(e.target.value)

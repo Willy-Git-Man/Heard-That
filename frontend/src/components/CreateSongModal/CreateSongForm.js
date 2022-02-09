@@ -42,7 +42,7 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
     if (newSong) {
       setShowModal(false)
       history.push("/Songs");
-      //I have to push to AllSongs as it wont exit modal for some reason if I route to /songs
+      //I have to push to AllSongs as it wont exit modal for some reason if I route to /songs asdf
     }
   };
   return (
