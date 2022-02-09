@@ -1,22 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { updateSongThunk } from "../../store/songs";
 import "./UpdateSongForm.css";
 
-export default function UpdateSongForm({ userInfo, setShowModal }) {
+export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
   // const [showModal, setShowModal] = useState(false);
+  const id = songId
 
   const history = useHistory();
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  const songTest = useSelector((state) => state.songs.songs[32]);
+  const songTest = useSelector((state) => state.songs.songs[id]);
 
   // const {id} = useParams()
+console.log('id:', id)
 
-  const [id] = useState(32);
 
   const [songName, setSongName] = useState(songTest.songName);
   const [artistName, setArtistName] = useState(songTest.artistName);
@@ -24,11 +25,29 @@ export default function UpdateSongForm({ userInfo, setShowModal }) {
   const [imageUrl, setImageUrl] = useState(songTest.imageUrl);
   const [albumId, setAlumbId] = useState(songTest.albumId);
 
+  const [errors, setErrors] = useState([])
+
+
   const newSongName = (e) => setSongName(e.target.value);
   const newArtistName = (e) => setArtistName(e.target.value);
   const newSongUrl = (e) => setSongUrl(e.target.value);
   const newImageUrl = (e) => setImageUrl(e.target.value);
   const newAlbumId = (e) => setAlumbId(e.target.value);
+
+  useEffect(() => {
+    const validationErrors = []
+
+    if (songName.length === 0) validationErrors.push("Song name field is required")
+    if (artistName.length === 0) validationErrors.push("Artist name field is required")
+    if (songName.length > 50) validationErrors.push('Song name must be less than 50 characters')
+    if (artistName.length > 50) validationErrors.push('Song name must be less than 50 characters')
+    if (songUrl.length > 255) validationErrors.push('Song url must be less than 255 Characters')
+    if (imageUrl.length > 255) validationErrors.push('Image url must be less than 255 characters')
+    if (typeof albumId !== "number") validationErrors.push('AlbumId must be a number')
+
+
+    setErrors(validationErrors)
+  }, [songName, artistName, songUrl, imageUrl, albumId])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,8 +63,9 @@ export default function UpdateSongForm({ userInfo, setShowModal }) {
     };
 
     const songUpdate = await dispatch(updateSongThunk(updatedSongPayload));
+    console.log('songUpdate:', songUpdate)
     if (songUpdate) {
-      // setShowModal(false)
+      setShowModal(false)
       history.push("/api/Songs");
     }
 
@@ -55,6 +75,12 @@ export default function UpdateSongForm({ userInfo, setShowModal }) {
   return (
     <div className="createNewSongDiv">
       <form className="createNewSongForm" onSubmit={handleSubmit}>
+
+      <ul className="errors">
+        {errors.map((error) => (
+          <li key={error}>{error}</li>
+        ))}
+      </ul>
         <label htmlFor="songNameLabel">Song Name: </label>
         <input
           type="text"

@@ -4,7 +4,7 @@ import UpdateSongForm from "./UpdateSongForm";
 
 import "./UpdateSongForm.css";
 
-function UpdateSongModal({ userInfo }) {
+function UpdateSongModal({ userInfo, songId }) {
   const [showModal, setShowModal] = useState(false);
   // console.log('userInfofvvv:', userInfo)
   return (
@@ -17,7 +17,7 @@ function UpdateSongModal({ userInfo }) {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <UpdateSongForm setShowModal={setShowModal} userInfo={userInfo} />
+          <UpdateSongForm setShowModal={setShowModal} userInfo={userInfo} songId={songId}/>
         </Modal>
       )}
     </>

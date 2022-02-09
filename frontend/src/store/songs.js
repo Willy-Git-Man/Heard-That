@@ -58,6 +58,7 @@ export const updateSongThunk = (updatedSong) => async (dispatch) => {
   if (response.ok) {
     const updatedSongRequest = await response.json();
     dispatch(updateSong(updatedSongRequest));
+    return updatedSongRequest
   }
 };
 

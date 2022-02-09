@@ -74,7 +74,7 @@ export default function MySongs({ userInfo, setShowModal }) {
                 alt="Sorry No go on the load yo"
               />
 
-              {/* <UpdateSongModal  /> */}
+              <UpdateSongModal songId={allSongs[key].id} />
               {/* <UpdateSongModal /> */}
 
 
