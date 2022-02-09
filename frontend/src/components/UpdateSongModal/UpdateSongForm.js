@@ -12,11 +12,11 @@ export default function UpdateSongForm({ userInfo, setShowModal }) {
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  const songTest = useSelector((state) => state.songs.songs[186]);
+  const songTest = useSelector((state) => state.songs.songs[32]);
 
   // const {id} = useParams()
 
-  const [id] = useState(songTest.id);
+  const [id] = useState(32);
 
   const [songName, setSongName] = useState(songTest.songName);
   const [artistName, setArtistName] = useState(songTest.artistName);
