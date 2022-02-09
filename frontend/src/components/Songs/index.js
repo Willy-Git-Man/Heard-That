@@ -75,7 +75,7 @@ export default function MySongs({ userInfo, setShowModal }) {
               />
 
               {/* <UpdateSongModal  /> */}
-              <UpdateSongModal />
+              {/* <UpdateSongModal /> */}
 
 
               <button
