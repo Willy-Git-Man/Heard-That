@@ -12,6 +12,15 @@ router.get(
   })
 )
 
+router.get('/:id(\\d+)',
+asyncHandler( async (req,res) => {
+  const id = parseInt(req.params.id)
+  const targetAlbum = await Albums.findByPk(id)
+  return res.json({targetAlbum})
+})
+)
+
+
 router.post(
   '/',
   asyncHandler( async (req,res) => {
