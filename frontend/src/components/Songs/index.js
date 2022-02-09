@@ -7,7 +7,7 @@ import "react-h5-audio-player/lib/styles.css";
 import "./songs.css";
 import UpdateSongModal from "../UpdateSongModal";
 
-export default function MySongs({ userInfo }) {
+export default function MySongs({ userInfo, setShowModal }) {
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -69,7 +69,7 @@ export default function MySongs({ userInfo }) {
                 alt="Sorry No go on the load yo"
               />
 
-              <UpdateSongModal  />
+              <UpdateSongModal  setShowModal={setShowModal}/>
 
 
               <button

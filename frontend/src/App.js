@@ -12,6 +12,8 @@ import UpdateSong from "./components/Songs/updateSongForm";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
@@ -29,7 +31,7 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route path="/Songs">
-            <MySongs userInfo={userInfo} />
+            <MySongs userInfo={userInfo} setShowModal={setShowModal} />
             <CreateSongModal userInfo={userInfo} />
           </Route>
 
