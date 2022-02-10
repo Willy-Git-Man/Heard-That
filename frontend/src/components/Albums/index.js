@@ -14,6 +14,9 @@ export default function MyAlbums({ userInfo }) {
   console.log('allAlbumKeys:', allAlbumKeys)
   // const titletest = allAlbums[1].title
 
+  const allSongs = useSelector((state) => state.songs.songs);
+
+
 
 
   if (userInfo === undefined) {
@@ -31,6 +34,8 @@ export default function MyAlbums({ userInfo }) {
         {allAlbumKeys
         ?.filter((index) => allAlbums[index]?.userId === userInfo.id)
         .map((index) => (
+          <div>
+
           <ul>
             <li>{allAlbums[index].title}</li>
             <img
@@ -39,6 +44,12 @@ export default function MyAlbums({ userInfo }) {
                   alt="Sorry No go on the load yo"
                 />
           </ul>
+
+          <ul>
+            <li></li>
+          </ul>
+
+          </div>
         ))
         }
       </div>
