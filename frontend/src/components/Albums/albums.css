@@ -2,3 +2,45 @@
   columns: white;
   background-color: white;
 }
+
+.albumSecondDiv {
+  outline: black solid 5px;
+  display: flex;
+  position: relative;
+}
+
+.albumUl {
+  outline: solid black 5px;
+  list-style: none;
+  /* position: relative; */
+  /* background-color: black; */
+  /* height: 150px; */
+
+}
+
+.albumListItem {
+  height: 20vh;
+  z-index: 99;
+  color: white;
+  /* position: relative; */
+  /* background-color: white; */
+}
+
+.albumImageNavLink {
+  height: 20vh;
+  z-index: 99;
+  color: white;
+  margin-left: 30%;
+  position: absolute;
+}
+
+.albumImage {
+  position: absolute;
+  height: 20vh;
+  z-index: -1;
+
+}
+
+.albumUlDiv {
+  /* height: 80%; */
+}

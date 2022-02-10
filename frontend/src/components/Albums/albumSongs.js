@@ -4,7 +4,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import { getAllAlbumsThunk } from "../../store/albums";
 import "./albums.css";
 
-export default function MyAlbums({ userInfo }) {
+export default function AlbumSongs({ userInfo }) {
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -31,11 +31,11 @@ export default function MyAlbums({ userInfo }) {
     <div className="albumsMainDiv">
       <h1 className="test">Hello Album</h1>
       <div clasSName="albumSecondDiv">
-        {allAlbumKeys
+        {/* {allAlbumKeys
         ?.filter((index) => allAlbums[index]?.userId === userInfo.id)
         .map((index) => (
           <div className="albumUlDiv">
-              <NavLink className="albumImageNavLink" to={`/Albums/${index}`}>
+              <NavLink className="albumImageNavLink" to="/Albums/1">
                 Link
                 </NavLink>
 
@@ -48,13 +48,10 @@ export default function MyAlbums({ userInfo }) {
           <li className="albumListItem">{allAlbums[index].title}</li>
           </ul>
 
-          {/* <ul>
-            <li></li>
-          </ul> */}
 
           </div>
         ))
-        }
+        } */}
       </div>
     </div>
   );

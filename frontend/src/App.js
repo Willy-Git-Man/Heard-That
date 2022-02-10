@@ -9,6 +9,7 @@ import MySongs from "./components/Songs";
 import AllSongs from "./components/Songs/allSongs";
 import UpdateSong from "./components/Songs/updateSongForm";
 import MyAlbums from "./components/Albums";
+import AlbumSongs from "./components/Albums/albumSongs";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,7 +41,9 @@ function App() {
           </Route>
 
           {/* <Route path="/AllSongs"><AllSongs /></Route> */}
-          <Route path="/Albums"><MyAlbums userInfo={userInfo}/></Route>
+          <Route exact path="/Albums"><MyAlbums userInfo={userInfo}/></Route>
+
+          <Route path="/Albums/:id"><AlbumSongs userInfo={userInfo}/></Route>
 
 
           {/* <Route path="/UpdateSongForm/:id">
