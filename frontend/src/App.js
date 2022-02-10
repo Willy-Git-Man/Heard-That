@@ -8,6 +8,7 @@ import CreateSongModal from "./components/CreateSongModal";
 import MySongs from "./components/Songs";
 import AllSongs from "./components/Songs/allSongs";
 import UpdateSong from "./components/Songs/updateSongForm";
+import MyAlbums from "./components/Albums";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ function App() {
           </Route>
 
           {/* <Route path="/AllSongs"><AllSongs /></Route> */}
-          <Route path="/Albums"><AllSongs /></Route>
+          <Route path="/Albums"><MyAlbums /></Route>
 
 
           <Route path="/UpdateSongForm/:id">

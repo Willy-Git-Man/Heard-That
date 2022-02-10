@@ -1,17 +1,21 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Albums = sequelize.define('Albums', {
-    userId: DataTypes.INTEGER,
-    title: DataTypes.STRING,
-    imageUrl: DataTypes.STRING
-  }, {});
-  Albums.associate = function(models) {
-    // Albums.hasMany(models.Songs, {
-    //   foreignKey: 'albumId'
-    // })
-    // Albums.belongsTo(models.User, {
-    //   foriegnKey: 'userId'
-    // })
+  const Albums = sequelize.define(
+    "Albums",
+    {
+      userId: DataTypes.INTEGER,
+      title: DataTypes.STRING,
+      imageUrl: DataTypes.STRING,
+    },
+    {}
+  );
+  Albums.associate = function (models) {
+    Albums.belongsTo(models.User, {
+      foriegnKey: "userId",
+    });
+    Albums.hasMany(models.Songs, {
+      foreignKey: "albumId",
+    });
   };
   return Albums;
 };
