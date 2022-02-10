@@ -40,12 +40,12 @@ function App() {
           </Route>
 
           {/* <Route path="/AllSongs"><AllSongs /></Route> */}
-          <Route path="/Albums"><MyAlbums /></Route>
+          <Route path="/Albums"><MyAlbums userInfo={userInfo}/></Route>
 
 
-          <Route path="/UpdateSongForm/:id">
+          {/* <Route path="/UpdateSongForm/:id">
             <UpdateSong />
-          </Route>
+          </Route> */}
         </Switch>
       )}
     </>

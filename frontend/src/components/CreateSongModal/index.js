@@ -9,7 +9,7 @@ function CreateSongModal({userInfo}) {
 // console.log('userInfofvvv:', userInfo)
   return (
     <>
-      <button className={'createSongModalButton'} onClick={() => setShowModal(true)}><i class="fa fa-music"><i class="fa fa-file-music"></i></i></button>
+      <button className={'createSongModalButton'} onClick={() => setShowModal(true)}><i className="fa fa-music"></i></button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <CreateSongForm setShowModal={setShowModal} userInfo={userInfo}/>

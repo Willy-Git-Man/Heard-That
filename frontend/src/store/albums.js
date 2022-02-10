@@ -1,4 +1,3 @@
-import { applyMiddleware } from "redux";
 import { csrfFetch } from "./csrf";
 
 const GET_ALL_ALBUMS = 'albums/GET_ALL_ALBUMS'
@@ -26,7 +25,7 @@ const deleteAlbum = (albumToDelete) => ({
   payload: albumToDelete
 })
 
-export const getAllAlbumsThink = () => async (dispatch) => {
+export const getAllAlbumsThunk = () => async (dispatch) => {
   const albumResponse = await csrfFetch('/api/albums')
 
   if (albumResponse.ok) {
@@ -50,8 +49,8 @@ export const addAlbumThunk = (newAlbum) => async (dispatch) => {
   }
 }
 
-export const updateAlbumThink = (updatedAlbum) => async (dispatch) => {
-  const updatedAlbumResponse = await csrfFetch(`/api/songs/${+updatedAlbum.id}`, {
+export const updateAlbumThunk = (updatedAlbum) => async (dispatch) => {
+  const updatedAlbumResponse = await csrfFetch(`/api/albums/${+updatedAlbum.id}`, {
     method: "PUT",
     body: JSON.stringify(updatedAlbum),
   });
@@ -62,7 +61,7 @@ export const updateAlbumThink = (updatedAlbum) => async (dispatch) => {
   }
 };
 
-export const deleteAlbumThink = (albumToDelete) => async (dispatch) => {
+export const deleteAlbumThunk = (albumToDelete) => async (dispatch) => {
   const deleteAlbumResponse = await csrfFetch(`/api/songs/${albumToDelete}`, {
     method: 'DELETE'
   })
@@ -79,7 +78,8 @@ const albumsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_ALBUMS:
       newState = {...state}
-      action.payload.forReach((album) => newState.albums[album.id] = album)
+      const albumsPayload = action.payload
+      albumsPayload.forEach((album) => newState.albums[album.id] = album)
       return newState
 
     default:
