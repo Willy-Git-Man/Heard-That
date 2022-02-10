@@ -61,3 +61,12 @@ export const updateAlbumThink = (updatedAlbum) => async (dispatch) => {
     return updatedAlbumRequest
   }
 };
+
+export const deleteAlbumThink = (albumToDelete) => async (dispatch) => {
+  const deleteAlbumResponse = await csrfFetch(`/api/songs/${albumToDelete}`, {
+    method: 'DELETE'
+  })
+  if (deleteAlbumResponse.ok) {
+    dispatch(deleteAlbum(albumToDelete))
+  }
+}
