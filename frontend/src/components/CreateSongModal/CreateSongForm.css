@@ -37,5 +37,16 @@
 }
 
 .createSongModalButton {
+position: absolute;
+width: 10%;
+bottom: 0;
+/* outline: solid black 5px; */
+padding-top: 1%;
+padding-bottom: 1%;
+font-size: 20px;
+color: white;
+background-color: darkblue;
+margin-left: .25%;
 
+/* top: 0; */
 }

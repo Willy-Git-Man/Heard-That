@@ -30,6 +30,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          {/* <Route path="/">
+            <MySongs />
+          </Route> */}
           <Route path="/Songs">
             <MySongs userInfo={userInfo} setShowModal={setShowModal} />
             <CreateSongModal userInfo={userInfo} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink}  from 'react-router-dom';
+import { NavLink, useHistory}  from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
@@ -8,12 +8,14 @@ import SignupFormModal from '../SignupFormModal';
 
 import NavLinks from '../NavLinks/navLinks';
 import CreateSongModal from '../CreateSongModal';
+import MySongs from '../Songs';
 
+
+import './Navigation.css'
 
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
-
   let sessionLinks;
   if (sessionUser) {
 
@@ -21,18 +23,16 @@ function Navigation({ isLoaded }){
       <div className="navDiv">
       <NavLinks />
       <ProfileButton user={sessionUser} />
-      {/* <CreateSongModal /> */}
-      {/* <CreateSongModal /> */}
       </div>
     );
+
   } else {
 
     sessionLinks = (
-      <>
-
+      <div className="loginDiv">
         <LoginFormModal />
         <SignupFormModal />
-      </>
+      </div>
     );
   }
 

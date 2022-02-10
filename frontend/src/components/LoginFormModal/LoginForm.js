@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function LoginForm() {
         if (data && data.errors) setErrors(data.errors);
       }
     );
+
 
   };
 
