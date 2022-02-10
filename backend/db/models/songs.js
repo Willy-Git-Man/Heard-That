@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Songs.associate = function(models) {
     Songs.belongsTo(models.User, {
-      foriegnKey: 'userId'
+      foreignKey: 'userId'
     })
     Songs.belongsTo(models.Albums, {
-      foriegnKey: 'albumId'
+      foreignKey: 'albumId'
     })
   };
   return Songs;
