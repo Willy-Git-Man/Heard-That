@@ -70,3 +70,21 @@ export const deleteAlbumThink = (albumToDelete) => async (dispatch) => {
     dispatch(deleteAlbum(albumToDelete))
   }
 }
+
+const initialState = {albums: {}}
+
+const albumsReducer = (state = initialState, action) => {
+  let newState;
+
+  switch (action.type) {
+    case GET_ALL_ALBUMS:
+      newState = {...state}
+      action.payload.forReach((album) => newState.albums[album.id] = album)
+      return newState
+
+    default:
+      return initialState
+  }
+}
+
+export default albumsReducer
