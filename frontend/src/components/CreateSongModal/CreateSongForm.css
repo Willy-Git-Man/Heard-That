@@ -38,16 +38,17 @@
 
 .createSongModalButton {
 position: absolute;
-width: 10%;
+padding: 2.5%;
+/* width: 10%; */
 bottom: 0;
 /* outline: solid black 5px; */
-padding-top: 1%;
-padding-bottom: 1%;
-font-size: 40px;
+/* padding-top: 1%;
+padding-bottom: 1%; */
+font-size: 57px;
 color: white;
 /* background-color: darkblue; */
 margin-left: .25%;
-height: 15%;
+/* height: 15%; */
 background-color: rgb(24, 203, 95);
 
 /* top: 0; */
