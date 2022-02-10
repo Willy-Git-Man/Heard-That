@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {});
   Songs.associate = function(models) {
-    // Songs.belongsTo(models.User, {
+    // Songs.hasOne(models.User, {
     //   foriegnKey: 'userId'
     // })
   };
