@@ -43,10 +43,12 @@ bottom: 0;
 /* outline: solid black 5px; */
 padding-top: 1%;
 padding-bottom: 1%;
-font-size: 20px;
+font-size: 40px;
 color: white;
-background-color: darkblue;
+/* background-color: darkblue; */
 margin-left: .25%;
+height: 15%;
+background-color: rgb(24, 203, 95);
 
 /* top: 0; */
 }

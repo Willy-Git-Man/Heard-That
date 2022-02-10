@@ -38,7 +38,9 @@ function App() {
             <CreateSongModal userInfo={userInfo} />
           </Route>
 
-          <Route path="/AllSongs">{/* <AllSongs /> */}</Route>
+          {/* <Route path="/AllSongs"><AllSongs /></Route> */}
+          <Route path="/Albums"><AllSongs /></Route>
+
 
           <Route path="/UpdateSongForm/:id">
             <UpdateSong />

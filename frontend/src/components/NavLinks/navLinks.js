@@ -8,7 +8,7 @@ export default function NavLinks() {
 
     <NavLink activeClassName="currentNavRoute" to='/Songs'>My Songs</NavLink>
     ------
-    <NavLink activeClassName="currentNavRoute" to='/AllSongs'>All Songs</NavLink>
+    <NavLink activeClassName="currentNavRoute" to='/Albums'>All Songs</NavLink>
     {/* ------ */}
     {/* <NavLink exact to="/">Home</NavLink> */}
 

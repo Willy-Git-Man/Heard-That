@@ -15,6 +15,7 @@ padding-bottom: 1%;
 font-size: 20px;
 color: white;
 margin-left: .25%;
+height: 15vh;
 }
 
 .profile-dropdown {
@@ -51,13 +52,16 @@ align-items: center;
   /* position: relative; */
   height: 5vh;
   min-height: 50px;
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   /* justify-content: space-between; */
   /* background-color: black; */
   border: solid black 5px;
   background-color: rgba(0, 208, 255, 0.797);
   background-color: rgba(7, 158, 193, 0.6);
+  background-color:rgba(255, 255, 255, .1);
 
 }
 
