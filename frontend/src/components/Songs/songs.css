@@ -2,7 +2,7 @@
   /* height: 100px; */
   border: black solid 5px;
   display: block;
-  padding-left: 10vw;
+  /* margin-left: 1%; */
   /* display: block; */
   /* margin-bottom: 50px; */
   background-color: rgba(50, 80, 150, .9);
@@ -21,15 +21,15 @@
   background-color: rgba(100, 50, 150, .8);
   flex-direction: row-reverse;
   border: black solid 5px;
-  height: 20vh;
-  min-height: 250px;
+  height: 20%;
+  min-height: 225px;
   /* width: %; */
   /* width: 75%; */
   /* margin-top: 50px; */
   position: relative;
   width: 60%;
   margin-left: 20%;
-  margin-top: 2.5%;
+  /* margin-top: 2.5%; */
   /* overflow: scroll; */
 }
 
@@ -91,7 +91,8 @@ z-index: 1;
     /* margin-top: 100px; */
   background-color: rgba(50, 80, 150, .9);
   height: 85vh;
-  width: 80vw;
+  width: 80%;
+  margin-left: 10%;
   overflow-y: scroll;
 
   }
