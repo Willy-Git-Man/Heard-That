@@ -31,6 +31,8 @@ export const getAllAlbumsThunk = () => async (dispatch) => {
   if (albumResponse.ok) {
     const albums = await albumResponse.json()
 
+    console.log('getAllAlbums(albums):', getAllAlbums(albums))
+
     dispatch(getAllAlbums(albums))
   }
   return albumResponse
@@ -78,8 +80,7 @@ const albumsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_ALBUMS:
       newState = {...state}
-      const albumsPayload = action.payload
-      albumsPayload.forEach((album) => newState.albums[album.id] = album)
+      action.payload.forEach((album) => newState.albums[album.id] = album)
       return newState
 
     default:

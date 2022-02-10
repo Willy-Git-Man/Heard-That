@@ -1,28 +1,47 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { getAllAlbumsThunk } from "../../store/albums";
+import "./albums.css";
 
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
-import { getAllAlbumsThunk } from '../../store/albums'
-import './albums.css'
+export default function MyAlbums({ userInfo }) {
+  const history = useHistory();
+  const dispatch = useDispatch();
 
-export default function MyAlbums({userInfo}) {
-  const history = useHistory()
-  const dispatch = useDispatch()
+  const allAlbums = useSelector((state) => state.albums.albums);
+  const allAlbumKeys = Object.keys(allAlbums)
+  // console.log('allAlbums:', allAlbums[1].title)
+  console.log('allAlbumKeys:', allAlbumKeys)
+  // const titletest = allAlbums[1].title
 
-  const allAlbums = useSelector((state) => state.albums)
 
-  console.log('allAlbums:', allAlbums)
 
   if (userInfo === undefined) {
-    history.push('/')
+    history.push("/");
   }
 
-
   useEffect(() => {
-    dispatch(getAllAlbumsThunk())
-  }, [dispatch])
+    dispatch(getAllAlbumsThunk());
+  }, [dispatch]);
 
   return (
-    <h1 className="test">Hello Album</h1>
-  )
+    <div className="albumsMainDiv">
+      <h1 className="test">Hello Album</h1>
+      <div clasSName="albumSecondDiv">
+        {allAlbumKeys
+        ?.filter((index) => allAlbums[index]?.userId === userInfo.id)
+        .map((index) => (
+          <ul>
+            <li>{allAlbums[index].title}</li>
+            <img
+                  className="albumImage"
+                  src={allAlbums[index].imageUrl}
+                  alt="Sorry No go on the load yo"
+                />
+          </ul>
+        ))
+        }
+      </div>
+    </div>
+  );
 }
