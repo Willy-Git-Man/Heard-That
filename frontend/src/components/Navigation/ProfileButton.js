@@ -42,8 +42,8 @@ function ProfileButton({ user }) {
       <div className={"dropDownMenu"}>
         {showMenu && (
           <ul className="profile-dropdown">
-            <h1 className={"userName"}>{user.username}</h1>
-            <h1 className={"email"}>{user.email}</h1>
+            <h1 className="userName">{user.username}</h1>
+            <h1 className="email">{user.email}</h1>
 
             {/* <li>
               <a

@@ -8,6 +8,7 @@ import "./albums.css";
 export default function MyAlbums({ userInfo }) {
   const allAlbums = useSelector((state) => state.albums.albums);
   const allAlbumKeys = Object.keys(allAlbums);
+ console.log(' allAlbumKeys:',  allAlbumKeys)
   const sessionUser = useSelector(state => state.session.user);
 
   const history = useHistory();

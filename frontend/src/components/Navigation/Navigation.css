@@ -94,3 +94,11 @@ align-items: center;
 .loginDiv {
   background-color: black;
 }
+
+.userName{
+  color: black;
+}
+
+.email{
+  color: black;
+}

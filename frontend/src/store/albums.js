@@ -34,14 +34,8 @@ const deleteAlbum = (albumToDelete) => ({
 })
 
 
-
 export const getAllAlbumsThunk = () => async (dispatch) => {
-  // const albumResponse = await csrfFetch('/api/albums')
   const albumResponse = await csrfFetch('/api/albums')
-
-  //addings /id to the end grabs the songs as well
-
-
 
   if (albumResponse.ok) {
     const albums = await albumResponse.json()
@@ -50,7 +44,6 @@ export const getAllAlbumsThunk = () => async (dispatch) => {
   }
   return albumResponse
 }
-
 
 
 export const getAllAlbumSongsThunk = () => async (dispatch) => {
@@ -127,11 +120,8 @@ const albumsReducer = (state = initialState, action) => {
 
     case GET_ALBUM_SONGS:
       newState= {...state}
-      console.log('Target Album:', action.payload.targetAlbum)
-      console.log('Target song:', action.payload.targetAlbumSongs)
-
-      // console.log('action.payload:', action.payload.targetSongs)
-
+      // console.log('Target Album:', action.payload.targetAlbum)
+      // console.log('Target song:', action.payload.targetAlbumSongs)
       return newState
 
 
@@ -143,7 +133,7 @@ const albumsReducer = (state = initialState, action) => {
 
       case DELETE_ALBUM:
         newState = {...state}
-        console.log('newState Album:', newState)
+        // console.log('newState Album:', newState)
         const id = action.payload
         delete newState.albums[id]
         return newState
@@ -152,37 +142,6 @@ const albumsReducer = (state = initialState, action) => {
         newState = {...state, albums: {...state.albums}}
         newState.albums[action.payload.id] = {...action.payload}
         return newState
-
-
-      // case GET_ALL_ALBUMS:
-      //   newState = {...state}
-      //   console.log('action.payload:', action.payload)
-      //   console.log('allAlbums.targetAlbums', action.payload.allAlbums.targetAlbum)
-
-
-      //   const targetAlbum = action.payload.allAlbums.targetAlbum
-      //   console.log('targetAlbum:', targetAlbum)
-
-
-      //   // console.log('Object.keys(targetAlbum):', Object.values(targetAlbum))
-      //   // const {targetAblums, targetAblumSongs} = action.paylaod.allAlbums
-
-      //   action.payload.forEach((album) => newState.albums[album.id] = album)
-      //   // targetAlbum.forEach((album) => newState.albums[album.id] = album)
-
-      //   return newState
-
-
-
-
-
-    // case GET_ALBUM_SONGS:
-    //   newState = {...state}
-    //   action.payload.forEach((album) => newState.albums[album.id] = album)
-    //   return newState
-
-
-
 
     default:
       return initialState

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
@@ -11,7 +11,6 @@ function LoginForm() {
 
 
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
@@ -20,9 +19,10 @@ function LoginForm() {
         const data = await res.json();
         if (data && data.errors) {
           setErrors(data.errors);
-        } 
+        }
       }
     );
+
 
   };
 

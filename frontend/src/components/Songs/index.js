@@ -15,10 +15,10 @@ export default function MySongs({ userInfo, setShowModal }) {
     history.push('/')
   }
 
+
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectKeys = Object.keys(allSongs)
   const sessionUser = useSelector(state => state.session.user);
-
 
 
 
@@ -40,6 +40,8 @@ export default function MySongs({ userInfo, setShowModal }) {
     <div className="songsMainDiv">
       <div className="songsDiv">
         <h1 className="welcome">{sessionUser.username}'s Songs</h1>
+    {/* <NavLink activeClassName="currentNavRoute" to='/Albums'>{sessionUser.username}'s Albums</NavLink> */}
+
         {allSongsObjectKeys
           ?.filter((key) => allSongs[key]?.userId === userInfo.id) // filter out keys for correct user songs
           .map((key) => (

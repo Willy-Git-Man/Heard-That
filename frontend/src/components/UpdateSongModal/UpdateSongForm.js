@@ -41,6 +41,8 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
   const newImageUrl = (e) => setImageUrl(e.target.value);
   const newAlbumId = (e) => setAlumbId(e.target.value);
 
+  
+
   useEffect(() => {
     const validationErrors = []
 
@@ -141,7 +143,7 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
         >
           {allAlbumObjectArray
           .map((album) => (
-            <option value={album.id}>{album.title}</option>
+            <option value={album.id} key={album.id}>{album.title}</option>
           ))}
 
           {/* <option value={1}>The Wall</option>
