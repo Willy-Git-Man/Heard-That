@@ -805,7 +805,7 @@ Migrate:
 heroku run npm run sequelize db:migrate
 
 
-Seed:
+Seed:/
 
 heroku run npm run sequelize db:seed:all
 
