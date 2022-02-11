@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
 import { deleteAlbumThunk, getAllAlbumsThunk } from "../../store/albums";
+import UpdateAlbumModal from "../UpdateAlbumModal";
 import "./albums.css";
 
 export default function MyAlbums({ userInfo }) {
@@ -55,6 +56,9 @@ export default function MyAlbums({ userInfo }) {
               >
                 <i className="far fa-trash-alt"></i>
               </button>
+
+              {/* <UpdateSongModal songId={allSongs[key].id} /> */}
+              <UpdateAlbumModal albumId={allAlbums[index].id} />
 
               {/* <ul>
             <li></li>

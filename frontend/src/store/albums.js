@@ -141,12 +141,17 @@ const albumsReducer = (state = initialState, action) => {
         return newState
 
 
-      // case DELETE_ALBUM:
-      //   newState = {...state}
-      //   console.log('newState Album:', newState)
-      //   const id = action.payload
-      //   delete newState.albums[id]
-      //   return newState
+      case DELETE_ALBUM:
+        newState = {...state}
+        console.log('newState Album:', newState)
+        const id = action.payload
+        delete newState.albums[id]
+        return newState
+
+      case UPDATE_ALBUM:
+        newState = {...state, albums: {...state.albums}}
+        newState.albums[action.payload.id] = {...action.payload}
+        return newState
 
 
       // case GET_ALL_ALBUMS:
