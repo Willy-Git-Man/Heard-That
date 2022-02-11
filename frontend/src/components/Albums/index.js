@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
-import { getAllAlbumsThunk } from "../../store/albums";
+import { deleteAlbumThunk, getAllAlbumsThunk } from "../../store/albums";
 import "./albums.css";
 
 export default function MyAlbums({ userInfo }) {
@@ -19,6 +19,10 @@ export default function MyAlbums({ userInfo }) {
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
   }, [dispatch]);
+
+  const deleteAlbumDispatch = (album) => {
+    dispatch(deleteAlbumThunk(album))
+  }
 
   if (!allAlbumKeys.length) {
     return null
@@ -44,6 +48,13 @@ export default function MyAlbums({ userInfo }) {
               <NavLink className="albumImageNavLink" to={`/Albums/${index}`}>
                <h1>{allAlbums[index].title}</h1>
               </NavLink>
+
+              <button
+                className="deleteSongButton"
+                onClick={() => deleteAlbumDispatch(allAlbums[index].id)}
+              >
+                <i className="far fa-trash-alt"></i>
+              </button>
 
               {/* <ul>
             <li></li>

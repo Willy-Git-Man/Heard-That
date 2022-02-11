@@ -105,7 +105,7 @@ export const updateAlbumThunk = (updatedAlbum) => async (dispatch) => {
 };
 
 export const deleteAlbumThunk = (albumToDelete) => async (dispatch) => {
-  const deleteAlbumResponse = await csrfFetch(`/api/songs/${albumToDelete}`, {
+  const deleteAlbumResponse = await csrfFetch(`/api/albums/${albumToDelete}`, {
     method: 'DELETE'
   })
   if (deleteAlbumResponse.ok) {
