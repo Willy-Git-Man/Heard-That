@@ -51,7 +51,7 @@ export default function AlbumSongs({ userInfo }) {
 
 
       <div className="songsMainDiv">
-      <div className="songsDiv">
+      <div className="albumSongsDiv">
         <h1 className="welcome">{sessionUser.username}'s Songs</h1>
         {allSongsObjectKeys
           ?.filter((key) => allSongs[key]?.userId === userInfo.id && allSongs[key]?.albumId === allAlbums[id].id) // filter out keys for correct user songs
@@ -75,10 +75,10 @@ export default function AlbumSongs({ userInfo }) {
                   {allSongs[key].artistName}
                 </li>
 
-                <li className="songListItemUrl">
+                {/* <li className="songListItemUrl">
                   <i className="fab fa-grav"></i>
                   {allSongs[key].songUrl}
-                </li>
+                </li> */}
               </ul>
 
               <AudioPlayer

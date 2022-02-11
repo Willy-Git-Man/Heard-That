@@ -9,7 +9,7 @@ function UpdateAlbumModal({ userInfo, albumId }) {
   return (
     <>
       <button
-        className={"updateSongModalButton"}
+        className={"updateAlbumModalButton"}
         onClick={() => setShowModal(true)}
       >
         <i className="fas fa-wrench"></i>

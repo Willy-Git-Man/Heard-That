@@ -58,11 +58,11 @@ export default function MySongs({ userInfo, setShowModal }) {
                   <i className="fab fa-grav"></i>
                   {allSongs[key].artistName}
                 </li>
-
+{/* 
                 <li className="songListItemUrl">
                   <i className="fab fa-grav"></i>
                   {allSongs[key].songUrl}
-                </li>
+                </li> */}
               </ul>
 
               <AudioPlayer

@@ -7,8 +7,6 @@ import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 
 import NavLinks from '../NavLinks/navLinks';
-import CreateSongModal from '../CreateSongModal';
-import MySongs from '../Songs';
 
 
 import './Navigation.css'
@@ -16,6 +14,7 @@ import './Navigation.css'
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+
   let sessionLinks;
   if (sessionUser) {
 
@@ -23,6 +22,8 @@ function Navigation({ isLoaded }){
       <div className="navDiv">
       <NavLinks />
       <ProfileButton user={sessionUser} />
+
+
       </div>
     );
 
@@ -35,6 +36,10 @@ function Navigation({ isLoaded }){
       </div>
     );
   }
+
+  // if (sessionUser) {
+  //   return ()
+  // }
 
   return (
     <>

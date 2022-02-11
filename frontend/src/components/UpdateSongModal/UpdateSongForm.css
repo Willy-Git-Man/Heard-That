@@ -1,9 +1,9 @@
-.updateSongModalButton {
-  height: 30%;
+.updateAlbumModalButton {
+  height: 112.5px;
   background-color: rgb(50, 1, 1);
   background-color: rgba(117, 235, 14, 0.995);
   position: absolute;
-  top: 30%;
+  top: 112.5px;
   left: 0;
   /* top: 0; */
   width: 20%;

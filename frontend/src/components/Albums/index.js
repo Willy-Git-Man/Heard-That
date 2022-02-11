@@ -51,7 +51,7 @@ export default function MyAlbums({ userInfo }) {
               </NavLink>
 
               <button
-                className="deleteSongButton"
+                className="deleteAlbumButton"
                 onClick={() => deleteAlbumDispatch(allAlbums[index].id)}
               >
                 <i className="far fa-trash-alt"></i>
