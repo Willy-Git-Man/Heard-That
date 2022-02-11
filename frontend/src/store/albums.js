@@ -82,7 +82,7 @@ export const getAllAlbumSongsThunk = () => async (dispatch) => {
 export const addAlbumThunk = (newAlbum) => async (dispatch) => {
   const addAlbumResponse = await csrfFetch('/api/albums', {
     method: "POST",
-    headers: { 'Content-Type': 'application/json'}["Content-Type"],
+    headers: { 'Content-Type': 'application/json'},
     body: JSON.stringify(newAlbum)
   })
   if (addAlbumResponse.ok) {

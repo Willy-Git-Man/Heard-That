@@ -10,6 +10,7 @@ import AllSongs from "./components/Songs/allSongs";
 import UpdateSong from "./components/Songs/updateSongForm";
 import MyAlbums from "./components/Albums";
 import AlbumSongs from "./components/Albums/albumSongs";
+import CreateAlbumModal from "./components/CreateAlbumModal/CreateAlbumForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,7 +23,6 @@ function App() {
 
   const userInfo = useSelector((state) => state.session.user);
   const songInfo = useSelector((state) => state.songs);
-
 
   // const currentUser = useSelector(state => state.session.user)/
 
@@ -40,10 +40,14 @@ function App() {
           </Route>
 
           {/* <Route path="/AllSongs"><AllSongs /></Route> */}
-          <Route exact path="/Albums"><MyAlbums userInfo={userInfo}/></Route>
+          <Route exact path="/Albums">
+            <MyAlbums userInfo={userInfo} />
+            <CreateAlbumModal userInfo={userInfo} />
+          </Route>
 
-          <Route path="/Albums/:id"><AlbumSongs userInfo={userInfo}/></Route>
-
+          <Route path="/Albums/:id">
+            <AlbumSongs userInfo={userInfo} />
+          </Route>
 
           {/* <Route path="/UpdateSongForm/:id">
             <UpdateSong />
