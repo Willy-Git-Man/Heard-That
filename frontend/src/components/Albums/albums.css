@@ -1,46 +1,78 @@
-.test {
-  columns: white;
-  background-color: white;
+.welcome {
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.albumsMainDiv {
+  position: relative;
+  background-color: black;
+}
+h1 {
+  color: white;
 }
 
 .albumSecondDiv {
-  /* outline: black solid 5px;
+/* display: flex; */
+  position: relative;
+  /* height: 90vh; */
+  /* background-color: rgba(0, 0, 0, .1); */
+  display: inline-block;
+  height: 90vh;
+  width: 80%;
+  margin-left: 10%;
   display: flex;
-  position: relative; */
-}
+  justify-content: space-around;
 
-.albumUl {
-  outline: solid black 5px;
-  list-style: none;
-  /* position: relative; */
-  /* background-color: black; */
-  /* height: 150px; */
+
 
 }
 
-.albumListItem {
-  height: 20vh;
-  z-index: 99;
-  color: white;
-  /* position: relative; */
-  /* background-color: white; */
+.eachAlbumMainDiv {
+  position: relative;
+  /* height: 90vh; */
+  display: inline-block;
+  margin-right: 10%;
 }
 
 .albumImageNavLink {
-  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 20vh; */
   z-index: 99;
   color: white;
-  margin-left: 30%;
   position: absolute;
+  width: 25%;
+  background-color: blue;
+  font-weight: none;
+  /* bottom: 0; */
+  left: 75%;
+  height: 5%;
+  /* padding: 5%; */
 }
 
 .albumImage {
-  position: absolute;
-  height: 20vh;
-  z-index: -1;
-
+  /* position: absolute;
+  height: fill;
+  z-index: 1;
+  position: absolute; */
+  height: 225px;
+  width: 275px;
 }
 
 .albumUlDiv {
   /* height: 80%; */
+}
+
+.albumName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 999;
+  width: 75%;
+  background-color: red;
+  height: 5%;
+  margin: 0;
 }

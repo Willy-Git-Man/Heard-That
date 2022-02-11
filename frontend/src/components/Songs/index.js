@@ -17,6 +17,8 @@ export default function MySongs({ userInfo, setShowModal }) {
 
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectKeys = Object.keys(allSongs)
+  const sessionUser = useSelector(state => state.session.user);
+
 
   useEffect(() => {
     dispatch(getAllSongsThunk());
@@ -32,10 +34,10 @@ export default function MySongs({ userInfo, setShowModal }) {
   return (
     <div className="songsMainDiv">
       <div className="songsDiv">
+        <h1 className="welcome">{sessionUser.username}'s Songs</h1>
         {allSongsObjectKeys
           ?.filter((key) => allSongs[key]?.userId === userInfo.id) // filter out keys for correct user songs
           .map((key) => (
-
             // <h1>hello</h1>
             <div className="songListDiv" key={allSongs[key].id}>
               <ul className="songUl">

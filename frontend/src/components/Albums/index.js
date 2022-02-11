@@ -9,12 +9,9 @@ export default function MyAlbums({ userInfo }) {
   const dispatch = useDispatch();
 
   const allAlbums = useSelector((state) => state.albums.albums);
-  const allAlbumKeys = Object.keys(allAlbums)
+  const allAlbumKeys = Object.keys(allAlbums);
 
-  const allSongs = useSelector((state) => state.songs.songs);
-
-
-
+  const sessionUser = useSelector(state => state.session.user);
 
   if (userInfo === undefined) {
     history.push("/");
@@ -26,32 +23,28 @@ export default function MyAlbums({ userInfo }) {
 
   return (
     <div className="albumsMainDiv">
-      <h1 className="test">Hello Album</h1>
+      <h1 className="welcome">{sessionUser.username}'s Albums</h1>
       <div className="albumSecondDiv">
         {allAlbumKeys
-        ?.filter((index) => allAlbums[index]?.userId === userInfo.id)
-        .map((index) => (
-          <div className="albumUlDiv" key={allAlbums[index].id}>
+          ?.filter((index) => allAlbums[index]?.userId === userInfo.id)
+          .map((index) => (
+            <div className="eachAlbumMainDiv" key={allAlbums[index].id}>
+
+              <img
+                className="albumImage"
+                src={allAlbums[index].imageUrl}
+                alt="Sorry No go on the load yo"
+              />
+                 <h1 className="albumName">{allAlbums[index].title}</h1>
               <NavLink className="albumImageNavLink" to={`/Albums/${index}`}>
-                Link
-                </NavLink>
+               <h1>Link</h1>
+              </NavLink>
 
-            <img
-                  className="albumImage"
-                  src={allAlbums[index].imageUrl}
-                  alt="Sorry No go on the load yo"
-                  />
-          <ul className="albumUl">
-          <li className="albumListItem" key={index}>{allAlbums[index].title}</li>
-          </ul>
-
-          {/* <ul>
+              {/* <ul>
             <li></li>
           </ul> */}
-
-          </div>
-        ))
-        }
+            </div>
+          ))}
       </div>
     </div>
   );
