@@ -5,13 +5,12 @@ import { getAllAlbumsThunk } from "../../store/albums";
 import "./albums.css";
 
 export default function MyAlbums({ userInfo }) {
-  const history = useHistory();
-  const dispatch = useDispatch();
-
   const allAlbums = useSelector((state) => state.albums.albums);
   const allAlbumKeys = Object.keys(allAlbums);
-
   const sessionUser = useSelector(state => state.session.user);
+
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   if (userInfo === undefined) {
     history.push("/");
@@ -20,6 +19,12 @@ export default function MyAlbums({ userInfo }) {
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
   }, [dispatch]);
+
+  if (!allAlbumKeys.length) {
+    return null
+  }
+
+  else
 
   return (
     <div className="albumsMainDiv">
@@ -35,9 +40,9 @@ export default function MyAlbums({ userInfo }) {
                 src={allAlbums[index].imageUrl}
                 alt="Sorry No go on the load yo"
               />
-                 <h1 className="albumName">{allAlbums[index].title}</h1>
+                 {/* <h1 className="albumName">{allAlbums[index].title}</h1> */}
               <NavLink className="albumImageNavLink" to={`/Albums/${index}`}>
-               <h1>Link</h1>
+               <h1>{allAlbums[index].title}</h1>
               </NavLink>
 
               {/* <ul>

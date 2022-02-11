@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory} from "react-router-dom";
+import { NavLink, useHistory} from "react-router-dom";
 import { deleteSongThunk, getAllSongsThunk } from "../../store/songs";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
@@ -28,9 +28,11 @@ export default function MySongs({ userInfo, setShowModal }) {
     dispatch(deleteSongThunk(songId));
   };
 
-  if (!Object.keys(allSongs).length) {
+  if (!allSongsObjectKeys.length) {
     return null
-  } else
+  }
+
+  else
   return (
     <div className="songsMainDiv">
       <div className="songsDiv">
@@ -40,6 +42,7 @@ export default function MySongs({ userInfo, setShowModal }) {
           .map((key) => (
             // <h1>hello</h1>
             <div className="songListDiv" key={allSongs[key].id}>
+            {/* <NavLink className="albumLink"to={`/Albums/${allSongs[key].albumId}`}>Album</NavLink> */}
               <ul className="songUl">
 
                 <li className="songListItem">

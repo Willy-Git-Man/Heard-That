@@ -22,9 +22,9 @@ export default function AlbumSongs({ userInfo }) {
     history.push("/");
   }
 
-  // useEffect(() => {
-  //   dispatch(getAllAlbumSongsThunk());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getAllAlbumSongsThunk());
+  }, [dispatch]);
 
   return (
     <div className="albumsMainDiv" >

@@ -10,6 +10,7 @@ const GET_ALBUM_SONGS = 'albums/GET_ALBUM_SONGS'
 const getAllAlbums = (allAlbums) => ({
   type: GET_ALL_ALBUMS,
   payload: allAlbums
+  // {allAlbums}
 })
 
 const getAlbumSongs = (albumSongs) => ({
@@ -32,8 +33,15 @@ const deleteAlbum = (albumToDelete) => ({
   payload: albumToDelete
 })
 
+
+
 export const getAllAlbumsThunk = () => async (dispatch) => {
+  // const albumResponse = await csrfFetch('/api/albums')
   const albumResponse = await csrfFetch('/api/albums')
+
+  //addings /id to the end grabs the songs as well
+
+
 
   if (albumResponse.ok) {
     const albums = await albumResponse.json()
@@ -43,16 +51,33 @@ export const getAllAlbumsThunk = () => async (dispatch) => {
   return albumResponse
 }
 
-export const getAllAlbumSongsThunk = () => async (dispatch) => {
-  const id = useParams()
-  const albumSongResponse = await csrfFetch(`/api/Albums/${id}`)
 
-  if (albumSongResponse.ok) {
-    const albumSongs = await albumSongResponse.json()
-    dispatch(getAlbumSongs(albumSongs))
+
+export const getAllAlbumSongsThunk = () => async (dispatch) => {
+  // const albumResponse = await csrfFetch('/api/albums')
+  const albumResponse = await csrfFetch(`/api/albums/1`)
+
+  if (albumResponse.ok) {
+    const albums = await albumResponse.json()
+
+    dispatch(getAlbumSongs(albums))
   }
-  return albumSongResponse
+  return albumResponse
 }
+
+
+// export const getAllAlbumSongsThunk = () => async (dispatch) => {
+//   // const id = useParams()
+//   // const albumSongResponse = await csrfFetch(`/api/Albums/`)
+
+//   const albumSongResponse = await csrfFetch(`/api/Albums/1`)
+
+//   if (albumSongResponse.ok) {
+//     const albumSongs = await albumSongResponse.json()
+//     dispatch(getAlbumSongs(albumSongs))
+//   }
+//   return albumSongResponse
+// }
 
 export const addAlbumThunk = (newAlbum) => async (dispatch) => {
   const addAlbumResponse = await csrfFetch('/api/albums', {
@@ -98,6 +123,47 @@ const albumsReducer = (state = initialState, action) => {
       newState = {...state}
       action.payload.forEach((album) => newState.albums[album.id] = album)
       return newState
+
+
+    case GET_ALBUM_SONGS:
+      newState= {...state}
+      console.log('Target Album:', action.payload.targetAlbum)
+      console.log('Target song:', action.payload.targetAlbumSongs)
+
+      // console.log('action.payload:', action.payload.targetSongs)
+
+      return newState
+
+
+
+      // case GET_ALL_ALBUMS:
+      //   newState = {...state}
+      //   console.log('action.payload:', action.payload)
+      //   console.log('allAlbums.targetAlbums', action.payload.allAlbums.targetAlbum)
+
+
+      //   const targetAlbum = action.payload.allAlbums.targetAlbum
+      //   console.log('targetAlbum:', targetAlbum)
+
+
+      //   // console.log('Object.keys(targetAlbum):', Object.values(targetAlbum))
+      //   // const {targetAblums, targetAblumSongs} = action.paylaod.allAlbums
+
+      //   action.payload.forEach((album) => newState.albums[album.id] = album)
+      //   // targetAlbum.forEach((album) => newState.albums[album.id] = album)
+
+      //   return newState
+
+
+
+
+
+    // case GET_ALBUM_SONGS:
+    //   newState = {...state}
+    //   action.payload.forEach((album) => newState.albums[album.id] = album)
+    //   return newState
+
+
 
 
     default:
