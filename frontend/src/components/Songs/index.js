@@ -6,6 +6,7 @@ import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "./songs.css";
 import UpdateSongModal from "../UpdateSongModal";
+import { getAllAlbumSongsThunk, getAllAlbumsThunk } from "../../store/albums";
 
 export default function MySongs({ userInfo, setShowModal }) {
   const history = useHistory();
@@ -18,6 +19,7 @@ export default function MySongs({ userInfo, setShowModal }) {
 
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectKeys = Object.keys(allSongs)
+  
   const sessionUser = useSelector(state => state.session.user);
 
 
@@ -25,6 +27,14 @@ export default function MySongs({ userInfo, setShowModal }) {
 
   useEffect(() => {
     dispatch(getAllSongsThunk());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getAllAlbumsThunk());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getAllAlbumSongsThunk());
   }, [dispatch]);
 
   const deleteDispatch = (songId) => {

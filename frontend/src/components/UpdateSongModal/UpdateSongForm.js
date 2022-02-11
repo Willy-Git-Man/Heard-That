@@ -18,6 +18,8 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
 
   const allAlbums = useSelector((state) => state.albums.albums);
   const allAlbumObjectKeys = Object.keys(allAlbums)
+ console.log(' allAlbumKeys:',  allAlbumObjectKeys)
+
   const allAlbumObjectArray = Object.values(allAlbums)
 
   const noDuplicateAlbumArray = [...new Set (allAlbumObjectArray)]
@@ -41,7 +43,7 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
   const newImageUrl = (e) => setImageUrl(e.target.value);
   const newAlbumId = (e) => setAlumbId(e.target.value);
 
-  
+
 
   useEffect(() => {
     const validationErrors = []

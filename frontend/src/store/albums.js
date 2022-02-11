@@ -114,6 +114,7 @@ const albumsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_ALBUMS:
       newState = {...state}
+      
       action.payload.forEach((album) => newState.albums[album.id] = album)
       return newState
 
