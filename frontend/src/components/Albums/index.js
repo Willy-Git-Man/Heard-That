@@ -58,7 +58,7 @@ export default function MyAlbums({ userInfo }) {
               </button>
 
               {/* <UpdateSongModal songId={allSongs[key].id} /> */}
-              <UpdateAlbumModal albumId={allAlbums[index].id} />
+              <UpdateAlbumModal  albumId={allAlbums[index].id} />
 
               {/* <ul>
             <li></li>

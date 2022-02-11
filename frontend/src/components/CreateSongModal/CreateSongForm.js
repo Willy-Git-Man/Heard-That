@@ -36,7 +36,7 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
     if (artistName.length > 50) validationErrors.push('Song name must be less than 50 characters')
     if (songUrl.length > 255) validationErrors.push('Song url must be less than 255 Characters')
     if (imageUrl.length > 255) validationErrors.push('Image url must be less than 255 characters')
-    if (albumId !== Number) validationErrors.push('AlbumId must be a number')
+    // if (albumId !== Number) validationErrors.push('AlbumId must be a number')
 
 
     setErrors(validationErrors)
@@ -107,9 +107,10 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
             required
           />
 
-          <label htmlFor="albumIdLabel">Ablum Id: </label>
+          <label htmlFor="albumIdLabel"></label>
           <input
-            type="text"
+
+            type="hidden"
             name="albumId"
             value={albumId}
             onChange={newAlbumId}

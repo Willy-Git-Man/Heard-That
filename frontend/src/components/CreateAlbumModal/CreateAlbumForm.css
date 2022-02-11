@@ -1,0 +1,9 @@
+.createAlbumModalButton {
+  position: absolute;
+padding: 2.5%;
+bottom: 0;
+font-size: 57px;
+color: white;
+margin-left: .25%;
+background-color: rgb(24, 203, 95);
+}

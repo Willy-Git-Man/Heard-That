@@ -15,6 +15,17 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
 
   const songTest = useSelector((state) => state.songs.songs[id]);
 
+
+  const allAlbums = useSelector((state) => state.albums.albums);
+  const allAlbumObjectKeys = Object.keys(allAlbums)
+  const allAlbumObjectArray = Object.values(allAlbums)
+
+  const noDuplicateAlbumArray = [...new Set (allAlbumObjectArray)]
+
+  console.log('allAlbumObjectValues:', allAlbumObjectArray)
+
+  console.log('allAlbums:', allAlbums)
+
   const [songName, setSongName] = useState(songTest.songName);
   const [artistName, setArtistName] = useState(songTest.artistName);
   const [songUrl, setSongUrl] = useState(songTest.songUrl);
@@ -112,14 +123,32 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
           required
         />
 
-        <label htmlFor="albumIdLabel">Ablum Id: </label>
+        {/* <label htmlFor="albumIdLabel">Ablum Id: </label>
         <input
           type="text"
           name="albumId"
           value={albumId}
           onChange={newAlbumId}
           required
-        />
+        /> */}
+        <label htmlFor="albumIdLabel">Ablum : </label>
+        <select
+          type="text"
+          name="albumId"
+          value={albumId}
+          onChange={newAlbumId}
+          required
+        >
+          {allAlbumObjectArray
+          .map((album) => (
+            <option value={album.id}>{album.title}</option>
+          ))}
+
+          {/* <option value={1}>The Wall</option>
+          <option value={2}>My Songs</option>
+          <option value={3}>Summer Vibes</option> */}
+
+        </select>
 
         {/* <button type="submit" onClick={
           // dispatch(updateSongThunk())/

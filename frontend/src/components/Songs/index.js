@@ -20,6 +20,9 @@ export default function MySongs({ userInfo, setShowModal }) {
   const sessionUser = useSelector(state => state.session.user);
 
 
+
+
+
   useEffect(() => {
     dispatch(getAllSongsThunk());
   }, [dispatch]);
@@ -58,7 +61,7 @@ export default function MySongs({ userInfo, setShowModal }) {
                   <i className="fab fa-grav"></i>
                   {allSongs[key].artistName}
                 </li>
-{/* 
+{/*
                 <li className="songListItemUrl">
                   <i className="fab fa-grav"></i>
                   {allSongs[key].songUrl}
