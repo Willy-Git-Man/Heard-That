@@ -135,6 +135,10 @@ const albumsReducer = (state = initialState, action) => {
       return newState
 
 
+      case ADD_ALBUM:
+        newState = {...state, albums: {...state.albums}}
+        newState.albums[action.payload.createAlbum.id] = {...action.payload.createAlbum}
+        return newState
 
       // case GET_ALL_ALBUMS:
       //   newState = {...state}
