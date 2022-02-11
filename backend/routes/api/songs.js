@@ -45,10 +45,8 @@ router.post(
   // validateSongCreate,
   asyncHandler(async (req, res) => {
     // const { songName, password, username } = req.body;
-    console.log('req.body:', req.body)
 
     const createSong = await Songs.create(req.body);
-    // console.log('createSong:', createSong)
 
     // res.json({ message: `${createSong.songName} had been successfully added!`})
     return res.json({

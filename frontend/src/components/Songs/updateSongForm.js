@@ -11,11 +11,8 @@ export default function UpdateSong({userInfo}) {
   const {id} = useParams()
 
   const sessionUser = useSelector((state) => state.session.user);
-//   const songTest = useSelector((state) => state.songs.getAllSongs[3]);
 const songTest = useSelector((state) => state.songs.songs[id])
-console.log('songTest:', songTest)
 
-//  console.log(' songTest:',  songTest)
 
 
 

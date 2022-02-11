@@ -30,8 +30,6 @@ export const getAllSongsThunk = () => async (dispatch) => {
 
   if (response.ok) {
     const songs = await response.json();
-    // console.log(songs.songs)
-    console.log(" songsThunkTest:", getAllSongs(songs));
     dispatch(getAllSongs(songs));
   }
   return response;

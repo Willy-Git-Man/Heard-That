@@ -6,7 +6,6 @@ import './CreateSongForm.css'
 
 function CreateSongModal({userInfo}) {
   const [showModal, setShowModal] = useState(false);
-// console.log('userInfofvvv:', userInfo)
   return (
     <>
       <button className={'createSongModalButton'} onClick={() => setShowModal(true)}><i className="fa fa-music"></i></button>

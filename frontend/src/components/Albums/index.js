@@ -10,9 +10,6 @@ export default function MyAlbums({ userInfo }) {
 
   const allAlbums = useSelector((state) => state.albums.albums);
   const allAlbumKeys = Object.keys(allAlbums)
-  // console.log('allAlbums:', allAlbums[1].title)
-  console.log('allAlbumKeys:', allAlbumKeys)
-  // const titletest = allAlbums[1].title
 
   const allSongs = useSelector((state) => state.songs.songs);
 
@@ -30,11 +27,11 @@ export default function MyAlbums({ userInfo }) {
   return (
     <div className="albumsMainDiv">
       <h1 className="test">Hello Album</h1>
-      <div clasSName="albumSecondDiv">
+      <div className="albumSecondDiv">
         {allAlbumKeys
         ?.filter((index) => allAlbums[index]?.userId === userInfo.id)
         .map((index) => (
-          <div className="albumUlDiv">
+          <div className="albumUlDiv" key={allAlbums[index].id}>
               <NavLink className="albumImageNavLink" to={`/Albums/${index}`}>
                 Link
                 </NavLink>
@@ -45,7 +42,7 @@ export default function MyAlbums({ userInfo }) {
                   alt="Sorry No go on the load yo"
                   />
           <ul className="albumUl">
-          <li className="albumListItem">{allAlbums[index].title}</li>
+          <li className="albumListItem" key={index}>{allAlbums[index].title}</li>
           </ul>
 
           {/* <ul>

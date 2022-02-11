@@ -23,7 +23,6 @@ function App() {
   const userInfo = useSelector((state) => state.session.user);
   const songInfo = useSelector((state) => state.songs);
 
-  // console.log('userInfo:', userInfo.username)
 
   // const currentUser = useSelector(state => state.session.user)/
 

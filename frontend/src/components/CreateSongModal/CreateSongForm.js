@@ -55,7 +55,6 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
     };
 
     const newSong = await dispatch(addSongThunk(newSongPayload));
-   console.log(' newSong:',  newSong)
     if (newSong) {
       setShowModal(false)
       history.push("/Songs");

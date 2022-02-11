@@ -10,7 +10,6 @@ import UpdateSongModal from "../UpdateSongModal";
 export default function MySongs({ userInfo, setShowModal }) {
   const history = useHistory();
   const dispatch = useDispatch();
-  console.log('userInfo:', userInfo)
 
   if (userInfo === undefined) {
     history.push('/')
@@ -18,8 +17,6 @@ export default function MySongs({ userInfo, setShowModal }) {
 
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectKeys = Object.keys(allSongs)
-  console.log("All Current Songs:", allSongs);
-
 
   useEffect(() => {
     dispatch(getAllSongsThunk());

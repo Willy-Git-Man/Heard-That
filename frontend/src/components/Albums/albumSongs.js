@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useHistory } from "react-router-dom";
-import { getAllAlbumsThunk } from "../../store/albums";
+import { NavLink, useHistory, useParams } from "react-router-dom";
+import { getAllAlbumSongsThunk } from "../../store/albums";
 import "./albums.css";
 
 export default function AlbumSongs({ userInfo }) {
@@ -10,27 +10,26 @@ export default function AlbumSongs({ userInfo }) {
 
   const allAlbums = useSelector((state) => state.albums.albums);
   const allAlbumKeys = Object.keys(allAlbums)
-  // console.log('allAlbums:', allAlbums[1].title)
-  console.log('allAlbumKeys:', allAlbumKeys)
-  // const titletest = allAlbums[1].title
 
   const allSongs = useSelector((state) => state.songs.songs);
 
+  console.log('allAlbums:', allAlbums[1].title)
 
+  const {id} = useParams()
 
 
   if (userInfo === undefined) {
     history.push("/");
   }
 
-  useEffect(() => {
-    dispatch(getAllAlbumsThunk());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getAllAlbumSongsThunk());
+  // }, [dispatch]);
 
   return (
-    <div className="albumsMainDiv">
-      <h1 className="test">Hello Album</h1>
-      <div clasSName="albumSecondDiv">
+    <div className="albumsMainDiv" >
+      <h1 className="test">Enjoy listening to {allAlbums[id].title}</h1>
+      <div className="albumSecondDiv">
         {/* {allAlbumKeys
         ?.filter((index) => allAlbums[index]?.userId === userInfo.id)
         .map((index) => (

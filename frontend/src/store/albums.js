@@ -1,13 +1,20 @@
+import { useParams } from "react-router-dom";
 import { csrfFetch } from "./csrf";
 
 const GET_ALL_ALBUMS = 'albums/GET_ALL_ALBUMS'
 const ADD_ALBUM = 'albums/ADD_ALBUM'
 const UPDATE_ALBUM = 'albums/UPDATE_ALBUM'
 const DELETE_ALBUM = 'albums/DELETE_ALBUM'
+const GET_ALBUM_SONGS = 'albums/GET_ALBUM_SONGS'
 
 const getAllAlbums = (allAlbums) => ({
   type: GET_ALL_ALBUMS,
   payload: allAlbums
+})
+
+const getAlbumSongs = (albumSongs) => ({
+  type: GET_ALBUM_SONGS,
+  payload: albumSongs
 })
 
 const addAlbum = (newAlbum) => ({
@@ -31,11 +38,20 @@ export const getAllAlbumsThunk = () => async (dispatch) => {
   if (albumResponse.ok) {
     const albums = await albumResponse.json()
 
-    console.log('getAllAlbums(albums):', getAllAlbums(albums))
-
     dispatch(getAllAlbums(albums))
   }
   return albumResponse
+}
+
+export const getAllAlbumSongsThunk = () => async (dispatch) => {
+  const id = useParams()
+  const albumSongResponse = await csrfFetch(`/api/Albums/${id}`)
+
+  if (albumSongResponse.ok) {
+    const albumSongs = await albumSongResponse.json()
+    dispatch(getAlbumSongs(albumSongs))
+  }
+  return albumSongResponse
 }
 
 export const addAlbumThunk = (newAlbum) => async (dispatch) => {
@@ -82,6 +98,7 @@ const albumsReducer = (state = initialState, action) => {
       newState = {...state}
       action.payload.forEach((album) => newState.albums[album.id] = album)
       return newState
+
 
     default:
       return initialState

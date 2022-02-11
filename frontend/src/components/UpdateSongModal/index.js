@@ -6,14 +6,12 @@ import "./UpdateSongForm.css";
 
 function UpdateSongModal({ userInfo, songId }) {
   const [showModal, setShowModal] = useState(false);
-  // console.log('userInfofvvv:', userInfo)
   return (
     <>
       <button
         className={"updateSongModalButton"}
         onClick={() => setShowModal(true)}
       >
-        {/* Update Song */}
         <i className="fas fa-wrench"></i>
 
       </button>

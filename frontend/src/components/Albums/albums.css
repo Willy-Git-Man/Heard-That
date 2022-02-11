@@ -4,9 +4,9 @@
 }
 
 .albumSecondDiv {
-  outline: black solid 5px;
+  /* outline: black solid 5px;
   display: flex;
-  position: relative;
+  position: relative; */
 }
 
 .albumUl {

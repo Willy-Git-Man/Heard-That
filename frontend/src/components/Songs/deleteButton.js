@@ -11,7 +11,6 @@ export default function DeleteSong() {
 
   const {id} = useParams()
 
-  // console.log('id:', id)
   return (
     <>
     <button className="deleteSongButton" onClick={() => dispatchSongRemoval(50)}>

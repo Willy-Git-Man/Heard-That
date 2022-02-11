@@ -15,10 +15,6 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
 
   const songTest = useSelector((state) => state.songs.songs[id]);
 
-  // const {id} = useParams()
-console.log('id:', id)
-
-
   const [songName, setSongName] = useState(songTest.songName);
   const [artistName, setArtistName] = useState(songTest.artistName);
   const [songUrl, setSongUrl] = useState(songTest.songUrl);
@@ -63,7 +59,6 @@ console.log('id:', id)
     };
 
     const songUpdate = await dispatch(updateSongThunk(updatedSongPayload));
-    console.log('songUpdate:', songUpdate)
     if (songUpdate) {
       setShowModal(false)
       history.push("/api/Songs");
