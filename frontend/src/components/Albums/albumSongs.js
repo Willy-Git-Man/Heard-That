@@ -41,19 +41,21 @@ export default function AlbumSongs({ userInfo }) {
 
 
   return (
-    <div className="albumsMainDiv">
+    <div className="albumSongsMainDiv">
       <h1 className="test">Enjoy listening to {allAlbums[id].title}</h1>
-      <div className="albumSecondDiv">
-        <div className="songsMainDivAlbum">
+      <div className="albumSongsSecondDiv">
             <h1 className="welcome">{sessionUser.username}'s Songs</h1>
+        <div className="songsMainDivAlbum">
+            <div>
+
             {allSongsObjectKeys
               ?.filter(
                 (key) =>
-                  allSongs[key]?.userId === userInfo.id &&
-                  allSongs[key]?.albumId === allAlbums[id].id
-              )
-              .map((key) => (
-                <div className="songListDiv" key={allSongs[key].id}>
+                allSongs[key]?.userId === userInfo.id &&
+                allSongs[key]?.albumId === allAlbums[id].id
+                )
+                .map((key) => (
+                  <div className="albumSongListDiv" key={allSongs[key].id}>
                   <ul className="songUl">
                     <li className="songListItem">
                       <i className="fab fa-grav"></i>
@@ -71,14 +73,15 @@ export default function AlbumSongs({ userInfo }) {
                     // autoPlay
                     src={allSongs[key] ? allSongs[key].songUrl : null}
                     onPlay={(e) => console.log("onPlay")}
-                  />
+                    />
                   <img
                     className="songImage"
                     src={allSongs[key].imageUrl}
                     alt="Sorry No go on the load yo"
-                  />
+                    />
                 </div>
               ))}
+              </div>
         </div>
       </div>
     </div>

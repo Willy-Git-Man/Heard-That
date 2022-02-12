@@ -1,20 +1,12 @@
 .updateAlbumModalButton {
-  height: 112.5px;
   height: 12.5vh;
-
-  background-color: rgb(50, 1, 1);
-  background-color: rgba(117, 235, 14, 0.995);
-  position: absolute;
-  /* top: 112.5px; */
-  bottom: 0;
+  background-color: rgb(56, 173, 66);
   left: 0;
-  /* top: 0; */
-  width: 20%;
+  position: absolute;
+  bottom: 0;
   width: 40%;
-
   color: white;
   font-size: 2em;
-  z-index: 50;
+  z-index: 100;
   outline: solid black 5px;
-  margin-bottom: 3.5vh;
 }
