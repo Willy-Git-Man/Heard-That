@@ -1,12 +1,35 @@
 .currentNavRoute {
   color: green;
   /* margin-right: 10%; */
+  text-decoration: none;
+
 }
 
 .navigationLinks {
   /* outline: black solid 5px; */
   /* background-color: aquamarine; */
   /* position: absolute; */
-  font-size: 200%;
 
+  font-size: 165%;
+  height: 4%;
+
+  padding: 0.4em 0.4em;
+  color: white;
+  border-radius: 0.35em;
+  background-color: rgb(31, 211, 8);
+  background-color: rgba(117, 235, 14, 0.995);
+
+  width: 80%;
+  /* height: 5vh; */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+ 
+}
+
+.navRoute {
+  text-decoration: none;
 }

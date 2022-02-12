@@ -56,7 +56,7 @@ export default function MyAlbums({ userInfo }) {
               />
                  {/* <h1 className="albumName">{allAlbums[index].title}</h1> */}
               <NavLink className="albumImageNavLink" to={`/Albums/${index}`}>
-               <h1>{allAlbums[index]?.title}</h1>
+               <h1 className="albumNameLink">{allAlbums[index]?.title}</h1>
               </NavLink>
 
               <button

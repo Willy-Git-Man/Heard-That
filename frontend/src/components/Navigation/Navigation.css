@@ -6,11 +6,14 @@
   right: 0;
   background-color: rgb(0, 208, 255);
 padding: 2.5%;
+outline: solid black 5px;
+
 
 
   /* position: absolute; */
 /* width: 10%; */
 bottom: 0;
+height: 10vh;
 /* outline: solid black 5px; */
 /* padding-top: 1%;
 padding-bottom: 1%; */
@@ -18,12 +21,14 @@ font-size: 57px;
 color: white;
 /* margin-left: .25%; */
 /* height: 15vh; */
+width: 10vw;
+
+z-index: 1;
 }
 
-.profile-dropdown {
+/* .profile-dropdown {
 display: flex;
 flex-direction: column;
-/* justify-content: center; */
 align-items: center;
  outline: solid black 5px;
  right: 0;
@@ -36,9 +41,35 @@ align-items: center;
  padding: 0;
  z-index: 5;
  background-color: white;
- /* position: relative; */
- /* height: 100px; */
+} */
+
+.profile-dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* background-color: black(0, 0, 0); */
+  /* top: 10vh; */
+  /* top: 0; */
+  bottom: 0;
+  /* left: 7.5%; */
+  /* width: 20%; */
+
+  height: 10%;
+  /* width: 85vw; */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 999;
+  outline: 10px white solid;
+  overflow: scroll;
+  /* text-align: center; */
+
+  left: 25%;
+  width: 50%;
 }
+
 
 
 
@@ -80,12 +111,15 @@ align-items: center;
 } */
 
 .logoutButton {
-  width: 100%;
+  /* width: 100%; */
   background-color: blueviolet;
   padding-top: 5%;
   padding-bottom: 5%;
+  padding-left: 50%;
+  padding-right: 50%;
+
   color: white;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   right: 0;
 
@@ -96,9 +130,9 @@ align-items: center;
 }
 
 .userName{
-  color: black;
+  color: white;
 }
 
 .email{
-  color: black;
+  color: white;
 }

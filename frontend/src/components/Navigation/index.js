@@ -15,25 +15,17 @@ import MySongs from "../Songs";
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
 
+  const history = useHistory()
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-
       <div className="navDiv">
         <NavLinks />
         <ProfileButton user={sessionUser} />
-
-
-
-
-
-        </div>
-
-
+      </div>
     );
-    <Redirect to="/songs" />
-
+    // <Redirect to="/songs" />;
   } else {
     sessionLinks = (
       <div className="loginDiv">
@@ -47,20 +39,25 @@ function Navigation({ isLoaded }) {
     );
   }
 
-  // if (sessionUser) {
-  //   return ()
-  // }
-
-  return (
-    <>
+  if (sessionUser) {
+    // history.push('/Songs' || '/Albums' || '/Albums/:id')
+    return (
       <ul className="navUl">
         <li className="navLi">
           {/* <NavLink exact to="/">Home</NavLink> */}
 
-          {isLoaded && sessionLinks }
+          {isLoaded && sessionLinks}
         </li>
       </ul>
 
+    )
+  } else
+
+  return (
+    <>
+    <div className={"mainNav"}>
+          <div className={"profileDiv"}>{isLoaded && sessionLinks}</div>÷
+        </div>
     </>
   );
 }

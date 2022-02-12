@@ -34,8 +34,6 @@ function App() {
       {isLoaded && (
         <Switch>
 
-
-
           <Route path="/Songs">
             <MySongs userInfo={userInfo} setShowModal={setShowModal} />
             <CreateSongModal userInfo={userInfo} />
@@ -50,6 +48,8 @@ function App() {
           <Route path="/Albums/:id">
             <AlbumSongs userInfo={userInfo} />
           </Route>
+
+          
         </Switch>
       )}
     </>

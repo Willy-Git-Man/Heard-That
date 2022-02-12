@@ -1,6 +1,6 @@
 .songsMainDiv {
   /* height: 100px; */
-  border: black solid 5px;
+  /* border: black solid 5px; */
   display: block;
   /* margin-left: 1%; */
   /* display: block; */
@@ -9,10 +9,11 @@
   background-color: rgba(0, 208, 255, 0.3);
   background-color: rgba(7, 158, 193, 0.6);
   background-color: black;
+  outline: solid black 5px;
 
 
   /* margin-bottom: 60px; */
-  height: 80%;
+  height: 90%;
 }
 
 .songListDiv {
@@ -244,4 +245,16 @@ z-index: 1;
 
  .currentNavRoute {
    /* z-index: 99999; */
+   padding: 0.4em 0.4em;
+   color: white;
+   border-radius: 0.35em;
+   background-color: rgb(255, 1, 1);
+   /* font-size: 3vh; */
+   /* width: 33vw; */
+   /* height: 7.5vh; */
+ }
+
+
+ .welcome {
+  margin: 0;
  }
