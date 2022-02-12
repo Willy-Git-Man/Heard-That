@@ -18,11 +18,14 @@ router.get(
     const id = parseInt(req.params.id);
     const targetAlbum = await Albums.findByPk(id);
 
-    const targetAlbumSongs = await Songs.findAll({
-      where: { albumId: id },
-    });
+    // const targetAlbumSongs = await Songs.findAll({
+    //   where: { albumId: id },
+    // });
 
-    return res.json({ targetAlbum, targetAlbumSongs });
+    // return res.json({ targetAlbum, targetAlbumSongs });
+
+
+    return res.json({ targetAlbum});
   })
 );
 

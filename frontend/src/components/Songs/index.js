@@ -23,14 +23,16 @@ export default function MySongs({ userInfo, setShowModal }) {
   const sessionUser = useSelector(state => state.session.user);
 
 
-
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
+    dispatch(getAllSongsThunk());
+
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(getAllSongsThunk());
-  }, [dispatch]);
+
+    // useEffect(() => {
+    //   dispatch(getAllSongsThunk());
+    // }, [dispatch]);
 
 
   // useEffect(() => {

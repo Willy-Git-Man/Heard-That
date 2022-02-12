@@ -18,15 +18,16 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
 
   const allAlbums = useSelector((state) => state.albums.albums);
   const allAlbumObjectKeys = Object.keys(allAlbums)
- console.log(' allAlbumKeys:',  allAlbumObjectKeys)
 
   const allAlbumObjectArray = Object.values(allAlbums)
 
-  const noDuplicateAlbumArray = [...new Set (allAlbumObjectArray)]
+const allAlbumObjectArrayFiltered = allAlbumObjectArray.filter((album) => album.userId === sessionUser.id)
+console.log('allAlbumObjectArrayFiltered:', allAlbumObjectArrayFiltered)
+  // const noDuplicateAlbumArray = [...new Set (allAlbumObjectArray)]
 
-  console.log('allAlbumObjectValues:', allAlbumObjectArray)
+  // console.log('allAlbumObjectValuesFiltered:', allAlbumObjectArray)
 
-  console.log('allAlbums:', allAlbums)
+  // console.log('allAlbums:', allAlbums)
 
   const [songName, setSongName] = useState(songTest.songName);
   const [artistName, setArtistName] = useState(songTest.artistName);
@@ -143,7 +144,8 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
           onChange={newAlbumId}
           required
         >
-          {allAlbumObjectArray
+          {allAlbumObjectArrayFiltered
+          // .filter((album) => album.userId === userInfo.id)
           .map((album) => (
             <option value={album.id} key={album.id}>{album.title}</option>
           ))}

@@ -1,37 +1,36 @@
 import { csrfFetch } from "./csrf";
 
-const GET_ALL_ALBUMS = 'albums/GET_ALL_ALBUMS'
-const ADD_ALBUM = 'albums/ADD_ALBUM'
-const UPDATE_ALBUM = 'albums/UPDATE_ALBUM'
-const DELETE_ALBUM = 'albums/DELETE_ALBUM'
-const GET_ALBUM_SONGS = 'albums/GET_ALBUM_SONGS'
+const GET_ALL_ALBUMS = "albums/GET_ALL_ALBUMS";
+const ADD_ALBUM = "albums/ADD_ALBUM";
+const UPDATE_ALBUM = "albums/UPDATE_ALBUM";
+const DELETE_ALBUM = "albums/DELETE_ALBUM";
+const GET_ALBUM_SONGS = "albums/GET_ALBUM_SONGS";
 
 const getAllAlbums = (allAlbums) => ({
   type: GET_ALL_ALBUMS,
-  payload: allAlbums
+  payload: allAlbums,
   // {allAlbums}
-})
+});
 
 const getAlbumSongs = (albumSongs) => ({
   type: GET_ALBUM_SONGS,
-  payload: albumSongs
-})
+  payload: albumSongs,
+});
 
 const addAlbum = (newAlbum) => ({
   type: ADD_ALBUM,
-  payload: newAlbum
-})
+  payload: newAlbum,
+});
 
 const updateAlbum = (albumToUpdate) => ({
   type: UPDATE_ALBUM,
-  payload: albumToUpdate
-})
+  payload: albumToUpdate,
+});
 
 const deleteAlbum = (albumToDelete) => ({
   type: DELETE_ALBUM,
-  payload: albumToDelete
-})
-
+  payload: albumToDelete,
+});
 
 // export const getAllAlbumsThunk = () => async (dispatch) => {
 //   const albumResponse = await csrfFetch('/api/albums')
@@ -44,7 +43,6 @@ const deleteAlbum = (albumToDelete) => ({
 //   return albumResponse
 // }
 
-
 export const getAllAlbumsThunk = () => async (dispatch) => {
   const response = await csrfFetch("/api/albums");
 
@@ -54,20 +52,6 @@ export const getAllAlbumsThunk = () => async (dispatch) => {
   }
   return response;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // export const getAllAlbumSongsThunk = () => async (dispatch) => {
 //   // const albumResponse = await csrfFetch('/api/albums')
@@ -80,7 +64,6 @@ export const getAllAlbumsThunk = () => async (dispatch) => {
 //   }
 //   return albumResponse
 // }
-
 
 // export const getAllAlbumSongsThunk = () => async (dispatch) => {
 //   // const id = useParams()
@@ -96,99 +79,80 @@ export const getAllAlbumsThunk = () => async (dispatch) => {
 // }
 
 export const addAlbumThunk = (newAlbum) => async (dispatch) => {
-  const addAlbumResponse = await csrfFetch('/api/albums', {
+  const addAlbumResponse = await csrfFetch("/api/albums", {
     method: "POST",
-    headers: { 'Content-Type': 'application/json'},
-    body: JSON.stringify(newAlbum)
-  })
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newAlbum),
+  });
   if (addAlbumResponse.ok) {
-    const albumPostRequest = await addAlbumResponse.json()
-    dispatch(addAlbum(albumPostRequest))
-    return albumPostRequest
+    const albumPostRequest = await addAlbumResponse.json();
+    dispatch(addAlbum(albumPostRequest));
+    return albumPostRequest;
   }
-}
+};
 
 export const updateAlbumThunk = (updatedAlbum) => async (dispatch) => {
-  const updatedAlbumResponse = await csrfFetch(`/api/albums/${+updatedAlbum.id}`, {
-    method: "PUT",
-    body: JSON.stringify(updatedAlbum),
-  });
+  const updatedAlbumResponse = await csrfFetch(
+    `/api/albums/${+updatedAlbum.id}`,
+    {
+      method: "PUT",
+      body: JSON.stringify(updatedAlbum),
+    }
+  );
   if (updatedAlbumResponse.ok) {
     const updatedAlbumRequest = await updatedAlbumResponse.json();
     dispatch(updateAlbum(updatedAlbumRequest));
-    return updatedAlbumRequest
+    return updatedAlbumRequest;
   }
 };
 
 export const deleteAlbumThunk = (albumToDelete) => async (dispatch) => {
   const deleteAlbumResponse = await csrfFetch(`/api/albums/${albumToDelete}`, {
-    method: 'DELETE'
-  })
+    method: "DELETE",
+  });
   if (deleteAlbumResponse.ok) {
-    dispatch(deleteAlbum(albumToDelete))
+    dispatch(deleteAlbum(albumToDelete));
   }
-}
+};
 
-const initialState = {albums: {}}
+const initialState = { albums: {} };
 
 const albumsReducer = (state = initialState, action) => {
   let newState;
 
   switch (action.type) {
     case GET_ALL_ALBUMS:
-      newState = {...state}
-      console.log('newState1:', newState)
+      newState = { ...state };
 
-      action.payload.forEach((album) => newState.albums[album.id] = album )
-      console.log('newState2:', newState)
-
+      action.payload.forEach((album) => (newState.albums[album.id] = album));
       // newState = action.payload.albums
 
-      return newState
+      return newState;
 
+    case ADD_ALBUM:
+      newState = { ...state, albums: { ...state.albums } };
+      newState.albums[action.payload.createAlbum.id] = {
+        ...action.payload.createAlbum,
+      };
+      return newState;
 
-    // case GET_ALBUM_SONGS:
-    //   newState= {...state}
-    //   // console.log('Target Album:', action.payload.targetAlbum)
-    //   // console.log('Target song:', action.payload.targetAlbumSongs)
-    //   return newState
+    case DELETE_ALBUM:
+      // newState = {...state}
+      newState = { ...state, albums: { ...state.albums } };
 
+      console.log("newState:", newState);
+      console.log("action.payload:", action.payload);
+      delete newState.albums[action.payload];
+      return newState;
 
-      case ADD_ALBUM:
-        newState = {...state, albums: {...state.albums}}
-        newState.albums[action.payload.createAlbum.id] = {...action.payload.createAlbum}
-        return newState
-
-
-      case DELETE_ALBUM:
-        // newState = {...state}
-        newState = {...state, albums: {...state.albums}}
-
-        console.log('newState:', newState)
-        console.log('action.payload:', action.payload)
-        delete newState.albums[action.payload]
-        return newState
-
-
-        // newState = {...state, albums: {...state.albums}}
-        // newState.albums[action.payload.createAlbum.id] = {...action.payload.createAlbum}
-        // return newState
-
-
-        // const test = []
-        // test.push(newState)
-        // return test.filter((song) => song.id !== action.payload);
-
-
-
-      case UPDATE_ALBUM:
-        newState = {...state, albums: {...state.albums}}
-        newState.albums[action.payload.id] = {...action.payload}
-        return newState
+    case UPDATE_ALBUM:
+      newState = { ...state, albums: { ...state.albums } };
+      newState.albums[action.payload.id] = { ...action.payload };
+      return newState;
 
     default:
-      return initialState
+      return state;
   }
-}
+};
 
-export default albumsReducer
+export default albumsReducer;
