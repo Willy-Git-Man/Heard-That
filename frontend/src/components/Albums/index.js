@@ -7,9 +7,11 @@ import "./albums.css";
 
 export default function MyAlbums({ userInfo }) {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
   }, [dispatch]);
+
   const allAlbums = useSelector((state) => state.albums.albums);
   // const allSongs = useSelector((state) => state.songs.songs);
 
