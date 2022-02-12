@@ -161,7 +161,6 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
         <button>Update</button>
       </form>
 
-      <h1>hello</h1>
     </div>
   );
 }

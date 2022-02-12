@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { Albums, Songs } = require("../../db/models");
 const asyncHandler = require("express-async-handler");
-const { db } = require("../../config");
 
 router.get(
   "/",
@@ -19,17 +18,12 @@ router.get(
     const id = parseInt(req.params.id);
     const targetAlbum = await Albums.findByPk(id);
 
-
-
     const targetAlbumSongs = await Songs.findAll({
-      where: { albumId: id }
-    })
-
-
+      where: { albumId: id },
+    });
 
     return res.json({ targetAlbum, targetAlbumSongs });
   })
-
 );
 
 router.post(

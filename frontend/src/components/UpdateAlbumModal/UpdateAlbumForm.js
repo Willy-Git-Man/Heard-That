@@ -56,7 +56,7 @@ export default function UpdateAlbumForm({ userInfo, setShowModal, albumId }) {
 
   return (
     <div className="createNewSongDiv">
-      <form className="createNewSongForm" onSubmit={handleSubmit}>
+      <form className="createNewAlbumForm" onSubmit={handleSubmit}>
 
       <ul className="errors">
         {errors.map((error) => (

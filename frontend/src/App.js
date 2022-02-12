@@ -6,8 +6,6 @@ import Navigation from "./components/Navigation";
 // import Songs from "./components/Songs";
 import CreateSongModal from "./components/CreateSongModal";
 import MySongs from "./components/Songs";
-import AllSongs from "./components/Songs/allSongs";
-import UpdateSong from "./components/Songs/updateSongForm";
 import MyAlbums from "./components/Albums";
 import AlbumSongs from "./components/Albums/albumSongs";
 import CreateAlbumModal from "./components/CreateAlbumModal/CreateAlbumForm";
@@ -30,7 +28,12 @@ function App() {
 
   return (
     <>
+
+
       <Navigation isLoaded={isLoaded} />
+
+
+
       {isLoaded && (
         <Switch>
 
@@ -49,7 +52,7 @@ function App() {
             <AlbumSongs userInfo={userInfo} />
           </Route>
 
-          
+
         </Switch>
       )}
     </>

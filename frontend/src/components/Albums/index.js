@@ -6,34 +6,37 @@ import UpdateAlbumModal from "../UpdateAlbumModal";
 import "./albums.css";
 
 export default function MyAlbums({ userInfo }) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllAlbumsThunk());
+  }, [dispatch]);
   const allAlbums = useSelector((state) => state.albums.albums);
+  // const allSongs = useSelector((state) => state.songs.songs);
+
+  // const sessionUser = useSelector(state => state.session.user);
+
   const allAlbumKeys = Object.keys(allAlbums);
- console.log(' allAlbumKeys:',  allAlbumKeys)
-  const sessionUser = useSelector(state => state.session.user);
 
   const history = useHistory();
-  const dispatch = useDispatch();
 
   if (userInfo === undefined) {
     history.push("/");
   }
 
-  useEffect(() => {
-    dispatch(getAllAlbumsThunk());
-  }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(getAllAlbumSongsThunk());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getAllAlbumSongsThunk());
+  // }, [dispatch]);
 
   const deleteAlbumDispatch = (album) => {
     dispatch(deleteAlbumThunk(album))
   }
 
+  console.log(' allAlbumKeys:',  allAlbumKeys)
   if (!allAlbumKeys.length) {
-    return null
-
-
+    return (
+      <h1>error</h1>
+    )
   }
 
   else
@@ -54,7 +57,6 @@ export default function MyAlbums({ userInfo }) {
                 src={allAlbums[index]?.imageUrl}
                 alt="Sorry No go on the load yo"
               />
-                 {/* <h1 className="albumName">{allAlbums[index].title}</h1> */}
               <NavLink className="albumImageNavLink" to={`/Albums/${index}`}>
                <h1 className="albumNameLink">{allAlbums[index]?.title}</h1>
               </NavLink>
@@ -66,12 +68,8 @@ export default function MyAlbums({ userInfo }) {
                 <i className="far fa-trash-alt"></i>
               </button>
 
-              {/* <UpdateSongModal songId={allSongs[key].id} /> */}
               <UpdateAlbumModal  albumId={allAlbums[index]?.id} />
 
-              {/* <ul>
-            <li></li>
-          </ul> */}
             </div>
           ))}
       </div>

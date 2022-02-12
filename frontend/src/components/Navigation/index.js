@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { NavLink, Redirect, useHistory } from "react-router-dom";
+import React from "react";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
@@ -9,13 +8,10 @@ import SignupFormModal from "../SignupFormModal";
 import NavLinks from "../NavLinks/navLinks";
 
 import "./Navigation.css";
-import AlbumSongs from "../Albums/albumSongs";
-import MySongs from "../Songs";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
 
-  const history = useHistory()
 
   let sessionLinks;
   if (sessionUser) {

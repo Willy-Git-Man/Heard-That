@@ -19,7 +19,7 @@ export default function MySongs({ userInfo, setShowModal }) {
 
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectKeys = Object.keys(allSongs)
-  
+
   const sessionUser = useSelector(state => state.session.user);
 
 
@@ -33,9 +33,9 @@ export default function MySongs({ userInfo, setShowModal }) {
     dispatch(getAllAlbumsThunk());
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(getAllAlbumSongsThunk());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getAllAlbumSongsThunk());
+  // }, [dispatch]);
 
   const deleteDispatch = (songId) => {
     dispatch(deleteSongThunk(songId));
@@ -57,7 +57,7 @@ export default function MySongs({ userInfo, setShowModal }) {
           .map((key) => (
             // <h1>hello</h1>
             <div className="songListDiv" key={allSongs[key].id}>
-            {/* <NavLink className="albumLink"to={`/Albums/${allSongs[key].albumId}`}>Album</NavLink> */}
+            <NavLink className="albumLink"to={`/Albums/${allSongs[key].albumId}`}>Album</NavLink>
               <ul className="songUl">
 
                 <li className="songListItem">

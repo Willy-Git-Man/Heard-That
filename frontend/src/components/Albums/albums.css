@@ -74,7 +74,7 @@ flex-wrap: wrap;
   bottom: 0;
   outline: solid black 5px;
 
-  z-index: 200;
+  z-index: 125;
   /* padding: 5%; */
 }
 

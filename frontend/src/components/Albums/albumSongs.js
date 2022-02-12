@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { getAllAlbumSongsThunk, getAllAlbumsThunk } from "../../store/albums";
 import { getAllSongsThunk } from "../../store/songs";
 import "./albums.css";
@@ -19,9 +19,9 @@ export default function AlbumSongs({ userInfo }) {
   const allSongsObjectKeys = Object.keys(allSongs);
   const sessionUser = useSelector((state) => state.session.user);
 
-  useEffect(() => {
-    dispatch(getAllAlbumSongsThunk());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getAllAlbumSongsThunk());
+  // }, [dispatch]);
 
   useEffect(() => {
     dispatch(getAllAlbumsThunk());

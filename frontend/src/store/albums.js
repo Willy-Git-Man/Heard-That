@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import { csrfFetch } from "./csrf";
 
 const GET_ALL_ALBUMS = 'albums/GET_ALL_ALBUMS'
@@ -34,29 +33,53 @@ const deleteAlbum = (albumToDelete) => ({
 })
 
 
+// export const getAllAlbumsThunk = () => async (dispatch) => {
+//   const albumResponse = await csrfFetch('/api/albums')
+
+//   if (albumResponse.ok) {
+//     const albums = await albumResponse.json()
+
+//     dispatch(getAllAlbums(albums))
+//   }
+//   return albumResponse
+// }
+
+
 export const getAllAlbumsThunk = () => async (dispatch) => {
-  const albumResponse = await csrfFetch('/api/albums')
+  const response = await csrfFetch("/api/albums");
 
-  if (albumResponse.ok) {
-    const albums = await albumResponse.json()
-
-    dispatch(getAllAlbums(albums))
+  if (response.ok) {
+    const albums = await response.json();
+    dispatch(getAllAlbums(albums));
   }
-  return albumResponse
-}
+  return response;
+};
 
 
-export const getAllAlbumSongsThunk = () => async (dispatch) => {
-  // const albumResponse = await csrfFetch('/api/albums')
-  const albumResponse = await csrfFetch(`/api/albums/1`)
 
-  if (albumResponse.ok) {
-    const albums = await albumResponse.json()
 
-    dispatch(getAlbumSongs(albums))
-  }
-  return albumResponse
-}
+
+
+
+
+
+
+
+
+
+
+
+// export const getAllAlbumSongsThunk = () => async (dispatch) => {
+//   // const albumResponse = await csrfFetch('/api/albums')
+//   const albumResponse = await csrfFetch(`/api/albums/1`)
+
+//   if (albumResponse.ok) {
+//     const albums = await albumResponse.json()
+
+//     dispatch(getAlbumSongs(albums))
+//   }
+//   return albumResponse
+// }
 
 
 // export const getAllAlbumSongsThunk = () => async (dispatch) => {
@@ -114,16 +137,21 @@ const albumsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_ALBUMS:
       newState = {...state}
-      
-      action.payload.forEach((album) => newState.albums[album.id] = album)
+      console.log('newState1:', newState)
+
+      action.payload.forEach((album) => newState.albums[album.id] = album )
+      console.log('newState2:', newState)
+
+      // newState = action.payload.albums
+
       return newState
 
 
-    case GET_ALBUM_SONGS:
-      newState= {...state}
-      // console.log('Target Album:', action.payload.targetAlbum)
-      // console.log('Target song:', action.payload.targetAlbumSongs)
-      return newState
+    // case GET_ALBUM_SONGS:
+    //   newState= {...state}
+    //   // console.log('Target Album:', action.payload.targetAlbum)
+    //   // console.log('Target song:', action.payload.targetAlbumSongs)
+    //   return newState
 
 
       case ADD_ALBUM:
@@ -133,11 +161,25 @@ const albumsReducer = (state = initialState, action) => {
 
 
       case DELETE_ALBUM:
-        newState = {...state}
-        // console.log('newState Album:', newState)
-        const id = action.payload
-        delete newState.albums[id]
+        // newState = {...state}
+        newState = {...state, albums: {...state.albums}}
+
+        console.log('newState:', newState)
+        console.log('action.payload:', action.payload)
+        delete newState.albums[action.payload]
         return newState
+
+
+        // newState = {...state, albums: {...state.albums}}
+        // newState.albums[action.payload.createAlbum.id] = {...action.payload.createAlbum}
+        // return newState
+
+
+        // const test = []
+        // test.push(newState)
+        // return test.filter((song) => song.id !== action.payload);
+
+
 
       case UPDATE_ALBUM:
         newState = {...state, albums: {...state.albums}}
