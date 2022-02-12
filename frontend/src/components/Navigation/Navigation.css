@@ -84,6 +84,7 @@ align-items: center;
 .navDiv {
   /* position: relative; */
   height: 5vh;
+  width: 100%;
   /* min-height: 50px; */
   /* width: 100%; */
   display: flex;
@@ -91,12 +92,14 @@ align-items: center;
   align-items: center;
   /* justify-content: space-between; */
   /* background-color: black; */
-  border: solid black 5px;
+  /* border: solid black 5px; */
   background-color: rgba(0, 208, 255, 0.797);
   background-color: rgba(7, 158, 193, 0.6);
   background-color:rgba(255, 255, 255, .1);
 
 }
+
+
 
 .navUl {
   list-style: none;
