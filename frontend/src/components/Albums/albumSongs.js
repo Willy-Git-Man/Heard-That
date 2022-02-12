@@ -42,11 +42,11 @@ export default function AlbumSongs({ userInfo }) {
 
   return (
     <div className="albumSongsMainDiv">
-      <h1 className="test">Enjoy listening to {allAlbums[id].title}</h1>
+      {/* <h1 className="test">Enjoy listening to {allAlbums[id].title}</h1> */}
       <div className="albumSongsSecondDiv">
-            <h1 className="welcome">{sessionUser.username}'s Songs</h1>
         <div className="songsMainDivAlbum">
             <div>
+            <h1 className="welcome">{sessionUser.username}'s Songs</h1>
 
             {allSongsObjectKeys
               ?.filter(

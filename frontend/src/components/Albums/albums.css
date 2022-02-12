@@ -38,6 +38,10 @@ flex-wrap: wrap;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  height: 80vh;
+  position: relative;
+  overflow-y: scroll;
+
   /* width: 1000px; */
 
 }
@@ -110,6 +114,7 @@ flex-wrap: wrap;
   outline: solid black 5px;
   /* position: absolute; */
   z-index: 9999;
+  width:  27.6vh;
 
 }
 
@@ -137,6 +142,7 @@ height: 85vh;
 width: 50vw;
 margin-left: 10%;
 overflow-y: scroll;
+/* background-color: black; */
 
 outline: black solid 5px;
 }
@@ -173,15 +179,35 @@ outline: black solid 5px;
   display: flex;
   background-color: rgba(100, 50, 150, .8);
   flex-direction: row-reverse;
-  border: black solid 5px;
+  outline: black solid 5px;
   height: 20%;
   min-height: 225px;
+  
   /* width: %; */
   /* width: 75%; */
   /* margin-top: 50px; */
   position: relative;
-  width: 150%;
+  /* width: 150%; */
   /* margin-left: 20%; */
-  margin-top: 2.5%;
+  margin-top: 5%;
   /* outline: black solid 5px; */
+}
+
+
+
+.albumSongsMainDiv {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+}
+
+.albumSongsSecondDiv {
+  background-color: black;
+  height: 80vh;
+  outline: solid black 5px;
+  width: 75%;
 }
