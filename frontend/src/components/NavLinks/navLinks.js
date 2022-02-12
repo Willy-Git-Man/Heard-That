@@ -7,7 +7,7 @@ export default function NavLinks() {
 
     <NavLink activeClassName="currentNavRoute" className="navRoute" to='/Songs'>My Songs</NavLink>
     ------
-    <NavLink activeClassName="currentNavRoute" className="navRoute" to='/Albums'>My Albums</NavLink>
+    <NavLink activeClassName="currentNavRoute" className="navRoute" exact to='/Albums'>My Albums</NavLink>
 
     </nav>
   )

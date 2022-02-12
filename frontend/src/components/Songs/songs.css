@@ -244,16 +244,7 @@ z-index: 1;
  }
 
 
- .currentNavRoute {
-   /* z-index: 99999; */
-   padding: 0.4em 0.4em;
-   color: white;
-   border-radius: 0.35em;
-   background-color: rgb(255, 1, 1);
-   /* font-size: 3vh; */
-   /* width: 33vw; */
-   /* height: 7.5vh; */
- }
+ 
 
 
  .welcome {

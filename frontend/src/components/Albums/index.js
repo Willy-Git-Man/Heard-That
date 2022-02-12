@@ -36,6 +36,7 @@ export default function MyAlbums({ userInfo }) {
 
   console.log(' allAlbumKeys:',  allAlbumKeys)
   if (!allAlbumKeys.length) {
+    history.push('/Songs')
     return (
       <h1>error</h1>
     )
