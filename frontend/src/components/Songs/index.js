@@ -24,14 +24,14 @@ export default function MySongs({ userInfo, setShowModal }) {
 
 
 
+  useEffect(() => {
+    dispatch(getAllAlbumsThunk());
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getAllSongsThunk());
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(getAllAlbumsThunk());
-  }, [dispatch]);
 
   // useEffect(() => {
   //   dispatch(getAllAlbumSongsThunk());

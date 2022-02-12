@@ -87,7 +87,9 @@ const songsReducer = (state = initialState, action) => {
       return newState;
 
     case DELETE_SONG:
-      newState = {...state};
+      // newState = {...state};
+      newState= {...state, songs: {...state.songs}};
+
       const id = action.payload
       delete newState.songs[id]
       return newState;
