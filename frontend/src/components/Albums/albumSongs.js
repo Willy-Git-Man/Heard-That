@@ -98,7 +98,7 @@ export default function AlbumSongs({ userInfo }) {
                   <img
                     className="songImage"
                     src={allSongs[key].imageUrl}
-                    alt="Sorry No go on the load yo"
+                    alt="Broken Img Url"
                   />
 
                   <button

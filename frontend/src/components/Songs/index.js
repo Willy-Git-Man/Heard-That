@@ -96,7 +96,7 @@ export default function MySongs({ userInfo, setShowModal }) {
               <img
                 className="songImage"
                 src={allSongs[key].imageUrl}
-                alt="Sorry No go on the load yo"
+                alt="Broken Img Url"
               />
 
               <UpdateSongModal songId={allSongs[key].id} />

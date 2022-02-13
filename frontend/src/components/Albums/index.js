@@ -88,7 +88,7 @@ export default function MyAlbums({ userInfo }) {
           <img
             className="albumImage"
             src={allAlbums[1]?.imageUrl}
-            alt="Sorry No go on the load yo"
+            alt="Broken Img Url"
           />
           <NavLink className="albumImageNavLink" to={`/Albums/${1}`}>
             <h1 className="albumNameLink">{allAlbums[1]?.title}</h1>
@@ -119,7 +119,7 @@ export default function MyAlbums({ userInfo }) {
                 <img
                   className="albumImage"
                   src={allAlbums[index]?.imageUrl}
-                  alt="Sorry No go on the load yo"
+                  alt="Broken Img Url"
                 />
                 <NavLink className="albumImageNavLink" to={`/Albums/${index}`}>
                   <h1 className="albumNameLink">{allAlbums[index]?.title}</h1>

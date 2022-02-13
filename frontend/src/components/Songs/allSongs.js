@@ -22,7 +22,7 @@ export default function AllSongs({ userInfo }) {
             <img
               className="songImage"
               src={song.imageUrl}
-              alt="Sorry No go on the load yo"
+              alt="Broken Img Url"
             />
             <ul className="songUl">
               <li className="songListItem">

@@ -131,12 +131,18 @@ background-image: url("../../../public/pics/mixtape.png");
 
 
   height: 27.6vh;
+  min-height: 27.6vh;
+  /* min-height: 200px; */
   width: auto;
+  min-width: 15vw;
   /* margin-left: 40%; */
   outline: solid black 5px;
   /* position: absolute; */
-  z-index: 9999;
+  z-index: 999;
   width:  27.6vh;
+  color: black;
+  font-size: large;
+  font-weight: bolder;
 
 }
 
@@ -174,13 +180,12 @@ outline: black solid 5px;
 }
 
 .deleteAlbumButton {
-  height: 9.125vh;
-
-  background-color: rgb(2, 0, 0);
+  height: 5vh;
+  background-color: rgb(173, 56, 56);
   right: 0;
   position: absolute;
-  top: 0;
-  width: 30%;
+  top: 5vh;
+  width: 5vw;
   color: white;
   font-size: 2em;
   z-index: 100;
