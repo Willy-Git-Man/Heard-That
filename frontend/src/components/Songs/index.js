@@ -40,6 +40,7 @@ export default function MySongs({ userInfo, setShowModal }) {
   // }, [dispatch]);
 
   const deleteDispatch = (songId) => {
+    // songId.albumId = 1  
     dispatch(deleteSongThunk(songId));
   };
 
@@ -100,7 +101,7 @@ export default function MySongs({ userInfo, setShowModal }) {
 
               <button
                 className="deleteSongButton"
-                onClick={() => deleteDispatch(allSongs[key].id)}
+                onClick={() => deleteDispatch(allSongs[key].id )}
               >
                 <i className="far fa-trash-alt"></i>
               </button>

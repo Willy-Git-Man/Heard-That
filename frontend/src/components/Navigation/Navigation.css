@@ -83,7 +83,7 @@ align-items: center;
 
 .navDiv {
   /* position: relative; */
-  height: 5vh;
+  /* height: 5vh; */
   width: 100%;
   /* min-height: 50px; */
   /* width: 100%; */
@@ -117,15 +117,17 @@ align-items: center;
 .logoutButton {
   /* width: 100%; */
   background-color: blueviolet;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 50%;
-  padding-right: 50%;
+  /* padding-top: 5%; */
+  /* padding-bottom: 5%; */
+  /* padding-left: 50%; */
+  /* padding-right: 50%; */
 
   color: white;
   /* position: absolute; */
   bottom: 0;
   right: 0;
+  width: 30vw;
+  /* font-size: 2em; */
 
 }
 
@@ -142,5 +144,22 @@ align-items: center;
 }
 
 .navRoute {
+  color: white;
+}
+
+.loginMessage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 100vw;
+}
+
+.loginMessage  {
+  color: white;
+}
+
+.welcomeGreetingTop {
   color: white;
 }

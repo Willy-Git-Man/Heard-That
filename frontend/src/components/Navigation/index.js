@@ -28,8 +28,47 @@ function Navigation({ isLoaded }) {
         <LoginFormModal />
         <SignupFormModal />
 
-        <div>
-          <h1>hello</h1>
+        <div className="loginMessage">
+
+          <h1 className="welcomeGreetingTop" >Welcome to Heard-That!</h1>
+          <h2>Login or Signup below to start listening</h2>
+          <h3>Upon entry you can add your songs,</h3>
+          <h4>Add your playlists,</h4>
+          <h5>And update or remove them as you please!</h5>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+          <i class="fa fa-music"></i>
+
+
         </div>
       </div>
     );

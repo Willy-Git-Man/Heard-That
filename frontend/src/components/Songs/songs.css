@@ -95,7 +95,7 @@ z-index: 1;
   width: 80%;
   margin-left: 10%;
   overflow-y: scroll;
-  z-index: ;
+  border-top-left-radius: 10%;
 
   }
 
@@ -244,7 +244,7 @@ z-index: 1;
  }
 
 
- 
+
 
 
  .welcome {

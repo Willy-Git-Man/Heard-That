@@ -23,6 +23,7 @@ h1 {
 background-color: rgba(50, 80, 150, .9);
 /* height: 85vh; */
 height: 80vh;
+border-top-left-radius: 10%;
 
 
 width: 80%;
@@ -41,6 +42,7 @@ flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   height: 80vh;
+  border-top-left-radius: 10%;
 
   position: relative;
   overflow-y: scroll;
@@ -218,4 +220,20 @@ outline: black solid 5px;
   outline: solid black 5px;
   width: 75%;
   width: 80%;
+}
+
+.deleteSongButton2 {
+  height: 30%;
+    background-color: rgb(1, 196, 255);
+    left: 0;
+    position: absolute;
+    width: 20%;
+    color: white;
+    font-size: 2em;
+    z-index: 50;
+    outline: solid black 5px;
+}
+
+.deleteSongButton2:onClick{
+  background-color: black;
 }

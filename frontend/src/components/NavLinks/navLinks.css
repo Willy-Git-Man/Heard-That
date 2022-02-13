@@ -8,9 +8,9 @@
 
 .currentNavRoute {
   /* z-index: 99999; */
-  padding: 0.4em 0.4em;
+  /* padding: 0.4em 0.4em;
   color: white;
-  border-radius: 0.35em;
+  border-radius: 0.35em; */
   /* font-size: 3vh; */
   /* width: 33vw; */
   /* height: 7.5vh; */
@@ -32,16 +32,35 @@
 
   /* width: 80%; */
   /* height: 5vh; */
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   text-decoration: none;
   z-index: 1;
+  width: 100vw;
 
 }
 
 .navRoute {
   text-decoration: none;
+  font-size: xx-large;
+  background-color: rgba(0, 110, 255, 0.521);
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: .5%;
+  padding-bottom: .5%;
+  border-radius: 5%;
+
+
+}
+
+.navRoute.currentNavRoute {
+  color: white;
+  background-color: rgba(0, 110, 255, 1);
+
+  /* margin-right: 10%; */
+  text-decoration: none;
+
 }

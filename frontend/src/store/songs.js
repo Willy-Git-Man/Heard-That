@@ -60,6 +60,33 @@ export const updateSongThunk = (updatedSong) => async (dispatch) => {
   }
 };
 
+
+
+
+
+
+
+
+
+export const updateTestSongThunk = (updatedSong) => async (dispatch) => {
+  const response = await csrfFetch(`/api/songs/${+updatedSong.id}`, {
+    method: "PUT",
+    body: JSON.stringify({ albumId: 1}),
+  });
+  if (response.ok) {
+    const updatedSongRequest = await response.json();
+    dispatch(updateSong(updatedSongRequest));
+    return updatedSongRequest
+  }
+};
+
+
+
+
+
+
+
+
 export const deleteSongThunk = (songIdToDelete) => async (dispatch) => {
   const response = await csrfFetch(`/api/songs/${songIdToDelete}`, {
     method: "DELETE",
