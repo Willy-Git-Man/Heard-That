@@ -90,8 +90,11 @@ z-index: 1;
   .songsDiv {
     outline: black solid 5px;
     /* margin-top: 100px; */
-  background-color: rgba(50, 80, 150, .9);
+    background-color: rgba(0, 208, 255, .1);
+
   height: 85vh;
+height: 75vh;
+
   width: 80%;
   margin-left: 10%;
   overflow-y: scroll;
