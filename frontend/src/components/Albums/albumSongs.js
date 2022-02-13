@@ -64,7 +64,7 @@ export default function AlbumSongs({ userInfo }) {
       {/* <h1 className="test">Enjoy listening to {allAlbums[id].title}</h1> */}
       <div className="albumSongsSecondDiv">
         {/* <h1 className="welcome">{sessionUser.username}'s Songs</h1> */}
-        <h1 className="welcome">{allAlbums[id].title}'s </h1>
+        <h1 className="welcome">{allAlbums[id].title} </h1>
 
         <div className="songsMainDivAlbum">
           <div>

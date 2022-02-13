@@ -19,7 +19,10 @@
 .songListDiv {
   /* height: 2200px; */
   display: flex;
-  background-color: rgba(100, 50, 150, .8);
+  /* background-color: rgba(100, 50, 150, .8); */
+ background-color: rgba(0, 0, 0, .9);
+
+
   flex-direction: row-reverse;
   border: black solid 5px;
   height: 20%;
@@ -70,11 +73,12 @@ z-index: 1;
   list-style: none;
   padding-left: 0;
   font-size: 1.5em;
-  margin-left: 20%;
+  margin-left: 22.5%;
   position: relative;
   /* margin-bottom: 2.5%; */
   color: white;
-  font-size: 2em;
+  font-size: 1.85em;
+  margin-bottom: 5%;
   }
 
   .songListItemUrl {

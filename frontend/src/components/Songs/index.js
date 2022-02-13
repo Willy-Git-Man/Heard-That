@@ -58,7 +58,7 @@ export default function MySongs({ userInfo, setShowModal }) {
   else
   return (
     <div className="songsMainDiv">
-        <h1 className="welcome">{sessionUser.username}'s Songs</h1>
+        <h1 className="welcome">{sessionUser.username}'s Music</h1>
       <div className="songsDiv" >
     {/* <NavLink activeClassName="currentNavRoute" to='/Albums'>{sessionUser.username}'s Albums</NavLink> */}
 
@@ -67,11 +67,10 @@ export default function MySongs({ userInfo, setShowModal }) {
           .map((key) => (
             // <h1>hello</h1>
             <div className="songListDiv" key={allSongs[key].id}  >
-            <NavLink className="albumLink"to={`/Albums/${allSongs[key].albumId}`}>Album</NavLink>
+            {/* <NavLink className="albumLink"to={`/Albums/${allSongs[key].albumId}`}>Album</NavLink> */}
               <ul className="songUl">
 
                 <li className="songListItem">
-                  <i className="fab fa-grav"></i>
                   {/* {song.songName} */}
                   {allSongs[key].songName}
                   {/* {allSongs[key].songName} */}
@@ -80,12 +79,10 @@ export default function MySongs({ userInfo, setShowModal }) {
                 </li>
 
                 <li className="songListItem">
-                  <i className="fab fa-grav"></i>
                   {allSongs[key].artistName}
                 </li>
 {/*
                 <li className="songListItemUrl">
-                  <i className="fab fa-grav"></i>
                   {allSongs[key].songUrl}
                 </li> */}
               </ul>
