@@ -1,5 +1,4 @@
 .loginForm {
-
   padding-left: 30px;
   padding-right: 30px;
   max-width: 275px;
@@ -9,6 +8,9 @@
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   box-sizing: border-box;
+  z-index: 500;
+  border-radius: 10%;
+  background-color: black;
 }
 
 .loginForm input {
@@ -34,4 +36,31 @@
   margin-bottom: 10px;
   margin-top: 20px;
   position: relative;
+}
+
+.demoButton {
+  /* background-image: url("../../../public/pics/loginTest.png"); */
+  background-color: rgba(117, 235, 14, 0.995);
+
+  color: white;
+  /* height: 5vh; */
+  font-size: 2em;
+}
+
+.loginFormDiv {
+  background-color: rgba(117, 235, 14, 0.995);
+
+}
+
+.loginFormDiv label {
+  color: white;
+}
+
+.loginFormNormalButton {
+    /* background-image: url("../../../public/pics/loginTest.png"); */
+    background-color: rgba(117, 235, 14, 0.995);
+
+    color: white;
+    /* height: 5vh; */
+    font-size: 2em;
 }

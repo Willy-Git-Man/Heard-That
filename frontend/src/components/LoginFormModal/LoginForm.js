@@ -26,7 +26,7 @@ function LoginForm() {
   };
 
   return (
-    <div>
+    <div className="loginFormDiv">
       <form className="loginForm" onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
@@ -51,7 +51,7 @@ function LoginForm() {
             required
           />
         </label>
-        <button className={"loginModalButton"} type="submit">
+        <button className={"loginFormNormalButton"} type="submit">
           Log In
         </button>
 

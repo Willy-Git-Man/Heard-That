@@ -35,6 +35,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
+background-image: url("../../../public/pics/albums.png");
+  background-size: auto;
 
 }
 
@@ -52,6 +54,9 @@ height: 75vh;
   overflow-y: scroll;
   background-color: rgba(50, 80, 150, .9);
 background-color: rgba(0, 208, 255, .1);
+background-image: url("../../../public/pics/photo-1484950763426-56b5bf172dbb.jpeg");
+/* opacity: 0.6; */
+  background-size: auto;
 
 
 

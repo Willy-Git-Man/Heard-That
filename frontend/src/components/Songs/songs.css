@@ -99,6 +99,8 @@ height: 75vh;
   margin-left: 10%;
   overflow-y: scroll;
   border-top-left-radius: 10%;
+  background-image: url("../../../public/pics/mixtape.png");
+  background-size: auto;
 
   }
 
@@ -139,6 +141,7 @@ height: 75vh;
 
   .loginModalButton {
     background-color: aqua;
+    background-image: url("../../../public/pics/loginTest.png");
     position: absolute;
     bottom: 0;
     left: 0;
@@ -146,10 +149,11 @@ height: 75vh;
     width: 25%;
     color: white;
     font-size: 50px;
+    border-radius: 10%;
   }
 
   .signupFormButton {
-    background-color: aqua;
+    background-color: black;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -157,6 +161,7 @@ height: 75vh;
     width: 25%;
     color: white;
     font-size: 50px;
+    border-radius: 10%;
   }
 
 

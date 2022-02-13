@@ -26,3 +26,17 @@ color: white;
 z-index: 1;
 
 }
+
+.createAlbumButton {
+  display: flex;
+
+  padding: 0.4em 0.4em;
+  color: white;
+  border-radius: 0.35em;
+  background-color: rgb(31, 211, 8);
+  background-color: rgba(117, 235, 14, 0.995);
+
+  font-size: 2em;
+  width: 33vw;
+  width: 100%;
+}

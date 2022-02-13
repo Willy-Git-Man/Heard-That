@@ -31,43 +31,16 @@ function Navigation({ isLoaded }) {
 
         <div className="loginMessage">
 
+          {/* <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i> */}
           <h1 className="welcomeGreetingTop" >Welcome to Heard-That!</h1>
           <h2>Login or Signup below to start listening</h2>
-          <h3>Upon entry you can add your songs,</h3>
+          {/* <h3>Upon entry you can add your songs,</h3>
           <h4>Add your playlists,</h4>
-          <h5>And update or remove them as you please!</h5>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
-          <i className="fa fa-music"></i>
+          <h5>And update or remove them as you please!</h5> */}
+          {/* <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i> */}
+
 
 
         </div>
