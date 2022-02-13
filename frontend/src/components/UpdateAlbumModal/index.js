@@ -13,6 +13,7 @@ function UpdateAlbumModal({ userInfo, albumId }) {
         onClick={() => setShowModal(true)}
       >
         <i className="fas fa-wrench"></i>
+        
 
       </button>
       {showModal && (

@@ -9,6 +9,13 @@ export default function NavLinks() {
 
     <NavLink activeClassName="currentNavRoute" className="navRoute" exact to='/Albums'>My Albums</NavLink>
 
+    <button className="navRouteButton">
+
+<NavLink className="navLinkButton" to="/songs"> <i className="fa fa-music"></i></NavLink>
+        </button>
+
+
+
     </nav>
   )
 }
