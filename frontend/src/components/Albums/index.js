@@ -17,6 +17,10 @@ export default function MyAlbums({ userInfo }) {
     dispatch(getAllAlbumsThunk());
   }, [dispatch]);
 
+  // useEffect(() => {
+  //   dispatch(getAllSongsThunk());
+  // }, [dispatch]);
+
 
 
   const allAlbums = useSelector((state) => state.albums.albums);
@@ -38,7 +42,9 @@ export default function MyAlbums({ userInfo }) {
 
   const deleteAlbumDispatch = (album) => {
     // alert("If you deleted an album with songs in it, dont worry! It will reapear when you come back unless you remove all the songs first");
-    dispatch(deleteAlbumThunk(album));
+    dispatch(deleteAlbumThunk(album))
+    .then(dispatch(getAllSongsThunk()))
+    ;
   };
 
   console.log(" allAlbumKeys:", allAlbumKeys);

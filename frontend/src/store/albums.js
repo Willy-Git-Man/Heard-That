@@ -1,5 +1,6 @@
 import { csrfFetch } from "./csrf";
 
+
 const GET_ALL_ALBUMS = "albums/GET_ALL_ALBUMS";
 const ADD_ALBUM = "albums/ADD_ALBUM";
 const UPDATE_ALBUM = "albums/UPDATE_ALBUM";
@@ -124,7 +125,7 @@ export const deleteAlbumThunk = (albumToDelete) => async (dispatch) => {
     method: "DELETE",
   });
   if (deleteAlbumResponse.ok) {
-    dispatch(deleteAlbum(albumToDelete));
+    dispatch(deleteAlbum(albumToDelete))
   }
 };
 
@@ -150,12 +151,11 @@ const albumsReducer = (state = initialState, action) => {
       return newState;
 
     case DELETE_ALBUM:
-      // newState = {...state}
-      newState = { ...state, albums: { ...state.albums } };
+      newState = { ...state, albums: { ...state.albums }};
+      // newState = { ...state, albums: { ...state.albums }, songs: {...state.songs} };
 
-      console.log("newState:", newState);
-      console.log("action.payload:", action.payload);
       delete newState.albums[action.payload];
+      // delete newState.songs[action.payload];
       return newState;
 
     case UPDATE_ALBUM:

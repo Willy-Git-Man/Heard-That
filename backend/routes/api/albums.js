@@ -18,14 +18,14 @@ router.get(
     const id = parseInt(req.params.id);
     const targetAlbum = await Albums.findByPk(id);
 
-    // const targetAlbumSongs = await Songs.findAll({
-    //   where: { albumId: id },
-    // });
+    const targetAlbumSongs = await Songs.findAll({
+      where: { albumId: id },
+    });
 
-    // return res.json({ targetAlbum, targetAlbumSongs });
+    return res.json({ targetAlbum, targetAlbumSongs });
 
 
-    return res.json({ targetAlbum});
+    // return res.json({ targetAlbum});
   })
 );
 
@@ -65,7 +65,7 @@ router.delete(
 
     albumToDelete.destroy();
     res.json({
-      message: `${albumToDelete.title} has been successfully deleted!`,
+      message: `${albumToDelete.title} has been successfully deleted!`
     });
   })
 );
