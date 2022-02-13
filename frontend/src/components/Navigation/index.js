@@ -35,38 +35,38 @@ function Navigation({ isLoaded }) {
           <h3>Upon entry you can add your songs,</h3>
           <h4>Add your playlists,</h4>
           <h5>And update or remove them as you please!</h5>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
-          <i class="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i>
 
 
         </div>

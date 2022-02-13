@@ -117,7 +117,7 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
             required
           />
 
-          <button type="submit">Create Song</button>
+          <button className="createSongButton" type="submit">Create Song</button>
         </form>
       </div>
     </>

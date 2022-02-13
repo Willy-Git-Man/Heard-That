@@ -28,6 +28,8 @@
   color: white;
   /* border-radius: 0.35em; */
   background-color: rgb(31, 211, 8);
+  background-color: rgb(0, 208, 255);
+
   /* background-color: rgba(117, 235, 14, 0.995); */
 
   /* width: 80%; */
@@ -47,11 +49,11 @@
   text-decoration: none;
   font-size: xx-large;
   background-color: rgba(0, 110, 255, 0.521);
-  padding-left: 2.5%;
-  padding-right: 2.5%;
-  padding-top: .5%;
-  padding-bottom: .5%;
-  border-radius: 5%;
+  padding-left: 2.75%;
+  padding-right: 2.75%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  border-radius: 10%;
 
 
 }

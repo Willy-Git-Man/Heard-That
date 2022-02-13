@@ -2,7 +2,12 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getAllAlbumSongsThunk, getAllAlbumsThunk } from "../../store/albums";
-import { deleteSongThunk, getAllSongsThunk, updateSongThunk, updateTestSongThunk } from "../../store/songs";
+import {
+  deleteSongThunk,
+  getAllSongsThunk,
+  updateSongThunk,
+  updateTestSongThunk,
+} from "../../store/songs";
 import "./albums.css";
 
 import AudioPlayer from "react-h5-audio-player";
@@ -35,54 +40,36 @@ export default function AlbumSongs({ userInfo }) {
     history.push("/");
   }
 
-
-
-
-
   const updateDispatch = (songId) => {
     // songId.albumId = 1
 
-    dispatch(updateTestSongThunk((songId)));
+    dispatch(updateTestSongThunk(songId));
     // dispatch(deleteSongThunk(songId));
 
-    history.push('/Albums')
-
+    history.push(`/Albums`);
   };
 
-
-
-
-
-
-
-
   if (!allSongsObjectKeys.length) {
-    return null
+    return null;
   }
-
 
   return (
     <div className="albumSongsMainDiv">
       {/* <h1 className="test">Enjoy listening to {allAlbums[id].title}</h1> */}
       <div className="albumSongsSecondDiv">
-            {/* <h1 className="welcome">{sessionUser.username}'s Songs</h1> */}
-            <h1 className="welcome">{allAlbums[id].title}'s </h1>
+        {/* <h1 className="welcome">{sessionUser.username}'s Songs</h1> */}
+        <h1 className="welcome">{allAlbums[id].title}'s </h1>
 
         <div className="songsMainDivAlbum">
-            <div>
-
-
-
-
-
+          <div>
             {allSongsObjectKeys
               ?.filter(
                 (key) =>
-                allSongs[key]?.userId === userInfo.id &&
-                allSongs[key]?.albumId === allAlbums[id].id
-                )
-                .map((key) => (
-                  <div className="albumSongListDiv" key={allSongs[key].id}>
+                  allSongs[key]?.userId === userInfo.id &&
+                  allSongs[key]?.albumId === allAlbums[id].id
+              )
+              .map((key) => (
+                <div className="albumSongListDiv" key={allSongs[key].id}>
                   <ul className="songUl">
                     <li className="songListItem">
                       <i className="fab fa-grav"></i>
@@ -100,27 +87,22 @@ export default function AlbumSongs({ userInfo }) {
                     // autoPlay
                     src={allSongs[key] ? allSongs[key].songUrl : null}
                     onPlay={(e) => console.log("onPlay")}
-                    />
+                  />
                   <img
                     className="songImage"
                     src={allSongs[key].imageUrl}
                     alt="Sorry No go on the load yo"
-                    />
+                  />
 
-
-
-
-<button
-                className="deleteSongButton2"
-                onClick={() => updateDispatch(allSongs[key])}
-              >
-                         <i class="fa fa-music"></i>
-
-              </button>
+                  <button
+                    className="deleteSongButton2"
+                    onClick={() => updateDispatch(allSongs[key])}
+                  >
+                    <i className="fa fa-music"></i>
+                  </button>
                 </div>
-
               ))}
-              </div>
+          </div>
         </div>
       </div>
     </div>

@@ -72,7 +72,7 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
           />
 
 
-          <button type="submit">Create Album</button>
+          <button className="createAlbumButton" type="submit">Create Album</button>
         </form>
       </div>
     </>
