@@ -51,6 +51,7 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     // history.push('/Songs' || '/Albums' || '/Albums/:id')
     return (
+      <>
       <ul className="navUl">
         <li className="navLi">
           {/* <NavLink exact to="/">Home</NavLink> */}
@@ -58,6 +59,21 @@ function Navigation({ isLoaded }) {
           {isLoaded && sessionLinks}
         </li>
       </ul>
+      <div className="splashMessage">
+
+          {/* <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i> */}
+          <h1 className="welcomeGreetingTop" >Welcome to Heard-That!</h1>
+          {/* <h3>Upon entry you can add your songs,</h3>
+          <h4>Add your playlists,</h4>
+          <h5>And update or remove them as you please!</h5> */}
+          {/* <i className="fa fa-music"></i>
+          <i className="fa fa-music"></i> */}
+
+
+
+        </div>
+      </>
 
     )
   } else
