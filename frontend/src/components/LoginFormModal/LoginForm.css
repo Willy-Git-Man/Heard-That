@@ -45,6 +45,7 @@
   color: white;
   /* height: 5vh; */
   font-size: 2em;
+  border-radius: 10%;
 }
 
 .loginFormDiv {
@@ -63,4 +64,6 @@
     color: white;
     /* height: 5vh; */
     font-size: 2em;
+  border-radius: 10%;
+
 }
