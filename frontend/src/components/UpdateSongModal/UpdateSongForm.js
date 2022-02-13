@@ -144,6 +144,7 @@ console.log('allAlbumObjectArrayFiltered:', allAlbumObjectArrayFiltered)
           onChange={newAlbumId}
           required
         >
+          <option value={1} key={1}>{allAlbums[1].title}</option>
           {allAlbumObjectArrayFiltered
           // .filter((album) => album.userId === userInfo.id)
           .map((album) => (
