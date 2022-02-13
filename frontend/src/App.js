@@ -9,13 +9,14 @@ import MySongs from "./components/Songs";
 import MyAlbums from "./components/Albums";
 import AlbumSongs from "./components/Albums/albumSongs";
 import CreateAlbumModal from "./components/CreateAlbumModal/CreateAlbumForm";
+import AllSongs from "./components/Songs/allSongs";
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  
+
 
 
 
@@ -54,8 +55,8 @@ function App() {
             <AlbumSongs userInfo={userInfo} />
           </Route>
 
-        {/* <Route path="/">
-          <MySongs userInfo={userInfo} />
+        {/* <Route path="/allSongs">
+          <AllSongs />
         </Route> */}
 
         </Switch>

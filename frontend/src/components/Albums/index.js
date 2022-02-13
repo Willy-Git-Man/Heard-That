@@ -6,6 +6,7 @@ import {
   getAllAlbumSongsThunk,
   getAllAlbumsThunk,
 } from "../../store/albums";
+import { getAllSongsThunk } from "../../store/songs";
 import UpdateAlbumModal from "../UpdateAlbumModal";
 import "./albums.css";
 
@@ -15,6 +16,8 @@ export default function MyAlbums({ userInfo }) {
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
   }, [dispatch]);
+
+
 
   const allAlbums = useSelector((state) => state.albums.albums);
   // const allSongs = useSelector((state) => state.songs.songs);
@@ -34,7 +37,7 @@ export default function MyAlbums({ userInfo }) {
   // }, [dispatch]);
 
   const deleteAlbumDispatch = (album) => {
-    alert("If you deleted an album with songs in it, dont worry! It will reapear when you come back unless you remove all the songs first");
+    // alert("If you deleted an album with songs in it, dont worry! It will reapear when you come back unless you remove all the songs first");
     dispatch(deleteAlbumThunk(album));
   };
 

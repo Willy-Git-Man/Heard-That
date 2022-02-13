@@ -23,11 +23,18 @@ export default function MySongs({ userInfo, setShowModal }) {
   const sessionUser = useSelector(state => state.session.user);
 
 
+
+  // const allSongs = useSelector((state) => state.songs.songs);
+
+
+
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
     dispatch(getAllSongsThunk());
 
   }, [dispatch]);
+
+
 
 
     // useEffect(() => {
@@ -40,7 +47,7 @@ export default function MySongs({ userInfo, setShowModal }) {
   // }, [dispatch]);
 
   const deleteDispatch = (songId) => {
-    // songId.albumId = 1
+
     dispatch(deleteSongThunk(songId));
   };
 

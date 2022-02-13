@@ -43,6 +43,12 @@ export default function AlbumSongs({ userInfo }) {
   const updateDispatch = (songId) => {
     // songId.albumId = 1
 
+    // allSongs.forEach((song) => {
+    //   if (song.albumId === songId) {
+
+    //   }
+    // })
+
     dispatch(updateTestSongThunk(songId));
     // dispatch(deleteSongThunk(songId));
 
@@ -62,7 +68,7 @@ export default function AlbumSongs({ userInfo }) {
 
         <div className="songsMainDivAlbum">
           <div>
-            
+
             {allSongsObjectKeys
               ?.filter(
                 (key) =>

@@ -54,8 +54,15 @@ router.put(
 router.delete(
   "/:id",
   asyncHandler(async (req, res) => {
-    const albumId = req.params.id;
-    const albumToDelete = await Albums.findByPk(albumId);
+    const albumIds = req.params.id;
+    const albumToDelete = await Albums.findByPk(albumIds);
+    const songsToDelete = await Songs.findAll({where: {albumId: albumIds}})
+
+    songsToDelete.forEach((song) => {
+      song.destroy()
+
+    })
+
     albumToDelete.destroy();
     res.json({
       message: `${albumToDelete.title} has been successfully deleted!`,
