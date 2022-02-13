@@ -4,7 +4,6 @@
   justify-content: center;
   align-items: center;
   margin: 0;
-  justify-content: ;
 }
 .albumsMainDiv {
   position: relative;
@@ -35,7 +34,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
-background-image: url("../../../public/pics/albums.png");
+background-image: url("../../../public/pics/mainsplash.png");
   background-size: auto;
 
 }

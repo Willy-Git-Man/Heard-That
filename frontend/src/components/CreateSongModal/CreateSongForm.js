@@ -6,13 +6,13 @@ import { addSongThunk } from "../../store/songs";
 import "./CreateSongForm.css";
 
 export default function CreateSongForm({ userInfo, setShowModal }) {
-  const [songName, setSongName] = useState("The Real Slim Shady");
-  const [artistName, setArtistName] = useState("Eminem");
+  const [songName, setSongName] = useState("Space Disco");
+  const [artistName, setArtistName] = useState("T. Schürger");
   const [songUrl, setSongUrl] = useState(
-    "https://www.mboxdrive.com/Eminem_-_The_Real_Slim_Shady_47829433.mp3"
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   );
   const [imageUrl, setImageUrl] = useState(
-    "https://upload.wikimedia.org/wikipedia/en/6/69/Eminem_-_The_Real_Slim_Shady_CD_cover.jpg"
+    "https://i.icanvas.com/DGT44?d=2&sh=v&p=1&bg=g&t=1637676126"
   );
   const [albumId, setAlumbId] = useState(1);
 

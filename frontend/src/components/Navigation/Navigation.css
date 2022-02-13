@@ -136,16 +136,21 @@
 
 .welcomeGreetingTop {
   color: white;
+  margin-top: 10%;
 }
 
 .splashMessage {
   display: flex;
   justify-content: center;
-
-  background-image: url("../../../public/pics/musicSplash.png");
-  background-size: cover;
+  display: flex;
+  justify-content: center;
+  /* width: 400px; */
+  background-image: url("../../../public/pics/mixtape.png");
+  background-size: contain cover;
   width: 100%;
-height: 90vh;
+  /* width: 1000px; */
+
+height: 100vh;
 position: absolute;
 z-index: -1;
 }
