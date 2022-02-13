@@ -161,7 +161,7 @@ console.log('allAlbumObjectArrayFiltered:', allAlbumObjectArrayFiltered)
           // dispatch(updateSongThunk())/
           history.push('/UpdateSongForm')
         } >Update Song</button> */}
-        <button>Update</button>
+        <button className="updateSongFormButton">Update</button>
       </form>
 
     </div>

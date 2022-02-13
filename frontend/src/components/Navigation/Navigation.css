@@ -34,6 +34,7 @@
   padding: 0;
   list-style: none;
   z-index: 999;
+  background-color: black;
   outline: 10px white solid;
   /* overflow: scroll; */
   /* text-align: center; */
@@ -140,7 +141,7 @@
 .splashMessage {
   display: flex;
   justify-content: center;
-  
+
   background-image: url("../../../public/pics/musicSplash.png");
   background-size: cover;
   width: 100%;

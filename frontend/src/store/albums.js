@@ -8,6 +8,7 @@ const DELETE_ALBUM = "albums/DELETE_ALBUM";
 const GET_ALBUM_SONGS = "albums/GET_ALBUM_SONGS";
 
 
+const DELETE_SONG = "songs/DELETE_SONGS";
 
 
 
@@ -25,6 +26,10 @@ const getAlbumSongs = (albumSongs) => ({
 
 
 
+const deleteSong = (songToDelete) => ({
+  type: DELETE_SONG,
+  payload: songToDelete,
+});
 
 
 
@@ -128,6 +133,22 @@ export const deleteAlbumThunk = (albumToDelete) => async (dispatch) => {
     dispatch(deleteAlbum(albumToDelete))
   }
 };
+
+// export const deleteAlbumThunk = (albumToDelete) => async (dispatch) => {
+//   const deleteAlbumResponse = await csrfFetch(`/api/albums/${albumToDelete}`, {
+//     method: "DELETE",
+//   });
+
+//   const deleteAlbumSongResponse = await csrfFetch(`/api/albums/songs/${albumToDelete}`, {
+//     method: "DELETE",
+//   });
+//   if (deleteAlbumResponse.ok) {
+//     dispatch(deleteAlbum(albumToDelete))
+//   }
+//   if (deleteAlbumSongResponse.ok) {
+//     dispatch(deleteSong(albumToDelete))
+//   }
+// };
 
 const initialState = { albums: {} };
 
