@@ -6,6 +6,10 @@ const UPDATE_ALBUM = "albums/UPDATE_ALBUM";
 const DELETE_ALBUM = "albums/DELETE_ALBUM";
 const GET_ALBUM_SONGS = "albums/GET_ALBUM_SONGS";
 
+
+
+
+
 const getAllAlbums = (allAlbums) => ({
   type: GET_ALL_ALBUMS,
   payload: allAlbums,
@@ -16,6 +20,15 @@ const getAlbumSongs = (albumSongs) => ({
   type: GET_ALBUM_SONGS,
   payload: albumSongs,
 });
+
+
+
+
+
+
+
+
+
 
 const addAlbum = (newAlbum) => ({
   type: ADD_ALBUM,

@@ -5,6 +5,19 @@ const ADD_SONG = "songs/ADD_SONG";
 const UPDATE_SONG = "songs/UPDATE_SONG";
 const DELETE_SONG = "songs/DELETE_SONGS";
 
+
+
+
+
+const MOVE_SONG_ALBUM = 'albums/MOVE_SONG_ALBUM'
+
+
+
+
+
+
+
+
 const getAllSongs = (allSongs) => ({
   type: GET_ALL_SONGS,
   payload: allSongs,
@@ -24,6 +37,30 @@ const deleteSong = (songToDelete) => ({
   type: DELETE_SONG,
   payload: songToDelete,
 });
+
+
+
+
+
+
+
+const moveSongAlbum = (song) => ({
+  type:MOVE_SONG_ALBUM,
+  payload: song
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const getAllSongsThunk = () => async (dispatch) => {
   const response = await csrfFetch("/api/songs");

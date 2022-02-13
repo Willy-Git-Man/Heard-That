@@ -45,7 +45,7 @@ export default function AlbumSongs({ userInfo }) {
     dispatch(updateTestSongThunk((songId)));
     // dispatch(deleteSongThunk(songId));
 
-    history.push('/Albums/1')
+    history.push('/Albums')
 
   };
 
@@ -71,7 +71,7 @@ export default function AlbumSongs({ userInfo }) {
         <div className="songsMainDivAlbum">
             <div>
 
-           
+
 
 
 

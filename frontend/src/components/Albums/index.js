@@ -32,6 +32,7 @@ export default function MyAlbums({ userInfo }) {
 
   const deleteAlbumDispatch = (album) => {
     dispatch(deleteAlbumThunk(album))
+    
   }
 
   console.log(' allAlbumKeys:',  allAlbumKeys)

@@ -194,6 +194,7 @@ z-index: 1;
   /* background-color: white; */
   /* margin-top: 0; */
   color: green;
+  margin: 0;
   /* margin: ; */
   /* padding-right: 2.5%; */
   /* padding-left: 2.5%; */
@@ -202,9 +203,10 @@ z-index: 1;
  .rhap_main.rhap_stacked {
   background-color: rgb(243, 235, 235);
   padding: 0;
-  margin: 0;
+  margin-top: 0;
   /* width: 100%; */
   outline: black solid 5px;
+  background-color: black;
   /* z-index: 200; */
 
  }
@@ -235,12 +237,34 @@ z-index: 1;
   /* outline: black solid 5px; */
   margin: 0;
   /* z-index: 200; */
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+ }
+
+ .rhap_progress-container {
+  background-color: black;
+  display: flex;
+ }
+
+ .rhap_current-time {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+ }
+
+ .rhap_time.rhap_total-time {
+   position: absolute;
+   bottom: 0;
+   right: 0;
  }
 
 
  .albumLink {
    z-index: 9999;
    color: white;
+   margin-left: 0;
+   color: black;
  }
 
 

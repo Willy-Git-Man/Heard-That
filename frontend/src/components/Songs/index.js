@@ -40,7 +40,7 @@ export default function MySongs({ userInfo, setShowModal }) {
   // }, [dispatch]);
 
   const deleteDispatch = (songId) => {
-    // songId.albumId = 1  
+    // songId.albumId = 1
     dispatch(deleteSongThunk(songId));
   };
 
@@ -52,15 +52,15 @@ export default function MySongs({ userInfo, setShowModal }) {
   return (
     <div className="songsMainDiv">
         <h1 className="welcome">{sessionUser.username}'s Songs</h1>
-      <div className="songsDiv">
+      <div className="songsDiv" >
     {/* <NavLink activeClassName="currentNavRoute" to='/Albums'>{sessionUser.username}'s Albums</NavLink> */}
 
         {allSongsObjectKeys
           ?.filter((key) => allSongs[key]?.userId === userInfo.id) // filter out keys for correct user songs
           .map((key) => (
             // <h1>hello</h1>
-            <div className="songListDiv" key={allSongs[key].id}>
-            <NavLink className="albumLink"to={`/Albums/${allSongs[key].albumId}`}>Album</NavLink>
+            <div className="songListDiv" key={allSongs[key].id}  > 
+            {/* <NavLink className="albumLink"to={`/Albums/${allSongs[key].albumId}`}>Album</NavLink> */}
               <ul className="songUl">
 
                 <li className="songListItem">
