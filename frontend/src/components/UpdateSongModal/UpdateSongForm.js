@@ -55,7 +55,7 @@ console.log('allAlbumObjectArrayFiltered:', allAlbumObjectArrayFiltered)
     if (artistName.length > 50) validationErrors.push('Song name must be less than 50 characters')
     if (songUrl.length > 255) validationErrors.push('Song url must be less than 255 Characters')
     if (imageUrl.length > 255) validationErrors.push('Image url must be less than 255 characters')
-    if (typeof albumId !== "number") validationErrors.push('AlbumId must be a number')
+    // if (typeof albumId !== "number") validationErrors.push('AlbumId must be a number')
 
 
     setErrors(validationErrors)
