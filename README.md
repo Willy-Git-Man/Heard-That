@@ -49,7 +49,7 @@ yarn add react-h5-audio-player
   * Run npm start in the backend
   * Run npm start in the frontend
   * If it doesn't load, go directly to http://localhost:3000 in the URL
-  * Use demo login or create own user
+  * Use demo login or create your own user
 
 * Backend Dependencies:
   "dependencies": {
