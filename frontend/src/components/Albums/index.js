@@ -43,7 +43,7 @@ export default function MyAlbums({ userInfo }) {
   const deleteAlbumDispatch = (album) => {
     // alert("If you deleted an album with songs in it, dont worry! It will reapear when you come back unless you remove all the songs first");
     dispatch(deleteAlbumThunk(album))
-    .then(dispatch(getAllSongsThunk()))
+    dispatch(getAllSongsThunk())
     ;
   };
 
@@ -127,7 +127,7 @@ export default function MyAlbums({ userInfo }) {
 
                 <button
                   className="deleteAlbumButton"
-                  onClick={() => deleteAlbumDispatch(allAlbums[index]?.id)}
+                  onClick={() => deleteAlbumDispatch(allAlbums[index]?.id) }
                 >
                   <i className="far fa-trash-alt"></i>
                 </button>
