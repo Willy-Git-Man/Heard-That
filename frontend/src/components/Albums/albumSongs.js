@@ -99,6 +99,7 @@ export default function AlbumSongs({ userInfo }) {
                     className="songImage"
                     src={allSongs[key].imageUrl}
                     alt="Broken Img Url"
+                   
                   />
 
                   <button
