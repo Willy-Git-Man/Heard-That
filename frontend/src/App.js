@@ -45,6 +45,8 @@ function App() {
 
           <Route exact path="/Songs">
             <SearchBar />
+            <MyAlbums userInfo={userInfo} />
+            <CreateAlbumModal userInfo={userInfo} />
             <MySongs userInfo={userInfo} setShowModal={setShowModal} />
             <CreateSongModal userInfo={userInfo} />
           </Route>
@@ -57,6 +59,7 @@ function App() {
 
           <Route exact path="/Albums/:id">
           {/* <SearchBar /> */}
+          <MyAlbums userInfo={userInfo} />
 
             <AlbumSongs userInfo={userInfo} />
           </Route>

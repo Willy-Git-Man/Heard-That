@@ -9,8 +9,12 @@
 .albumsMainDiv {
   position: relative;
   background-color: black;
-  height: 25%;
+  /* height: 75vh; */
+
   outline: black solid 5px;
+  width:50%;
+  position:absolute;
+  left:0;
 
 }
 h1 {
@@ -233,6 +237,9 @@ outline: black solid 5px;
   height: 80vh;
   background-color: black;
   outline: solid black 5px;
+  width:50%;
+  position:absolute;
+  right:0;
 
 }
 
