@@ -35,7 +35,19 @@ Heard-That is a take on sound cloud where users can upload and play their songs 
   * Install postgres
   * Create a new user in postgresQl with CREATEDB and PASSWORD in PSQL
     -CREATE USER <username> WITH CREATEDB PASSWORD <'password'>
-  * Create a .env file (copy env.example)
+  * Create a .env file (
+PORT=5000
+DB_USERNAME=heard_that_dev
+DB_PASSWORD=password
+DB_DATABASE=heard_that
+DB_HOST=localhost
+JWT_SECRET=esgoHD56WWEfIQ
+JWT_EXPIRES_IN=604800
+
+
+
+  ) in the backend
+  
   * Add the following proxy to your package.json file within your frontend directory, replacing or keeping the 5000 port to match your PORT configuartion found in your .env file
     -"proxy": "http://localhost:5000"
   * Run npx dotenv sequelize db:create
