@@ -6,12 +6,15 @@
 
 
 .searchInput {
-  height: 5vh;
+  /* height: 2.5vh; */
+  font-size:2.5em;
   width: 20vw;
   position: absolute;
   margin-left: 40vw;
   top:0;
   z-index:9999;
+  background-color:white;
+  outline: white 5px solid;
   /* margin-left: 37.5vw; */
 }
 

@@ -43,7 +43,7 @@ function App() {
         <Switch>
 
 
-          <Route exact path="/Songs">
+          <Route exact path="/songs">
             <SearchBar />
             <MyAlbums userInfo={userInfo} />
             <CreateAlbumModal userInfo={userInfo} />
@@ -51,22 +51,16 @@ function App() {
             <CreateSongModal userInfo={userInfo} />
           </Route>
 
-          {/* <Route path="/AllSongs"><AllSongs /></Route> */}
           <Route exact path="/Albums">
             <MyAlbums userInfo={userInfo} />
             <CreateAlbumModal userInfo={userInfo} />
           </Route>
 
           <Route exact path="/Albums/:id">
-          {/* <SearchBar /> */}
           <MyAlbums userInfo={userInfo} />
 
             <AlbumSongs userInfo={userInfo} />
           </Route>
-
-        {/* <Route path="/allSongs">
-          <AllSongs />
-        </Route> */}
 
         </Switch>
       )}

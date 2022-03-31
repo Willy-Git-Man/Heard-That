@@ -24,7 +24,7 @@
   /* font-size: 165%; */
   /* height: 5vh; */
 
-  padding: 0.4em 12.5em .4em 12.5em;
+  /* padding: 0.4em 12.5em .4em 12.5em; */
   color: white;
   /* border-radius: 0.35em; */
   background-color: rgb(31, 211, 8);
@@ -83,6 +83,7 @@
   color: white;
   width: 10vw;
   z-index: 1;
+  margin-left:250px;
 
   /* font: 200px; */
 }

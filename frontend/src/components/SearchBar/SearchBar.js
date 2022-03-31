@@ -37,7 +37,7 @@ console.log(allSongs)
       <div>
         <input
           className="searchInput"
-          placeholder="Search Users..."
+          placeholder="Search Songs..."
           onChange={(e) => {
             setSearchValue(e.target.value);
           }}
