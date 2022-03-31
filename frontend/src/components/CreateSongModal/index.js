@@ -8,7 +8,7 @@ function CreateSongModal({userInfo}) {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <button className={'createSongModalButton'} onClick={() => setShowModal(true)}><i className="fa fa-music"></i></button>
+      <button className={'createSongModalButton'} onClick={() => setShowModal(true)}>Add Song</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <CreateSongForm setShowModal={setShowModal} userInfo={userInfo}/>
