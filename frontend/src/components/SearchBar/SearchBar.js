@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./index.css";
 import { getAllSongsThunk } from "../../store/songs";
+import AudioPlayer from "react-h5-audio-player";
+
 
 
 const SearchBar = () => {
@@ -50,31 +52,61 @@ console.log(allSongs)
               return song;
           })
           .map((song) => (
-            <div className="songListDiv" key={song.id}>
+          //   <div className="songListDiv" key={song.id}>
+          //   <img
+          //     className="songImage"
+          //     src={song.imageUrl}
+          //     alt="Broken Img Url"
+          //   />
+          //   <ul className="songUl">
+          //     <li className="songListItem">
+          //       {" "}
+          //       <i className="fab fa-grav"></i>
+          //       {song.songName}
+          //     </li>
+
+          //     <li className="songListItem">
+          //       {" "}
+          //       <i className="fab fa-grav"></i>
+          //       {song.artistName}
+          //     </li>
+
+          //     <li className="songListItem">
+          //       {" "}
+          //       <i className="fab fa-grav"></i>
+          //       {song.songUrl}
+          //     </li>
+          //   </ul>
+          // </div>
+          <div className="songListDiv" key={song.id}  >
+            <ul className="songUl">
+
+              <li className="songListItem">
+                {song.songName}
+
+
+              </li>
+
+              <li className="songListItem">
+                {song.artistName}
+              </li>
+
+            </ul>
+
+            <AudioPlayer
+              className="audioPlayer"
+              // autoPlay
+              src={song ? song.songUrl : null}
+              onPlay={(e) => console.log("onPlay")}
+            />
             <img
               className="songImage"
               src={song.imageUrl}
               alt="Broken Img Url"
             />
-            <ul className="songUl">
-              <li className="songListItem">
-                {" "}
-                <i className="fab fa-grav"></i>
-                {song.songName}
-              </li>
 
-              <li className="songListItem">
-                {" "}
-                <i className="fab fa-grav"></i>
-                {song.artistName}
-              </li>
 
-              <li className="songListItem">
-                {" "}
-                <i className="fab fa-grav"></i>
-                {song.songUrl}
-              </li>
-            </ul>
+
           </div>
           ))}
       </div>

@@ -9,8 +9,8 @@
   height: 5vh;
   width: 20vw;
   position: absolute;
-  margin-left: 72.5vw;
-  margin-left: 37.5vw;
+  margin-left: 75vw;
+  /* margin-left: 37.5vw; */
 }
 
 .searchDivWithResults {
@@ -18,8 +18,8 @@
   width: 20vw;
   position: absolute;
   margin-top: 7.5vh;
-  margin-left: 72.5vw;
-  margin-left: 37.5vw;
+  margin-left: 75vw;
+  /* margin-left: 37.5vw; */
 
   overflow-y: scroll;
   /* margin-top: 26vh; */
@@ -53,5 +53,5 @@
 .test{
   color:white;
   font-size:em;
-  
+
 }
