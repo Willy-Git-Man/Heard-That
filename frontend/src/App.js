@@ -11,6 +11,8 @@ import AlbumSongs from "./components/Albums/albumSongs";
 import CreateAlbumModal from "./components/CreateAlbumModal/CreateAlbumForm";
 import AllSongs from "./components/Songs/allSongs";
 
+import SearchBar from './components/SearchBar/SearchBar.js'
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -40,8 +42,10 @@ function App() {
       {isLoaded && (
         <Switch>
 
+
           <Route exact path="/Songs">
             <MySongs userInfo={userInfo} setShowModal={setShowModal} />
+            <SearchBar />
             <CreateSongModal userInfo={userInfo} />
           </Route>
 
