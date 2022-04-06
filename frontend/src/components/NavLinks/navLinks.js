@@ -6,7 +6,7 @@ import ProfileButton from '../Navigation/ProfileButton'
 import './navLinks.css'
 
 export default function NavLinks() {
-  const sessionUser = useSelector((state) => state.session.user);
+  const userInfo = useSelector((state) => state.session.user);
 
   return (
     <nav className="navigationLinks">
@@ -16,9 +16,9 @@ export default function NavLinks() {
 <NavLink className="navLinkButton" to="/">Home</NavLink>
         </button> */}
 
-        <CreateSongModal />
-        <CreateAlbumModal />
-        <ProfileButton user={sessionUser} />
+        <CreateSongModal userInfo={userInfo}/>
+        <CreateAlbumModal userInfo={userInfo}/>
+        <ProfileButton user={userInfo} />
 
         {/* <i className="fa fa-music"></i> */}
 
