@@ -8,7 +8,7 @@ function LoginForm() {
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  // const history = useHistory()
+  const history = useHistory()
 
 
 
@@ -23,8 +23,8 @@ function LoginForm() {
           // history.push('/songs')
         }
       }
-    );
-
+      );
+      
   };
 
   return (

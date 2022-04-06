@@ -1,18 +1,26 @@
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import CreateAlbumModal from '../CreateAlbumModal/CreateAlbumForm'
+import CreateSongModal from '../CreateSongModal'
+import ProfileButton from '../Navigation/ProfileButton'
 import './navLinks.css'
 
 export default function NavLinks() {
+  const sessionUser = useSelector((state) => state.session.user);
+
   return (
     <nav className="navigationLinks">
 
-    {/* <NavLink activeClassName="currentNavRoute" className="navRoute" to='/Songs'>My Songs</NavLink> */}
+    {/* <button className="navRouteButton">
 
-    {/* <NavLink activeClassName="currentNavRoute" className="navRoute" exact to='/Albums'>My Albums</NavLink> */}
+<NavLink className="navLinkButton" to="/">Home</NavLink>
+        </button> */}
 
-    <button className="navRouteButton">
+        <CreateSongModal />
+        <CreateAlbumModal />
+        <ProfileButton user={sessionUser} />
 
-<NavLink className="navLinkButton" to="/songs"> <i className="fa fa-music"></i></NavLink>
-        </button>
+        {/* <i className="fa fa-music"></i> */}
 
 
 

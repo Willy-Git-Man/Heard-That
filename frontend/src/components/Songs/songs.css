@@ -108,7 +108,7 @@ height: 75vh;
   margin-left: 10%;
   overflow-y: scroll;
   border-top-left-radius: 10%;
-  background-image: url("../../../public/pics/mixtape.png");
+  /* background-image: url("../../../public/pics/mixtape.png"); */
   background-size: auto;
 
   }

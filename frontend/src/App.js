@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { NavLink, Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 // import Songs from "./components/Songs";
@@ -12,6 +12,7 @@ import CreateAlbumModal from "./components/CreateAlbumModal/CreateAlbumForm";
 import AllSongs from "./components/Songs/allSongs";
 
 import SearchBar from './components/SearchBar/SearchBar.js'
+import ProfileButton from "./components/Navigation/ProfileButton";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,22 +45,29 @@ function App() {
 
 
           <Route exact path="/songs">
+            {/* <ProfileButton /> */}
+            {/* <ProfileButton user={userInfo} />
             <SearchBar />
             <MyAlbums userInfo={userInfo} />
             <CreateAlbumModal userInfo={userInfo} />
             <MySongs userInfo={userInfo} setShowModal={setShowModal} />
-            <CreateSongModal userInfo={userInfo} />
+            <CreateSongModal userInfo={userInfo} /> */}
           </Route>
 
           <Route exact path="/Albums">
-            <MyAlbums userInfo={userInfo} />
-            <CreateAlbumModal userInfo={userInfo} />
+            {/* <MyAlbums userInfo={userInfo} /> */}
+            {/* <CreateAlbumModal userInfo={userInfo} /> */}
           </Route>
 
           <Route exact path="/Albums/:id">
-          <MyAlbums userInfo={userInfo} />
-
+          {/* <MyAlbums userInfo={userInfo} /> */}
+<>
             <AlbumSongs userInfo={userInfo} />
+            <button className="navRouteButton">
+
+<NavLink className="navLinkButton" to="/">Home</NavLink>
+        </button>
+</>
           </Route>
 
         </Switch>

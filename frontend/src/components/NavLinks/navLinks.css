@@ -38,10 +38,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   text-decoration: none;
   z-index: 1;
   width: 100vw;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  height: 10vh;
+
 
 }
 

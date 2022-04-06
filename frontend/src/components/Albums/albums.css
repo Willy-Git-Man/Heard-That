@@ -39,7 +39,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
-background-image: url("../../../public/pics/mixtape.png");
+/* background-image: url("../../../public/pics/mixtape.png"); */
   background-size: auto;
 
 }
@@ -58,7 +58,7 @@ height: 75vh;
   overflow-y: scroll;
   background-color: rgba(50, 80, 150, .9);
 background-color: rgba(0, 208, 255, .1);
-background-image: url("../../../public/pics/mixtape.png");
+/* background-image: url("../../../public/pics/mixtape.png"); */
 /* opacity: 0.6; */
   background-size: auto;
 
@@ -240,6 +240,7 @@ outline: black solid 5px;
   width:50%;
   position:absolute;
   right:0;
+  z-index: 100;
 
 }
 
