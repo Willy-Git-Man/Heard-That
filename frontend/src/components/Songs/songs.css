@@ -9,10 +9,11 @@
   background-color: rgba(0, 208, 255, 0.3);
   background-color: rgba(7, 158, 193, 0.6);
   background-color: black;
-  outline: solid black 5px;
+  /* outline: solid black 5px; */
   position:absolute;
   width:50%;
   right:0;
+  height: 90vh;
 
 
   /* margin-bottom: 60px; */
@@ -102,7 +103,7 @@ font-size: large;
     background-color: rgba(0, 208, 255, .1);
 
   height: 85vh;
-height: 75vh;
+height: 85vh;
 
   width: 80%;
   margin-left: 10%;

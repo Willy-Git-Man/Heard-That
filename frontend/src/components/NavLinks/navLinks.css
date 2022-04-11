@@ -17,35 +17,23 @@
 }
 
 .navigationLinks {
-  /* outline: black solid 5px; */
-  /* background-color: aquamarine; */
-  /* position: absolute; */
+  border: 5px solid #00ff3e;
 
-  /* font-size: 165%; */
-  /* height: 5vh; */
-
-  /* padding: 0.4em 12.5em .4em 12.5em; */
   color: white;
-  /* border-radius: 0.35em; */
   background-color: rgb(31, 211, 8);
   background-color: rgb(0, 208, 255);
-
-  /* background-color: rgba(117, 235, 14, 0.995); */
-
-  /* width: 80%; */
-  /* height: 5vh; */
-  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-decoration: none;
   z-index: 1;
-  width: 100vw;
+  width: 80vw;
   background-color: black;
   position: absolute;
   bottom: 0;
   height: 10vh;
+  z-index: 9999;
 
 
 }
@@ -73,24 +61,26 @@
 }
 
 .navRouteButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width:10%;
   position: absolute;
   left: 0;
-  padding: 0;
-  background-color: rgb(0, 208, 255);
-  padding: 2.5%;
-  outline: solid black 5px;
-  bottom: 0;
+  /* left:30%; */
+  /* bottom:20%; */
+  bottom:0;
+  height: 2.5vh;
+  border: 5px solid #00ff3e;
+  font-family: 'Press Start 2P', cursive;
+  color: #00ff3e;
+  /* background-color: #00ff3e; */
+  font-size: .25em;
+  background-color: rgba(0,0,0,.95);
+  border-radius: 0;
+  min-height: 37.5px;
   height: 10vh;
-  font-size: px;
-  color: white;
-  width: 10vw;
-  z-index: 1;
   /* margin-left:250px; */
 
   /* font: 200px; */
+  font-size: 2em;
 }
 
 /* navRouteButton i {
@@ -100,7 +90,7 @@
 
 .navLinkButton {
   z-index: 999;
-  color: white;
-  font-size: 57px;
+  /* color: white; */
+  /* font-size: 57px; */
 
 }

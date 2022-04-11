@@ -1,18 +1,15 @@
 .profileButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* position: absolute; */
-  right: 0;
-  background-color: rgb(0, 208, 255);
-  padding: 2.5%;
-  outline: solid black 5px;
-  bottom: 0;
-  height: 10vh;
-  font-size: 57px;
-  color: white;
-  width: 10vw;
-  z-index: 1;
+  width:25%;
+  left:30%;
+  bottom:20%;
+  height: 2.5vh;
+  border: 5px solid #00ff3e;
+  font-family: 'Press Start 2P', cursive;
+  color: #00ff3e;
+  font-size: 1.25em;
+  background-color: rgba(0,0,0,.95);
+  border-radius: 0;
+  min-height: 37.5px;
 }
 
 .profile-dropdown {

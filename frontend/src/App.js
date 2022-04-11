@@ -11,17 +11,13 @@ import AlbumSongs from "./components/Albums/albumSongs";
 import CreateAlbumModal from "./components/CreateAlbumModal/CreateAlbumForm";
 import AllSongs from "./components/Songs/allSongs";
 
-import SearchBar from './components/SearchBar/SearchBar.js'
+import SearchBar from "./components/SearchBar/SearchBar.js";
 import ProfileButton from "./components/Navigation/ProfileButton";
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
-
-
-
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -34,16 +30,10 @@ function App() {
 
   return (
     <>
-
-
       <Navigation isLoaded={isLoaded} />
-
-
-
+    
       {isLoaded && (
         <Switch>
-
-
           <Route exact path="/songs">
             {/* <ProfileButton /> */}
             {/* <ProfileButton user={userInfo} />
@@ -53,22 +43,37 @@ function App() {
             <MySongs userInfo={userInfo} setShowModal={setShowModal} />
             <CreateSongModal userInfo={userInfo} /> */}
           </Route>
-
           <Route exact path="/Albums">
             {/* <MyAlbums userInfo={userInfo} /> */}
             {/* <CreateAlbumModal userInfo={userInfo} /> */}
           </Route>
 
-          <Route exact path="/Albums/:id">
-          {/* <MyAlbums userInfo={userInfo} /> */}
-<>
-            <AlbumSongs userInfo={userInfo} />
-            <button className="navRouteButton">
 
-<NavLink className="navLinkButton" to="/">Home</NavLink>
-        </button>
-</>
+
+
+
+          <Route exact path="/Albums/:id">
+
+
+
+
+            {/* <MyAlbums userInfo={userInfo} /> */}
+            <>
+              <AlbumSongs userInfo={userInfo} />
+              <button className="navRouteButton">
+                <NavLink className="navLinkButton" to="/">
+                  Home
+                </NavLink>
+              </button>
+            </>
+
+
+
+
           </Route>
+
+
+
 
         </Switch>
       )}

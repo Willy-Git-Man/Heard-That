@@ -14,6 +14,7 @@ import CreateAlbumModal from "../CreateAlbumModal/CreateAlbumForm";
 import MySongs from "../Songs";
 import CreateSongModal from "../CreateSongModal";
 import { useHistory } from "react-router-dom";
+import AlbumSongs from "../Albums/albumSongs";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
