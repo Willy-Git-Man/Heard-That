@@ -13,7 +13,7 @@
   position:absolute;
   width:50%;
   right:0;
-  height: 90vh;
+  height: 90%;
 
 
   /* margin-bottom: 60px; */
@@ -21,24 +21,22 @@
 }
 
 .songListDiv {
-  /* height: 2200px; */
   display: flex;
-  /* background-color: rgba(100, 50, 150, .8); */
- background-color: rgba(0, 0, 0, .9);
-
-
+  background-color: rgba(100, 50, 150, .8);
   flex-direction: row-reverse;
-  border: black solid 5px;
+  outline: black solid 5px;
   height: 20%;
   min-height: 225px;
+
   /* width: %; */
   /* width: 75%; */
   /* margin-top: 50px; */
   position: relative;
-  width: 60%;
-  margin-left: 20%;
-  margin-top: 2.5%;
-  /* overflow: scroll; */
+  /* width: 150%; */
+  /* margin-left: 20%; */
+  margin-top: 5%;
+  min-width: 400px;
+  /* z-index: 99999; */
 }
 
 .songImage {
@@ -98,20 +96,25 @@ font-size: large;
   }
 
   .songsDiv {
-    /* outline: black solid 5px; */
-    /* margin-top: 100px; */
-    background-color: rgba(0, 208, 255, .1);
 
-  height: 85vh;
-height: 85vh;
+    height: 75vh;
+    border-top-left-radius: 10%;
+    border: 5px solid #00ff3e;
 
-  width: 80%;
-  margin-left: 10%;
-  overflow-y: scroll;
-  border-top-left-radius: 10%;
-  /* background-image: url("../../../public/pics/mixtape.png"); */
-  background-size: auto;
 
+    width: 80%;
+    margin-left: 10%;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* background-image: url("../../../public/pics/mixtape.png"); */
+      background-size: auto;
+  }
+
+  .songsDiv::-webkit-scrollbar {
+    display: none;
   }
 
 
