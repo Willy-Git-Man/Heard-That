@@ -17,22 +17,21 @@
 }
 
 .navigationLinks {
-  border: 5px solid #00ff3e;
-
-  color: white;
-  background-color: rgb(31, 211, 8);
-  background-color: rgb(0, 208, 255);
+  outline: 5px solid #00ff3e;
   display: flex;
-  justify-content: center;
+  gap: 2.5%;
+  flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   text-decoration: none;
   z-index: 1;
-  width: 100%;
+  width: 11.5%;
   background-color: black;
   position: absolute;
   bottom: 0;
-  height: 10%;
+  left: 0;
+  height: 100%;
   z-index: 9999;
 
 

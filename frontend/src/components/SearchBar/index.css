@@ -2,25 +2,20 @@
   /* height: 5vh; */
   /* height: 40vh; */
   overflow: hidden;
+  height: 3.5vh;
   /* z-index: 9999; */
+  width: 100%;
 }
 
 
 .searchInput {
-  /* height: 2.5vh; */
-  height: 5vh;
   height: 2.5vh;
-
-  width: 20vw;
-  position: absolute;
-  bottom: 12.5%;
-  z-index: 999999;
-  /* margin-left: 72.5vw; */
-  margin-left: 37.5vw;
   background-color: black;
   border: 5px solid #00ff3e;
   color: #00ff3e;
-  font-size: 1.75em;
+  font-size: .5em;
+  width: 100%;
+
   /* font-size: .325em; */
   font-family: 'Press Start 2P', cursive;
   /* margin-left: 37.5vw; */
@@ -36,9 +31,7 @@
 
 .searchDivWithResults {
   height: 50%;
-  width: 20vw;
-  position: absolute;
-  margin-left: 40vw;
+  width: 100%;
   top:0;
   z-index:99;
   margin-top:5vh;

@@ -11,9 +11,10 @@
   background-color: black;
   /* outline: solid black 5px; */
   position:absolute;
-  width:50%;
+  width:100%;
   right:0;
-  height: 90%;
+  height: 60%;
+  bottom: 10%;
 
 
   /* margin-bottom: 60px; */
@@ -97,13 +98,12 @@ font-size: large;
 
   .songsDiv {
 
-    height: 75vh;
+    height: 70%;
     border-top-left-radius: 10%;
-    border: 5px solid #00ff3e;
+    /* outline: 5px solid #00ff3e; */
 
-
-    width: 80%;
-    margin-left: 10%;
+margin-left: 11.5%;
+    width: 88.5%;
     overflow-y: scroll;
     display: flex;
     justify-content: center;

@@ -7,6 +7,7 @@
   font-size: 2em;
   font-family: 'Press Start 2P', cursive;
   color: #00ff3e;
+  width: 100%;
 }
 .albumsMainDiv {
   position: relative;
@@ -14,10 +15,10 @@
   /* height: 75vh; */
 
   /* outline: black solid 5px; */
-  width:50%;
+  width:100%;
   position:absolute;
   left:0;
-  height: 90%;
+  height: 35%;
 
 }
 h1 {
@@ -26,13 +27,12 @@ h1 {
 
 .albumSecondDiv {
 
-height: 75vh;
-border-top-left-radius: 10%;
-border: 5px solid #00ff3e;
+height: 30vh;
+/* outline: 5px solid #00ff3e; */
 
 
-width: 80%;
-margin-left: 10%;
+width: 88.5%;
+margin-left: 11.5%;
 overflow-y: scroll;
 display: flex;
 justify-content: center;
@@ -40,6 +40,7 @@ align-items: center;
 flex-wrap: wrap;
 /* background-image: url("../../../public/pics/mixtape.png"); */
   background-size: auto;
+  background: linear-gradient(#724f31, #000000);
 
 }
 
@@ -49,24 +50,31 @@ flex-wrap: wrap;
 
 .songsMainDivAlbum {
 
-  height: 75vh;
-  border-top-left-radius: 10%;
-  border: 5px solid #00ff3e;
+  height: 60%;
+  /* border: 5px solid #00ff3e; */
+  position: absolute;
+  top: 30%;
+z-index: 9999;
 
-
-  width: 80%;
-  margin-left: 10%;
+  width: 88.5%;
+  margin-left: 11.5%;
   overflow-y: scroll;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  /* background-image: url("../../../public/pics/mixtape.png"); */
-    background-size: auto;
+  /* flex-wrap: wrap; */
 }
 
 .songsMainDivAlbum::-webkit-scrollbar {
   display: none;
+}
+.albumSongsListDiv {
+  position: absolute;
+  top: 30%;
+  height: 60%;
+z-index: 9999;
+  width: 100%;
+  /* margin-left: 11.5%; */
+  overflow: scroll;
+  display: flex;
 }
 
 .eachAlbumMainDiv {
@@ -79,6 +87,8 @@ flex-wrap: wrap;
   /* margin-bottom: 5%; */
   margin-top: 2.5%;
   margin-bottom: 2.5%;
+  height: 40%;
+  width: 30%;
 
 
 
@@ -92,7 +102,9 @@ flex-wrap: wrap;
   z-index: 99;
   color: white;
   position: absolute;
-  width: 100%;
+  width: 60%;
+  margin-left: 40%;
+  height: 100%;
   background-color: blue;
   background-color: rgb(0, 208, 255);
  background-color: rgba(0, 0, 0, .95);
@@ -101,11 +113,11 @@ flex-wrap: wrap;
   font-weight: none;
   /* bottom: 0; */
   /* left: 75%; */
-  height: 5vh;
   bottom: 0;
   outline: solid black 5px;
 
   z-index: 100;
+  font-size: .5em;
   font-family: 'Press Start 2P', cursive;
   color: #00ff3e;
   /* padding: 5%; */
@@ -122,32 +134,10 @@ flex-wrap: wrap;
 }
 
 .albumImage {
-  /* position: absolute;
-  height: fill;
-  z-index: 1;
-  position: absolute; */
-
-
-
-
-
-
-
-
-
-
-
-
-  height: 27.6vh;
-  min-height: 27.6vh;
-  /* min-height: 200px; */
-  width: auto;
-  min-width: 15vw;
-  /* margin-left: 40%; */
   outline: solid black 5px;
-  /* position: absolute; */
   z-index: 999;
-  width:  27.6vh;
+  width:  40%;
+  height: 100%;
   color: black;
   font-size: large;
   font-weight: bolder;
@@ -213,21 +203,15 @@ outline: black solid 5px;
 
 .albumSongListDiv {
   display: flex;
+  flex-wrap: wrap;
   background-color: rgba(100, 50, 150, .8);
+  width: 30%;
   flex-direction: row-reverse;
   outline: black solid 5px;
-  height: 20%;
-  min-height: 225px;
-
-  /* width: %; */
-  /* width: 75%; */
-  /* margin-top: 50px; */
   position: relative;
-  /* width: 150%; */
-  /* margin-left: 20%; */
   margin-top: 5%;
-  min-width: 400px;
-  /* outline: black solid 5px; */
+  background-color: black;
+  /* min-width: 400px; */
 }
 
 

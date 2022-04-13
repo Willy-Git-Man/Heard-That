@@ -27,7 +27,7 @@ const history = useHistory()
       <>
       <div>
       {/* <ProfileButton user={userInfo} /> */}
-            <SearchBar />
+            {/* <SearchBar /> */}
             <MyAlbums userInfo={userInfo} />
             {/* <CreateAlbumModal userInfo={userInfo} /> */}
             <MySongs userInfo={userInfo} />
@@ -65,9 +65,7 @@ const history = useHistory()
             {isLoaded && sessionLinks}
           </li>
         </ul>
-        <div className="splashMessage">
 
-        </div>
       </>
     );
   } else
