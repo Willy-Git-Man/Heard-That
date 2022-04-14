@@ -43,7 +43,7 @@ export default function AlbumCarousel({userInfo}) {
     return (
     <div className="eachDivInCarousel">
       <h2>Welcome</h2>
-      <Slider asNavFor={secondSlider} ref={(slider1) => setfirstSlider(slider1)}>
+      {/* <Slider asNavFor={secondSlider} ref={(slider1) => setfirstSlider(slider1)}>
 
 <div className="eachAlbumMainDiv" key={allAlbums[1]?.id}>
   <img
@@ -84,7 +84,7 @@ export default function AlbumCarousel({userInfo}) {
       <UpdateAlbumModal albumId={allAlbums[index]?.id} />
     </div>
   ))}
-      </Slider>
+      </Slider> */}
       {/* <h4>Second Slider</h4> */}
       <Slider
         asNavFor={firstSlider}

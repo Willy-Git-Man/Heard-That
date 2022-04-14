@@ -66,7 +66,6 @@ export default function AlbumSongs({ userInfo }) {
         {/* <h1 className="welcome">{sessionUser.username}'s Songs</h1> */}
         {/* <h1 className="welcome">{allAlbums[id].title} </h1> */}
 
-        <div className="songsMainDivAlbum">
           <div className="albumSongsListDiv">
             {allSongsObjectKeys
               ?.filter(
@@ -109,7 +108,6 @@ export default function AlbumSongs({ userInfo }) {
                 </div>
               ))}
           </div>
-        </div>
       </div>
     </div>
   );
