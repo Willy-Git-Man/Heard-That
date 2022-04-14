@@ -2,8 +2,8 @@
   /* height: 5vh; */
   /* height: 40vh; */
   overflow: hidden;
-  height: 3.5vh;
-  /* z-index: 9999; */
+  /* height: 3.5vh; */
+  z-index: 9999;
   width: 100%;
 }
 

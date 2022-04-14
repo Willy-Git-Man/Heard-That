@@ -14,6 +14,11 @@ import AllSongs from "./components/Songs/allSongs";
 import SearchBar from "./components/SearchBar/SearchBar.js";
 import ProfileButton from "./components/Navigation/ProfileButton";
 
+
+import "slick-carousel/slick/slick.css";
+
+import "slick-carousel/slick/slick-theme.css";
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -31,7 +36,7 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-    
+
       {isLoaded && (
         <Switch>
           <Route exact path="/songs">

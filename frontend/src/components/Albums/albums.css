@@ -1,3 +1,6 @@
+
+
+
 .welcome {
   /* background-color: white; */
   display: flex;
@@ -28,19 +31,17 @@ h1 {
 .albumSecondDiv {
 
 height: 30vh;
-/* outline: 5px solid #00ff3e; */
 
 
 width: 88.5%;
 margin-left: 11.5%;
-overflow-y: scroll;
+/* overflow-y: scroll;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
-/* background-image: url("../../../public/pics/mixtape.png"); */
   background-size: auto;
-  background: linear-gradient(#724f31, #000000);
+  background: linear-gradient(#724f31, #000000); */
 
 }
 
@@ -49,17 +50,20 @@ flex-wrap: wrap;
 }
 
 .songsMainDivAlbum {
+  height: 50vh;
+  margin-top: 10vh;
+  border-top-left-radius: 10%;
+  /* outline: 5px solid #00ff3e; */
 
-  height: 60%;
-  /* border: 5px solid #00ff3e; */
-  position: absolute;
-  top: 30%;
-z-index: 9999;
-
+margin-left: 11.5%;
   width: 88.5%;
-  margin-left: 11.5%;
   overflow-y: scroll;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* background-image: url("../../../public/pics/mixtape.png"); */
+    background-size: auto;
   /* flex-wrap: wrap; */
 }
 
@@ -67,32 +71,56 @@ z-index: 9999;
   display: none;
 }
 .albumSongsListDiv {
-  position: absolute;
+  height: 60vh;
+  margin-top: 10vh;
   top: 30%;
-  height: 60%;
-z-index: 9999;
-  width: 100%;
-  /* margin-left: 11.5%; */
-  overflow: scroll;
+  z-index: 999;
+  position: absolute;
+background-color: black;
+  outline: 5px solid #00ff3e;
+  width: 88.5%;
+  /* overflow-y: scroll; */
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* background-image: url(../../../public/pics/mixtape.png); */
+  background-size: auto;
+}
+
+.albumSongsListDiv::-webkit-scrollbar {
+  display: none;
 }
 
 .eachAlbumMainDiv {
-  position: relative;
-  /* width: 30%; */
-  /* height: 90vh; */
-  /* display: inline-block; */
-  margin-right: 1.6%;
-  margin-left: 1.7%;
-  /* margin-bottom: 5%; */
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
-  height: 40%;
-  width: 30%;
 
+position: relative;
+height: 100%;
 
 
 }
+
+
+.eachDivInCarousel {
+
+  height: 30%;
+
+
+  width: 88.5%;
+  margin-left: 11.5%;
+  /* overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+    background-size: auto;
+    background: linear-gradient(#724f31, #000000); */
+
+  }
+
+  .eachDivInCarousel::-webkit-scrollbar {
+    display: none;
+  }
 
 .albumImageNavLink {
   display: flex;
@@ -102,9 +130,9 @@ z-index: 9999;
   z-index: 99;
   color: white;
   position: absolute;
-  width: 60%;
-  margin-left: 40%;
-  height: 100%;
+  width: 250px;
+  /* margin-left: 10%; */
+  height: 25%;
   background-color: blue;
   background-color: rgb(0, 208, 255);
  background-color: rgba(0, 0, 0, .95);
@@ -130,14 +158,19 @@ z-index: 9999;
   margin: 0;
   padding: 0;
   color: #00ff3e;
-  /* padding: ; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 30%;
 }
 
 .albumImage {
   outline: solid black 5px;
+  /* position: absolute; */
   z-index: 999;
-  width:  40%;
-  height: 100%;
+  width:  250px;
+  height: 250px;
   color: black;
   font-size: large;
   font-weight: bolder;
@@ -173,16 +206,15 @@ overflow-y: scroll;
 outline: black solid 5px;
 }
 
-.updatealbumModalButton {
 
-}
 
 .deleteAlbumButton {
   height: 5vh;
   background-color: rgb(173, 56, 56);
   right: 0;
   position: absolute;
-  top: 5vh;
+  bottom: 25%;
+  left: 0;
   width: 5vw;
   color: white;
   font-size: 2em;
@@ -264,4 +296,47 @@ outline: black solid 5px;
   width: 100%;
   height: 7.5vh;
   /* margin-left:250px; */
+}
+
+.slick-track {
+  background-color: lightblue;
+  height: 17.5vh;
+  width: 80%;
+  background-color: black;
+}
+
+.slick-slider slick-initialized {
+  /* background-color: black;
+  z-index: 9999; */
+  /* margin-left: 11.5%; */
+  /* margin-right: 11.5%; */
+  width: 80%;
+
+}
+
+.slick-list {
+  /* background-color: white; */
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  /* margin-left: 50%; */
+}
+
+.slick-arrow.slick-next {
+/* background-color: white; */
+margin-right: 10%;
+font-size: 3em;
+height: 5vh;
+}
+
+.slick-arrow_slick-prev {
+font-size: 3em;
+}
+
+.slick-slide.slick-active.slick-current {
+display: flex;
+flex-direction: column;
+justify-content: center;
+position: relative;
+background-color: black;
 }
