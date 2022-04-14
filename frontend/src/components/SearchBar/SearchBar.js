@@ -5,8 +5,6 @@ import "./index.css";
 import { getAllSongsThunk } from "../../store/songs";
 import AudioPlayer from "react-h5-audio-player";
 
-
-
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
   const [songs, setSongs] = useState([]);
@@ -31,7 +29,7 @@ const SearchBar = () => {
       "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png";
   };
 
-console.log(allSongs)
+  console.log(allSongs);
   return (
     <div className="searchBarMainDiv">
       <div>
@@ -44,45 +42,51 @@ console.log(allSongs)
         />
       </div>
       <div className="searchDivWithResults">
-
         {allSongs
           .filter((song) => {
             if (searchValue === "") return null;
-            else if (song.songName.toLowerCase().includes(searchValue.toLowerCase()))
+            else if (
+              song.songName.toLowerCase().includes(searchValue.toLowerCase())
+            )
               return song;
           })
           .map((song) => (
+            <div className="songListDivSearch" key={song.id}>
+              <ul className="songUl">
+                <li className="songListItem">{song.songName}</li>
 
-          <div className="songListDivSearch" key={song.id}  >
-            <ul className="songUl">
+                <li className="songListItem">{song.artistName}</li>
+              </ul>
 
-              <li className="songListItem">
-                {song.songName}
-
-
-              </li>
-
-              <li className="songListItem">
-                {song.artistName}
-              </li>
-
-            </ul>
-
-            <AudioPlayer
-              className="audioPlayer"
-              // autoPlay
-              src={song ? song.songUrl : null}
-              onPlay={(e) => console.log("onPlay")}
-            />
-            <img
-              className="songImage"
-              src={song.imageUrl}
-              alt="Broken Img Url"
-            />
+              <AudioPlayer
+                className="audioPlayer"
+                // autoPlay
+                src={song ? song.songUrl : null}
+                onPlay={(e) => console.log("onPlay")}
+              />
+              <img
+                className="songImage"
+                src={song.imageUrl}
+                alt="Broken Img Url"
+              />
+            </div>
+          ))}
 
 
+          {allSongs
+          .filter((song) => {
+            if (searchValue === "") return null;
+            else if (
+              !song.songName.toLowerCase().includes(searchValue.toLowerCase())
+            )
+              return song;
+          }).slice(0,1)
+          .map((song) => (
 
-          </div>
+
+            <div className="songListDivSearchEmptyResult" key={song.id}>
+            <h1 className="emptySearchMessage">No matching results</h1>
+            </div>
           ))}
       </div>
     </div>

@@ -4,6 +4,7 @@
   overflow: hidden;
   /* height: 3.5vh; */
   z-index: 9999;
+  /* height: 1000px; */
   width: 100%;
 }
 
@@ -28,13 +29,19 @@
 
 }
 
+.emptySearchTest {
+  height: 100px;
+  width: 100px;
+  background-color: white;
+}
+
 
 .searchDivWithResults {
   height: 50%;
   width: 100%;
   top:0;
   z-index:99;
-  margin-top:5vh;
+  /* margin-top:5vh; */
   /* margin-left: 37.5vw; */
 
   overflow-y: scroll;
@@ -73,4 +80,19 @@
   color:white;
   font-size:em;
 
+}
+
+
+.songListDivSearchEmptyResult {
+
+}
+
+.emptySearchMessage {
+  margin-bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+  color: #00ff3e;
+font-size: .75em;
 }

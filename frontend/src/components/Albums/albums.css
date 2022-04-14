@@ -83,7 +83,7 @@ margin-left: 11.5%;
 background-color: black;
   outline: 5px solid #00ff3e;
   width: 88.5%;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   display: flex;
   justify-content: center;
   align-items: center;
