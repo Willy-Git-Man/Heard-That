@@ -39,6 +39,24 @@
   min-width: 400px;
   /* z-index: 99999; */
 }
+.songListDivSearch {
+  display: flex;
+  background-color: rgba(100, 50, 150, .8);
+  flex-direction: row-reverse;
+  outline: black solid 5px;
+  height: 20%;
+  min-height: 225px;
+
+  /* width: %; */
+  /* width: 75%; */
+  /* margin-top: 50px; */
+  position: relative;
+  /* width: 150%; */
+  /* margin-left: 20%; */
+  margin-top: 5%;
+  /* min-width: 400px; */
+  /* z-index: 99999; */
+}
 
 .songImage {
 height: 60%;
@@ -98,7 +116,8 @@ font-size: large;
 
   .songsDiv {
 
-    height: 70%;
+    height: 50vh;
+    margin-top: 10vh;
     border-top-left-radius: 10%;
     /* outline: 5px solid #00ff3e; */
 

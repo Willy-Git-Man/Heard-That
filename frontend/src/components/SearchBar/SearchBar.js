@@ -52,8 +52,8 @@ console.log(allSongs)
               return song;
           })
           .map((song) => (
- 
-          <div className="songListDiv" key={song.id}  >
+
+          <div className="songListDivSearch" key={song.id}  >
             <ul className="songUl">
 
               <li className="songListItem">

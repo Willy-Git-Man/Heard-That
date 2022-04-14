@@ -58,7 +58,7 @@ export default function MySongs({ userInfo, setShowModal }) {
   else
   return (
       <div className="songsDiv" >
-        <h1 className="welcome">{sessionUser.username}'s Music</h1>
+        {/* <h1 className="welcome">{sessionUser.username}'s Music</h1> */}
     {/* <NavLink activeClassName="currentNavRoute" to='/Albums'>{sessionUser.username}'s Albums</NavLink> */}
 
         {allSongsObjectKeys

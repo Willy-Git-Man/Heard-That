@@ -1,14 +1,13 @@
 .updateAlbumModalButton {
   height: 5vh;
   background-color: rgb(56, 173, 66);
-  right: 0;
+  left: 10vw;
+  bottom: 25%;
   position: absolute;
-  top: 0;
   width: 5vw;
   color: white;
   font-size: 2em;
   z-index: 100;
-  outline: solid black 5px;
 }
 
 .updateSongFormButton {
@@ -17,7 +16,6 @@
   border-radius: 0.35em;
   background-color: rgb(31, 211, 8);
   background-color: rgba(117, 235, 14, 0.995);
-
   font-size: 2em;
   width: 33vw;
   width: 100%;
