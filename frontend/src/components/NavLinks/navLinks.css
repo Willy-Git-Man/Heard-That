@@ -19,6 +19,7 @@
 .navigationLinks {
   outline: 5px solid #00ff3e;
   display: flex;
+  position: relative;
   gap: 2.5%;
   flex-direction: column;
   /* justify-content: center; */
@@ -33,6 +34,7 @@
   left: 0;
   height: 100%;
   z-index: 9999;
+  /* position: relative; */
 
 
 }
@@ -94,3 +96,21 @@
   /* font-size: 57px; */
 
 }
+
+
+.globalAudioPlayer {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  border: white solid 5px;
+}
+
+/* .globalAudioPlayer rhap_progress-section {
+  border: 5px solid white;
+  height: 100px;
+}
+
+.globalAudioPlayer.rhap_main.rhap_stacked {
+  border: white solid 5px;
+  background-color: pink;
+} */

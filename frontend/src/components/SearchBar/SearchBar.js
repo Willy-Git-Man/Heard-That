@@ -8,6 +8,7 @@ import AudioPlayer from "react-h5-audio-player";
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
   const [songs, setSongs] = useState([]);
+  const [playing, setPlaying] = useState("")
   const dispatch = useDispatch();
 
   // useEffect(() => {

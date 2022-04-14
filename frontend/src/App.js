@@ -18,11 +18,20 @@ import ProfileButton from "./components/Navigation/ProfileButton";
 import "slick-carousel/slick/slick.css";
 
 import "slick-carousel/slick/slick-theme.css";
+export const PlayingContext = React.createContext()
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
+  // const [playing, setPlaying] = useState("")
+  // let playingFunc = () => {
+  //   setPlaying()
+  // }
   const [showModal, setShowModal] = useState(false);
+
+
+
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));

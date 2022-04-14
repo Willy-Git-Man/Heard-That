@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, createContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getAllAlbumSongsThunk, getAllAlbumsThunk } from "../../store/albums";
@@ -13,10 +13,15 @@ import "./albums.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
-export default function AlbumSongs({ userInfo }) {
+export default function AlbumSongs({ userInfo}) {
   const history = useHistory();
   const dispatch = useDispatch();
   const { id } = useParams();
+  const [playing, setPlaying] = useState("")
+  console.log('playing 2:', playing)
+  const PlayingContext = createContext()
+
+
 
   const allAlbums = useSelector((state) => state.albums.albums);
   // const allAlbumKeys = Object.keys(allAlbums);
@@ -89,10 +94,12 @@ export default function AlbumSongs({ userInfo }) {
 
                   <AudioPlayer
                     className="audioPlayer"
+                    playing={PlayingContext}
                     // autoPlay
                     src={allSongs[key] ? allSongs[key].songUrl : null}
-                    onPlay={(e) => console.log("onPlay")}
+                    onPlay={() => setPlaying(allSongs[key].songUrl)}
                   />
+                  {console.log("playing:",playing)}
                   <img
                     className="songImage"
                     src={allSongs[key].imageUrl}

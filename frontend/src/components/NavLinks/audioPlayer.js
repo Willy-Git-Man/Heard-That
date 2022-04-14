@@ -11,38 +11,22 @@ import AudioPlayer from "react-h5-audio-player";
 
 
 import './navLinks.css'
-import AudioPlayerGlobal from './audioPlayer'
 
-export default function NavLinks() {
+export default function AudioPlayerGlobal() {
   const userInfo = useSelector((state) => state.session.user);
 
   return (
-    <nav className="navigationLinks">
+    <div className="globalAudioPlayer">
 
-    {/* <button className="navRouteButton">
-
-<NavLink className="navLinkButton" to="/">Home</NavLink>
-        </button> */}
-   <NavLink className="navLinkButton" to="/">
-                  <h1>Heard-That</h1>
-                </NavLink>
-        <SearchBar />
-        <CreateAlbumModal userInfo={userInfo}/>
-        <CreateSongModal userInfo={userInfo}/>
-        <ProfileButton user={userInfo} />
-
-        {/* <i className="fa fa-music"></i> */}
-
-        {/* <AudioPlayer
+        <AudioPlayer
                 className="audioPlayer"
                 // autoPlay
                 src={null}
                 onPlay={(e) => console.log("onPlay")}
-              /> */}
-              <AudioPlayerGlobal />
+              />
 
 
 
-    </nav>
+    </div>
   )
 }
