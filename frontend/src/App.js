@@ -24,10 +24,7 @@ function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // const [playing, setPlaying] = useState("")
-  // let playingFunc = () => {
-  //   setPlaying()
-  // }
+console.log("hhhhh",PlayingContext)
   const [showModal, setShowModal] = useState(false);
 
 
