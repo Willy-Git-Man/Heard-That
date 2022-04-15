@@ -40,7 +40,7 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
     const newSong = await dispatch(addAlbumThunk(newAlbumPayload));
     if (newSong) {
       setShowModal(false)
-      history.push("/Songs");
+      history.push(`/Albums/${1}`);
     }
   };
   return (

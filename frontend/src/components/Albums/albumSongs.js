@@ -45,7 +45,9 @@ export default function AlbumSongs({ userInfo}) {
   if (userInfo === undefined) {
     history.push("/");
   }
-
+// const playbutton = (el) => {
+//   setPlaying(el)
+// }
   const updateDispatch = (songId) => {
     // songId.albumId = 1
 
@@ -82,39 +84,42 @@ export default function AlbumSongs({ userInfo}) {
                   allSongs[key]?.albumId === allAlbums[id].id
               )
               .map((key) => (
-                <div className="albumSongListDiv" key={allSongs[key].id}>
-                  <ul className="songUl">
-                    <li className="songListItem">
-                      <i className="fab fa-grav"></i>
+                <div className="albumSongListDiv" key={allSongs[key].id} onClick={console.log('success')}>
+                  <div className="songUl"style={{ backgroundImage: `url(${allSongs[key].imageUrl})`   }} alt="Broken Img Url" onclick={() => setPlaying(allSongs[key].songUrl)}>
+                    <li className="songListItem" >
                       {allSongs[key].songName}
                     </li>
 
+                  {/* <button onclick={playbutton(allSongs[key].songUrl)}>
+ggasdfasdfasdfa
+                  </button> */}
                     <li className="songListItem">
-                      <i className="fab fa-grav"></i>
                       {allSongs[key].artistName}
                     </li>
-                  </ul>
+                  <button className="songDivButton" style={{ backgroundImage: `url(${allSongs[key].imageUrl})`   }}onClick={() => setPlaying(allSongs[key].songUrl)}>Hello Test</button>
+                  </div>
 
-                  <AudioPlayer
-                    className="audioPlayer"
+                  {/* <AudioPlayer
+                    className="audioPlayergg"
                     playing={PlayingContext}
                     // autoPlay
                     src={allSongs[key] ? allSongs[key].songUrl : null}
                     onPlay={() => setPlaying(allSongs[key].songUrl)}
-                  />
+                  /> */}
+
                   {console.log("playing:",playing)}
-                  <img
+                  {/* <img
                     className="songImage"
                     src={allSongs[key].imageUrl}
                     alt="Broken Img Url"
-                  />
-
+                  /> */}
+{/*
                   <button
                     className="deleteSongButton2"
                     onClick={() => updateDispatch(allSongs[key])}
                   >
                     <i className="fa fa-music"></i>
-                  </button>
+                  </button> */}
                 </div>
               ))}
           </div>

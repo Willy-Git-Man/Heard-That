@@ -14,22 +14,18 @@ import AllSongs from "./components/Songs/allSongs";
 import SearchBar from "./components/SearchBar/SearchBar.js";
 import ProfileButton from "./components/Navigation/ProfileButton";
 
-
 import "slick-carousel/slick/slick.css";
 
 import "slick-carousel/slick/slick-theme.css";
 import NavLinks from "./components/NavLinks/navLinks";
-export const PlayingContext = React.createContext()
+export const PlayingContext = React.createContext();
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
-console.log("hhhhh",PlayingContext)
+  console.log("hhhhh", PlayingContext);
   const [showModal, setShowModal] = useState(false);
-
-
-
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -46,53 +42,16 @@ console.log("hhhhh",PlayingContext)
 
       {isLoaded && (
         <Switch>
-          <Route exact path="/songs">
-            {/* <ProfileButton /> */}
-            {/* <ProfileButton user={userInfo} />
-            <SearchBar />
-            <MyAlbums userInfo={userInfo} />
-            <CreateAlbumModal userInfo={userInfo} />
-            <MySongs userInfo={userInfo} setShowModal={setShowModal} />
-            <CreateSongModal userInfo={userInfo} /> */}
-          </Route>
-          <Route exact path="/Albums">
-            {/* <MyAlbums userInfo={userInfo} /> */}
-            {/* <CreateAlbumModal userInfo={userInfo} /> */}
-          </Route>
-
-
-
-
-
           <Route exact path="/Albums/:id">
-
-
-
-
-            {/* <MyAlbums userInfo={userInfo} /> */}
             <>
               <AlbumSongs userInfo={userInfo} />
-      {/* <Navigation isLoaded={isLoaded} /> */}
-      {/* <Navigation isLoaded={isLoaded} /> */}
-        {/* <NavLinks /> */}
-
-
-
               <button className="navRouteButton">
                 <NavLink className="navLinkButton" to="/">
                   Home
                 </NavLink>
               </button>
             </>
-
-
-
-
           </Route>
-
-
-
-
         </Switch>
       )}
     </>

@@ -57,7 +57,7 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
     const newSong = await dispatch(addSongThunk(newSongPayload));
     if (newSong) {
       setShowModal(false)
-      history.push("/");
+      history.push("/Albums/1");
       //I have to push to AllSongs as it wont exit modal for some reason if I route to /songs asdf
     }
   };
