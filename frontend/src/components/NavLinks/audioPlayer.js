@@ -12,7 +12,7 @@ import AudioPlayer from "react-h5-audio-player";
 
 import './navLinks.css'
 
-export default function AudioPlayerGlobal() {
+export default function AudioPlayerGlobal({playing}) {
   const userInfo = useSelector((state) => state.session.user);
 
   return (
@@ -21,7 +21,7 @@ export default function AudioPlayerGlobal() {
         <AudioPlayer
                 className="audioPlayer"
                 // autoPlay
-                src={null}
+                src={playing}
                 onPlay={(e) => console.log("onPlay")}
               />
 

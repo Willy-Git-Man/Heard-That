@@ -12,6 +12,7 @@ import "./albums.css";
 
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
+import NavLinks from "../NavLinks/navLinks";
 
 export default function AlbumSongs({ userInfo}) {
   const history = useHistory();
@@ -67,6 +68,8 @@ export default function AlbumSongs({ userInfo}) {
   return (
     <div className="">
       {/* <h1 className="test">Enjoy listening to {allAlbums[id].title}</h1> */}
+
+      <NavLinks playing={playing}/>
       <div className="albumSongsSecondDiv">
         {/* <h1 className="welcome">{sessionUser.username}'s Songs</h1> */}
         {/* <h1 className="welcome">{allAlbums[id].title} </h1> */}

@@ -36,7 +36,7 @@ const history = useHistory()
             {/* <CreateSongModal userInfo={userInfo} /> */}
       </div>
       <div className="navDiv">
-        <NavLinks />
+        {/* <NavLinks /> */}
         {/* <ProfileButton user={sessionUser} /> */}
       </div>
       </>

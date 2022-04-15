@@ -18,6 +18,7 @@ import ProfileButton from "./components/Navigation/ProfileButton";
 import "slick-carousel/slick/slick.css";
 
 import "slick-carousel/slick/slick-theme.css";
+import NavLinks from "./components/NavLinks/navLinks";
 export const PlayingContext = React.createContext()
 
 function App() {
@@ -71,6 +72,12 @@ console.log("hhhhh",PlayingContext)
             {/* <MyAlbums userInfo={userInfo} /> */}
             <>
               <AlbumSongs userInfo={userInfo} />
+      {/* <Navigation isLoaded={isLoaded} /> */}
+      {/* <Navigation isLoaded={isLoaded} /> */}
+        {/* <NavLinks /> */}
+
+
+
               <button className="navRouteButton">
                 <NavLink className="navLinkButton" to="/">
                   Home

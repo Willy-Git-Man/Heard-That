@@ -11,8 +11,9 @@ import AudioPlayer from "react-h5-audio-player";
 import "./navLinks.css";
 import AudioPlayerGlobal from "./audioPlayer";
 
-export default function NavLinks() {
+export default function NavLinks({playing}) {
   const userInfo = useSelector((state) => state.session.user);
+  console.log("hello test", playing)
 
   return (
     <nav className="navigationLinks">
@@ -24,7 +25,7 @@ export default function NavLinks() {
       <CreateSongModal userInfo={userInfo} />
       <ProfileButton user={userInfo} />
 
-      <AudioPlayerGlobal />
+      <AudioPlayerGlobal playing={playing}/>
     </nav>
   );
 }
