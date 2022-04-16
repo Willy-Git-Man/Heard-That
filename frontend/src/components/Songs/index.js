@@ -1,89 +1,46 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { deleteSongThunk, getAllSongsThunk } from "../../store/songs";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "./songs.css";
-import UpdateSongModal from "../UpdateSongModal";
-import { getAllAlbumSongsThunk, getAllAlbumsThunk } from "../../store/albums";
+import UpdateSongModal from "./UpdateSongModal";
+import { getAllAlbumsThunk } from "../../store/albums";
 
 export default function MySongs({ userInfo, setShowModal }) {
   const history = useHistory();
   const dispatch = useDispatch();
 
   if (userInfo === undefined) {
-    history.push('/')
+    history.push("/");
   }
 
-
   const allSongs = useSelector((state) => state.songs.songs);
-  const allSongsObjectKeys = Object.keys(allSongs)
-
-  const sessionUser = useSelector(state => state.session.user);
-
-
-
-  // const allSongs = useSelector((state) => state.songs.songs);
-
-
+  const allSongsObjectKeys = Object.keys(allSongs);
 
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
     dispatch(getAllSongsThunk());
-
   }, [dispatch]);
 
-
-
-
-    // useEffect(() => {
-    //   dispatch(getAllSongsThunk());
-    // }, [dispatch]);
-
-
-  // useEffect(() => {
-  //   dispatch(getAllAlbumSongsThunk());
-  // }, [dispatch]);
-
   const deleteDispatch = (songId) => {
-
     dispatch(deleteSongThunk(songId));
   };
 
   if (!allSongsObjectKeys.length) {
-    return null
-  }
-
-  else
-  return (
-      <div className="songsDiv" >
-        {/* <h1 className="welcome">{sessionUser.username}'s Music</h1> */}
-    {/* <NavLink activeClassName="currentNavRoute" to='/Albums'>{sessionUser.username}'s Albums</NavLink> */}
-
+    return null;
+  } else
+    return (
+      <div className="songsDiv">
         {allSongsObjectKeys
-          ?.filter((key) => allSongs[key]?.userId === userInfo.id) // filter out keys for correct user songs
+          ?.filter((key) => allSongs[key]?.userId === userInfo.id)
           .map((key) => (
-            // <h1>hello</h1>
-            <div className="songListDiv" key={allSongs[key].id}  >
-            {/* <NavLink className="albumLink"to={`/Albums/${allSongs[key].albumId}`}>Album</NavLink> */}
+            <div className="songListDiv" key={allSongs[key].id}>
               <ul className="songUl">
+                <li className="songListItem">{allSongs[key].songName}</li>
 
-                <li className="songListItem">
-                  {/* {song.songName} */}
-                  {allSongs[key].songName}
-                  {/* {allSongs[key].songName} */}
-
-
-                </li>
-
-                <li className="songListItem">
-                  {allSongs[key].artistName}
-                </li>
-{/*
-                <li className="songListItemUrl">
-                  {allSongs[key].songUrl}
-                </li> */}
+                <li className="songListItem">{allSongs[key].artistName}</li>
               </ul>
 
               <AudioPlayer
@@ -99,27 +56,15 @@ export default function MySongs({ userInfo, setShowModal }) {
               />
 
               <UpdateSongModal songId={allSongs[key].id} />
-              {/* <UpdateSongModal /> */}
-
 
               <button
                 className="deleteSongButton"
-                onClick={() => deleteDispatch(allSongs[key].id )}
+                onClick={() => deleteDispatch(allSongs[key].id)}
               >
                 <i className="far fa-trash-alt"></i>
               </button>
-
-              {/* <button
-                className="updateSongButton"
-                onClick={() => {
-                  history.push(`/UpdateSongForm/${allSongs[key].id}`);
-                }}
-              >
-                <i className="fas fa-wrench"></i>
-              </button> */}
-
             </div>
           ))}
       </div>
-  );
+    );
 }

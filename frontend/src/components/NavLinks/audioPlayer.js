@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import CreateAlbumModal from '../Albums/CreateAlbumModal/CreateAlbumForm'
-import CreateSongModal from '../CreateSongModal'
+import CreateSongModal from '../Songs/CreateSongModal'
 import ProfileButton from '../Navigation/ProfileButton'
 import SearchBar from '../SearchBar/SearchBar'
 import { useState, createContext, useContext } from "react";

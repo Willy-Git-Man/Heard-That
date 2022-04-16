@@ -12,7 +12,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import MyAlbums from "../Albums";
 import CreateAlbumModal from "../Albums/CreateAlbumModal/CreateAlbumForm";
 import MySongs from "../Songs";
-import CreateSongModal from "../CreateSongModal";
+import CreateSongModal from "../Songs/CreateSongModal";
 import { NavLink, useHistory } from "react-router-dom";
 import AlbumSongs from "../Albums/albumSongs";
 import AudioPlayerGlobal from "../NavLinks/audioPlayer";
