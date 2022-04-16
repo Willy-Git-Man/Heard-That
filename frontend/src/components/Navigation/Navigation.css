@@ -52,7 +52,8 @@
 .navDiv {
   /* position: relative; */
   /* height: 5vh; */
-  width: 100%;
+  width: 88.5%;
+  margin-left: 11.5%;
   /* min-height: 50px; */
   /* width: 100%; */
   display: flex;
@@ -64,7 +65,7 @@
   background-color: rgba(0, 208, 255, 0.797);
   background-color: rgba(7, 158, 193, 0.6);
   background-color: rgba(255, 255, 255, 0.1);
-  background-color: black;
+  background-color: rgba(255, 255, 255.1, alpha);
 }
 
 .navUl {
@@ -154,4 +155,3 @@ height: 100vh;
 position: absolute;
 z-index: -1;
 }
-

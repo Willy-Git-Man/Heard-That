@@ -33,18 +33,12 @@ h1 {
 height: 30vh;
 
 
-width: 75%;
-margin-left: 21.5%;
+width: 100%;
 display: flex;
 justify-content: space-around;
+background: linear-gradient(#724f31, #000000);
+
 gap: 50%;
-/* overflow-y: scroll;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
-  background-size: auto;
-  background: linear-gradient(#724f31, #000000); */
 
 }
 
@@ -74,13 +68,11 @@ margin-left: 11.5%;
   display: none;
 }
 .albumSongsListDiv {
-  height: 60vh;
+  background-color: rgba(255,255,255,.1);
+  height: 70%;
   margin-left: 11.5%;
-  margin-top: 10vh;
   top: 30%;
-  z-index: 999;
   position: absolute;
-background-color: black;
   outline: 5px solid #00ff3e;
   width: 88.5%;
   overflow-y: scroll;
@@ -90,6 +82,7 @@ background-color: black;
   flex-wrap: wrap;
   /* background-image: url(../../../public/pics/mixtape.png); */
   background-size: auto;
+
 }
 
 .albumSongsListDiv::-webkit-scrollbar {
@@ -106,6 +99,8 @@ position: relative;
 .eachAlbumMainDiv2 {
 
   position: relative;
+  display: flex;
+  justify-content: center;
   }
 
 
@@ -194,6 +189,11 @@ position: relative;
   /* object-fit: cover; */
 }
 
+.albumImageTopCarousel {
+  height: 15vh;
+  /* width: 50px; */
+}
+
 .albumUlDiv {
   /* height: 80%; */
 }
@@ -252,14 +252,15 @@ outline: black solid 5px;
 
 .albumSongListDiv {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  background-color: rgba(100, 50, 150, .8);
-  width: 30%;
+  /* background-color: rgba(100, 50, 150, .8); */
+  width: 10%;
   flex-direction: row-reverse;
-  outline: black solid 5px;
   position: relative;
-  margin-top: 5%;
-  background-color: black;
+  /* background-color: black; */
+  margin-right: 5%;
+  /* height: fill; */
   /* min-width: 400px; */
 }
 
@@ -316,34 +317,24 @@ outline: black solid 5px;
 }
 
 .slick-track {
-  background-color: lightblue;
   height: 17.5vh;
-  width: 80%;
-  background-color: black;
+  width: 100%;
 }
 
 .slick-slider slick-initialized {
-  /* background-color: black;
-  z-index: 9999; */
-  /* margin-left: 11.5%; */
-  /* margin-right: 11.5%; */
-  /* width: 40%; */
   display: flex;
   justify-content: center;
 
 }
 
 .slick-list {
-  /* background-color: white; */
   width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  /* margin-left: 50%; */
 }
 
 .slick-arrow.slick-next {
-/* background-color: white; */
-margin-right: 20%;
 font-size: 3em;
 height: 5vh;
 }
@@ -353,13 +344,7 @@ font-size: 3em;
 }
 
 .slick-slide.slick-active.slick-current {
-/* display: flex;
-flex-direction: column;
-justify-content: center;
-position: relative;
-background-color: black;
-margin: 0;
-padding: 0; */
+
 }
 
 .slick-slide.slick-active{
@@ -367,7 +352,6 @@ padding: 0; */
   flex-direction: column;
   justify-content: center;
   position: relative;
-  background-color: black;
   }
 
   .slick-slide.slick-active.slick-cloned {
@@ -375,7 +359,6 @@ padding: 0; */
     flex-direction: column;
     justify-content: center;
     position: relative;
-    background-color: black;
   }
 
   .slick-arrow.slick-prev::before {
@@ -418,4 +401,14 @@ padding: 0; */
     height: 100%;
     width: 100%;
     background-color: white;
+  }
+
+
+  .mainPageAlbums {
+  display: inline;
+  }
+
+
+  .albumMessage {
+    color: white;
   }

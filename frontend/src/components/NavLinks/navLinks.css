@@ -17,7 +17,6 @@
 }
 
 .navigationLinks {
-  outline: 5px solid #00ff3e;
   display: flex;
   position: relative;
   gap: 2.5%;

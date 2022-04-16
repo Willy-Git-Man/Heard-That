@@ -1,37 +1,22 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import ProfileButton from "./ProfileButton";
+import React from "react";
+import { useSelector } from "react-redux";
 import "./Navigation.css";
 import LoginFormModal from "../Auth/LoginFormModal";
 import SignupFormModal from "../Auth/SignupFormModal";
-
 import NavLinks from "../NavLinks/navLinks";
-
 import "./Navigation.css";
-import SearchBar from "../SearchBar/SearchBar";
 import MyAlbums from "../Albums";
-import CreateAlbumModal from "../Albums/CreateAlbumModal/CreateAlbumForm";
 import MySongs from "../Songs";
-import CreateSongModal from "../Songs/CreateSongModal";
-import { NavLink, useHistory } from "react-router-dom";
-import AlbumSongs from "../Albums/albumSongs";
-import AudioPlayerGlobal from "../NavLinks/audioPlayer";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
-  const history = useHistory();
   const userInfo = useSelector((state) => state.session.user);
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
-        <div>
           <MyAlbums userInfo={userInfo} />
-          <NavLinks />
-          <MySongs userInfo={userInfo} />
-        </div>
-        <div className="navDiv"></div>
       </>
     );
   } else {
@@ -51,9 +36,9 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     return (
       <>
-        <ul className="navUl">
-          <li className="navLi">{isLoaded && sessionLinks}</li>
-        </ul>
+        <div className="navUl">
+          <div className="navDiv">{isLoaded && sessionLinks}</div>
+        </div>
       </>
     );
   } else

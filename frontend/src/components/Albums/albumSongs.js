@@ -15,7 +15,6 @@ export default function AlbumSongs({ userInfo }) {
   const [playing, setPlaying] = useState("");
   const [pic, setPic] = useState("");
 
-  console.log("playing 2:", playing);
 
   const allAlbums = useSelector((state) => state.albums.albums);
   const allSongs = useSelector((state) => state.songs.songs);
@@ -43,7 +42,7 @@ export default function AlbumSongs({ userInfo }) {
   }
 
   return (
-    <div className="">
+    <div className="albumMainPage">
       <NavLinks playing={playing} setPlaying={setPlaying} pic={pic} />
       <div className="albumSongsSecondDiv">
         <div className="albumSongsListDiv">

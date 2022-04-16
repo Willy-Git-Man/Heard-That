@@ -71,24 +71,15 @@ font-size: large;
 }
 
 .songUl {
-  display: inline block;
-  width: fill;
   padding-left: 0;
-  /* margin: 0; */
-  /* position: absolute; */
   position: relative;
   top: 0;
   height: 250px;
   margin: 0;
   left: 0;
   z-index: 2;
-  /* outline: black solid 15px; */
-  /* background-repeat: no-repeat; */
   background-size: 100% 100%;
   width: 100%;
-
-  /* position: absolute; */
-  /* overflow: hidden; */
 }
 
 .songListItem {
@@ -140,6 +131,7 @@ font-size: large;
     flex-wrap: wrap;
     /* background-image: url(../../../public/pics/mixtape.png); */
     background-size: auto;
+
   }
 
   .songsDiv::-webkit-scrollbar {
@@ -343,6 +335,5 @@ font-size: large;
    /* position: absolute; */
    /* top: 0; */
  background-size: 100% 100%;
- border: 5px solid #00ff3e;
 
  }
