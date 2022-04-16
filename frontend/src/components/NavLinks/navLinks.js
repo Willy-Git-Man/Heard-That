@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import CreateAlbumModal from "../CreateAlbumModal/CreateAlbumForm";
+import CreateAlbumModal from "../Albums/CreateAlbumModal/CreateAlbumForm";
 import CreateSongModal from "../CreateSongModal";
 import ProfileButton from "../Navigation/ProfileButton";
 import SearchBar from "../SearchBar/SearchBar";

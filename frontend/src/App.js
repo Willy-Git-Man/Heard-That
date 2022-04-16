@@ -8,7 +8,7 @@ import CreateSongModal from "./components/CreateSongModal";
 import MySongs from "./components/Songs";
 import MyAlbums from "./components/Albums";
 import AlbumSongs from "./components/Albums/albumSongs";
-import CreateAlbumModal from "./components/CreateAlbumModal/CreateAlbumForm";
+import CreateAlbumModal from "./components/Albums/CreateAlbumModal/CreateAlbumForm";
 import AllSongs from "./components/Songs/allSongs";
 
 import SearchBar from "./components/SearchBar/SearchBar.js";

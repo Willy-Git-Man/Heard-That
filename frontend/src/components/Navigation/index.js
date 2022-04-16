@@ -10,7 +10,7 @@ import NavLinks from "../NavLinks/navLinks";
 import "./Navigation.css";
 import SearchBar from "../SearchBar/SearchBar";
 import MyAlbums from "../Albums";
-import CreateAlbumModal from "../CreateAlbumModal/CreateAlbumForm";
+import CreateAlbumModal from "../Albums/CreateAlbumModal/CreateAlbumForm";
 import MySongs from "../Songs";
 import CreateSongModal from "../CreateSongModal";
 import { NavLink, useHistory } from "react-router-dom";
