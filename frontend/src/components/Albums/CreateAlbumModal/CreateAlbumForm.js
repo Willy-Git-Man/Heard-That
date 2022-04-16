@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CreateAlbumForm from '.';
-import { Modal } from '../../context/Modal';
+import { Modal } from '../../../context/Modal';
 
 import './CreateAlbumForm.css'
 

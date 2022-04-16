@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { addSongThunk } from "../../store/songs";
+import { addSongThunk } from "../../../store/songs";
 
 import "./CreateSongForm.css";
 

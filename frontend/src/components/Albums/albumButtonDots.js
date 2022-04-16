@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router";
 import { deleteAlbumThunk } from "../../store/albums";
-// import { Redirect } from "react-router";
-import * as sessionActions from "../../store/session";
 import { getAllSongsThunk } from "../../store/songs";
-import UpdateAlbumModal from "../UpdateAlbumModal";
+import UpdateAlbumModal from "./UpdateAlbumModal";
 
 function AlbumButtonDots({ user, allAlbumsIndex }) {
   const [showMenu, setShowMenu] = useState(false);
-console.log('allAlbumsIndex:', allAlbumsIndex)
   const dispatch = useDispatch();
-  const history = useHistory();
 
   const openMenu = () => {
     if (showMenu) return;
@@ -19,10 +14,8 @@ console.log('allAlbumsIndex:', allAlbumsIndex)
   };
 
   const closeMenu = () => {
-
     setShowMenu(false);
   };
-
 
   useEffect(() => {
     if (!showMenu) return;
@@ -34,15 +27,8 @@ console.log('allAlbumsIndex:', allAlbumsIndex)
 
     // document.addEventListener("click", closeMenu);
 
-
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
-
-  const logout = (e) => {
-    e.preventDefault();
-    dispatch(sessionActions.logout());
-    history.push("/");
-  };
 
   const deleteAlbumDispatch = (album) => {
     dispatch(deleteAlbumThunk(album));
@@ -52,22 +38,22 @@ console.log('allAlbumsIndex:', allAlbumsIndex)
   return (
     <>
       <button className={"albumButtonDotsButton"} onClick={openMenu}>
-       Edit
-        {/* <i className="fas fa-user-circle" /> */}
-        {/* <i className="fab fa-grav"></i> */}
+        Edit
       </button>
       <div className={"albumSettingsDiv"}>
         {showMenu && (
           <div className="albumSettingsDiv">
+            <button
+              className="deleteAlbumButton"
+              onClick={() => deleteAlbumDispatch(allAlbumsIndex?.id)}
+            >
+              <i className="far fa-trash-alt"></i>
+            </button>
 
-  <button
-      className="deleteAlbumButton"
-      onClick={() => deleteAlbumDispatch(allAlbumsIndex?.id)}
-      >
-        <i className="far fa-trash-alt"></i>
-      </button>
-
-      <UpdateAlbumModal albumId={allAlbumsIndex?.id} closeMenu={closeMenu}/>
+            <UpdateAlbumModal
+              albumId={allAlbumsIndex?.id}
+              closeMenu={closeMenu}
+            />
           </div>
         )}
       </div>

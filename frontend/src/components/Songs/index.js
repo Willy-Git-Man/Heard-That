@@ -5,7 +5,7 @@ import { deleteSongThunk, getAllSongsThunk } from "../../store/songs";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "./songs.css";
-import UpdateSongModal from "../UpdateSongModal";
+import UpdateSongModal from "../Songs/UpdateSongModal";
 import { getAllAlbumSongsThunk, getAllAlbumsThunk } from "../../store/albums";
 
 export default function MySongs({ userInfo, setShowModal }) {

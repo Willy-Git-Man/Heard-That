@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { updateSongThunk } from "../../store/songs";
+import { updateSongThunk } from "../../../store/songs";
 import "./UpdateSongForm.css";
 
 export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
-  // const [showModal, setShowModal] = useState(false);
   const id = songId
 
   const history = useHistory();
@@ -15,19 +14,11 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
 
   const songTest = useSelector((state) => state.songs.songs[id]);
 
-
   const allAlbums = useSelector((state) => state.albums.albums);
-  const allAlbumObjectKeys = Object.keys(allAlbums)
 
   const allAlbumObjectArray = Object.values(allAlbums)
 
 const allAlbumObjectArrayFiltered = allAlbumObjectArray.filter((album) => album.userId === sessionUser.id)
-console.log('allAlbumObjectArrayFiltered:', allAlbumObjectArrayFiltered)
-  // const noDuplicateAlbumArray = [...new Set (allAlbumObjectArray)]
-
-  // console.log('allAlbumObjectValuesFiltered:', allAlbumObjectArray)
-
-  // console.log('allAlbums:', allAlbums)
 
   const [songName, setSongName] = useState(songTest.songName);
   const [artistName, setArtistName] = useState(songTest.artistName);

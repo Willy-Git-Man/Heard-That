@@ -1,16 +1,12 @@
-import React, {useState } from "react";
-import * as sessionActions from "../../store/session";
+import React, { useState } from "react";
+import * as sessionActions from "../../../store/session";
 import { useDispatch } from "react-redux";
-import {useHistory} from 'react-router'
 
 function LoginForm() {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  const history = useHistory()
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,11 +16,9 @@ function LoginForm() {
         const data = await res.json();
         if (data && data.errors) {
           setErrors(data.errors);
-          // history.push('/songs')
         }
       }
-      );
-
+    );
   };
 
   return (
