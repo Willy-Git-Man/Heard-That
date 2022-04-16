@@ -7,8 +7,10 @@ import "./CreateAlbumForm.css";
 
 export default function CreateAlbumForm({ userInfo, setShowModal }) {
   const [title, setTitle] = useState("Summer Vibes");
-  const [imageUrl, setImageUrl] = useState("https://i1.sndcdn.com/artworks-kpswMSYYQ4osELsK-jbOC2w-t500x500.jpg");
-  const [errors, setErrors] = useState([])
+  const [imageUrl, setImageUrl] = useState(
+    "https://i1.sndcdn.com/artworks-kpswMSYYQ4osELsK-jbOC2w-t500x500.jpg"
+  );
+  const [errors, setErrors] = useState([]);
 
   const newTitle = (e) => setTitle(e.target.value);
   const newAlbumImage = (e) => setImageUrl(e.target.value);
@@ -17,16 +19,19 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const validationErrors = []
+    const validationErrors = [];
 
-    if (title.length === 0) validationErrors.push("Song name field is required")
-    if (title.length > 50) validationErrors.push('Song name must be less than 50 characters')
-    if (imageUrl.length === 0) validationErrors.push("Artist name field is required")
-    if (imageUrl.length > 255) validationErrors.push('Image url must be less than 255 characters')
+    if (title.length === 0)
+      validationErrors.push("Song name field is required");
+    if (title.length > 50)
+      validationErrors.push("Song name must be less than 50 characters");
+    if (imageUrl.length === 0)
+      validationErrors.push("Artist name field is required");
+    if (imageUrl.length > 255)
+      validationErrors.push("Image url must be less than 255 characters");
 
-
-    setErrors(validationErrors)
-  }, [title, imageUrl])
+    setErrors(validationErrors);
+  }, [title, imageUrl]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +44,7 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
 
     const newSong = await dispatch(addAlbumThunk(newAlbumPayload));
     if (newSong) {
-      setShowModal(false)
+      setShowModal(false);
       history.push(`/Albums/${1}`);
     }
   };
@@ -47,12 +52,11 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
     <>
       <div className="createNewSongDiv">
         <form className="createNewSongForm" onSubmit={handleSubmit}>
-
-        <ul className="errors">
-        {errors.map((error) => (
-          <li key={error}>{error}</li>
-        ))}
-      </ul>
+          <ul className="errors">
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
           <label htmlFor="albumTitle">Album Name: </label>
           <input
             type="text"
@@ -71,8 +75,9 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
             required
           />
 
-
-          <button className="createAlbumButton" type="submit">Create</button>
+          <button className="createAlbumButton" type="submit">
+            Create
+          </button>
         </form>
       </div>
     </>

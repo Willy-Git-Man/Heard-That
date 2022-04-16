@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
-import CreateAlbumForm from '.';
-import { Modal } from '../../../context/Modal';
+import React, { useState } from "react";
+import CreateAlbumForm from ".";
+import { Modal } from "../../../context/Modal";
 
-import './CreateAlbumForm.css'
+import "./CreateAlbumForm.css";
 
-function CreateAlbumModal({userInfo}) {
+function CreateAlbumModal({ userInfo }) {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <button className={'createAlbumModalButton'} onClick={() => setShowModal(true)}>Create Playlist</button>
+      <button
+        className={"createAlbumModalButton"}
+        onClick={() => setShowModal(true)}
+      >
+        Create Playlist
+      </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <CreateAlbumForm setShowModal={setShowModal} userInfo={userInfo} />
