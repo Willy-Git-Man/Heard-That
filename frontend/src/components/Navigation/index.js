@@ -5,8 +5,6 @@ import "./Navigation.css";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 
-
-
 import NavLinks from "../NavLinks/navLinks";
 
 import "./Navigation.css";
@@ -15,36 +13,28 @@ import MyAlbums from "../Albums";
 import CreateAlbumModal from "../CreateAlbumModal/CreateAlbumForm";
 import MySongs from "../Songs";
 import CreateSongModal from "../CreateSongModal";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import AlbumSongs from "../Albums/albumSongs";
+import AudioPlayerGlobal from "../NavLinks/audioPlayer";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
-const history = useHistory()
+  const history = useHistory();
   const userInfo = useSelector((state) => state.session.user);
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
-      <div>
-      {/* <ProfileButton user={userInfo} /> */}
-            {/* <SearchBar /> */}
-            <MyAlbums userInfo={userInfo} />
-            {/* <CreateAlbumModal userInfo={userInfo} /> */}
-            <MySongs userInfo={userInfo} />
-            {/* <CreateSongModal userInfo={userInfo} /> */}
-      </div>
-      <div className="navDiv">
-        {/* <NavLinks /> */}
-        {/* <ProfileButton user={sessionUser} /> */}
-      </div>
+        <div>
+          <MyAlbums userInfo={userInfo} />
+          <NavLinks />
+          <MySongs userInfo={userInfo} />
+        </div>
+        <div className="navDiv"></div>
       </>
     );
-    // history.push('/songs')
   } else {
-  // if (!sessionUser) {
-
     sessionLinks = (
       <div className="loginDiv">
         <LoginFormModal />
@@ -62,12 +52,8 @@ const history = useHistory()
     return (
       <>
         <ul className="navUl">
-          <li className="navLi">
-
-            {isLoaded && sessionLinks}
-          </li>
+          <li className="navLi">{isLoaded && sessionLinks}</li>
         </ul>
-
       </>
     );
   } else

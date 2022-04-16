@@ -10,22 +10,32 @@ import AudioPlayer from "react-h5-audio-player";
 
 import "./navLinks.css";
 import AudioPlayerGlobal from "./audioPlayer";
+import AlbumNavLinks from "./albumNavlinks";
 
 export default function NavLinks({playing, setPlaying, pic}) {
   const userInfo = useSelector((state) => state.session.user);
   console.log("hello test", playing)
 
   return (
-    <nav className="navigationLinks">
-      <NavLink className="navLinkButton" to="/">
+    <div className="navigationLinks">
+      <div className="navLinkUpper" >
+      <NavLink className="navLinkButton" to="/Albums/1">
         <h1>Heard-That</h1>
       </NavLink>
       <SearchBar playing={playing} setPlaying={setPlaying}/>
       <CreateAlbumModal userInfo={userInfo} />
       <CreateSongModal userInfo={userInfo} />
       <ProfileButton user={userInfo} />
+      <NavLink className="homeNavLink" to="/">
+        Edit Songs
+      </NavLink>
+
+      </div>
+      <div className="navAlbumNavLinks">
+        <AlbumNavLinks />
+      </div>
 
       <AudioPlayerGlobal playing={playing} pic={pic} />
-    </nav>
+    </div>
   );
 }
