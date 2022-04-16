@@ -1,9 +1,10 @@
 .profileButton {
-  width:100%;
+  width:80%;
+  margin: 5%;
   left:30%;
   bottom:20%;
   height: 2.5vh;
-  border: 5px solid #00ff3e;
+  border: 2px solid #00ff3e;
   font-family: 'Press Start 2P', cursive;
   color: #00ff3e;
   font-size: .5em;
@@ -52,8 +53,8 @@
 .navDiv {
   /* position: relative; */
   /* height: 5vh; */
-  width: 88.5%;
-  margin-left: 11.5%;
+  width: 90.5%;
+  margin-left: 9.5%;
   /* min-height: 50px; */
   /* width: 100%; */
   display: flex;

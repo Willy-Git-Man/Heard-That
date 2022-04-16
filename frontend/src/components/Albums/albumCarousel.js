@@ -25,7 +25,9 @@ export default function AlbumCarousel({ userInfo }) {
   const allAlbumKeys = Object.keys(allAlbums);
 
   const history = useHistory();
-
+  const albumSearchHistoryPush = (id) => {
+    history.push(`/Albums/${id}`);
+  };
   if (userInfo === undefined) {
     history.push("/");
   }
@@ -35,11 +37,12 @@ export default function AlbumCarousel({ userInfo }) {
     return null
   } else
     return (
-      <div className="eachDivInCarousel">
+      <div className="mainCarouselDiv">
         <h2 className="albumMessage">Welcome</h2>
         <Slider
           asNavFor={secondSlider}
           ref={(slider1) => setfirstSlider(slider1)}
+          className="firstSlider"
         >
           <div className="eachAlbumMainDiv" key={allAlbums[1]?.id}  >
             <img
@@ -85,8 +88,10 @@ export default function AlbumCarousel({ userInfo }) {
           slidesToShow={4}
           swipeToSlide={true}
           focusOnSelect={true}
+          className="secondSlider"
+
         >
-          <div className="eachAlbumMainDiv" key={allAlbums[1]?.id}>
+          <div className="eachAlbumMainDiv" key={allAlbums[1]?.id} onclick={() => albumSearchHistoryPush(1)}>
             {/* <AlbumButtonDots /> */}
             <img
               className="albumImage"
@@ -104,21 +109,22 @@ export default function AlbumCarousel({ userInfo }) {
                 allAlbums[index]?.userId === userInfo.id &&
                 allAlbums[index]?.id !== 1
             )
-            .map((index) => (
+            .map((album) => (
               <div
-                className="eachAlbumMainDiv2"
-                key={allAlbums[index]?.id}
+                className="eachAlbumMainDiv"
+                key={allAlbums[album]?.id}
                 style={{
-                  backgroundImage: `url(${allAlbums[index]?.imageUrl})`,
+                  backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
                 }}
+                onclick={() => albumSearchHistoryPush(album.id)}
               >
                 <img
                   className="albumImage"
-                  src={allAlbums[index]?.imageUrl}
+                  src={allAlbums[album]?.imageUrl}
                   alt="Broken Img Url"
                 />
-                <NavLink className="albumImageNavLink" to={`/Albums/${index}`}>
-                  <h1 className="albumNameLink">{allAlbums[index]?.title}</h1>
+                <NavLink className="albumImageNavLink" to={`/Albums/${album}`}>
+                  <h1 className="albumNameLink">{allAlbums[album]?.title}</h1>
                 </NavLink>
               </div>
             ))}

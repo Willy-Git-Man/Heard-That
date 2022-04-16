@@ -14,10 +14,6 @@
 }
 .albumsMainDiv {
   position: relative;
-  background-color: black;
-  /* height: 75vh; */
-
-  /* outline: black solid 5px; */
   width:100%;
   position:absolute;
   left:0;
@@ -52,8 +48,8 @@ gap: 50%;
   border-top-left-radius: 10%;
   /* outline: 5px solid #00ff3e; */
 
-margin-left: 11.5%;
-  width: 88.5%;
+margin-left: 10%;
+  width: 90%;
   overflow-y: scroll;
   display: flex;
   justify-content: center;
@@ -70,11 +66,11 @@ margin-left: 11.5%;
 .albumSongsListDiv {
   background-color: rgba(255,255,255,.1);
   height: 70%;
-  margin-left: 11.5%;
+  margin-left: 10%;
   top: 30%;
   position: absolute;
   outline: 5px solid #00ff3e;
-  width: 88.5%;
+  width: 90%;
   overflow-y: scroll;
   display: flex;
   justify-content: center;
@@ -91,25 +87,47 @@ margin-left: 11.5%;
 
 .eachAlbumMainDiv {
 position: relative;
-/* height: 100%; */
+/* height: 100px; */
+height: 10vh;
+width: 75%;
+opacity: 1;
+
+
+}
+.firstSlider {
+  background-color: green ;
+height: 100%;
+ margin-bottom: 50px;
+
+
+}
+
+.secondSlider {
+  /* background-color: white; */
+  height: 10vh;
+height: 100%;
+
 
 
 }
 
 .eachAlbumMainDiv2 {
 
-  position: relative;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
   }
 
 
-.eachDivInCarousel {
+.mainCarouselDiv {
+  position: relative;
 
   height: 30%;
 
 
-  width: 88.5%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
   /* overflow-y: scroll;
   display: flex;
   justify-content: center;
@@ -149,7 +167,6 @@ position: relative;
   /* bottom: 0; */
   /* left: 75%; */
   bottom: 0;
-  outline: solid black 5px;
 
   z-index: 100;
   font-size: .5em;
@@ -169,7 +186,7 @@ position: relative;
   width: 90%;
   margin-left: 5%;
   height: 100%;
-  background-color: black;
+  /* background-color: black; */
   z-index: 99999;
 
   margin: 0;
@@ -190,7 +207,7 @@ position: relative;
 }
 
 .albumImageTopCarousel {
-  height: 15vh;
+  height: 100%;
   /* width: 50px; */
 }
 
@@ -258,7 +275,7 @@ outline: black solid 5px;
   width: 10%;
   flex-direction: row-reverse;
   position: relative;
-  /* background-color: black; */
+  /* background-secondcolor: black; */
   margin-right: 5%;
   /* height: fill; */
   /* min-width: 400px; */
@@ -344,7 +361,6 @@ font-size: 3em;
 }
 
 .slick-slide.slick-active.slick-current {
-
 }
 
 .slick-slide.slick-active{

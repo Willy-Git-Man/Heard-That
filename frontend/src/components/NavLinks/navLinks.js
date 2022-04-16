@@ -19,15 +19,14 @@ export default function NavLinks({ playing, setPlaying, pic }) {
         <NavLink className="navLinkButton" to="/Albums/1">
           <h1>Heard-That</h1>
         </NavLink>
-        <SearchBar playing={playing} setPlaying={setPlaying} />
         <CreateAlbumModal userInfo={userInfo} />
         <CreateSongModal userInfo={userInfo} />
 
         <ProfileButton user={userInfo} />
-        <NavLink className="homeNavLink" to="/">
-          Edit Songs
-        </NavLink>
+        <span className="navUpperBottomLine"></span>
+
       </div>
+        <SearchBar playing={playing} setPlaying={setPlaying} />
       <div className="navAlbumNavLinks">
         <AlbumNavLinks />
       </div>

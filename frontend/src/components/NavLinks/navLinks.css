@@ -26,7 +26,7 @@
   /* justify-content: space-around; */
   text-decoration: none;
   z-index: 1;
-  width: 11.5%;
+  width: 10%;
   background-color: black;
   position: absolute;
   bottom: 0;
@@ -34,6 +34,7 @@
   height: 100%;
   z-index: 9999;
   min-width: 200px;
+  width: 9.5%;
   /* position: relative; */
 
 
@@ -120,7 +121,7 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  width: 100%;
+  width: 80%;
   left: 30%;
   bottom: 20%;
   height: 2.5vh;
@@ -135,11 +136,24 @@
 }
 
 .navLinkUpper {
-  height: 40%;
+  height: 23.5%;
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
   /* outline: 5px solid white; */
   width: 100%;
+
+
+}
+
+.navUpperBottomLine {
+  color: white;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin-left: 5%;
+  border-bottom: white solid 2px;
+  margin-top: 20%;
 
 }
 

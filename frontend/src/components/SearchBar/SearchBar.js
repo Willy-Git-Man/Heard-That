@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import "./index.css";
 import { getAllSongsThunk } from "../../store/songs";
 import AudioPlayer from "react-h5-audio-player";
 import NavLinks from "../NavLinks/navLinks";
 
-const SearchBar = ({playing, setPlaying}) => {
+const SearchBar = ({ playing, setPlaying }) => {
   const [searchValue, setSearchValue] = useState("");
   const [songs, setSongs] = useState([]);
   const [pic, setPic] = useState([]);
 
   // const [playing, setPlaying] = useState("")
   const dispatch = useDispatch();
+  const history = useHistory();
 
   // useEffect(() => {
   //   async function fetchData() {
@@ -27,6 +28,7 @@ const SearchBar = ({playing, setPlaying}) => {
     dispatch(getAllSongsThunk());
   }, [dispatch]);
   const allSongs = Object.values(useSelector((state) => state.songs.songs));
+  const allAlbums = Object.values(useSelector((state) => state.albums.albums));
 
   const handlePicture = (e) => {
     e.target.src =
@@ -34,9 +36,13 @@ const SearchBar = ({playing, setPlaying}) => {
   };
 
   const test = (playing, pic) => {
-    setPlaying(playing)
-    setPic(pic)
-  }
+    setPlaying(playing);
+    setPic(pic);
+  };
+
+  const albumSearchHistoryPush = (id) => {
+    history.push(`/Albums/${id}`);
+  };
 
   console.log(allSongs);
   return (
@@ -52,7 +58,7 @@ const SearchBar = ({playing, setPlaying}) => {
       </div>
       <div className="searchDivWithResults">
         {allSongs
-          .filter((song) => {
+          .filter((song, i) => {
             if (searchValue === "") return null;
             else if (
               song.songName.toLowerCase().includes(searchValue.toLowerCase())
@@ -60,60 +66,74 @@ const SearchBar = ({playing, setPlaying}) => {
               return song;
           })
           .map((song) => (
-            <div className="albumSongListDivSearch" key={song.id} onClick={console.log('success')}>
-            {/* <AlbumButtonDots /> */}
-            <div className="songUl"style={{ backgroundImage: `url(${song.imageUrl})`   }} alt="Broken Img Url" onclick={() => setPlaying(song.songUrl)}>
-              <li className="songListItem" >
-                {song.songName}
-              </li>
-
-            {/* <button onclick={playbutton(song.songUrl)}>
-ggasdfasdfasdfa
-            </button> */}
-              <li className="songListItem">
-                {song.artistName}
-              </li>
-            <button className="songDivButton" style={{ backgroundImage: `url(${song.imageUrl})`   }}onClick={() => test(song.songUrl, song.imageUrl)}></button>
-            </div>
-
-            {/* <AudioPlayer
-              className="audioPlayergg"
-              playing={PlayingContext}
-              // autoPlay
-              src={allSongs[key] ? allSongs[key].songUrl : null}
-              onPlay={() => setPlaying(allSongs[key].songUrl)}
-            /> */}
-
-            {console.log("playing:",playing)}
-            {/* <img
-              className="songImage"
-              src={allSongs[key].imageUrl}
-              alt="Broken Img Url"
-            /> */}
-{/*
-            <button
-              className="deleteSongButton2"
-              onClick={() => updateDispatch(allSongs[key])}
+            <div
+              className="albumSongListDivSearch"
+              key={song.id}
+              onClick={console.log("success")}
             >
-              <i className="fa fa-music"></i>
-            </button> */}
-          </div>
+              {/* <AlbumButtonDots /> */}
+              <div
+                className="songUl"
+                style={{ backgroundImage: `url(${song.imageUrl})` }}
+                alt="Broken Img Url"
+                onclick={() => setPlaying(song.songUrl)}
+              >
+                <li className="songListItem">{song.songName}</li>
+
+                <li className="songListItem">{song.artistName}</li>
+                <button
+                  className="songDivButton"
+                  style={{ backgroundImage: `url(${song.imageUrl})` }}
+                  onClick={() => test(song.songUrl, song.imageUrl)}
+                ></button>
+              </div>
+            </div>
           ))}
 
+        {allAlbums
+          .filter((album) => {
+            if (searchValue === "") return null;
+            else if (
+              album.title.toLowerCase().includes(searchValue.toLowerCase())
+            )
+              return album;
+          })
+          .map((album) => (
+            <div
+              className="albumSongListDivSearch"
+              key={album.id}
+              onClick={console.log("success")}
+              onclick={() => albumSearchHistoryPush(album.id)}
+            >
+              {/* <AlbumButtonDots /> */}
+              <div
+                className="songUl"
+                style={{ backgroundImage: `url(${album.imageUrl})` }}
+                alt="Broken Img Url"
+                onclick={() => albumSearchHistoryPush(album.id)}
+              >
+                <div
+                  href="/Albums/1"
+                  className="songDivButton"
+                  style={{ backgroundImage: `url(${album.imageUrl})` }}
+                  onClick={() => albumSearchHistoryPush(album.id)}
+                ></div>
+              </div>
+            </div>
+          ))}
 
-          {allSongs
+        {allSongs
           .filter((song) => {
             if (searchValue === "") return null;
             else if (
               !song.songName.toLowerCase().includes(searchValue.toLowerCase())
             )
               return song;
-          }).slice(0,1)
+          })
+          .slice(0, 1)
           .map((song) => (
-
-
             <div className="songListDivSearchEmptyResult" key={song.id}>
-            <h1 className="emptySearchMessage">No matching results</h1>
+              <h1 className="emptySearchMessage">End of the line</h1>
             </div>
           ))}
       </div>
