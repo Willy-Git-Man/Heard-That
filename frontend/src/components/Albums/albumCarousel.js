@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useHistory, useParams } from "react-router-dom";
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { deleteAlbumThunk, getAllAlbumsThunk } from '../../store/albums';
 import { getAllSongsThunk } from '../../store/songs';
 import UpdateAlbumModal from '../UpdateAlbumModal';
+import AlbumButtonDots from './albumButtonDots';
 
 export default function AlbumCarousel({userInfo}) {
   const [firstSlider, setfirstSlider] = useState();
@@ -19,7 +20,8 @@ export default function AlbumCarousel({userInfo}) {
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
   }, [dispatch]);
-
+const {test, test2} = useParams()
+console.log('id:', test,test2)
   const allAlbums = useSelector((state) => state.albums.albums);
 
   const allAlbumKeys = Object.keys(allAlbums);
@@ -93,7 +95,8 @@ export default function AlbumCarousel({userInfo}) {
         swipeToSlide={true}
         focusOnSelect={true}
       >
-<div className="eachAlbumMainDiv" key={allAlbums[1]?.id}>
+<div className="eachAlbumMainDiv" key={allAlbums[1]?.id} >
+  {/* <AlbumButtonDots /> */}
   <img
     className="albumImage"
     src={allAlbums[1]?.imageUrl}
@@ -112,7 +115,8 @@ export default function AlbumCarousel({userInfo}) {
     allAlbums[index]?.id !== 1
     )
     .map((index) => (
-      <div className="eachAlbumMainDiv2" key={allAlbums[index]?.id}>
+      <div className="eachAlbumMainDiv2" key={allAlbums[index]?.id} style={{ backgroundImage: `url(${allAlbums[index]?.imageUrl})`   }}>
+        <AlbumButtonDots allAlbumsIndex={allAlbums[index]}/>
       <img
         className="albumImage"
         src={allAlbums[index]?.imageUrl}
@@ -121,15 +125,14 @@ export default function AlbumCarousel({userInfo}) {
       <NavLink className="albumImageNavLink" to={`/Albums/${index}`}>
         <h1 className="albumNameLink">{allAlbums[index]?.title}</h1>
       </NavLink>
-
-      <button
-        className="deleteAlbumButton"
-        onClick={() => deleteAlbumDispatch(allAlbums[index]?.id)}
-        >
+      {/* <button
+      className="deleteAlbumButton"
+      onClick={() => deleteAlbumDispatch(allAlbums[index]?.id)}
+      >
         <i className="far fa-trash-alt"></i>
       </button>
 
-      <UpdateAlbumModal albumId={allAlbums[index]?.id} />
+      <UpdateAlbumModal albumId={allAlbums[index]?.id} /> */}
     </div>
   ))}
       </Slider>

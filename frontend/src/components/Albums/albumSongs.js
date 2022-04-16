@@ -13,6 +13,7 @@ import "./albums.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import NavLinks from "../NavLinks/navLinks";
+import AlbumButtonDots from "./albumButtonDots";
 
 export default function AlbumSongs({ userInfo}) {
   const history = useHistory();
@@ -85,6 +86,7 @@ export default function AlbumSongs({ userInfo}) {
               )
               .map((key) => (
                 <div className="albumSongListDiv" key={allSongs[key].id} onClick={console.log('success')}>
+                  {/* <AlbumButtonDots /> */}
                   <div className="songUl"style={{ backgroundImage: `url(${allSongs[key].imageUrl})`   }} alt="Broken Img Url" onclick={() => setPlaying(allSongs[key].songUrl)}>
                     <li className="songListItem" >
                       {allSongs[key].songName}
