@@ -100,7 +100,7 @@
 
 .globalAudioPlayer {
   position: absolute;
-  bottom: 10%;
+  /* bottom: 10%; */
   width: 100%;
   border: white solid 5px;
 }

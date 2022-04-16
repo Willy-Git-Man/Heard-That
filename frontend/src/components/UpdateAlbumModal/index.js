@@ -4,7 +4,7 @@ import UpdateAlbumForm from "./UpdateAlbumForm";
 
 import "./UpdateAlbumForm.css";
 
-function UpdateAlbumModal({ userInfo, albumId }) {
+function UpdateAlbumModal({ userInfo, albumId, closeMenu }) {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
@@ -13,12 +13,12 @@ function UpdateAlbumModal({ userInfo, albumId }) {
         onClick={() => setShowModal(true)}
       >
         <i className="fas fa-wrench"></i>
-        
+
 
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <UpdateAlbumForm setShowModal={setShowModal} userInfo={userInfo} albumId={albumId} />
+          <UpdateAlbumForm setShowModal={setShowModal} userInfo={userInfo} albumId={albumId} closeMenu={closeMenu}/>
         </Modal>
       )}
     </>

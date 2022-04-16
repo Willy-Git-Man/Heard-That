@@ -20,6 +20,8 @@ export default function AlbumSongs({ userInfo}) {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [playing, setPlaying] = useState("")
+  const [pic, setPic] = useState("")
+
   console.log('playing 2:', playing)
   const PlayingContext = createContext()
 
@@ -34,6 +36,11 @@ export default function AlbumSongs({ userInfo}) {
   // useEffect(() => {
   //   dispatch(getAllAlbumSongsThunk());
   // }, [dispatch]);
+
+  const test = (playing, pic) => {
+    setPlaying(playing)
+    setPic(pic)
+  }
 
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
@@ -72,7 +79,7 @@ export default function AlbumSongs({ userInfo}) {
     <div className="">
       {/* <h1 className="test">Enjoy listening to {allAlbums[id].title}</h1> */}
 
-      <NavLinks playing={playing}/>
+      <NavLinks playing={playing} setPlaying={setPlaying} pic={pic}/>
       <div className="albumSongsSecondDiv">
         {/* <h1 className="welcome">{sessionUser.username}'s Songs</h1> */}
         {/* <h1 className="welcome">{allAlbums[id].title} </h1> */}
@@ -98,7 +105,7 @@ ggasdfasdfasdfa
                     <li className="songListItem">
                       {allSongs[key].artistName}
                     </li>
-                  <button className="songDivButton" style={{ backgroundImage: `url(${allSongs[key].imageUrl})`   }}onClick={() => setPlaying(allSongs[key].songUrl)}>Hello Test</button>
+                  <button className="songDivButton" style={{ backgroundImage: `url(${allSongs[key].imageUrl})`   }}onClick={() => test(allSongs[key].songUrl, allSongs[key].imageUrl)}></button>
                   </div>
 
                   {/* <AudioPlayer

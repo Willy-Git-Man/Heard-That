@@ -45,11 +45,11 @@ function App() {
           <Route exact path="/Albums/:id">
             <>
               <AlbumSongs userInfo={userInfo} />
-              <button className="navRouteButton">
+              {/* <button className="navRouteButton">
                 <NavLink className="navLinkButton" to="/">
                   Home
                 </NavLink>
-              </button>
+              </button> */}
             </>
           </Route>
         </Switch>

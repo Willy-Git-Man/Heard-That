@@ -85,24 +85,31 @@ font-size: large;
   /* outline: black solid 15px; */
   /* background-repeat: no-repeat; */
   background-size: 100% 100%;
+  width: 100%;
 
   /* position: absolute; */
   /* overflow: hidden; */
 }
 
 .songListItem {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   /* position:absolute; */
   /* position: relative; */
   z-index: 1;
   list-style: none;
   padding-left: 0;
   font-size: 1.5em;
-  margin-left: 22.5%;
   position: relative;
   /* margin-bottom: 2.5%; */
   color: white;
   font-size: 1.85em;
-  margin-bottom: 5%;
+  width: 100%;
   }
 
   .songListItemUrl {
@@ -228,6 +235,8 @@ margin-left: 11.5%;
   padding-left: 2.5%;
   /* height: 50%; */
   margin-top: 0;
+  height: 50%;
+  outline: solid white 5px;
  }
 
  .rhap_controls-section button {
@@ -248,7 +257,10 @@ margin-left: 11.5%;
   /* width: 100%; */
   outline: black solid 5px;
   background-color: black;
+  outline: 5px solid #00ff3e;
   /* z-index: 200; */
+  height: 50%;
+  background-color: white;
 
  }
 
@@ -262,6 +274,7 @@ margin-left: 11.5%;
    background-color: black;
    color: black;
    z-index: 100;
+   height: 50%;
 
  }
 
@@ -272,6 +285,8 @@ margin-left: 11.5%;
   background-color: black;
   color: black;
   z-index: 150;
+  height: 50%;
+
  }
 
  .rhap_progress-section {
@@ -314,4 +329,16 @@ margin-left: 11.5%;
 
  .welcome {
   margin: 0;
+ }
+
+
+ .globalAudioPlayer {
+   height: 20%;
+   position: absolute;
+   bottom: 0;
+
+   /* position: absolute; */
+   /* top: 0; */
+ background-size: 100% 100%;
+
  }

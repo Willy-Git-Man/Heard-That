@@ -18,14 +18,22 @@ console.log('allAlbumsIndex:', allAlbumsIndex)
     setShowMenu(true);
   };
 
+  const closeMenu = () => {
+
+    setShowMenu(false);
+  };
+
+
   useEffect(() => {
     if (!showMenu) return;
 
-    const closeMenu = () => {
-      setShowMenu(false);
-    };
+    // const closeMenu = () => {
 
-    document.addEventListener("click", closeMenu);
+    //   setShowMenu(false);
+    // };
+
+    // document.addEventListener("click", closeMenu);
+
 
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
@@ -59,7 +67,7 @@ console.log('allAlbumsIndex:', allAlbumsIndex)
         <i className="far fa-trash-alt"></i>
       </button>
 
-      <UpdateAlbumModal albumId={allAlbumsIndex?.id} />
+      <UpdateAlbumModal albumId={allAlbumsIndex?.id} closeMenu={closeMenu}/>
           </div>
         )}
       </div>

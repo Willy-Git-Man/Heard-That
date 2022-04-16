@@ -12,15 +12,15 @@ import AudioPlayer from "react-h5-audio-player";
 
 import './navLinks.css'
 
-export default function AudioPlayerGlobal({playing}) {
+export default function AudioPlayerGlobal({playing, pic}) {
   const userInfo = useSelector((state) => state.session.user);
-
+console.log('pic:', pic)
   return (
-    <div className="globalAudioPlayer">
+    <div className="globalAudioPlayer"   style={{ backgroundImage: `url(${pic})`   }}>
 
         <AudioPlayer
                 className="audioPlayer"
-                // autoPlay
+                style={{ backgroundImage: `url(${pic})`   }}
                 src={playing}
                 onPlay={(e) => console.log("onPlay")}
               />

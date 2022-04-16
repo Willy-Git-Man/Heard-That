@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { updateAlbumThunk } from "../../store/albums";
 import "./UpdateAlbumForm.css";
 
-export default function UpdateAlbumForm({ userInfo, setShowModal, albumId }) {
+export default function UpdateAlbumForm({ userInfo, setShowModal, albumId, closeMenu }) {
   const id = albumId
 
   const history = useHistory();
@@ -48,10 +48,11 @@ export default function UpdateAlbumForm({ userInfo, setShowModal, albumId }) {
     const albumUpdate = await dispatch(updateAlbumThunk(updatedAlbumPayload));
     if (albumUpdate) {
       setShowModal(false)
-      history.push("/api/Albums");
+      // closeMenu(true)
+      // history.push("/api/Albums");
     }
-
-    history.push("/Albums");
+closeMenu()
+    // history.push(`/Albums/${id}`);
   };
 
   return (

@@ -4,11 +4,14 @@ import { NavLink } from "react-router-dom";
 import "./index.css";
 import { getAllSongsThunk } from "../../store/songs";
 import AudioPlayer from "react-h5-audio-player";
+import NavLinks from "../NavLinks/navLinks";
 
-const SearchBar = () => {
+const SearchBar = ({playing, setPlaying}) => {
   const [searchValue, setSearchValue] = useState("");
   const [songs, setSongs] = useState([]);
-  const [playing, setPlaying] = useState("")
+  const [pic, setPic] = useState([]);
+
+  // const [playing, setPlaying] = useState("")
   const dispatch = useDispatch();
 
   // useEffect(() => {
@@ -29,6 +32,11 @@ const SearchBar = () => {
     e.target.src =
       "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png";
   };
+
+  const test = (playing, pic) => {
+    setPlaying(playing)
+    setPic(pic)
+  }
 
   console.log(allSongs);
   return (
@@ -52,25 +60,44 @@ const SearchBar = () => {
               return song;
           })
           .map((song) => (
-            <div className="songListDivSearch" key={song.id}>
-              <ul className="songUl">
-                <li className="songListItem">{song.songName}</li>
+            <div className="albumSongListDivSearch" key={song.id} onClick={console.log('success')}>
+            {/* <AlbumButtonDots /> */}
+            <div className="songUl"style={{ backgroundImage: `url(${song.imageUrl})`   }} alt="Broken Img Url" onclick={() => setPlaying(song.songUrl)}>
+              <li className="songListItem" >
+                {song.songName}
+              </li>
 
-                <li className="songListItem">{song.artistName}</li>
-              </ul>
-
-              <AudioPlayer
-                className="audioPlayer"
-                // autoPlay
-                src={song ? song.songUrl : null}
-                onPlay={(e) => console.log("onPlay")}
-              />
-              <img
-                className="songImage"
-                src={song.imageUrl}
-                alt="Broken Img Url"
-              />
+            {/* <button onclick={playbutton(song.songUrl)}>
+ggasdfasdfasdfa
+            </button> */}
+              <li className="songListItem">
+                {song.artistName}
+              </li>
+            <button className="songDivButton" style={{ backgroundImage: `url(${song.imageUrl})`   }}onClick={() => test(song.songUrl, song.imageUrl)}></button>
             </div>
+
+            {/* <AudioPlayer
+              className="audioPlayergg"
+              playing={PlayingContext}
+              // autoPlay
+              src={allSongs[key] ? allSongs[key].songUrl : null}
+              onPlay={() => setPlaying(allSongs[key].songUrl)}
+            /> */}
+
+            {console.log("playing:",playing)}
+            {/* <img
+              className="songImage"
+              src={allSongs[key].imageUrl}
+              alt="Broken Img Url"
+            /> */}
+{/*
+            <button
+              className="deleteSongButton2"
+              onClick={() => updateDispatch(allSongs[key])}
+            >
+              <i className="fa fa-music"></i>
+            </button> */}
+          </div>
           ))}
 
 
