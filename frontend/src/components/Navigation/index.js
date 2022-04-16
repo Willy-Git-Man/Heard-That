@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
-import LoginFormModal from "../LoginFormModal";
-import SignupFormModal from "../SignupFormModal";
+import LoginFormModal from "../Auth/LoginFormModal";
+import SignupFormModal from "../Auth/SignupFormModal";
 
 import NavLinks from "../NavLinks/navLinks";
 

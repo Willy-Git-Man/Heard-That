@@ -103,7 +103,7 @@
   position: absolute;
   /* bottom: 10%; */
   width: 100%;
-  border: white solid 5px;
+  /* z-index: 10000; */
 }
 
 /* .globalAudioPlayer rhap_progress-section {
@@ -139,7 +139,8 @@
   height: 40%;
   display: flex;
   flex-direction: column;
-  outline: 5px solid white;
+  /* outline: 5px solid white; */
+  width: 100%;
 
 }
 

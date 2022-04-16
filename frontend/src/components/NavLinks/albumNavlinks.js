@@ -12,7 +12,7 @@ export default function AlbumNavLinks() {
 
   return (
     <div className="navigationLink">
-      {allAlbums.map((album) => (
+      {allAlbums.filter((el) => el.userId === userInfo.id).map((album) => (
 
       <NavLink className="navAlbumNavLink" to={`/Albums/${album.id}`}>
         {album.title}

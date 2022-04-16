@@ -10,15 +10,11 @@ import AlbumSongs from "./components/Albums/albumSongs";
 import "slick-carousel/slick/slick.css";
 
 import "slick-carousel/slick/slick-theme.css";
-import NavLinks from "./components/NavLinks/navLinks";
 export const PlayingContext = React.createContext();
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
-
-  console.log("hhhhh", PlayingContext);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -26,8 +22,7 @@ function App() {
 
   const userInfo = useSelector((state) => state.session.user);
   const songInfo = useSelector((state) => state.songs);
-
-  // const currentUser = useSelector(state => state.session.user)/
+//TODO: THIS LINE ^ IS KEEPING CAROUSEL WORKING
 
   return (
     <>
