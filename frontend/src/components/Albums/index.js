@@ -25,17 +25,14 @@ export default function MyAlbums({ userInfo }) {
 
   const history = useHistory();
 
-  if (userInfo === undefined) {
-    history.push("/");
-  }
-
   if (!allAlbumKeys.length) {
-    history.push("/Songs");
-    return <h1>error</h1>;
+    history.push("/Albums/1");
+    return null;
   } else
     return (
       <div className="albumSecondDiv">
         <AlbumCarousel userInfo={userInfo} />
+        {/* <h1 className="splashMessage">Welcome back, Doctor</h1> */}
       </div>
     );
 }
