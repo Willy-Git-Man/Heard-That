@@ -7,6 +7,7 @@ import "./albums.css";
 
 import "react-h5-audio-player/lib/styles.css";
 import NavLinks from "../NavLinks/navLinks";
+import MyAlbums from ".";
 
 export default function AlbumSongs({ userInfo }) {
   const history = useHistory();
@@ -44,8 +45,10 @@ export default function AlbumSongs({ userInfo }) {
   return (
     <div className="albumMainPage">
       <NavLinks playing={playing} setPlaying={setPlaying} pic={pic} />
-      <div className="albumSongsSecondDiv">
         <div className="albumSongsListDiv">
+      <MyAlbums userInfo={userInfo} />
+          <div className="albumSongsListInnerDiv">
+
           {allSongsObjectKeys
             ?.filter(
               (key) =>
@@ -53,34 +56,42 @@ export default function AlbumSongs({ userInfo }) {
                 allSongs[key]?.albumId === allAlbums[id].id
             )
             .map((key) => (
-              <div
-                className="albumSongListDiv"
-                key={allSongs[key].id}
-                // onClick={console.log("success")}
-              >
+
                 <div
-                  className="songUl"
-                  style={{ backgroundImage: `url(${allSongs[key].imageUrl})` }}
+                  className="everySongDiv"
+                  // style={{ backgroundImage: `url(${allSongs[key].imageUrl})` }}
                   alt="Broken Img Url"
                   onclick={() => setPlaying(allSongs[key].songUrl)}
                 >
-                  <li className="songListItem">{allSongs[key].songName}</li>
-
-                  <li className="songListItem">{allSongs[key].artistName}</li>
+                  <img
+                className="songImageInAlbum"
+                src={allSongs[key]?.imageUrl}
+                alt="Broken Img Url"
+              />
                   <button
                     className="songDivButton"
-                    style={{
-                      backgroundImage: `url(${allSongs[key].imageUrl})`,
-                    }}
+                    // style={{
+                    //   backgroundImage: `url(${allSongs[key].imageUrl})`,
+                    // }}
                     onClick={() =>
                       test(allSongs[key].songUrl, allSongs[key].imageUrl)
                     }
-                  ></button>
+                  >
+                     {/* <i className="fas fa-user-circle" /> */}
+                    <h1 className="playButton">Play</h1>
+
+        {/* <i className="fab fa-grav"></i> */}
+                  </button>
+                  <div>
+
+                  <li className="songListItem">{allSongs[key].songName}</li>
+
+                  <li className="songListItem">{allSongs[key].artistName}</li>
+                  </div>
                 </div>
-              </div>
             ))}
+            </div>
         </div>
       </div>
-    </div>
   );
 }

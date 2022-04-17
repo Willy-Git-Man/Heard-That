@@ -18,24 +18,20 @@
 
 .navigationLinks {
   display: flex;
-  position: relative;
+  /* position: relative; */
   gap: 2.5%;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  /* justify-content: space-around; */
   text-decoration: none;
   z-index: 1;
   width: 10%;
   background-color: black;
-  position: absolute;
   bottom: 0;
   left: 0;
   height: 100%;
   z-index: 9999;
   min-width: 200px;
   width: 9.5%;
-  /* position: relative; */
 
 
 }
@@ -99,12 +95,7 @@
 }
 
 
-.globalAudioPlayer {
-  position: absolute;
-  /* bottom: 10%; */
-  width: 100%;
-  /* z-index: 10000; */
-}
+
 
 /* .globalAudioPlayer rhap_progress-section {
   border: 5px solid white;
@@ -140,6 +131,7 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+
   /* outline: 5px solid white; */
   width: 100%;
 
@@ -159,11 +151,10 @@
 
 
 .navigationLink {
-  height: 30%;
+  /* height: 30%; */
   width: 100%;
+  margin-bottom: 50%;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   margin: 0;
   flex-direction: column;
 }
@@ -171,5 +162,14 @@
 .navAlbumNavLink {
   width: 100%;
   color: white;
+
+}
+
+.navAlbumNavLinks {
+  /* position: absolute; */
+
+}
+
+.sideBarSearchAndLinks {
 
 }

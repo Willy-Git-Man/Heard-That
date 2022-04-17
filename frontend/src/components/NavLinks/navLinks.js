@@ -24,11 +24,12 @@ export default function NavLinks({ playing, setPlaying, pic }) {
 
         <ProfileButton user={userInfo} />
         <span className="navUpperBottomLine"></span>
-
       </div>
-        <SearchBar playing={playing} setPlaying={setPlaying} />
-      <div className="navAlbumNavLinks">
-        <AlbumNavLinks />
+
+      <div className="sideBarSearchAndLinks">
+
+      <SearchBar playing={playing} setPlaying={setPlaying} />
+      <AlbumNavLinks />
       </div>
 
       <AudioPlayerGlobal playing={playing} pic={pic} />

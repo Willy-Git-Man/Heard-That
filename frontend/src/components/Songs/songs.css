@@ -330,10 +330,14 @@ font-size: large;
    height: 20%;
    position: absolute;
    bottom: 0;
-   z-index: 10000;
+   z-index: -10000;
+   right: 0;
 
    /* position: absolute; */
    /* top: 0; */
  background-size: 100% 100%;
-
+ /* position: absolute; */
+ /* bottom: 10%; */
+ width: 100vw;
+ /* z-index: 10000; */
  }

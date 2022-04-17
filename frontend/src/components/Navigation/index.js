@@ -16,7 +16,7 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     sessionLinks = (
       <>
-          <MyAlbums userInfo={userInfo} />
+          {/* <MyAlbums userInfo={userInfo} /> */}
       </>
     );
   } else {

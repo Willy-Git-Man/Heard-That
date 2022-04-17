@@ -1,133 +1,102 @@
-
-
-
 .welcome {
-  /* background-color: white; */
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   margin: 0;
   font-size: 2em;
-  font-family: 'Press Start 2P', cursive;
   color: #00ff3e;
-  width: 100%;
+  font-family: "Press Start 2P", cursive;
 }
-.albumsMainDiv {
-  position: relative;
-  width:100%;
-  position:absolute;
-  left:0;
-  height: 35%;
 
-}
-h1 {
+h1,h2 {
   color: white;
+  margin: 0;
 }
 
 .albumSecondDiv {
-
-height: 30vh;
-
-
-width: 100%;
-display: flex;
-justify-content: space-around;
-background: linear-gradient(#724f31, #000000);
-
-gap: 50%;
-
-}
-
-.albumSecondDiv::-webkit-scrollbar {
-  display: none;
-}
-
-.songsMainDivAlbum {
-  height: 50vh;
-  margin-top: 10vh;
-  border-top-left-radius: 10%;
-  /* outline: 5px solid #00ff3e; */
-
-margin-left: 10%;
-  width: 90%;
-  overflow-y: scroll;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  /* background-image: url("../../../public/pics/mixtape.png"); */
-    background-size: auto;
-  /* flex-wrap: wrap; */
+  justify-content: space-around;
+  width: 100%;
+  /* height: 30vh; */
 }
 
-.songsMainDivAlbum::-webkit-scrollbar {
-  display: none;
-}
 .albumSongsListDiv {
-  background-color: rgba(255,255,255,.1);
-  height: 70%;
-  margin-left: 10%;
-  top: 30%;
-  position: absolute;
-  outline: 5px solid #00ff3e;
-  width: 90%;
-  overflow-y: scroll;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  /* background-image: url(../../../public/pics/mixtape.png); */
-  background-size: auto;
-
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
+  overflow-y: scroll;
+  height: 70vh;
+  width: 90.5%;
+  margin-left: 9.5%;
+}
+.albumSongsListInnerDiv {
+  padding: 2.5%;
 }
 
 .albumSongsListDiv::-webkit-scrollbar {
   display: none;
 }
+.everySongDiv {
+display: flex;
+outline: white solid 5px;
+margin-bottom: 25px;
+/* flex-direction: column; */
+}
+.everySongDiv::-webkit-scrollbar {
+  display: none;
+
+}
+.songDivButton {
+  /* background-color: white; */
+
+  width: 250px;
+}
+.playButton {
+  color: black;
+}
 
 .eachAlbumMainDiv {
-position: relative;
-/* height: 100px; */
-height: 10vh;
-width: 75%;
-opacity: 1;
+  /* position: relative; */
+  /* height: 10vh; */
+  height: 100%;
+  /* height: 15vh; */
 
+  display: flex;
+}
+.eachAlbumMainDivFirst {
+  height: 100%;
 
 }
 .firstSlider {
-  background-color: green ;
-height: 100%;
- margin-bottom: 50px;
 
-
+  height: 15vh;
+  outline: green 5px solid;
 }
 
 .secondSlider {
-  /* background-color: white; */
-  height: 10vh;
-height: 100%;
+  height: 15vh;
 
-
-
+  outline: green 5px solid;
 }
 
 .eachAlbumMainDiv2 {
-
   /* display: flex;
   justify-content: space-between;
   align-items: center; */
-  }
-
+}
 
 .mainCarouselDiv {
-  position: relative;
+  /* position: relative; */
 
-  height: 30%;
-
+  height: 30vh;
 
   width: 90%;
   display: flex;
   flex-direction: column;
+
   /* overflow-y: scroll;
   display: flex;
   justify-content: center;
@@ -135,12 +104,11 @@ height: 100%;
   flex-wrap: wrap;
     background-size: auto;
     background: linear-gradient(#724f31, #000000); */
+}
 
-  }
-
-  .eachDivInCarousel::-webkit-scrollbar {
-    display: none;
-  }
+.eachDivInCarousel::-webkit-scrollbar {
+  display: none;
+}
 
 .albumImageNavLink {
   display: flex;
@@ -160,8 +128,7 @@ height: 100%;
   height: 25%;
   background-color: blue;
   background-color: rgb(0, 208, 255);
- background-color: rgba(0, 0, 0, .95);
-
+  background-color: rgba(0, 0, 0, 0.95);
 
   font-weight: none;
   /* bottom: 0; */
@@ -169,8 +136,8 @@ height: 100%;
   bottom: 0;
 
   z-index: 100;
-  font-size: .5em;
-  font-family: 'Press Start 2P', cursive;
+  font-size: 0.5em;
+  font-family: "Press Start 2P", cursive;
   color: #00ff3e;
   /* padding: 5%; */
 }
@@ -179,7 +146,7 @@ height: 100%;
   list-style: none;
   font-style: none;
   /* max-width: 0; */
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   bottom: 0;
@@ -205,9 +172,20 @@ height: 100%;
   height: 200px;
   /* object-fit: cover; */
 }
+.albumImageSecondSlider {
+  height: 15vh;
+  object-fit: cover;
+z-index: -1;
+
+}
+.albumImageSecondSliderNext {
+  height: 15vh;
+  object-fit: cover;
+  z-index: -1;
+}
 
 .albumImageTopCarousel {
-  height: 100%;
+  height: 15vh;
   /* width: 50px; */
 }
 
@@ -228,19 +206,17 @@ height: 100%;
 }
 
 .albumSongsDiv {
-  outline: black solid 5px;
+  /* outline: black solid 5px; */
   /* margin-top: 100px; */
-background-color: rgba(50, 80, 150, .9);
-height: 85vh;
-width: 50vw;
-margin-left: 10%;
-overflow-y: scroll;
-/* background-color: black; */
+  background-color: rgba(50, 80, 150, 0.9);
+  height: 85vh;
+  width: 50vw;
+  margin-left: 10%;
+  overflow-y: scroll;
+  /* background-color: black; */
 
-outline: black solid 5px;
+  /* outline: black solid 5px; */
 }
-
-
 
 .deleteAlbumButton {
   height: 5vh;
@@ -256,16 +232,12 @@ outline: black solid 5px;
   outline: solid black 5px;
 }
 
-
 /* .songsMainDiv {
   background-color: rgba(100, 50, 25, .8);
 } */
 
 .myAlbums {
-
 }
-
-
 
 .albumSongListDiv {
   display: flex;
@@ -281,41 +253,36 @@ outline: black solid 5px;
   /* min-width: 400px; */
 }
 
-
-
 .albumSongsMainDiv {
   display: block;
   /* margin-left: 1%; */
   /* display: block; */
   /* margin-bottom: 50px; */
-  background-color: rgba(50, 80, 150, .9);
+  background-color: rgba(50, 80, 150, 0.9);
   background-color: rgba(0, 208, 255, 0.3);
   background-color: rgba(7, 158, 193, 0.6);
   background-color: black;
   /* outline: solid black 5px; */
-  position:absolute;
-  width:50%;
-  right:0;
+  position: absolute;
+  width: 50%;
+  right: 0;
   height: 90%;
   z-index: 999;
-
 }
-
-
 
 .deleteSongButton2 {
   height: 30%;
-    background-color: rgb(1, 196, 255);
-    left: 0;
-    position: absolute;
-    width: 20%;
-    color: white;
-    font-size: 2em;
-    z-index: 50;
-    outline: solid black 5px;
+  background-color: rgb(1, 196, 255);
+  left: 0;
+  position: absolute;
+  width: 20%;
+  color: white;
+  font-size: 2em;
+  z-index: 50;
+  outline: solid black 5px;
 }
 
-.deleteSongButton2:onClick{
+.deleteSongButton2:onclick {
   background-color: black;
 }
 
@@ -341,7 +308,6 @@ outline: black solid 5px;
 .slick-slider slick-initialized {
   display: flex;
   justify-content: center;
-
 }
 
 .slick-list {
@@ -352,82 +318,102 @@ outline: black solid 5px;
 }
 
 .slick-arrow.slick-next {
-font-size: 3em;
-height: 5vh;
+  font-size: 3em;
+  height: 5vh;
 }
 
 .slick-arrow_slick-prev {
-font-size: 3em;
+  font-size: 3em;
 }
 
 .slick-slide.slick-active.slick-current {
 }
 
-.slick-slide.slick-active{
+.slick-slide.slick-active {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  }
+}
 
-  .slick-slide.slick-active.slick-cloned {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-  }
+.slick-slide.slick-active.slick-cloned {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
 
-  .slick-arrow.slick-prev::before {
-    /* background-color: white; */
-    height: 5vh;
+.slick-arrow.slick-prev::before {
+  /* background-color: white; */
+  height: 5vh;
+}
 
-  }
-
-
-  .audioPlayergg {
-
-  }
-
-  .songDivButton {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-  background-size: 100% 100%;
-
-  }
-
-  .albumButtonDotsButton {
-    height: 25%;
-    width: 25%;
-    background-color: white;
-    /* position: abo; */
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 1);
-    color: #00ff3e;
-    /* font-size: 2.5em; */
-    font-size: 2em;
-  }
+.audioPlayergg {
+}
 
 
-  .albumSettingsDiv {
-    height: 100%;
-    width: 100%;
-    background-color: white;
-  }
 
+.albumButtonDotsButton {
+  height: 25%;
+  width: 25%;
+  background-color: white;
+  /* position: abo; */
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 1);
+  color: #00ff3e;
+  /* font-size: 2.5em; */
+  font-size: 2em;
+}
 
-  .mainPageAlbums {
+.albumSettingsDiv {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.mainPageAlbums {
   display: inline;
-  }
+}
 
-
-  .albumMessage {
-    color: white;
-  }
+.albumMessage {
+  color: white;
+}
 .splashMessage {
   color: white;
+}
+
+
+.firstSliderDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.secondSliderDiv {
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; */
+}
+
+.eachAlbumMainDivSecondCarousel {
+  position: relative;
+}
+.secondCaruselNavLink {
+  position: absolute;
+  top: 0;
+  /* width: 100%; */
+  /* height: 100%; */
+
+}
+
+
+.songImageInAlbum {
+  height: 100%;
+  width: 50px;
+}
+
+.albumMainPage {
+  display: flex;
 }
