@@ -7,6 +7,7 @@ import NavLinks from "../NavLinks/navLinks";
 import "./Navigation.css";
 import MyAlbums from "../Albums";
 import MySongs from "../Songs";
+import { Redirect } from "react-router-dom";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -17,6 +18,8 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
           {/* <MyAlbums userInfo={userInfo} /> */}
+          <Redirect to="/albums/1" />
+
       </>
     );
   } else {
