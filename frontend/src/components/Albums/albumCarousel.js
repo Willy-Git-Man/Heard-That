@@ -68,11 +68,58 @@ export default function AlbumCarousel({ userInfo }) {
                   {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
                 </div>
 
+                <div
+                  className="eachAlbumMainDivSecondCarousel"
+                  key={allAlbums[2]?.id}
+                  style={{
+                    backgroundImage: `url(${allAlbums[2]?.imageUrl})`,
+                  }}
+                  onclick={() => albumSearchHistoryPush(2)}
+                >
+                  <img
+                    className="albumImageSecondSliderNext"
+                    src={allAlbums[2]?.imageUrl}
+                    alt="Broken Img Url"
+                  onclick={() => albumSearchHistoryPush(2)}
+
+                  />
+                  <NavLink className="secondCaruselNavLink" to={`/Albums/${2}`}>
+                  <h1 className="albumNameLink">{allAlbums[2]?.title}</h1>
+                </NavLink>
+                  {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
+                </div>
+
+
+                <div
+                  className="eachAlbumMainDivSecondCarousel"
+                  key={allAlbums[3]?.id}
+                  style={{
+                    backgroundImage: `url(${allAlbums[3]?.imageUrl})`,
+                  }}
+                  onclick={() => albumSearchHistoryPush(3)}
+                >
+                  <img
+                    className="albumImageSecondSliderNext"
+                    src={allAlbums[3]?.imageUrl}
+                    alt="Broken Img Url"
+                  onclick={() => albumSearchHistoryPush(3)}
+
+                  />
+                  <NavLink className="secondCaruselNavLink" to={`/Albums/${3}`}>
+                  <h1 className="albumNameLink">{allAlbums[3]?.title}</h1>
+                </NavLink>
+                  {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
+                </div>
+
+
+
             {allAlbumKeys
               ?.filter(
                 (index) =>
                   allAlbums[index]?.userId === userInfo.id &&
-                  allAlbums[index]?.id !== 1
+                  allAlbums[index]?.id !== 1 &&
+                  allAlbums[index]?.id !== 2
+
               )
               .map((album) => (
                 <div
@@ -113,11 +160,21 @@ export default function AlbumCarousel({ userInfo }) {
               />
             </div>
 
+            <div className="eachAlbumMainDiv" key={allAlbums[2]?.id}>
+              <img
+                className="albumImageTopCarousel"
+                src={allAlbums[2]?.imageUrl}
+                alt="Broken Img Url"
+              />
+            </div>
+
             {allAlbumKeys
               ?.filter(
                 (index) =>
                   allAlbums[index]?.userId === userInfo.id &&
-                  allAlbums[index]?.id !== 1
+                  allAlbums[index]?.id !== 1 &&
+                  allAlbums[index]?.id !== 2
+
               )
               .map((index) => (
                 <div
