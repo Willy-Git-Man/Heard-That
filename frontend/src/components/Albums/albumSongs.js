@@ -44,7 +44,10 @@ export default function AlbumSongs({ userInfo }) {
 
   return (
     <div className="albumMainPage">
+      <div className="sideBar">
+
       <NavLinks playing={playing} setPlaying={setPlaying} pic={pic} />
+      </div>
         <div className="albumSongsListDiv">
       <MyAlbums userInfo={userInfo} />
           <div className="albumSongsListInnerDiv">

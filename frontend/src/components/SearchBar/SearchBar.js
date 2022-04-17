@@ -72,22 +72,26 @@ const SearchBar = ({ playing, setPlaying }) => {
               onClick={console.log("success")}
             >
               {/* <AlbumButtonDots /> */}
-              <div
-                className="songUl"
+              {/* <div
+                className="songUlSearch"
                 style={{ backgroundImage: `url(${song.imageUrl})` }}
                 alt="Broken Img Url"
-                onclick={() => setPlaying(song.songUrl)}
-              >
+                // onclick={() => setPlaying(song.songUrl)}
+                onClick={() => test(song.songUrl, song.imageUrl)}
+              > */}
+                <div className="searchLi">
+
                 <li className="songListItem">{song.songName}</li>
 
                 <li className="songListItem">{song.artistName}</li>
+                </div>
                 <button
                   className="songDivButton"
-                  style={{ backgroundImage: `url(${song.imageUrl})` }}
+                  // style={{ backgroundImage: `url(${song.imageUrl})` }}
                   onClick={() => test(song.songUrl, song.imageUrl)}
-                ></button>
+                >ggg</button>
               </div>
-            </div>
+            // </div>
           ))}
 
         {allAlbums
@@ -100,7 +104,7 @@ const SearchBar = ({ playing, setPlaying }) => {
           })
           .map((album) => (
             <div
-              className="albumSongListDivSearch"
+              className=""
               key={album.id}
               onClick={console.log("success")}
               onclick={() => albumSearchHistoryPush(album.id)}

@@ -82,6 +82,12 @@ font-size: large;
   width: 100%;
 }
 
+.songUlSearch {
+  padding-left: 0;
+  background-size: 100% 100%;
+  background-color: white;
+}
+
 .songListItem {
   background-color: black;
   display: flex;
@@ -327,7 +333,7 @@ font-size: large;
 
 
  .globalAudioPlayer {
-   height: 20%;
+   height: 20vh;
    position: absolute;
    bottom: 0;
    z-index: -10000;

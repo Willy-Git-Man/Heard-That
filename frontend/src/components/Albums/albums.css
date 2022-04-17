@@ -27,13 +27,21 @@ h1,h2 {
   /* justify-content: center; */
   /* align-items: center; */
   /* flex-wrap: wrap; */
-  overflow-y: scroll;
-  height: 70vh;
-  width: 90.5%;
-  margin-left: 9.5%;
+  overflow-y: hidden;
+  height: 90vh;
+  width: 100%;
+  padding-top:   2.5vh;
 }
 .albumSongsListInnerDiv {
-  padding: 2.5%;
+  margin-top: 2.5%;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+
+  height: 40vh;
+  overflow: scroll;
+}
+.albumSongsListInnerDiv::-webkit-scrollbar {
+  display: none;
 }
 
 .albumSongsListDiv::-webkit-scrollbar {
@@ -52,7 +60,8 @@ margin-bottom: 25px;
 .songDivButton {
   /* background-color: white; */
 
-  width: 250px;
+  /* width: 250px; */
+  background-color: #00ff3e;
 }
 .playButton {
   color: black;
@@ -416,4 +425,17 @@ z-index: -1;
 
 .albumMainPage {
   display: flex;
+  height: 80vh;
+}
+
+.sideBar {
+}
+
+.albumSongListDivSearch {
+  height: 5vh;
+  display: flex;
+}
+
+.searchLi {
+
 }
