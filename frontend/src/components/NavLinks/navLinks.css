@@ -116,7 +116,6 @@
   left: 30%;
   bottom: 20%;
   height: 2.5vh;
-  outline: 5px solid #00ff3e;
   font-family: 'Press Start 2P', cursive;
   color: #00ff3e;
   font-size: .5em;
@@ -171,5 +170,15 @@
 }
 
 .sideBarSearchAndLinks {
+
+}
+
+
+.rhap_container.rhap_loop--off.rhap_play-status--playing.audioPlayer {
+height: 100%;
+}
+
+.rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
+  height: 100%;
 
 }

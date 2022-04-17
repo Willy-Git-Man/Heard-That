@@ -168,12 +168,22 @@ export default function AlbumCarousel({ userInfo }) {
               />
             </div>
 
+
+            <div className="eachAlbumMainDiv" key={allAlbums[2]?.id}>
+              <img
+                className="albumImageTopCarousel"
+                src={allAlbums[3]?.imageUrl}
+                alt="Broken Img Url"
+              />
+            </div>
+
             {allAlbumKeys
               ?.filter(
                 (index) =>
                   allAlbums[index]?.userId === userInfo.id &&
                   allAlbums[index]?.id !== 1 &&
-                  allAlbums[index]?.id !== 2
+                  allAlbums[index]?.id !== 2 &&
+                  allAlbums[index]?.id !== 3
 
               )
               .map((index) => (
