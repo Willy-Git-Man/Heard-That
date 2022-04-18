@@ -47,6 +47,7 @@ export default function AlbumSongs({ userInfo }) {
     };
 
     const newSong = await dispatch(addLikedSongThunk(likedSongPayload));
+    history.push('/Albums/3')
   };
 
   useEffect(() => {
@@ -111,7 +112,6 @@ export default function AlbumSongs({ userInfo }) {
                   <li className="songListItem">{allSongs[key].artistName}</li>
                 </div>
                 <div>
-                  <UpdateSongModal songId={allSongs[key].id} />
 
                   <button
                     className="deleteSongButto"
@@ -119,13 +119,21 @@ export default function AlbumSongs({ userInfo }) {
                   >
                     <i className="far fa-trash-alt"></i>
                   </button>
+                  {allSongs[key].albumId !== 3 && (
+
+                    <>
+
+                    <UpdateSongModal songId={allSongs[key].id} />
 
                   <button
-                    className="addLikedSong"
-                    onClick={() => likeSongDispatch(allSongs[key].id)}
+                  className="addLikedSong"
+                  onClick={() => likeSongDispatch(allSongs[key].id)}
                   >
                     <i className="fab fa-grav"></i>
                   </button>
+                    </>
+                    )
+                  }
                 </div>
               </div>
             ))}
