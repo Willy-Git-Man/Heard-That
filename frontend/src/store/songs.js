@@ -85,6 +85,34 @@ export const addSongThunk = (newSong) => async (dispatch) => {
   }
 };
 
+
+
+
+
+
+export const addLikedSongThunk = (newSong) => async (dispatch) => {
+  const response = await csrfFetch("/api/songs", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newSong),
+  });
+  if (response.ok) {
+    const songRequest = await response.json();
+    dispatch(addSong(songRequest));
+    return songRequest;
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
 export const updateSongThunk = (updatedSong) => async (dispatch) => {
   const response = await csrfFetch(`/api/songs/${+updatedSong.id}`, {
     method: "PUT",

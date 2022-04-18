@@ -42,7 +42,7 @@ export default function AlbumCarousel({ userInfo }) {
           <Slider
             asNavFor={firstSlider}
             ref={(slider2) => setsecondSlider(slider2)}
-            slidesToShow={4}
+            slidesToShow={6}
             swipeToSlide={true}
             focusOnSelect={true}
             className="secondSlider"
@@ -64,7 +64,6 @@ export default function AlbumCarousel({ userInfo }) {
               <NavLink className="secondCaruselNavLink" to={`/Albums/${1}`}>
                 <h1 className="albumNameLink">{allAlbums[1]?.title}</h1>
               </NavLink>
-              {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
             </div>
 
             <div
@@ -84,7 +83,6 @@ export default function AlbumCarousel({ userInfo }) {
               <NavLink className="secondCaruselNavLink" to={`/Albums/${2}`}>
                 <h1 className="albumNameLink">{allAlbums[2]?.title}</h1>
               </NavLink>
-              {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
             </div>
 
             <div
@@ -104,8 +102,26 @@ export default function AlbumCarousel({ userInfo }) {
               <NavLink className="secondCaruselNavLink" to={`/Albums/${3}`}>
                 <h1 className="albumNameLink">{allAlbums[3]?.title}</h1>
               </NavLink>
-              {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
             </div>
+{/* 
+            <div
+              className="eachAlbumMainDivSecondCarousel"
+              key={allAlbums[2]?.id}
+              style={{
+                backgroundImage: `url(${allAlbums[2]?.imageUrl})`,
+              }}
+              onclick={() => albumSearchHistoryPush(2)}
+            >
+              <img
+                className="albumImageSecondSliderNext"
+                src={allAlbums[2]?.imageUrl}
+                alt="Broken Img Url"
+                onclick={() => albumSearchHistoryPush(2)}
+              />
+              <NavLink className="secondCaruselNavLink" to={`/Albums/${2}`}>
+                <h1 className="albumNameLink">{allAlbums[2]?.title}</h1>
+              </NavLink>
+            </div> */}
 
             {allAlbumKeys
               ?.filter(
@@ -135,7 +151,6 @@ export default function AlbumCarousel({ userInfo }) {
                   >
                     <h1 className="albumNameLink">{allAlbums[album]?.title}</h1>
                   </NavLink>
-                  {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
                 </div>
               ))}
           </Slider>

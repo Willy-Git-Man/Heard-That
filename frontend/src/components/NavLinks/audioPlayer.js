@@ -21,7 +21,7 @@ console.log('pic:', pic)
 
         <AudioPlayer
                 className="audioPlayer"
-                style={{ backgroundImage: `url(${pic})`   }}
+                style={{ backgroundImage: `url(${pic})`, backgroundRepeat: 'no-repeat', objectFit: 'cover'   }}
                 src={playing}
                 onPlay={(e) => console.log("onPlay")}
               />
