@@ -31,7 +31,7 @@
   height: 100%;
   z-index: 9999;
   min-width: 200px;
-  width: 9.5%;
+  width: 100%;
 
 
 }
@@ -126,7 +126,7 @@
 }
 
 .navLinkUpper {
-  height: 23.5%;
+  height: 20%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -170,7 +170,7 @@
 }
 
 .sideBarSearchAndLinks {
-
+width: 100%;
 }
 
 
