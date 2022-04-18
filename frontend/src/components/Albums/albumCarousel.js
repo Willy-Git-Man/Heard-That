@@ -47,71 +47,65 @@ export default function AlbumCarousel({ userInfo }) {
             focusOnSelect={true}
             className="secondSlider"
           >
-                 <div
-                  className="eachAlbumMainDivSecondCarousel"
-                  key={allAlbums[1]?.id}
-                  style={{
-                    backgroundImage: `url(${allAlbums[1]?.imageUrl})`,
-                  }}
-                  onclick={() => albumSearchHistoryPush(1)}
-                >
-                  <img
-                    className="albumImageSecondSliderNext"
-                    src={allAlbums[1]?.imageUrl}
-                    alt="Broken Img Url"
-                  onclick={() => albumSearchHistoryPush(1)}
+            <div
+              className="eachAlbumMainDivSecondCarousel"
+              key={allAlbums[1]?.id}
+              style={{
+                backgroundImage: `url(${allAlbums[1]?.imageUrl})`,
+              }}
+              onclick={() => albumSearchHistoryPush(1)}
+            >
+              <img
+                className="albumImageSecondSliderNext"
+                src={allAlbums[1]?.imageUrl}
+                alt="Broken Img Url"
+                onclick={() => albumSearchHistoryPush(1)}
+              />
+              <NavLink className="secondCaruselNavLink" to={`/Albums/${1}`}>
+                <h1 className="albumNameLink">{allAlbums[1]?.title}</h1>
+              </NavLink>
+              {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
+            </div>
 
-                  />
-                  <NavLink className="secondCaruselNavLink" to={`/Albums/${1}`}>
-                  <h1 className="albumNameLink">{allAlbums[1]?.title}</h1>
-                </NavLink>
-                  {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
-                </div>
+            <div
+              className="eachAlbumMainDivSecondCarousel"
+              key={allAlbums[2]?.id}
+              style={{
+                backgroundImage: `url(${allAlbums[2]?.imageUrl})`,
+              }}
+              onclick={() => albumSearchHistoryPush(2)}
+            >
+              <img
+                className="albumImageSecondSliderNext"
+                src={allAlbums[2]?.imageUrl}
+                alt="Broken Img Url"
+                onclick={() => albumSearchHistoryPush(2)}
+              />
+              <NavLink className="secondCaruselNavLink" to={`/Albums/${2}`}>
+                <h1 className="albumNameLink">{allAlbums[2]?.title}</h1>
+              </NavLink>
+              {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
+            </div>
 
-                <div
-                  className="eachAlbumMainDivSecondCarousel"
-                  key={allAlbums[2]?.id}
-                  style={{
-                    backgroundImage: `url(${allAlbums[2]?.imageUrl})`,
-                  }}
-                  onclick={() => albumSearchHistoryPush(2)}
-                >
-                  <img
-                    className="albumImageSecondSliderNext"
-                    src={allAlbums[2]?.imageUrl}
-                    alt="Broken Img Url"
-                  onclick={() => albumSearchHistoryPush(2)}
-
-                  />
-                  <NavLink className="secondCaruselNavLink" to={`/Albums/${2}`}>
-                  <h1 className="albumNameLink">{allAlbums[2]?.title}</h1>
-                </NavLink>
-                  {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
-                </div>
-
-
-                <div
-                  className="eachAlbumMainDivSecondCarousel"
-                  key={allAlbums[3]?.id}
-                  style={{
-                    backgroundImage: `url(${allAlbums[3]?.imageUrl})`,
-                  }}
-                  onclick={() => albumSearchHistoryPush(3)}
-                >
-                  <img
-                    className="albumImageSecondSliderNext"
-                    src={allAlbums[3]?.imageUrl}
-                    alt="Broken Img Url"
-                  onclick={() => albumSearchHistoryPush(3)}
-
-                  />
-                  <NavLink className="secondCaruselNavLink" to={`/Albums/${3}`}>
-                  <h1 className="albumNameLink">{allAlbums[3]?.title}</h1>
-                </NavLink>
-                  {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
-                </div>
-
-
+            <div
+              className="eachAlbumMainDivSecondCarousel"
+              key={allAlbums[3]?.id}
+              style={{
+                backgroundImage: `url(${allAlbums[3]?.imageUrl})`,
+              }}
+              onclick={() => albumSearchHistoryPush(3)}
+            >
+              <img
+                className="albumImageSecondSliderNext"
+                src={allAlbums[3]?.imageUrl}
+                alt="Broken Img Url"
+                onclick={() => albumSearchHistoryPush(3)}
+              />
+              <NavLink className="secondCaruselNavLink" to={`/Albums/${3}`}>
+                <h1 className="albumNameLink">{allAlbums[3]?.title}</h1>
+              </NavLink>
+              {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
+            </div>
 
             {allAlbumKeys
               ?.filter(
@@ -119,7 +113,6 @@ export default function AlbumCarousel({ userInfo }) {
                   allAlbums[index]?.userId === userInfo.id &&
                   allAlbums[index]?.id !== 1 &&
                   allAlbums[index]?.id !== 2
-
               )
               .map((album) => (
                 <div
@@ -134,19 +127,20 @@ export default function AlbumCarousel({ userInfo }) {
                     className="albumImageSecondSliderNext"
                     src={allAlbums[album]?.imageUrl}
                     alt="Broken Img Url"
-                  onclick={() => albumSearchHistoryPush(album.id)}
-
+                    onclick={() => albumSearchHistoryPush(album.id)}
                   />
-                  <NavLink className="secondCaruselNavLink" to={`/Albums/${album}`}>
-                  <h1 className="albumNameLink">{allAlbums[album]?.title}</h1>
-                </NavLink>
+                  <NavLink
+                    className="secondCaruselNavLink"
+                    to={`/Albums/${album}`}
+                  >
+                    <h1 className="albumNameLink">{allAlbums[album]?.title}</h1>
+                  </NavLink>
                   {/* <h1 className="secondCaruselAlbumH1">{allAlbums[album]?.title}</h1> */}
                 </div>
               ))}
           </Slider>
         </div>
         <div className="firstSliderDiv">
-
           <Slider
             asNavFor={secondSlider}
             ref={(slider1) => setfirstSlider(slider1)}
@@ -168,7 +162,6 @@ export default function AlbumCarousel({ userInfo }) {
               />
             </div>
 
-
             <div className="eachAlbumMainDiv" key={allAlbums[2]?.id}>
               <img
                 className="albumImageTopCarousel"
@@ -184,7 +177,6 @@ export default function AlbumCarousel({ userInfo }) {
                   allAlbums[index]?.id !== 1 &&
                   allAlbums[index]?.id !== 2 &&
                   allAlbums[index]?.id !== 3
-
               )
               .map((index) => (
                 <div
@@ -203,7 +195,6 @@ export default function AlbumCarousel({ userInfo }) {
               ))}
           </Slider>
         </div>
-
       </div>
     );
 }

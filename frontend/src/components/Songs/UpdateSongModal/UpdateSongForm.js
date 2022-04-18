@@ -65,10 +65,10 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
     const songUpdate = await dispatch(updateSongThunk(updatedSongPayload));
     if (songUpdate) {
       setShowModal(false);
-      history.push("/api/Songs");
+      // history.push("/api/Songs");
     }
 
-    history.push("/Songs");
+    // history.push("/Songs");
   };
 
   return (
