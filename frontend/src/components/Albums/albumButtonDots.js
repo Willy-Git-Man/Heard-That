@@ -8,7 +8,6 @@ import UpdateAlbumModal from "../Albums/UpdateAlbumModal";
 
 function AlbumButtonDots({ user, allAlbumsIndex }) {
   const [showMenu, setShowMenu] = useState(false);
-  console.log("allAlbumsIndex:", allAlbumsIndex);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -20,6 +19,11 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
   const closeMenu = () => {
     setShowMenu(false);
   };
+
+  const deleteSubmit = (id) => {
+    deleteAlbumDispatch(id)
+    closeMenu()
+  }
 
   useEffect(() => {
     if (!showMenu) return;
@@ -44,12 +48,13 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
       <button className={"albumButtonDotsButton"} onClick={openMenu}>
         Edit
       </button>
-      <div className={"albumSettingsDiv"}>
         {showMenu && (
           <div className="albumSettingsDiv">
             <button
               className="deleteAlbumButton"
-              onClick={() => deleteAlbumDispatch(allAlbumsIndex?.id)}
+              // onClick={() => deleteAlbumDispatch(allAlbumsIndex?.id)}
+              onClick={() => deleteSubmit(allAlbumsIndex?.id)}
+
             >
               <i className="far fa-trash-alt"></i>
             </button>
@@ -60,7 +65,6 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
             />
           </div>
         )}
-      </div>
     </>
   );
 }
