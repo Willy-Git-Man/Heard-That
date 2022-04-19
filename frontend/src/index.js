@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
@@ -19,14 +19,13 @@ if (process.env.NODE_ENV !== 'production') {
   window.csrfFetch = csrfFetch;
   window.store = store;
 }
-
 function Root() {
   return (
     <Provider store={store}>
       <ModalProvider>
 
       <BrowserRouter>
-        <App />
+        <App  />
       </BrowserRouter>
       </ModalProvider>
 

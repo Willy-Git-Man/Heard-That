@@ -12,6 +12,7 @@ import ProtectedRoute from "./components/Auth/ProtectedRoute";
 import LoginFormModal from "./components/Auth/LoginFormModal";
 import SignupFormModal from "./components/Auth/SignupFormModal";
 import { getAllAlbumsThunk } from "./store/albums";
+import LoginRoute from "./components/Auth/LoginRoute";
 export const PlayingContext = React.createContext();
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    dispatch(getAllAlbumsThunk())
+    dispatch(getAllAlbumsThunk());
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
@@ -32,42 +33,23 @@ function App() {
   if (!userInfo)
     return (
       <>
-        <div className={"mainNav"}>
-          {/* <div className={"profileDiv"}>{isLoaded && sessionLinks}</div> */}
-          <div className={"profileDiv"}>
-            {" "}
-            <div className="loginDiv">
-              <LoginFormModal />
-              <SignupFormModal />
-
-              <div className="loginMessage">
-                <h1 className="welcomeGreetingTop">Welcome to Heard-That!</h1>
-                <h2>Login or Signup below to start listening</h2>
-              </div>
-            </div>
-          </div>
-        </div>
+        <LoginRoute />
       </>
     );
+
+
   return (
     <>
       {/* <Navigation isLoaded={isLoaded} /> */}
-
       <Switch>
-      {/* <Route path="/">
-      <>
-      <Redirect to="/Albums/1" />
-
-      </>
-        </Route> */}
-        <ProtectedRoute exact path="/">
+        <Route exact path="/Albums/:id">
+          <AlbumSongs userInfo={userInfo} albumState={albumState} />
+        </Route>
+        <ProtectedRoute path="/">
           <>
             <Redirect to="/Albums/1" />
           </>
         </ProtectedRoute>
-        <Route exact path="/Albums/:id">
-          <AlbumSongs userInfo={userInfo} albumState={albumState}/>
-        </Route>
       </Switch>
     </>
   );
