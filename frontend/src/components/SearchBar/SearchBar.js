@@ -65,10 +65,7 @@ const SearchBar = ({ playing, setPlaying }) => {
               return song;
           })
           .map((song) => (
-            <div
-              className="albumSongListDivSearch"
-              key={song.id}
-            >
+            <div className="albumSongListDivSearch" key={song.id}>
               {/* <AlbumButtonDots /> */}
               {/* <div
                 className="songUlSearch"
@@ -77,18 +74,19 @@ const SearchBar = ({ playing, setPlaying }) => {
                 // onclick={() => setPlaying(song.songUrl)}
                 onClick={() => test(song.songUrl, song.imageUrl)}
               > */}
-                <div className="searchLi">
-
+              <div className="searchLi">
                 <li className="songListItem">{song.songName}</li>
 
                 <li className="songListItem">{song.artistName}</li>
-                </div>
-                <button
-                  className="songDivButton"
-                  // style={{ backgroundImage: `url(${song.imageUrl})` }}
-                  onClick={() => test(song.songUrl, song.imageUrl)}
-                >ggg</button>
               </div>
+              <button
+                className="songDivButton"
+                // style={{ backgroundImage: `url(${song.imageUrl})` }}
+                onClick={() => test(song.songUrl, song.imageUrl)}
+              >
+                <h1><i className="fab fa-grav"></i></h1>
+              </button>
+            </div>
             // </div>
           ))}
 

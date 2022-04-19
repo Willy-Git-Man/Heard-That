@@ -97,7 +97,7 @@ h2 {
 
   height: 15%;
 
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
 
@@ -314,16 +314,24 @@ h2 {
 }
 
 .firstOuterSliderDiv {
-  /* width: 90%; */
+  width: 90%;
   /* margin-top: 2.5vh; */
 }
 .slick-slider.center.slick-initialized {
+  padding-left: 50px;
+  padding-right: 50px;
+  /* width: 100%; */
+
 }
 
 .secondSliderDiv {
   /* display: flex;
   flex-direction: column; */
   /* overflow: hidden; */
+}
+
+.slick-arrow.slick-prev {
+  z-index: 1;
 }
 
 .mainAlbumsEachAlbumDiv {
@@ -407,6 +415,8 @@ h2 {
 }
 
 .searchLi {
+  height: 5%;
+  width: 75%;
 }
 
 .slick-slide.slick-active.slick-center.slick-current {

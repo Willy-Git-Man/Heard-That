@@ -49,7 +49,7 @@ function App() {
     <>
       {/* <Navigation isLoaded={isLoaded} /> */}
 
-    (
+
         <Switch>
           <ProtectedRoute exact path="/">
             <>
@@ -63,7 +63,7 @@ function App() {
             </>
           </Route>
         </Switch>
-      )
+      
     </>
   );
 }
