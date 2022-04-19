@@ -22,7 +22,6 @@ export default function AlbumCarousel({ userInfo }) {
   // }, [dispatch]);
 
   const allAlbums = useSelector((state) => state.albums.albums);
-  console.log("allAlbums:", allAlbums)
   const allAlbumKeys = Object.keys(allAlbums);
   const length = allAlbumKeys.length;
   // console.log("allAlbumKeys length:", allAlbumKeys[length -1])
@@ -33,25 +32,28 @@ export default function AlbumCarousel({ userInfo }) {
   const allAlbumEntries = Object.entries(allAlbums);
 // console.log("allAlbumEntries:",allAlbumEntries)
 
-  console.log("ID:", id)
 
 
-  const will = () => {
+  const rightArrowNextId = () => {
     for (let i = 0; i < allAlbumKeys.length; i++) {
       if (+allAlbumKeys[i] === +id) return +allAlbumKeys[i + 1]
-      console.log('i',i)
-      console.log('length',+allAlbumKeys[length -1])
-
-      console.log('+allAlbumKeys[i + 1]',+allAlbumKeys[i + 1])
-      console.log('+allAlbumKeys at i]',+allAlbumKeys[i])
-
-
       if (+allAlbumKeys[i + 1] === +allAlbumKeys[length -1]) return 1
+    }
+    return;
+  };
+
+  const leftArrowNextId = () => {
+    if (+id - 1 === 0) return allAlbumKeys[length -1]
+    console.log('+id yooo', +id)
+    // return allAlbumKeys[length -1]
+    for (let i = 0; i < allAlbumKeys.length; i++) {
+      console.log('album keys at i',+allAlbumKeys[i])
+      console.log(+allAlbumKeys[i] === +allAlbumKeys[0])
+      if (+allAlbumKeys[i] === +id) return +allAlbumKeys[i - 1]
 
     }
     return;
   };
-  will()
   const multipleAlbumCarouselSettings = {
     className: "center",
     // centerMode: true,
@@ -83,7 +85,6 @@ export default function AlbumCarousel({ userInfo }) {
   // };
   const mainAlbums = allAlbumKeys?.filter((album) => allAlbums[album]?.id <= 3);
 
-  console.log(mainAlbums);
 
   const handlePicture = (e) => {
     e.target.src =
@@ -94,7 +95,7 @@ export default function AlbumCarousel({ userInfo }) {
     const { className, style, onClick } = props;
     const rightArrow = () => {
       onClick();
-      history.push(`/Albums/${will()}`);
+      history.push(`/Albums/${rightArrowNextId()}`);
     };
     return (
       <div
@@ -117,9 +118,9 @@ export default function AlbumCarousel({ userInfo }) {
     const { className, style, onClick } = props;
     const leftArrow = () => {
       onClick();
+      history.push(`/Albums/${leftArrowNextId()}`);
 
-      if (+id - 1 === 0) history.push(`/Albums/${length}`);
-      else history.push(`/Albums/${+id - 1}`);
+
     };
     return (
       <div
