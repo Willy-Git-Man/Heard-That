@@ -36,6 +36,7 @@ h2 {
 
   height: 47.5vh;
   overflow: scroll; */
+  margin-top: 2.5%;
   height: 70%;
   overflow: scroll;
 }
@@ -63,6 +64,7 @@ h2 {
   align-items: center;
   height: 100%;
   width: 50%;
+  min-width: 50px;
 }
 .playButtonH1 {
   color: black;
@@ -93,7 +95,7 @@ h2 {
 .mainCarouselDiv {
   /* position: relative; */
 
-  height: 30vh;
+  height: 15%;
 
   width: 80%;
   display: flex;
@@ -384,6 +386,7 @@ h2 {
 .songImageInAlbum {
   height: 100%;
   width: 50%;
+  min-width:  50px;
 }
 
 .albumMainPage {
@@ -433,4 +436,10 @@ color: black;
 .songImageAndPlayButton {
   width: 5%;
   display: flex;
+}
+
+.songTitleAndArtistDiv {
+  display: flex;
+  width: 30%;
+  min-width: 300px;
 }

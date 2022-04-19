@@ -106,7 +106,7 @@ export default function AlbumSongs({ userInfo }) {
                     {/* <i className="fab fa-grav"></i> */}
                   </button>
                 </div>
-                <div>
+                <div className="songTitleAndArtistDiv">
                   <li className="songListItem">{allSongs[key].songName}</li>
 
                   <li className="songListItem">{allSongs[key].artistName}</li>

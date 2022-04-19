@@ -90,7 +90,8 @@ font-size: large;
   background-color: black;
   display: flex;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+  width: 50%;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -160,7 +161,7 @@ font-size: large;
   }
 
   .songButtonsDiv {
-    width: 10%;
+    width: 20%;
   }
 
   .updateSongModalButton {
@@ -168,6 +169,7 @@ font-size: large;
     background-color: #00ff3e;
 
     width: 33.33%;
+
 
   }
 
@@ -240,7 +242,7 @@ font-size: large;
 
 
  .globalAudioPlayer {
-   height: 10vh;
+   height: 10%;
    position: absolute;
    bottom: 0;
    right: 0;
