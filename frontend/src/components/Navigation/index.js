@@ -13,18 +13,46 @@ function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   const userInfo = useSelector((state) => state.session.user);
 
-  let sessionLinks;
+  // let sessionLinks;
+  // if (sessionUser) {
+  //   sessionLinks = (
+  //     <>
+  //         {/* <MyAlbums userInfo={userInfo} /> */}
+  //         <Redirect to="/Albums/1" />
+
+  //     </>
+  //   );
+  // }
+  // else {
+  //   sessionLinks = (
+  //     <div className="loginDiv">
+  //       <LoginFormModal />
+  //       <SignupFormModal />
+
+  //       <div className="loginMessage">
+  //         <h1 className="welcomeGreetingTop">Welcome to Heard-That!</h1>
+  //         <h2>Login or Signup below to start listening</h2>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
   if (sessionUser) {
-    sessionLinks = (
+    return (
       <>
-          {/* <MyAlbums userInfo={userInfo} /> */}
-          <Redirect to="/albums/1" />
+        {/* <div className="navUl">
+          <div className="navDiv">{isLoaded && sessionLinks}</div>
+        </div> */}
+          {/* <Redirect to="/Albums/1" /> */}
 
       </>
     );
-  } else {
-    sessionLinks = (
-      <div className="loginDiv">
+  } else
+  {/* <div className={"profileDiv"}>{isLoaded && sessionLinks}</div> */}
+    return (
+      <>
+        {/* <div className={"mainNav"}>
+          <div className={"profileDiv"}>  <div className="loginDiv">
         <LoginFormModal />
         <SignupFormModal />
 
@@ -32,24 +60,9 @@ function Navigation({ isLoaded }) {
           <h1 className="welcomeGreetingTop">Welcome to Heard-That!</h1>
           <h2>Login or Signup below to start listening</h2>
         </div>
-      </div>
-    );
-  }
+      </div></div>
 
-  if (sessionUser) {
-    return (
-      <>
-        <div className="navUl">
-          <div className="navDiv">{isLoaded && sessionLinks}</div>
-        </div>
-      </>
-    );
-  } else
-    return (
-      <>
-        <div className={"mainNav"}>
-          <div className={"profileDiv"}>{isLoaded && sessionLinks}</div>÷
-        </div>
+        </div> */}
       </>
     );
 }
