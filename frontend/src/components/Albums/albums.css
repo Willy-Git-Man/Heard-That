@@ -374,6 +374,9 @@ h2 {
 
 .sideBar {
   width: 9.5%;
+  min-width: 300px;
+  max-width: 300px;
+  margin-right: 50px;
 }
 
 .albumSongListDivSearch {
