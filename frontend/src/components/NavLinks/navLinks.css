@@ -158,11 +158,40 @@
   flex-direction: column;
 }
 
+
 .navAlbumNavLink {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
+  font-size: 2em;
   color: white;
 
 }
+.active {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
+  font-size: 2em;
+  color: black;
+  background-color: white;
+
+}
+
+/* .activeAlbum {
+  background-image: url("https://png.pngtree.com/png-vector/20210807/ourmid/pngtree-music-logo-vector-ilustration-tracing-png-image_3783408.jpg");
+} */
+
+/* .navAlbumNavLink:active {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
+  font-size: 2em;
+  color: black;
+
+} */
 
 .navAlbumNavLinks {
   /* position: absolute; */

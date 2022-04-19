@@ -9,29 +9,25 @@ export default function AlbumNavLinks() {
 
   return (
     <div className="navigationLink">
-  <div className="navigationLink">
+      <div className="navigationLink">
+        <NavLink className="navAlbumNavLink" to={`/Albums/${1}`}>
+          {allAlbums[0].title}
+        </NavLink>
+        <NavLink className="navAlbumNavLink" to={`/Albums/${2}`}>
+          {allAlbums[1].title}
+        </NavLink>
+        <NavLink className="navAlbumNavLink" to={`/Albums/${3}`}>
+          {allAlbums[2].title}
+        </NavLink>
 
-      <NavLink className="navAlbumNavLink" to={`/Albums/${1}`}>
-        {allAlbums[0].title}
-      </NavLink>
-      <NavLink className="navAlbumNavLink" to={`/Albums/${2}`}>
-        {allAlbums[1].title}
-      </NavLink>
-      <NavLink className="navAlbumNavLink" to={`/Albums/${3}`}>
-        {allAlbums[2].title}
-      </NavLink>
+        {allAlbums
+          .filter((el) => el.userId === userInfo.id)
+          .map((album) => (
+            <NavLink  className="navAlbumNavLink" activeClassName="active" to={`/Albums/${album.id}`}>
+              {album.title}
+            </NavLink>
+          ))}
       </div>
-
-  <div className="navigationLink">
-
-      {allAlbums
-        .filter((el) => el.userId === userInfo.id)
-        .map((album) => (
-          <NavLink className="navAlbumNavLink" to={`/Albums/${album.id}`}>
-            {album.title}
-          </NavLink>
-        ))}
-        </div>
     </div>
   );
 }

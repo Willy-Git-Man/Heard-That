@@ -4,6 +4,8 @@ import { useHistory } from "react-router";
 // import { Redirect } from "react-router";
 import * as sessionActions from "../../store/session";
 
+import './Navigation.css'
+
 function ProfileButton({ user }) {
   const [showMenu, setShowMenu] = useState(false);
 

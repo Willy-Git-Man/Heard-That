@@ -15,7 +15,7 @@ export default function NavLinks({ playing, setPlaying, pic }) {
   return (
     <div className="navigationLinks">
       <div className="navLinkUpper">
-        <NavLink className="navLinkButton" to="/Albums/1">
+        <NavLink activeClassName="activeAlbum" to="/Albums/1">
           <h1>Heard-That</h1>
         </NavLink>
         <CreateAlbumModal userInfo={userInfo} />

@@ -344,7 +344,10 @@ h2 {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, .5);
+
 }
+
+
 .albumNameLink:hover {
   width: 100%;
   height: 100%;
@@ -388,4 +391,15 @@ h2 {
 }
 
 .slick-slide.slick-active.slick-center.slick-current {
+}
+
+
+.mainAlbumsEachAlbumDivNavLink.active {
+background-color: black;
+background-image: url("https://png.pngtree.com/png-vector/20211020/ourmid/pngtree-simple-tiktok-border-with-music-icon-for-frame-tiktokers-png-image_3994932.png");
+opacity: 1;
+color: black;
+/* box-shadow: 10px 5px 5px red; */
+/* padding: 5%; */
+/* outline: 50px solid red; */
 }
