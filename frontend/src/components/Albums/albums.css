@@ -36,7 +36,7 @@ h2 {
 
   height: 47.5vh;
   overflow: scroll; */
-  margin-top: 2.5%;
+  margin-top: 5%;
   height: 70%;
   overflow: scroll;
 }
@@ -65,6 +65,7 @@ h2 {
   height: 100%;
   width: 50%;
   min-width: 50px;
+  opacity: .5;
 }
 .playButtonH1 {
   color: black;
@@ -407,6 +408,7 @@ h2 {
   min-width: 300px;
   max-width: 300px;
   margin-right: 50px;
+  background-color: #191414;
 }
 
 .albumSongListDivSearch {
@@ -439,17 +441,19 @@ color: black;
   background-color: pink;
   /* width: 100%; */
   width: 33.33%;
+  opacity: .5;
+
 
 }
 
 
 .songImageAndPlayButton {
-  width: 5%;
+  width: 14%;
   display: flex;
 }
 
 .songTitleAndArtistDiv {
   display: flex;
-  width: 30%;
+  width: 60%;
   min-width: 300px;
 }
