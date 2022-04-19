@@ -55,13 +55,6 @@ export default function AlbumSongs({ userInfo }) {
     history.push("/Albums/3");
   };
 
-  if (userInfo === undefined) {
-    history.push("/");
-  }
-
-  if (!allSongsObjectKeys.length) {
-    return null;
-  }
 
   return (
     <div className="albumMainPage">
@@ -98,13 +91,10 @@ export default function AlbumSongs({ userInfo }) {
                       test(allSongs[key].songUrl, allSongs[key].imageUrl)
                     }
                   >
-                    {/* <i className="fas fa-user-circle" /> */}
                     <h1 className="playButtonH1">
-                      {" "}
                       <i className="fab fa-grav"></i>
                     </h1>
 
-                    {/* <i className="fab fa-grav"></i> */}
                   </button>
                 </div>
                 <div className="songTitleAndArtistDiv">

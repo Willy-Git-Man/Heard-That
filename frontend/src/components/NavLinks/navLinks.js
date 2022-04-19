@@ -11,6 +11,8 @@ import AlbumNavLinks from "./albumNavlinks";
 
 export default function NavLinks({ playing, setPlaying, pic }) {
   const userInfo = useSelector((state) => state.session.user);
+  const allAlbums = Object.values(useSelector((state) => state.albums.albums));
+
 
   return (
     <div className="navigationLinks">
@@ -27,7 +29,7 @@ export default function NavLinks({ playing, setPlaying, pic }) {
 
       <div className="sideBarSearchAndLinks">
 
-      <AlbumNavLinks />
+      <AlbumNavLinks allAlbums={allAlbums}/>
       </div>
       <div className="sideBarSearchAndLinks">
 

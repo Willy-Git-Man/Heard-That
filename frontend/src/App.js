@@ -24,7 +24,7 @@ function App() {
   }, [dispatch]);
 
   const userInfo = useSelector((state) => state.session.user);
-  // const albumState = useSelector((state) => state.albums.albums);
+  const albumState = useSelector((state) => state.albums.albums);
 
   // const songInfo = useSele/ctor((state) => state.songs);
   //TODO: THIS LINE ^ IS KEEPING CAROUSEL WORKING
@@ -54,13 +54,19 @@ function App() {
       {/* <Navigation isLoaded={isLoaded} /> */}
 
       <Switch>
+      {/* <Route path="/">
+      <>
+      <Redirect to="/Albums/1" />
+
+      </>
+        </Route> */}
         <ProtectedRoute exact path="/">
           <>
             <Redirect to="/Albums/1" />
           </>
         </ProtectedRoute>
         <Route exact path="/Albums/:id">
-          <AlbumSongs userInfo={userInfo} />
+          <AlbumSongs userInfo={userInfo} albumState={albumState}/>
         </Route>
       </Switch>
     </>

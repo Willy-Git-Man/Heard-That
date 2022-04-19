@@ -13,22 +13,22 @@ import React from "react";
 import AlbumCarousel from "./albumCarousel";
 
 export default function MyAlbums({ userInfo }) {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getAllAlbumsThunk());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getAllAlbumsThunk());
+  // }, [dispatch]);
 
-  const allAlbums = useSelector((state) => state.albums.albums);
+  // const allAlbums = useSelector((state) => state.albums.albums);
 
-  const allAlbumKeys = Object.keys(allAlbums);
+  // const allAlbumKeys = Object.keys(allAlbums);
 
-  const history = useHistory();
+  // const history = useHistory();
 
-  if (!allAlbumKeys.length) {
-    history.push("/Albums/1");
-    return null;
-  } else
+  // if (!allAlbumKeys.length) {
+  //   history.push("/Albums/1");
+  //   return null;
+  // } else
     return (
       <div className="albumSecondDiv">
         <AlbumCarousel userInfo={userInfo} />

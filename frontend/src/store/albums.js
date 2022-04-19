@@ -1,16 +1,12 @@
 import { csrfFetch } from "./csrf";
 
-
 const GET_ALL_ALBUMS = "albums/GET_ALL_ALBUMS";
 const ADD_ALBUM = "albums/ADD_ALBUM";
 const UPDATE_ALBUM = "albums/UPDATE_ALBUM";
 const DELETE_ALBUM = "albums/DELETE_ALBUM";
 const GET_ALBUM_SONGS = "albums/GET_ALBUM_SONGS";
 
-
 const DELETE_SONG = "songs/DELETE_SONGS";
-
-
 
 const getAllAlbums = (allAlbums) => ({
   type: GET_ALL_ALBUMS,
@@ -23,18 +19,10 @@ const getAlbumSongs = (albumSongs) => ({
   payload: albumSongs,
 });
 
-
-
-
 const deleteSong = (songToDelete) => ({
   type: DELETE_SONG,
   payload: songToDelete,
 });
-
-
-
-
-
 
 const addAlbum = (newAlbum) => ({
   type: ADD_ALBUM,
@@ -51,17 +39,6 @@ const deleteAlbum = (albumToDelete) => ({
   payload: albumToDelete,
 });
 
-// export const getAllAlbumsThunk = () => async (dispatch) => {
-//   const albumResponse = await csrfFetch('/api/albums')
-
-//   if (albumResponse.ok) {
-//     const albums = await albumResponse.json()
-
-//     dispatch(getAllAlbums(albums))
-//   }
-//   return albumResponse
-// }
-
 export const getAllAlbumsThunk = () => async (dispatch) => {
   const response = await csrfFetch("/api/albums");
 
@@ -71,31 +48,6 @@ export const getAllAlbumsThunk = () => async (dispatch) => {
   }
   return response;
 };
-
-// export const getAllAlbumSongsThunk = () => async (dispatch) => {
-//   // const albumResponse = await csrfFetch('/api/albums')
-//   const albumResponse = await csrfFetch(`/api/albums/1`)
-
-//   if (albumResponse.ok) {
-//     const albums = await albumResponse.json()
-
-//     dispatch(getAlbumSongs(albums))
-//   }
-//   return albumResponse
-// }
-
-// export const getAllAlbumSongsThunk = () => async (dispatch) => {
-//   // const id = useParams()
-//   // const albumSongResponse = await csrfFetch(`/api/Albums/`)
-
-//   const albumSongResponse = await csrfFetch(`/api/Albums/1`)
-
-//   if (albumSongResponse.ok) {
-//     const albumSongs = await albumSongResponse.json()
-//     dispatch(getAlbumSongs(albumSongs))
-//   }
-//   return albumSongResponse
-// }
 
 export const addAlbumThunk = (newAlbum) => async (dispatch) => {
   const addAlbumResponse = await csrfFetch("/api/albums", {
@@ -130,7 +82,7 @@ export const deleteAlbumThunk = (albumToDelete) => async (dispatch) => {
     method: "DELETE",
   });
   if (deleteAlbumResponse.ok) {
-    dispatch(deleteAlbum(albumToDelete))
+    dispatch(deleteAlbum(albumToDelete));
   }
 };
 
@@ -172,7 +124,7 @@ const albumsReducer = (state = initialState, action) => {
       return newState;
 
     case DELETE_ALBUM:
-      newState = { ...state, albums: { ...state.albums }};
+      newState = { ...state, albums: { ...state.albums } };
       // newState = { ...state, albums: { ...state.albums }, songs: {...state.songs} };
 
       delete newState.albums[action.payload];

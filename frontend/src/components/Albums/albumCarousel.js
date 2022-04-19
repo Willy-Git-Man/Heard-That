@@ -139,10 +139,6 @@ export default function AlbumCarousel({ userInfo }) {
     );
   }
 
-  if (!allAlbumKeys.length) {
-    history.push("/Albums/1");
-    return null;
-  } else
     return (
       <div className="mainCarouselDiv">
         <div className="firstOuterSliderDiv">
