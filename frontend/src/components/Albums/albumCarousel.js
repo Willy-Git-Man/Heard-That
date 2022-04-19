@@ -10,35 +10,79 @@ import { getAllAlbumsThunk } from "../../store/albums";
 import AlbumButtonDots from "./albumButtonDots";
 
 export default function AlbumCarousel({ userInfo }) {
+  const { id } = useParams();
+  const history = useHistory();
+  const dispatch = useDispatch();
+
   const [firstSlider, setfirstSlider] = useState();
   const [secondSlider, setsecondSlider] = useState();
 
-  const { id } = useParams();
-  const history = useHistory();
+  // useEffect(() => {
+  //   dispatch(getAllAlbumsThunk());
+  // }, [dispatch]);
 
   const allAlbums = useSelector((state) => state.albums.albums);
-  console.log('allAlbums', allAlbums)
   const allAlbumKeys = Object.keys(allAlbums);
   const allAlbumValues = Object.values(allAlbums);
+  const allAlbumEntries = Object.entries(allAlbums);
+console.log("entries:",allAlbumEntries)
   const length = allAlbumKeys.length;
 
-  let test = {}
+  console.log("new test for will:", allAlbums[+id + 1])
+
+  console.log("allAlbums:", allAlbums);
+
+  let test = {};
   const will = () => {
     for (let i = 0; i < allAlbumValues.length; i++) {
-      test[i + 1] = allAlbumValues[i]
+      test[i + 1] = allAlbumValues[i];
     }
-    return test
-  }
-  will()
-  console.log(test, length)
-// console.log(test[id].id,length)
+    return test;
+  };
+  // will()
+  const multipleAlbumCarouselSettings = {
+    className: "center",
+    // centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 7,
 
-  function SampleNextArrow(props) {
+    // speed: 500,
+    // fade: true,
+    // autoplay: true,
+    speed: 1000,
+    nextArrow: <RightArrow />,
+    prevArrow: <LeftArrow />,
+  };
+  if (userInfo === undefined) {
+    history.push("/");
+  }
+
+  // const settings1 = {
+  //   className: "center",
+  //   centerMode: true,
+  //   infinite: true,
+  //   centerPadding: "60px",
+  //   slidesToShow: 1,
+  //   // speed: 500,
+  //   fade: true,
+  //   // autoplay: true,
+  //   speed: 2000,
+  // };
+  const mainAlbums = allAlbumKeys?.filter((album) => allAlbums[album]?.id <= 3);
+
+  console.log(mainAlbums);
+
+  const handlePicture = (e) => {
+    e.target.src =
+      "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png";
+  };
+
+  function RightArrow(props) {
     const { className, style, onClick } = props;
     const rightArrow = () => {
       onClick();
-        // if (test[id].id)
-       history.push(`/Albums/${test[id].id + 1}`);
+      history.push(`/Albums/${allAlbums[+id + 1].id}`);
     };
     return (
       <div
@@ -57,7 +101,7 @@ export default function AlbumCarousel({ userInfo }) {
     );
   }
 
-  function SamplePrevArrow(props) {
+  function LeftArrow(props) {
     const { className, style, onClick } = props;
     const leftArrow = () => {
       onClick();
@@ -82,154 +126,37 @@ export default function AlbumCarousel({ userInfo }) {
     );
   }
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAllAlbumsThunk());
-  }, [dispatch]);
-
-  // const history = useHistory();
-  const albumSearchHistoryPush = (id) => {
-    history.push(`/Albums/${id}`);
-  };
-
-  const settings1 = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 1,
-    // speed: 500,
-    fade: true,
-    // autoplay: true,
-    speed: 2000,
-  };
-
-  const settings2 = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 7,
-
-    // speed: 500,
-    // fade: true,
-    // autoplay: true,
-    speed: 1000,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-  };
-  if (userInfo === undefined) {
-    history.push("/");
-  }
-
   if (!allAlbumKeys.length) {
     history.push("/Albums/1");
     return null;
   } else
     return (
       <div className="mainCarouselDiv">
-        {/* <h2 className="albumMessage">Welcome</h2> */}
-
-        <div className="secondSliderDiv">
+        <div className="firstOuterSliderDiv">
           <Slider
-            {...settings1}
-            asNavFor={firstSlider}
-            ref={(slider2) => setsecondSlider(slider2)}
-          >
-
-{allAlbumKeys
-              ?.filter(
-                (index) =>
-                  allAlbums[index]?.id <= 3
-              )
-              .map((album) => (
-                <div
-                  className="eachAlbumMainDivSecondCarousel"
-                  key={allAlbums[id]?.id}
-                  style={{
-                    backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
-                  }}
-                  onclick={() => albumSearchHistoryPush(album)}
-                >
-                  <img
-                    className="albumImageSecondSliderNext"
-                    src={allAlbums[album]?.imageUrl}
-                    alt="Broken Img Url"
-                    onclick={() => albumSearchHistoryPush(album)}
-                  />
-                  <NavLink className="secondCaruselNavLink" to={`/Albums/${album}`}>
-                    <h1 className="albumNameLink">{allAlbums[album]?.title}</h1>
-                  </NavLink>
-                </div>
-              ))}
-
-            {allAlbumKeys
-              ?.filter(
-                (index) =>
-                  allAlbums[index]?.userId === userInfo.id &&
-                  allAlbums[index]?.id !== 1 &&
-                  allAlbums[index]?.id !== 2
-              )
-              .map((album) => (
-                <div
-                  className="eachAlbumMainDivSecondCarousel"
-                  key={allAlbums[album]?.id}
-                  style={{
-                    backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
-                  }}
-                  onclick={() => albumSearchHistoryPush(album.id)}
-                >
-                  <img
-                    className="albumImageSecondSliderNext"
-                    src={allAlbums[album]?.imageUrl}
-                    alt="Broken Img Url"
-                    onclick={() => albumSearchHistoryPush(album.id)}
-                  />
-                  <NavLink
-                    className="secondCaruselNavLink"
-                    to={`/Albums/${album}`}
-                  >
-                    <h1 className="albumNameLink">{allAlbums[album]?.title}</h1>
-                  </NavLink>
-                  <AlbumButtonDots allAlbumsIndex={allAlbums[album]} />
-                </div>
-              ))}
-          </Slider>
-        </div>
-
-        <div className="firstSliderDiv">
-          <Slider
-            {...settings2}
+            {...multipleAlbumCarouselSettings}
             // asNavFor={firstSlider}
             // ref={(slider2) => setsecondSlider(slider2)}
           >
-                   {allAlbumKeys
-              ?.filter(
-                (index) =>
-                  allAlbums[index]?.id <= 3
-              )
-              .map((album) => (
-                <div
-                  className="eachAlbumMainDivSecondCarousel"
-                  key={allAlbums[id]?.id}
-                  style={{
-                    backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
-                  }}
-                  onclick={() => albumSearchHistoryPush(album)}
+            {mainAlbums.map((album) => (
+              <div className="mainAlbumsEachAlbumDiv" key={allAlbums[album].id}>
+                <img
+                  className="mainAlbumsEachAlbumDivCarouselImage"
+                  src={allAlbums[album]?.imageUrl}
+                  alt="Broken Img Url"
+                  onError={handlePicture}
+                />
+                <NavLink
+                  className="mainAlbumsEachAlbumDivNavLink"
+                  // activeClassName="selected"
+                  to={`/Albums/${allAlbums[album].id}`}
                 >
-                  <img
-                    className="albumImageSecondSliderNext"
-                    src={allAlbums[album]?.imageUrl}
-                    alt="Broken Img Url"
-                    onclick={() => albumSearchHistoryPush(album)}
-                  />
-                  <NavLink className="secondCaruselNavLink" to={`/Albums/${album}`}>
-                    <h1 className="albumNameLink">{allAlbums[album]?.title}</h1>
-                  </NavLink>
-                </div>
-              ))}
-
+                  <h1 className="albumNameLink">
+                    {allAlbums[album]?.title}
+                  </h1>
+                </NavLink>
+              </div>
+            ))}
 
             {allAlbumKeys
               ?.filter(
@@ -239,23 +166,94 @@ export default function AlbumCarousel({ userInfo }) {
                   allAlbums[index]?.id !== 2 &&
                   allAlbums[index]?.id !== 3
               )
-              .map((index) => (
+              .map((album) => (
                 <div
-                  className="eachAlbumMainDivSecondCarousel"
-                  key={allAlbums[1]?.id}
-                  onclick={() => albumSearchHistoryPush(1)}
+                  className="mainAlbumsEachAlbumDiv"
+                  key={allAlbums[album].id}
                 >
-                  <AlbumButtonDots allAlbumsIndex={allAlbums[index]} />
                   <img
-                    className="albumImageSecondSliderNext"
-                    src={allAlbums[index]?.imageUrl}
+                    className="mainAlbumsEachAlbumDivCarouselImage"
+                    src={allAlbums[album]?.imageUrl}
                     alt="Broken Img Url"
+                    onError={handlePicture}
                   />
-                  <p className="albumNameLink">{allAlbums[index]?.title}</p>
+                  <AlbumButtonDots allAlbumsIndex={allAlbums[album]} />
+
+                  <NavLink
+                    className="mainAlbumsEachAlbumDivNavLink"
+                    to={`/Albums/${allAlbums[album].id}`}
+                  >
+                    <h1 className="albumNameLink">
+                      {allAlbums[album]?.title}
+                    </h1>
+                  </NavLink>
                 </div>
               ))}
           </Slider>
         </div>
+        {/* <Slider
+          {...settings1}
+          asNavFor={firstSlider}
+          ref={(slider2) => setsecondSlider(slider2)}
+        >
+          {allAlbumKeys
+            ?.filter((index) => allAlbums[index]?.id <= 3)
+            .map((album) => (
+              <div
+                className="eachAlbumMainDivSecondCarousel"
+                key={allAlbums[id]?.id}
+                style={{
+                  backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
+                }}
+                onclick={() => albumSearchHistoryPush(album)}
+              >
+                <img
+                  className="albumImageSecondSliderNext"
+                  src={allAlbums[album]?.imageUrl}
+                  alt="Broken Img Url"
+                  onclick={() => albumSearchHistoryPush(album)}
+                />
+                <NavLink
+                  className="secondCaruselNavLink"
+                  to={`/Albums/${album}`}
+                >
+                  <h1 className="albumNameLink">{allAlbums[album]?.title}</h1>
+                </NavLink>
+              </div>
+            ))}
+
+          {allAlbumKeys
+            ?.filter(
+              (index) =>
+                allAlbums[index]?.userId === userInfo.id &&
+                allAlbums[index]?.id !== 1 &&
+                allAlbums[index]?.id !== 2
+            )
+            .map((album) => (
+              <div
+                className="eachAlbumMainDivSecondCarousel"
+                key={allAlbums[album]?.id}
+                style={{
+                  backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
+                }}
+                onclick={() => albumSearchHistoryPush(album.id)}
+              >
+                <img
+                  className="albumImageSecondSliderNext"
+                  src={allAlbums[album]?.imageUrl}
+                  alt="Broken Img Url"
+                  onclick={() => albumSearchHistoryPush(album.id)}
+                />
+                <NavLink
+                  className="secondCaruselNavLink"
+                  to={`/Albums/${album}`}
+                >
+                  <h1 className="albumNameLink">{allAlbums[album]?.title}</h1>
+                </NavLink>
+                <AlbumButtonDots allAlbumsIndex={allAlbums[album]} />
+              </div>
+            ))}
+        </Slider> */}
       </div>
     );
 }

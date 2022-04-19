@@ -14,7 +14,6 @@ import './navLinks.css'
 
 export default function AudioPlayerGlobal({playing, pic}) {
   const userInfo = useSelector((state) => state.session.user);
-console.log('pic:', pic)
 //style={{ backgroundImage: `url(${pic})`   }}
   return (
     <div className="globalAudioPlayer"    >

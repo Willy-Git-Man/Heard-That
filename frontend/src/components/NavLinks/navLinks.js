@@ -11,7 +11,6 @@ import AlbumNavLinks from "./albumNavlinks";
 
 export default function NavLinks({ playing, setPlaying, pic }) {
   const userInfo = useSelector((state) => state.session.user);
-  console.log("hello test", playing);
 
   return (
     <div className="navigationLinks">

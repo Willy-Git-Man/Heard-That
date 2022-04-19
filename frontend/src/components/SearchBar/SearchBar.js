@@ -44,7 +44,6 @@ const SearchBar = ({ playing, setPlaying }) => {
     history.push(`/Albums/${id}`);
   };
 
-  console.log(allSongs);
   return (
     <div className="searchBarMainDiv">
       <div>
@@ -69,7 +68,6 @@ const SearchBar = ({ playing, setPlaying }) => {
             <div
               className="albumSongListDivSearch"
               key={song.id}
-              onClick={console.log("success")}
             >
               {/* <AlbumButtonDots /> */}
               {/* <div
@@ -106,7 +104,6 @@ const SearchBar = ({ playing, setPlaying }) => {
             <div
               className=""
               key={album.id}
-              onClick={console.log("success")}
               onclick={() => albumSearchHistoryPush(album.id)}
             >
               {/* <AlbumButtonDots /> */}
