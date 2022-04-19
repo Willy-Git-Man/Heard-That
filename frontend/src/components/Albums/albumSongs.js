@@ -18,6 +18,12 @@ import UpdateSongModal from "../Songs/UpdateSongModal";
 export default function AlbumSongs({ userInfo }) {
   const history = useHistory();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllAlbumsThunk());
+
+    dispatch(getAllSongsThunk());
+  }, [dispatch]);
   const { id } = useParams();
   const [playing, setPlaying] = useState("");
   const [pic, setPic] = useState("");
@@ -49,14 +55,6 @@ export default function AlbumSongs({ userInfo }) {
     history.push("/Albums/3");
   };
 
-  useEffect(() => {
-    dispatch(getAllAlbumsThunk());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(getAllSongsThunk());
-  }, [dispatch]);
-
   if (userInfo === undefined) {
     history.push("/");
   }
@@ -70,8 +68,10 @@ export default function AlbumSongs({ userInfo }) {
       <div className="sideBar">
         <NavLinks playing={playing} setPlaying={setPlaying} pic={pic} />
       </div>
+
       <div className="albumSongsListDiv">
         <MyAlbums userInfo={userInfo} />
+
         <div className="albumSongsListInnerDiv">
           {allSongsObjectKeys
             ?.filter(
@@ -82,8 +82,9 @@ export default function AlbumSongs({ userInfo }) {
             .map((key) => (
               <div
                 className="everySongDiv"
+                key={key}
                 alt="Broken Img Url"
-                onclick={() => setPlaying(allSongs[key].songUrl)}
+                onClick={() => setPlaying(allSongs[key].songUrl)}
               >
                 <div className="songImageAndPlayButton">
                   <img

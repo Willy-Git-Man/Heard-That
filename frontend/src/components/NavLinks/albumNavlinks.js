@@ -23,7 +23,8 @@ export default function AlbumNavLinks() {
         {allAlbums
           .filter((el) => el.userId === userInfo.id)
           .map((album) => (
-            <NavLink  className="navAlbumNavLink" activeClassName="active" to={`/Albums/${album.id}`}>
+
+                <NavLink  key={album.id} className="navAlbumNavLink" activeClassName="active" to={`/Albums/${album.id}`}>
               {album.title}
             </NavLink>
           ))}

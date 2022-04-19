@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ProtectedRoute from "./components/Auth/ProtectedRoute";
 import LoginFormModal from "./components/Auth/LoginFormModal";
 import SignupFormModal from "./components/Auth/SignupFormModal";
+import { getAllAlbumsThunk } from "./store/albums";
 export const PlayingContext = React.createContext();
 
 function App() {
@@ -18,11 +19,14 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    dispatch(getAllAlbumsThunk())
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
   const userInfo = useSelector((state) => state.session.user);
-  const songInfo = useSelector((state) => state.songs);
+  // const albumState = useSelector((state) => state.albums.albums);
+
+  // const songInfo = useSele/ctor((state) => state.songs);
   //TODO: THIS LINE ^ IS KEEPING CAROUSEL WORKING
 
   if (!userInfo)
@@ -49,21 +53,16 @@ function App() {
     <>
       {/* <Navigation isLoaded={isLoaded} /> */}
 
-
-        <Switch>
-          <ProtectedRoute exact path="/">
-            <>
-              <Redirect to="/Albums/1" />
-
-            </>
-          </ProtectedRoute>
-          <Route exact path="/Albums/:id">
-            <>
-              <AlbumSongs userInfo={userInfo} />
-            </>
-          </Route>
-        </Switch>
-      
+      <Switch>
+        <ProtectedRoute exact path="/">
+          <>
+            <Redirect to="/Albums/1" />
+          </>
+        </ProtectedRoute>
+        <Route exact path="/Albums/:id">
+          <AlbumSongs userInfo={userInfo} />
+        </Route>
+      </Switch>
     </>
   );
 }
