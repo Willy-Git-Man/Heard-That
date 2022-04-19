@@ -37,6 +37,7 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
     e.preventDefault();
 
     const newAlbumPayload = {
+      
       title,
       imageUrl,
       userId: userInfo.id,

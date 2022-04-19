@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addSongThunk } from "../../../store/songs";
 
@@ -26,6 +26,12 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
 
   const history = useHistory();
   const dispatch = useDispatch();
+
+  const allAlbums = useSelector((state) => state.albums.albums);
+  const allAlbumObjectArray = Object.values(allAlbums);
+  const allAlbumObjectArrayFiltered = allAlbumObjectArray.filter(
+    (album) => album.userId === userInfo.id
+  );
 
   useEffect(() => {
     const validationErrors = [];
@@ -61,7 +67,7 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
     const newSong = await dispatch(addSongThunk(newSongPayload));
     if (newSong) {
       setShowModal(false);
-      history.push("/Albums/1");
+      history.push(`/Albums/${albumId}`);
     }
   };
   return (
@@ -108,15 +114,38 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
             onChange={newImageUrl}
             required
           />
-
+{/*
           <label htmlFor="albumIdLabel"></label>
           <input
-            type="hidden"
+            type="text"
             name="albumId"
             value={albumId}
             onChange={newAlbumId}
             required
-          />
+          /> */}
+            <label htmlFor="albumIdLabel">Ablum : </label>
+        <select
+          type="text"
+          name="albumId"
+          value={albumId}
+          onChange={newAlbumId}
+          required
+        >
+          <option value={1} key={1}>
+            {allAlbums[1].title}
+          </option>
+          <option value={2} key={2}>
+            {allAlbums[2].title}
+          </option>
+          <option value={3} key={3}>
+            {allAlbums[3].title}
+          </option>
+          {allAlbumObjectArrayFiltered.map((album) => (
+            <option value={album.id} key={album.id}>
+              {album.title}
+            </option>
+          ))}
+        </select>
 
           <button className="createSongButton" type="submit">
             Create

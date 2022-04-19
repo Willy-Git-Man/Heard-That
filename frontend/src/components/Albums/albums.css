@@ -36,6 +36,8 @@ h2 {
 
   height: 47.5vh;
   overflow: scroll; */
+  height: 70%;
+  overflow: scroll;
 }
 .albumSongsListInnerDiv::-webkit-scrollbar {
   display: none;
@@ -46,17 +48,31 @@ h2 {
 }
 .everySongDiv {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 25px;
   background-color: rgba(0, 0, 0, 0.2);
+  height: 10%;
 }
 .everySongDiv::-webkit-scrollbar {
   display: none;
 }
 .songDivButton {
   background-color: #00ff3e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
 }
-.playButton {
+.playButtonH1 {
   color: black;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
 }
 
 
@@ -367,7 +383,7 @@ h2 {
 
 .songImageInAlbum {
   height: 100%;
-  width: 50px;
+  width: 50%;
 }
 
 .albumMainPage {
@@ -402,4 +418,19 @@ color: black;
 /* box-shadow: 10px 5px 5px red; */
 /* padding: 5%; */
 /* outline: 50px solid red; */
+}
+
+
+.addLikedSong {
+  height: 100%;
+  background-color: pink;
+  /* width: 100%; */
+  width: 33.33%;
+
+}
+
+
+.songImageAndPlayButton {
+  width: 5%;
+  display: flex;
 }

@@ -26,7 +26,6 @@ export default function AlbumSongs({ userInfo }) {
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectKeys = Object.keys(allSongs);
 
-
   const test = (playing, pic) => {
     setPlaying(playing);
     setPic(pic);
@@ -47,7 +46,7 @@ export default function AlbumSongs({ userInfo }) {
     };
 
     const newSong = await dispatch(addLikedSongThunk(likedSongPayload));
-    history.push('/Albums/3')
+    history.push("/Albums/3");
   };
 
   useEffect(() => {
@@ -83,57 +82,54 @@ export default function AlbumSongs({ userInfo }) {
             .map((key) => (
               <div
                 className="everySongDiv"
-                // style={{ backgroundImage: `url(${allSongs[key].imageUrl})` }}
                 alt="Broken Img Url"
                 onclick={() => setPlaying(allSongs[key].songUrl)}
               >
-                <img
-                  className="songImageInAlbum"
-                  src={allSongs[key]?.imageUrl}
-                  alt="Broken Img Url"
-                />
-                <button
-                  className="songDivButton"
-                  // style={{
-                  //   backgroundImage: `url(${allSongs[key].imageUrl})`,
-                  // }}
-                  onClick={() =>
-                    test(allSongs[key].songUrl, allSongs[key].imageUrl)
-                  }
-                >
-                  {/* <i className="fas fa-user-circle" /> */}
-                  <h1 className="playButton">Play</h1>
+                <div className="songImageAndPlayButton">
+                  <img
+                    className="songImageInAlbum"
+                    src={allSongs[key]?.imageUrl}
+                    alt="Broken Img Url"
+                  />
+                  <button
+                    className="songDivButton"
+                    onClick={() =>
+                      test(allSongs[key].songUrl, allSongs[key].imageUrl)
+                    }
+                  >
+                    {/* <i className="fas fa-user-circle" /> */}
+                    <h1 className="playButtonH1">
+                      {" "}
+                      <i className="fab fa-grav"></i>
+                    </h1>
 
-                  {/* <i className="fab fa-grav"></i> */}
-                </button>
+                    {/* <i className="fab fa-grav"></i> */}
+                  </button>
+                </div>
                 <div>
                   <li className="songListItem">{allSongs[key].songName}</li>
 
                   <li className="songListItem">{allSongs[key].artistName}</li>
                 </div>
-                <div>
-
+                <div className="songButtonsDiv">
                   <button
-                    className="deleteSongButto"
+                    className="deleteSongButton"
                     onClick={() => deleteDispatch(allSongs[key].id)}
                   >
                     <i className="far fa-trash-alt"></i>
                   </button>
                   {allSongs[key].albumId !== 3 && (
-
                     <>
+                      <UpdateSongModal songId={allSongs[key].id} />
 
-                    <UpdateSongModal songId={allSongs[key].id} />
-
-                  <button
-                  className="addLikedSong"
-                  onClick={() => likeSongDispatch(allSongs[key].id)}
-                  >
-                    <i className="fab fa-grav"></i>
-                  </button>
+                      <button
+                        className="addLikedSong"
+                        onClick={() => likeSongDispatch(allSongs[key].id)}
+                      >
+                        <i className="fab fa-grav"></i>
+                      </button>
                     </>
-                    )
-                  }
+                  )}
                 </div>
               </div>
             ))}

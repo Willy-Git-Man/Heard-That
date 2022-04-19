@@ -144,31 +144,30 @@ font-size: large;
 
 
   .deleteSongButton {
-    height: 30%;
+    /* height: 30%;
     background-color: rgb(255, 1, 1);
     left: 0;
     position: absolute;
     width: 20%;
     color: white;
     font-size: 2em;
-    z-index: 50;
+    z-index: 50; */
+    height: 100%;
+    background-color: red;
+    width: 33.33%;
 
 
   }
 
-  .updateSongModalButton {
-    height: 30%;
-    background-color: rgb(50, 1, 1);
-    background-color: rgba(117, 235, 14, 0.995);
-    position: absolute;
-    top: 30%;
-    left: 0;
-    /* top: 0; */
-    width: 20%;
-    color: white;
-    font-size: 2em;
-    z-index: 50;
+  .songButtonsDiv {
+    width: 10%;
+  }
 
+  .updateSongModalButton {
+    height: 100%;
+    background-color: #00ff3e;
+
+    width: 33.33%;
 
   }
 
