@@ -22,24 +22,36 @@ export default function AlbumCarousel({ userInfo }) {
   // }, [dispatch]);
 
   const allAlbums = useSelector((state) => state.albums.albums);
+  console.log("allAlbums:", allAlbums)
   const allAlbumKeys = Object.keys(allAlbums);
-  const allAlbumValues = Object.values(allAlbums);
-  const allAlbumEntries = Object.entries(allAlbums);
-console.log("entries:",allAlbumEntries)
   const length = allAlbumKeys.length;
+  // console.log("allAlbumKeys length:", allAlbumKeys[length -1])
 
-  console.log("new test for will:", allAlbums[+id + 1])
+  const allAlbumValues = Object.values(allAlbums);
+  // console.log("allAlbumValues:", allAlbumValues)
 
-  console.log("allAlbums:", allAlbums);
+  const allAlbumEntries = Object.entries(allAlbums);
+// console.log("allAlbumEntries:",allAlbumEntries)
 
-  let test = {};
+  console.log("ID:", id)
+
+
   const will = () => {
-    for (let i = 0; i < allAlbumValues.length; i++) {
-      test[i + 1] = allAlbumValues[i];
+    for (let i = 0; i < allAlbumKeys.length; i++) {
+      if (+allAlbumKeys[i] === +id) return +allAlbumKeys[i + 1]
+      console.log('i',i)
+      console.log('length',+allAlbumKeys[length -1])
+
+      console.log('+allAlbumKeys[i + 1]',+allAlbumKeys[i + 1])
+      console.log('+allAlbumKeys at i]',+allAlbumKeys[i])
+
+
+      if (+allAlbumKeys[i + 1] === +allAlbumKeys[length -1]) return 1
+
     }
-    return test;
+    return;
   };
-  // will()
+  will()
   const multipleAlbumCarouselSettings = {
     className: "center",
     // centerMode: true,
@@ -82,7 +94,7 @@ console.log("entries:",allAlbumEntries)
     const { className, style, onClick } = props;
     const rightArrow = () => {
       onClick();
-      history.push(`/Albums/${allAlbums[+id + 1].id}`);
+      history.push(`/Albums/${will()}`);
     };
     return (
       <div
