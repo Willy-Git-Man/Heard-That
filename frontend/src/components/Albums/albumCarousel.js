@@ -35,6 +35,21 @@ export default function AlbumCarousel({ userInfo }) {
     nextArrow: <RightArrow />,
     prevArrow: <LeftArrow />,
   };
+
+  const lowerCarouselSettings = {
+    className: "center",
+    // centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 1,
+
+    // speed: 5,
+    // fade: true,
+    // autoplay: true,
+    // speed: 1000,
+    nextArrow: <RightArrow />,
+    prevArrow: <LeftArrow />,
+  };
   if (userInfo === undefined) {
     history.push("/");
   }
@@ -139,6 +154,36 @@ export default function AlbumCarousel({ userInfo }) {
             </NavLink>
           </div>
         ))}
+      </Slider>
+
+      <Slider
+        {...lowerCarouselSettings}
+        // asNavFor={firstSlider}
+        // ref={(slider2) => setsecondSlider(slider2)}
+      >
+          <div className="mainAlbumsEachAlbumDiv2" key={allAlbums[+id].id}>
+            {/* <img
+              className="mainAlbumsEachAlbumDivCarouselImage"
+              src={allAlbums[album]?.imageUrl}
+              alt="Broken Img Url"
+              onError={handlePicture}
+            /> */}
+            <NavLink
+              className="mainAlbumsEachAlbumDivNavLink"
+              to={`/Albums/${allAlbums[+id].id}`}
+            >
+              <div
+                className="albumNameLink"
+                style={{
+                  backgroundImage: `url(${allAlbums[+id]?.imageUrl})`,
+                }}
+              >
+                <h1 className="albumCarouselAlbumTitle">
+                  {allAlbums[+id]?.title}
+                </h1>
+              </div>
+            </NavLink>
+          </div>
       </Slider>
     </div>
   );
