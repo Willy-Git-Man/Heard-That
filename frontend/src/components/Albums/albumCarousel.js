@@ -186,7 +186,7 @@ export default function AlbumCarousel({ userInfo }) {
                     alt="Broken Img Url"
                     onError={handlePicture}
                   />
-                  <AlbumButtonDots allAlbumsIndex={allAlbums[album]} />
+                  {/* <AlbumButtonDots allAlbumsIndex={allAlbums[album]} /> */}
 
                   <NavLink
                     className="mainAlbumsEachAlbumDivNavLink"

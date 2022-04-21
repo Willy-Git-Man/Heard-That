@@ -5,11 +5,15 @@ import { deleteAlbumThunk } from "../../store/albums";
 import * as sessionActions from "../../store/session";
 import { getAllSongsThunk } from "../../store/songs";
 import UpdateAlbumModal from "../Albums/UpdateAlbumModal";
+import { NavLink, useParams } from "react-router-dom";
+
 
 function AlbumButtonDots({ user, allAlbumsIndex }) {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
+  const {id} = useParams()
+  console.log('ggggg', +id)
 
   const openMenu = () => {
     if (showMenu) return;
@@ -23,6 +27,7 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
   const deleteSubmit = (id) => {
     deleteAlbumDispatch(id)
     closeMenu()
+    history.push('/Albums/1')
   }
 
   useEffect(() => {
@@ -53,14 +58,14 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
             <button
               className="deleteAlbumButton"
               // onClick={() => deleteAlbumDispatch(allAlbumsIndex?.id)}
-              onClick={() => deleteSubmit(allAlbumsIndex?.id)}
+              onClick={() => deleteSubmit(+id)}
 
             >
               <i className="far fa-trash-alt"></i>
             </button>
 
             <UpdateAlbumModal
-              albumId={allAlbumsIndex?.id}
+              albumId={+id}
               closeMenu={closeMenu}
             />
           </div>

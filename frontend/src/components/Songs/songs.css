@@ -256,5 +256,11 @@ font-size: large;
  /* bottom: 10%; */
  width: 100vw;
  z-index: 99999999;
+ color: white;
  /* z-index: 10000; */
+ background-color: #1B263B;
+ }
+
+ .rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
+background-color: black;
  }

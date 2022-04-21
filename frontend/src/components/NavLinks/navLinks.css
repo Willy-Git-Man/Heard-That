@@ -9,6 +9,8 @@
   background-color: black;
   height: 100%;
   width: 100%;
+  background-color: #0d1b2a;
+
 }
 
 
@@ -24,8 +26,12 @@
 
 .logoTopLeft {
   display: flex;
-  background-color: black;
+  /* background-color: black; */
+  color: #E0E1DD;
+  font-size: 1em;
+  background-color: #0D1B2A;
   margin-bottom: 5%;
+  text-decoration: none;
 }
 
 
@@ -51,11 +57,10 @@
 
 .navAlbumNavLink {
   width: 100%;
-  display: flex;
-  justify-content: center;
   margin-bottom: 1%;
-  font-size: 2em;
-  color: white;
+  font-size: 1em;
+  color: #E0E1DD;
+  text-decoration: none;
 }
 .active {
   width: 100%;
@@ -63,8 +68,8 @@
   justify-content: center;
   margin-bottom: 1%;
   font-size: 2em;
-  color: black;
-  background-color: white;
+  color: #0D1B2A;
+  background-color: #E0E1DD;
 }
 
 /* .activeAlbum {
@@ -91,10 +96,13 @@
 
 .rhap_container.rhap_loop--off.rhap_play-status--playing.audioPlayer {
   height: 100%;
+  background-color: black;
+
 }
 
 .rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
   height: 100%;
   /* height: 50vh; */
   /* opacity: .3; */
+  background-color: black;
 }

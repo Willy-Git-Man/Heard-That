@@ -1,11 +1,13 @@
 import {  useSelector } from "react-redux";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
+import AlbumButtonDots from "../Albums/albumButtonDots";
 
 import "./navLinks.css";
 
 export default function AlbumNavLinks({allAlbums}) {
   const userInfo = useSelector((state) => state.session.user);
+  const {id} = useParams()
 
   return (
     <div className="navigationLink">
@@ -23,10 +25,16 @@ export default function AlbumNavLinks({allAlbums}) {
         {allAlbums
           .filter((el) => el.userId === userInfo.id)
           .map((album) => (
-
+<>
                 <NavLink  key={album.id} className="navAlbumNavLink" activeClassName="active" to={`/Albums/${album.id}`}>
               {album?.title}
             </NavLink>
+            {album.id === +id && (
+
+              <AlbumButtonDots allAlbumsIndex={allAlbums[album]} />
+            )}
+
+</>
           ))}
       </div>
     </div>

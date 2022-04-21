@@ -18,22 +18,22 @@ export default function NavLinks({ playing, setPlaying, pic }) {
     <div className="navigationLinks">
       <div className="navLinkUpper">
         <NavLink className="logoTopLeft" activeClassName="logoTopLeft" to="/Albums/1">
-        <i className="fab fa-grav"></i> <h1>Heard-That</h1>
+        <h1>Heard-That</h1>
         </NavLink>
         <CreateAlbumModal userInfo={userInfo} />
         <CreateSongModal userInfo={userInfo} />
 
         <ProfileButton user={userInfo} />
-        <span className="navUpperBottomLine"></span>
+        {/* <span className="navUpperBottomLine"></span> */}
       </div>
 
       <div className="sideBarSearchAndLinks">
 
       <AlbumNavLinks allAlbums={allAlbums}/>
+      <SearchBar playing={playing} setPlaying={setPlaying} />
       </div>
       <div className="sideBarSearchAndLinks">
 
-      <SearchBar playing={playing} setPlaying={setPlaying} />
       </div>
 
       <AudioPlayerGlobal playing={playing} pic={pic} />
