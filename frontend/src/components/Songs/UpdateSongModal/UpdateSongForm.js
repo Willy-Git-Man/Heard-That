@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { updateSongThunk } from "../../../store/songs";
 import "./UpdateSongForm.css";
 
-export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
+export default function UpdateSongForm({ userInfo, setShowModal, songId, closeMenu }) {
   const id = songId;
   const history = useHistory();
   const dispatch = useDispatch();
@@ -65,6 +65,7 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId }) {
     const songUpdate = await dispatch(updateSongThunk(updatedSongPayload));
     if (songUpdate) {
       setShowModal(false);
+      closeMenu()
       // history.push("/api/Songs");
     }
 

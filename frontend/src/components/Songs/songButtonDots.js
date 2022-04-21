@@ -9,7 +9,7 @@ import { NavLink, useParams } from "react-router-dom";
 import UpdateSongModal from "./UpdateSongModal";
 
 
-function SongButtonDots({ user, allAlbumsIndex }) {
+function SongButtonDots({ user, allAlbumsIndex, songId }) {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -30,9 +30,13 @@ function SongButtonDots({ user, allAlbumsIndex }) {
     dispatch(getAllSongsThunk());
   };
   const deleteSubmit = (id) => {
-    deleteSongDispatch(id)
+    // deleteSongDispatch(id)
+    dispatch(deleteSongThunk(id));
+
     closeMenu()
-    history.push(`/Albums/${+id}`)
+    // dispatch(getAllSongsThunk());
+
+    // history.push(`/Albums/${+id}`)
   }
 
   useEffect(() => {
@@ -59,7 +63,7 @@ function SongButtonDots({ user, allAlbumsIndex }) {
             <button
               className="deleteAlbumButton"
               // onClick={() => deleteAlbumDispatch(allAlbumsIndex?.id)}
-              onClick={() => deleteSubmit(+id)}
+              onClick={() => deleteSubmit(songId)}
 
             >
               <i className="far fa-trash-alt"></i>
@@ -68,6 +72,7 @@ function SongButtonDots({ user, allAlbumsIndex }) {
             <UpdateSongModal
               albumId={+id}
               closeMenu={closeMenu}
+              songId={songId}
             />
           </div>
         )}

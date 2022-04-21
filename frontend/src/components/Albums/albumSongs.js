@@ -108,7 +108,7 @@ export default function AlbumSongs({ userInfo }) {
                   >
                     <i className="far fa-trash-alt"></i>
                   </button> */}
-                  <SongButtonDots />
+                  <SongButtonDots songId={allSongs[key].id} />
                   {/* {allSongs[key].albumId !== 3 && (
                     <>
                       <UpdateSongModal songId={allSongs[key].id} />

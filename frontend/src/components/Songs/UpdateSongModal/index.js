@@ -4,8 +4,13 @@ import UpdateSongForm from "./UpdateSongForm";
 
 import "./UpdateSongForm.css";
 
-function UpdateSongModal({ userInfo, songId }) {
+function UpdateSongModal({ userInfo, songId, closeMenu }) {
   const [showModal, setShowModal] = useState(false);
+  const test = () => {
+    setShowModal(false)
+    closeMenu()
+
+  }
   return (
     <>
       <button
@@ -15,11 +20,14 @@ function UpdateSongModal({ userInfo, songId }) {
         <i className="fas fa-wrench"></i>
       </button>
       {showModal && (
+        // <Modal onClose={() => setShowModal(false)}>
         <Modal onClose={() => setShowModal(false)}>
+
           <UpdateSongForm
             setShowModal={setShowModal}
             userInfo={userInfo}
             songId={songId}
+            closeMenu={closeMenu}
           />
         </Modal>
       )}
