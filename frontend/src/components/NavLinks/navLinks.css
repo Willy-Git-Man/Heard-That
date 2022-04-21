@@ -17,7 +17,6 @@
 
 .navLinkUpper {
   height: 20%;
-  padding:  2.5%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -27,6 +26,7 @@
 .logoTopLeft {
   display: flex;
   /* background-color: black; */
+  width: 100%;
   color: #E0E1DD;
   font-size: 1em;
   background-color: #0D1B2A;

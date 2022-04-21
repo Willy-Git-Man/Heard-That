@@ -3,6 +3,7 @@ body {
   /* padding: 0; */
   margin: 0;
   /* width: 100%; */
+  height: 100%;
 }
 
 html {
@@ -13,7 +14,7 @@ html {
   background: linear-gradient(#0D1B2A, #778DA9, #415A77, #778DA9, #0D1B2A);
   background: linear-gradient(#778DA9, #1B263B);
   /* background-color: #E0E1DD; */
-
+height: 100%;
 
 
 
@@ -33,4 +34,8 @@ html {
 
 li {
   color: white;
+}
+
+#root {
+  height: 100%;
 }

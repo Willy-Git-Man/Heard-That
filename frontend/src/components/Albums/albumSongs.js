@@ -63,8 +63,6 @@ export default function AlbumSongs({ userInfo }) {
         <NavLinks playing={playing} setPlaying={setPlaying} pic={pic} />
       </div>
 
-
-
       <div className="albumSongsListDiv">
         <MyAlbums userInfo={userInfo} />
 
@@ -76,11 +74,7 @@ export default function AlbumSongs({ userInfo }) {
                 allSongs[key]?.albumId === allAlbums[id].id
             )
             .map((key) => (
-              <div
-                className="everySongDiv"
-                key={key}
-                alt="Broken Img Url"
-              >
+              <div className="everySongDiv" key={key} alt="Broken Img Url">
                 <div className="songImageAndPlayButton">
                   <img
                     className="songImageInAlbum"
@@ -108,7 +102,6 @@ export default function AlbumSongs({ userInfo }) {
         </div>
       </div>
       <AudioPlayerGlobal playing={playing} pic={pic} />
-
     </div>
   );
 }

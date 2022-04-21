@@ -19,22 +19,21 @@ h2 {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 2.5%;
 }
 
 .albumSongsListDiv {
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
-  height: 90vh;
+  height: 90%;
   width: 100%;
+  justify-content: space-around;
 }
 .albumSongsListInnerDiv {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  margin-top: 2.5%;
   height: 65vh;
   width: 95%;
   padding-left: 2.5%;
@@ -428,16 +427,16 @@ h2 {
 
 .albumMainPage {
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 .sideBar {
   /* width: 9.5%; */
   width: 280px;
-  height: 90vh;
+  height: 90%;
   /* margin-right: 45px; */
-  background-color: #191414;
   background-color: #353535;
+  background-color: #0D1B2A;
 }
 
 .albumSongListDivSearch {

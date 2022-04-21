@@ -13,13 +13,15 @@ export default function NavLinks({ playing, setPlaying, pic }) {
   const userInfo = useSelector((state) => state.session.user);
   const allAlbums = Object.values(useSelector((state) => state.albums.albums));
 
-
   return (
     <>
-    <div className="navigationLinks">
       <div className="navLinkUpper">
-        <NavLink className="logoTopLeft" activeClassName="logoTopLeft" to="/Albums/1">
-        <h1 className="logoH1">Heard-That</h1>
+        <NavLink
+          className="logoTopLeft"
+          activeClassName="logoTopLeft"
+          to="/Albums/1"
+        >
+          <h1 className="logoH1">Heard-That</h1>
         </NavLink>
         <CreateAlbumModal userInfo={userInfo} />
         <CreateSongModal userInfo={userInfo} />
@@ -27,18 +29,12 @@ export default function NavLinks({ playing, setPlaying, pic }) {
         <ProfileButton user={userInfo} />
         <span className="navUpperBottomLine"></span>
       </div>
+      <div className="sideBarLower">
 
-      <div className="sideBarSearchAndLinks">
 
-      <AlbumNavLinks allAlbums={allAlbums}/>
+        <AlbumNavLinks allAlbums={allAlbums} />
+        <SearchBar playing={playing} setPlaying={setPlaying} />
       </div>
-      <div className="sideBarSearchAndLinks">
-      <SearchBar playing={playing} setPlaying={setPlaying} />
-
-      </div>
-
-    </div>
-      {/* <AudioPlayerGlobal playing={playing} pic={pic} /> */}
     </>
   );
 }
