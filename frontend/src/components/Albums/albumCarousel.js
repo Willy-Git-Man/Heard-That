@@ -121,9 +121,9 @@ export default function AlbumCarousel({ userInfo }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "red",
-          height: "2.5vh",
-          width: "2.5vh",
+          background: "#0D1B2A",
+          height: "5vh",
+          width: "5vh",
         }}
         onClick={() => rightArrow()}
       />
@@ -144,9 +144,10 @@ export default function AlbumCarousel({ userInfo }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "red",
-          height: "2.5vh",
-          width: "2.5vh",
+          background: "#0D1B2A",
+
+          height: "5vh",
+          width: "5vh",
         }}
         onClick={() => leftArrow()}
       />
@@ -207,6 +208,7 @@ export default function AlbumCarousel({ userInfo }) {
             ))}
         </Slider>
       </div>
+
       {/* <Slider
           {...settings1}
           asNavFor={firstSlider}
@@ -271,5 +273,6 @@ export default function AlbumCarousel({ userInfo }) {
             ))}
         </Slider> */}
     </div>
+
   );
 }
