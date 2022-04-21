@@ -12,7 +12,8 @@ function CreateAlbumModal({ userInfo }) {
         className={"createAlbumModalButton"}
         onClick={() => setShowModal(true)}
       >
-        Create Playlist
+        <i className="fab fa-grav"></i>
+        Add Playlist
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

@@ -404,10 +404,9 @@ h2 {
 }
 
 .sideBar {
-  width: 9.5%;
-  min-width: 300px;
-  max-width: 300px;
-  margin-right: 50px;
+  /* width: 9.5%; */
+  width: 280px;
+  margin-right: 45px;
   background-color: #191414;
 }
 
