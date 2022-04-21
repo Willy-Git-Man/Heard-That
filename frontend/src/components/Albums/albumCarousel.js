@@ -22,34 +22,51 @@ export default function AlbumCarousel({ userInfo }) {
   // }, [dispatch]);
 
   const allAlbums = useSelector((state) => state.albums.albums);
+  // console.log(allAlbums)
+  // const sessionUser = useSelector((state) => state.session.user);
+
   const allAlbumKeys = Object.keys(allAlbums);
-  const length = allAlbumKeys.length;
+
+  // const allUserAlbumKeys = Object.values(allAlbums).filter((album) => album === userInfo.id);
+  // console.log(allUserAlbumKeys)
+  // const length = allAlbumKeys.length;
   // console.log("allAlbumKeys length:", allAlbumKeys[length -1])
 
   const allAlbumValues = Object.values(allAlbums);
+  const userAlbums = allAlbumValues.filter(
+    (album) => album.userId === userInfo.id || album.userId === 2
+  );
+  // const userAlbumKeys = allAlbumKeys.filter((album) => album.userId === userInfo.id || album.userId === 2)
+
+  const length = userAlbums.length;
+  console.log("userAlbums",userAlbums);
+  console.log("allAlbumKeys",allAlbumKeys);
   // console.log("allAlbumValues:", allAlbumValues)
 
   const allAlbumEntries = Object.entries(allAlbums);
-// console.log("allAlbumEntries:",allAlbumEntries)
-
-
+  // console.log("allAlbumEntries:",allAlbumEntries)
 
   const rightArrowNextId = () => {
-    for (let i = 0; i < allAlbumKeys.length; i++) {
-      if (+allAlbumKeys[i] === +id) return +allAlbumKeys[i + 1]
-      if (+allAlbumKeys[i + 1] === +allAlbumKeys[length -1]) return 1
+
+    for (let i = 0; i < userAlbums.length; i++) {
+      // console.log("test", allAlbums[i])
+      if (+userAlbums[i].id === +id) return +userAlbums[i + 1].id;
+      if (+userAlbums[i + 1].id === +userAlbums[length - 1].id) return 1;
     }
     return;
   };
 
   const leftArrowNextId = () => {
-    if (+id - 1 === 0) return allAlbumKeys[length -1]
-    console.log('+id yooo', +id)
-    // return allAlbumKeys[length -1]
-    for (let i = 0; i < allAlbumKeys.length; i++) {
-      console.log('album keys at i',+allAlbumKeys[i])
-      console.log(+allAlbumKeys[i] === +allAlbumKeys[0])
-      if (+allAlbumKeys[i] === +id) return +allAlbumKeys[i - 1]
+
+    if (+id === 1) return 35
+    for (let i = 0; i < userAlbums.length; i++) {
+
+      // if (+id === 1) return +userAlbums[length - 1].id;
+      if (+userAlbums[i].id === +id) return +userAlbums[i - 1].id;
+      // else return 35
+      // if (!+userAlbums[i - 1].id) return 35
+      // console.log('testing', +userAlbums[i].id)
+      // console.log(+id)
 
     }
     return;
@@ -85,7 +102,6 @@ export default function AlbumCarousel({ userInfo }) {
   // };
   const mainAlbums = allAlbumKeys?.filter((album) => allAlbums[album]?.id <= 3);
 
-
   const handlePicture = (e) => {
     e.target.src =
       "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png";
@@ -119,8 +135,6 @@ export default function AlbumCarousel({ userInfo }) {
     const leftArrow = () => {
       onClick();
       history.push(`/Albums/${leftArrowNextId()}`);
-
-
     };
     return (
       <div
@@ -139,15 +153,41 @@ export default function AlbumCarousel({ userInfo }) {
     );
   }
 
-    return (
-      <div className="mainCarouselDiv">
-        <div className="firstOuterSliderDiv">
-          <Slider
-            {...multipleAlbumCarouselSettings}
-            // asNavFor={firstSlider}
-            // ref={(slider2) => setsecondSlider(slider2)}
-          >
-            {mainAlbums.map((album) => (
+  return (
+    <div className="mainCarouselDiv">
+      <div className="firstOuterSliderDiv">
+        <Slider
+          {...multipleAlbumCarouselSettings}
+          // asNavFor={firstSlider}
+          // ref={(slider2) => setsecondSlider(slider2)}
+        >
+          {mainAlbums.map((album) => (
+            <div className="mainAlbumsEachAlbumDiv" key={allAlbums[album].id}>
+              <img
+                className="mainAlbumsEachAlbumDivCarouselImage"
+                src={allAlbums[album]?.imageUrl}
+                alt="Broken Img Url"
+                onError={handlePicture}
+              />
+              <NavLink
+                className="mainAlbumsEachAlbumDivNavLink"
+                // activeClassName="selected"
+                to={`/Albums/${allAlbums[album].id}`}
+              >
+                <h1 className="albumNameLink">{allAlbums[album]?.title}</h1>
+              </NavLink>
+            </div>
+          ))}
+
+          {allAlbumKeys
+            ?.filter(
+              (index) =>
+                allAlbums[index]?.userId === userInfo.id &&
+                allAlbums[index]?.id !== 1 &&
+                allAlbums[index]?.id !== 2 &&
+                allAlbums[index]?.id !== 3
+            )
+            .map((album) => (
               <div className="mainAlbumsEachAlbumDiv" key={allAlbums[album].id}>
                 <img
                   className="mainAlbumsEachAlbumDivCarouselImage"
@@ -155,52 +195,19 @@ export default function AlbumCarousel({ userInfo }) {
                   alt="Broken Img Url"
                   onError={handlePicture}
                 />
+                {/* <AlbumButtonDots allAlbumsIndex={allAlbums[album]} /> */}
+
                 <NavLink
                   className="mainAlbumsEachAlbumDivNavLink"
-                  // activeClassName="selected"
                   to={`/Albums/${allAlbums[album].id}`}
                 >
-                  <h1 className="albumNameLink">
-                    {allAlbums[album]?.title}
-                  </h1>
+                  <h1 className="albumNameLink">{allAlbums[album]?.title}</h1>
                 </NavLink>
               </div>
             ))}
-
-            {allAlbumKeys
-              ?.filter(
-                (index) =>
-                  allAlbums[index]?.userId === userInfo.id &&
-                  allAlbums[index]?.id !== 1 &&
-                  allAlbums[index]?.id !== 2 &&
-                  allAlbums[index]?.id !== 3
-              )
-              .map((album) => (
-                <div
-                  className="mainAlbumsEachAlbumDiv"
-                  key={allAlbums[album].id}
-                >
-                  <img
-                    className="mainAlbumsEachAlbumDivCarouselImage"
-                    src={allAlbums[album]?.imageUrl}
-                    alt="Broken Img Url"
-                    onError={handlePicture}
-                  />
-                  {/* <AlbumButtonDots allAlbumsIndex={allAlbums[album]} /> */}
-
-                  <NavLink
-                    className="mainAlbumsEachAlbumDivNavLink"
-                    to={`/Albums/${allAlbums[album].id}`}
-                  >
-                    <h1 className="albumNameLink">
-                      {allAlbums[album]?.title}
-                    </h1>
-                  </NavLink>
-                </div>
-              ))}
-          </Slider>
-        </div>
-        {/* <Slider
+        </Slider>
+      </div>
+      {/* <Slider
           {...settings1}
           asNavFor={firstSlider}
           ref={(slider2) => setsecondSlider(slider2)}
@@ -263,6 +270,6 @@ export default function AlbumCarousel({ userInfo }) {
               </div>
             ))}
         </Slider> */}
-      </div>
-    );
+    </div>
+  );
 }
