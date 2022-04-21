@@ -30,14 +30,14 @@ h2 {
   width: 100%;
 }
 .albumSongsListInnerDiv {
-  /* margin-top: 7.5%;
-  padding-left: 2.5vw;
-  padding-right: 2.5vw;
-
-  height: 47.5vh;
-  overflow: scroll; */
-  margin-top: 5%;
-  height: 70%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 2.5%;
+  height: 65vh;
+  width: 95%;
+  padding-left: 2.5%;
   overflow: scroll;
 }
 .albumSongsListInnerDiv::-webkit-scrollbar {
@@ -51,26 +51,37 @@ h2 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #0D1B2A;
   height: 10%;
+  width: 100%;
 }
 .everySongDiv::-webkit-scrollbar {
   display: none;
 }
 .songDivButton {
-  background-color: #00ff3e;
+  background-color: #415A77;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 50%;
-  min-width: 50px;
-  opacity: .5;
+  /* min-width: 50px; */
+  /* opacity: .5; */
+}
+.songButtonDotsButton {
+  background-color: #415A77;
+  color: #E0E1DD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 5vw;
+  font-size: 1em;
+  /* min-width: 50px;
+  opacity: .5; */
 }
 .playButtonH1 {
-  color: black;
-  height: 100%;
-  width: 50%;
+  color: #E0E1DD;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -360,6 +371,9 @@ h2 {
   /* height: 100%; */
 }
 
+
+
+
 .mainAlbumsAndOtherAlbumsCarouselDiv {
   width: 100%;
 }
@@ -453,4 +467,15 @@ h2 {
 .songTitleAndArtistDiv {
   display: flex;
   width: 60%;
+}
+
+
+.albumCarouselAlbumTitle {
+  /* width: 100%; */
+  background-color: #778DA9;
+  color: #E0E1DD;
+  display: flex;
+  justify-content: center;
+  /* color: #778DA9; */
+
 }

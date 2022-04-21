@@ -14,6 +14,7 @@ import "react-h5-audio-player/lib/styles.css";
 import NavLinks from "../NavLinks/navLinks";
 import MyAlbums from ".";
 import UpdateSongModal from "../Songs/UpdateSongModal";
+import SongButtonDots from "../Songs/songButtonDots";
 
 export default function AlbumSongs({ userInfo }) {
   const history = useHistory();
@@ -77,7 +78,7 @@ export default function AlbumSongs({ userInfo }) {
                 className="everySongDiv"
                 key={key}
                 alt="Broken Img Url"
-                onClick={() => setPlaying(allSongs[key].songUrl)}
+                // onClick={() => setPlaying(allSongs[key].songUrl)}
               >
                 <div className="songImageAndPlayButton">
                   <img
@@ -91,9 +92,8 @@ export default function AlbumSongs({ userInfo }) {
                       test(allSongs[key].songUrl, allSongs[key].imageUrl)
                     }
                   >
-                    <h1 className="playButtonH1">
-                      <i className="fab fa-grav"></i>
-                    </h1>
+                      <i className="fab fa-grav" ></i>
+
 
                   </button>
                 </div>
@@ -102,14 +102,14 @@ export default function AlbumSongs({ userInfo }) {
 
                   <li className="songListItem">{allSongs[key].artistName}</li>
                 </div>
-                <div className="songButtonsDiv">
-                  <button
+                  {/* <button
                     className="deleteSongButton"
                     onClick={() => deleteDispatch(allSongs[key].id)}
                   >
                     <i className="far fa-trash-alt"></i>
-                  </button>
-                  {allSongs[key].albumId !== 3 && (
+                  </button> */}
+                  <SongButtonDots />
+                  {/* {allSongs[key].albumId !== 3 && (
                     <>
                       <UpdateSongModal songId={allSongs[key].id} />
 
@@ -120,8 +120,7 @@ export default function AlbumSongs({ userInfo }) {
                         <i className="fab fa-grav"></i>
                       </button>
                     </>
-                  )}
-                </div>
+                  )} */}
               </div>
             ))}
         </div>
