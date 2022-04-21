@@ -1,9 +1,6 @@
 .updateAlbumModalButton {
   height: 5vh;
   background-color: rgb(56, 173, 66);
-  left: 10vw;
-  bottom: 25%;
-  position: absolute;
   width: 5vw;
   color: white;
   font-size: 2em;
