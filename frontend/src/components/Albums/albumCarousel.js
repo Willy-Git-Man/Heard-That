@@ -48,7 +48,7 @@ export default function AlbumCarousel({ userInfo }) {
   };
 
   const leftArrowNextId = () => {
-    if (+id === 1) return 35;
+    if (+id === 1) return +userAlbums[length - 1].id;
     for (let i = 0; i < userAlbums.length; i++) {
       if (+userAlbums[i].id === +id) return +userAlbums[i - 1].id;
     }
