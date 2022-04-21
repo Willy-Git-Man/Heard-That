@@ -30,9 +30,9 @@ export default function NavLinks({ playing, setPlaying, pic }) {
       <div className="sideBarSearchAndLinks">
 
       <AlbumNavLinks allAlbums={allAlbums}/>
-      <SearchBar playing={playing} setPlaying={setPlaying} />
       </div>
       <div className="sideBarSearchAndLinks">
+      <SearchBar playing={playing} setPlaying={setPlaying} />
 
       </div>
 

@@ -57,19 +57,25 @@
 
 .navAlbumNavLink {
   width: 100%;
+  height: 1.5vh;
   margin-bottom: 1%;
+  display: flex;
+  justify-content: space-between;
   font-size: 1em;
   color: #E0E1DD;
   text-decoration: none;
 }
 .active {
   width: 100%;
+  height: 2.5vh;
   display: flex;
   justify-content: center;
   margin-bottom: 1%;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #0D1B2A;
   background-color: #E0E1DD;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* .activeAlbum {
@@ -105,4 +111,11 @@
   /* height: 50vh; */
   /* opacity: .3; */
   background-color: black;
+}
+
+
+.albumNavLinkAndEdit {
+  display: flex;
+  height: 2.5%;
+  /* height: 5vh; */
 }

@@ -11,19 +11,24 @@
 
 .searchInput {
   height: 2.5vh;
-  background-color: black;
-  margin: 5%;
-  border: 2px solid #00ff3e;
-  color: #00ff3e;
+  background-color: #0D1B2A;
+  margin: 1%;
+  width: 95%;
+  /* margin-left: 0; */
+  outline: 2px solid #E0E1DD;
+  border-right: 2px solid #E0E1DD;
+  border-left: 2px solid #E0E1DD;
+
+  color: #E0E1DD;
   font-size: .5em;
-  width: 90%;
+  /* width: 90%; */
 
   /* font-size: .325em; */
   font-family: 'Press Start 2P', cursive;
   /* margin-left: 37.5vw; */
 }
 .searchInput::placeholder {
-  color: #00ff3e;
+  color: #E0E1DD;
   font-size: .925em;
   font-family: 'Press Start 2P', cursive;
 
