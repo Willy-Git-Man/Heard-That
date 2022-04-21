@@ -15,6 +15,7 @@ import NavLinks from "../NavLinks/navLinks";
 import MyAlbums from ".";
 import UpdateSongModal from "../Songs/UpdateSongModal";
 import SongButtonDots from "../Songs/songButtonDots";
+import AudioPlayerGlobal from "../NavLinks/audioPlayer";
 
 export default function AlbumSongs({ userInfo }) {
   const history = useHistory();
@@ -56,12 +57,13 @@ export default function AlbumSongs({ userInfo }) {
     history.push("/Albums/3");
   };
 
-
   return (
     <div className="albumMainPage">
       <div className="sideBar">
         <NavLinks playing={playing} setPlaying={setPlaying} pic={pic} />
       </div>
+
+
 
       <div className="albumSongsListDiv">
         <MyAlbums userInfo={userInfo} />
@@ -78,7 +80,6 @@ export default function AlbumSongs({ userInfo }) {
                 className="everySongDiv"
                 key={key}
                 alt="Broken Img Url"
-                // onClick={() => setPlaying(allSongs[key].songUrl)}
               >
                 <div className="songImageAndPlayButton">
                   <img
@@ -92,9 +93,7 @@ export default function AlbumSongs({ userInfo }) {
                       test(allSongs[key].songUrl, allSongs[key].imageUrl)
                     }
                   >
-                      <i className="fab fa-grav" ></i>
-
-
+                    <i className="fab fa-grav"></i>
                   </button>
                 </div>
                 <div className="songTitleAndArtistDiv">
@@ -102,29 +101,14 @@ export default function AlbumSongs({ userInfo }) {
 
                   <li className="songListItem">{allSongs[key].artistName}</li>
                 </div>
-                  {/* <button
-                    className="deleteSongButton"
-                    onClick={() => deleteDispatch(allSongs[key].id)}
-                  >
-                    <i className="far fa-trash-alt"></i>
-                  </button> */}
-                  <SongButtonDots songId={allSongs[key].id} />
-                  {/* {allSongs[key].albumId !== 3 && (
-                    <>
-                      <UpdateSongModal songId={allSongs[key].id} />
 
-                      <button
-                        className="addLikedSong"
-                        onClick={() => likeSongDispatch(allSongs[key].id)}
-                      >
-                        <i className="fab fa-grav"></i>
-                      </button>
-                    </>
-                  )} */}
+                <SongButtonDots songId={allSongs[key].id} />
               </div>
             ))}
         </div>
       </div>
+      <AudioPlayerGlobal playing={playing} pic={pic} />
+
     </div>
   );
 }

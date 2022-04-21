@@ -8,8 +8,16 @@ body {
 html {
   background-color: rgba(0, 0, 0, .95);
   background-color: black;
-  background: linear-gradient(#313f72, #000000);
-  background: #778DA9
+  background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #E0E1DD, #778DA9, #415A77, #1B263B, #0D1B2A);
+  background: linear-gradient(#E0E1DD, #778DA9, #415A77, #1B263B, #0D1B2A);
+  background: linear-gradient(#0D1B2A, #778DA9, #415A77, #778DA9, #0D1B2A);
+  background: linear-gradient(#778DA9, #1B263B);
+  /* background-color: #E0E1DD; */
+
+
+
+
+  /* background: #778DA9 */
 
 
 

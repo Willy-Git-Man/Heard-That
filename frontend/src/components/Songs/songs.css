@@ -206,21 +206,7 @@ font-size: large;
   }
 
 
-  .audioPlayer {
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    position: relative;
-    /* background-color: rgba(50, 80, 150, .9); */
-    /* margin-top: 50px; */
-    bottom: 0;
-    color: black;
-    position: absolute;
-    height: 40%;
-    /* height: fit-content; */
-    /* margin-left: 10%; */
-    z-index: 10;
-  }
+
 
   svg {
     /* position: absolute; */
@@ -251,19 +237,13 @@ font-size: large;
    position: absolute;
    bottom: 0;
    right: 0;
-
-   /* position: absolute; */
-   /* top: 0; */
- /* background-size: 100% 100%; */
- /* position: absolute; */
- /* bottom: 10%; */
  width: 100vw;
- z-index: 99999999;
  color: white;
- /* z-index: 10000; */
- background-color: #1B263B;
+ /* background-color: #1B263B; */
+ /* background: linear-gradient(#0D1B2A, #778DA9, #415A77, #778DA9, #0D1B2A); */
+
  }
 
  .rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
-background-color: black;
+/* background-color: black; */
  }

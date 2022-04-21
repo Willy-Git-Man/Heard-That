@@ -38,7 +38,7 @@ export default function NavLinks({ playing, setPlaying, pic }) {
       </div>
 
     </div>
-      <AudioPlayerGlobal playing={playing} pic={pic} />
+      {/* <AudioPlayerGlobal playing={playing} pic={pic} /> */}
     </>
   );
 }

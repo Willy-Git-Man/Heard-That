@@ -77,23 +77,6 @@
   display: flex;
 }
 
-/* .activeAlbum {
-  background-image: url("https://png.pngtree.com/png-vector/20210807/ourmid/pngtree-music-logo-vector-ilustration-tracing-png-image_3783408.jpg");
-} */
-
-/* .navAlbumNavLink:active {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1%;
-  font-size: 2em;
-  color: black;
-
-} */
-
-.navAlbumNavLinks {
-  /* position: absolute; */
-}
 
 .sideBarSearchAndLinks {
   width: 100%;
@@ -101,7 +84,9 @@
 
 .rhap_container.rhap_loop--off.rhap_play-status--playing.audioPlayer {
   height: 100%;
-  background-color: black;
+  /* background-color: #778DA9; */
+  background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A);
+
 
 }
 
@@ -110,6 +95,10 @@
   /* height: 50vh; */
   /* opacity: .3; */
   background-color: black;
+  /* background-color: #778DA9; */
+  background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A);
+
+
 }
 
 
