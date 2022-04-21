@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 // import { Redirect } from "react-router";
 import * as sessionActions from "../../store/session";
 
-import './Navigation.css'
+import "./Navigation.css";
 
 function ProfileButton({ user }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -47,24 +47,6 @@ function ProfileButton({ user }) {
           <ul className="profile-dropdown">
             <h1 className="userName">{user.username}</h1>
             <h1 className="email">{user.email}</h1>
-
-            {/* <li>
-              <a
-                className={"linkedIn"}
-                href="https://www.linkedin.com/in/william-b-grossman/"
-              >
-                LinkedIn
-              </a>
-            </li>
-
-            <li>
-              <a
-                className={"github"}
-                href="https://github.com/Willy-Git-Man/Solo-Project"
-              >
-                GitHub
-              </a>
-            </li> */}
 
             <li>
               <button className={"logoutButton"} onClick={logout}>

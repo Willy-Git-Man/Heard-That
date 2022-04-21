@@ -25,7 +25,7 @@ export default function AlbumNavLinks({ allAlbums }) {
         {allAlbums
           .filter((el) => el.userId === userInfo.id)
           .map((album) => (
-            <div className="albumNavLinkAndEdit">
+            <div className="albumNavLinkAndEdit" key={album.id}>
               <NavLink
                 key={album.id}
                 className="navAlbumNavLink"

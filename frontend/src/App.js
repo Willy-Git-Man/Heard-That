@@ -18,6 +18,8 @@ export const PlayingContext = React.createContext();
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  // dispatch(getAllAlbumsThunk());
+  // dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
 
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
@@ -37,14 +39,14 @@ function App() {
       </>
     );
 
-
   return (
     <>
-      {/* <Navigation isLoaded={isLoaded} /> */}
+
       <Switch>
-        <Route exact path="/Albums/:id">
+
+        <ProtectedRoute exact path="/Albums/:id">
           <AlbumSongs userInfo={userInfo} albumState={albumState} />
-        </Route>
+        </ProtectedRoute>
         <ProtectedRoute path="/">
           <>
             <Redirect to="/Albums/1" />

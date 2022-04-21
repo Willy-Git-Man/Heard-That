@@ -55,7 +55,6 @@ export default function AlbumCarousel({ userInfo }) {
   }
   const rightArrowNextId = () => {
     for (let i = 0; i < userAlbums.length; i++) {
-      // console.log("test", allAlbums[i])
       if (+userAlbums[i].id === +id) return +userAlbums[i + 1].id;
       if (+userAlbums[i + 1].id === +userAlbums[length - 1].id) return 1;
     }
@@ -70,10 +69,6 @@ export default function AlbumCarousel({ userInfo }) {
     return;
   };
 
-  const handlePicture = (e) => {
-    e.target.src =
-      "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png";
-  };
 
   function RightArrow(props) {
     const { className, style, onClick } = props;
@@ -130,13 +125,8 @@ export default function AlbumCarousel({ userInfo }) {
         // ref={(slider2) => setsecondSlider(slider2)}
       >
         {allAlbumKeys.map((album) => (
-          <div className="mainAlbumsEachAlbumDiv" key={allAlbums[album].id}>
-            {/* <img
-              className="mainAlbumsEachAlbumDivCarouselImage"
-              src={allAlbums[album]?.imageUrl}
-              alt="Broken Img Url"
-              onError={handlePicture}
-            /> */}
+          <div className="mainAlbumsEachAlbumDiv" key={allAlbums[album]?.id}>
+
             <NavLink
               className="mainAlbumsEachAlbumDivNavLink"
               to={`/Albums/${allAlbums[album].id}`}
@@ -161,16 +151,11 @@ export default function AlbumCarousel({ userInfo }) {
         // asNavFor={firstSlider}
         // ref={(slider2) => setsecondSlider(slider2)}
       >
-          <div className="mainAlbumsEachAlbumDiv2" key={allAlbums[+id].id}>
-            {/* <img
-              className="mainAlbumsEachAlbumDivCarouselImage"
-              src={allAlbums[album]?.imageUrl}
-              alt="Broken Img Url"
-              onError={handlePicture}
-            /> */}
+          <div className="mainAlbumsEachAlbumDiv2" key={allAlbums[+id]?.id}>
+
             <NavLink
               className="mainAlbumsEachAlbumDivNavLink"
-              to={`/Albums/${allAlbums[+id].id}`}
+              to={`/Albums/${allAlbums[+id]?.id}`}
             >
               <div
                 className="albumNameLink"

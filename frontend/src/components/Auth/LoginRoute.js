@@ -14,11 +14,11 @@ function LoginRoute() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
+  const userInfo = useSelector((state) => state.session.user);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  const userInfo = useSelector((state) => state.session.user);
     if (!userInfo)
     return (
       <>
