@@ -65,6 +65,7 @@ h2 {
   align-items: center;
   height: 100%;
   width: 50%;
+  border: none;
   /* min-width: 50px; */
   /* opacity: .5; */
 }
@@ -77,6 +78,7 @@ h2 {
   height: 100%;
   width: 5vw;
   font-size: 1em;
+  border: none;
   /* min-width: 50px;
   opacity: .5; */
 }
@@ -206,16 +208,15 @@ h2 {
 }
 
 .deleteAlbumButton {
-  height: 5vh;
-  background-color: rgb(173, 56, 56);
-  right: 0;
-  /* position: absolute; */
-  /* bottom: 25%; */
-  /* left: 0; */
+  background-color: #415A77;
+  color: #E0E1DD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   width: 5vw;
-  color: white;
-  font-size: 2em;
-  z-index: 100;
+  font-size: 1em;
+  border: none;
 }
 
 /* .songsMainDiv {
@@ -304,8 +305,15 @@ h2 {
   background-color: white;
   background-color: white;
   position: absolute;
+  display: flex;
   /* left: 325px; */
 
+}
+
+.songSettingsDiv {
+  height: 100%;
+  width: 10vw;
+  display: flex;
 }
 
 .mainPageAlbums {
@@ -426,6 +434,7 @@ h2 {
 .sideBar {
   /* width: 9.5%; */
   width: 280px;
+  height: 90vh;
   /* margin-right: 45px; */
   background-color: #191414;
   background-color: #353535;
@@ -472,7 +481,7 @@ h2 {
 
 .albumCarouselAlbumTitle {
   /* width: 100%; */
-  background-color: #778DA9;
+  background-color: #0D1B2A;
   color: #E0E1DD;
   display: flex;
   justify-content: center;

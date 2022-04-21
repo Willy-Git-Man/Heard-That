@@ -103,7 +103,7 @@ font-size: large;
   font-size: 1.5em;
   position: relative;
   /* margin-bottom: 2.5%; */
-  color: white;
+  color: #E0E1DD;
   font-size: 1.85em;
   width: 100%;
   }
@@ -166,12 +166,15 @@ font-size: large;
   }
 
   .updateSongModalButton {
-    height: 100%;
-    background-color: #00ff3e;
-
-    width: 33.33%;
-    opacity: .5;
-
+    background-color: #415A77;
+  color: #E0E1DD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 5vw;
+  font-size: 1em;
+  border: none;
 
   }
 
@@ -244,7 +247,7 @@ font-size: large;
 
 
  .globalAudioPlayer {
-   height: 10%;
+   height: 10vh;
    position: absolute;
    bottom: 0;
    right: 0;

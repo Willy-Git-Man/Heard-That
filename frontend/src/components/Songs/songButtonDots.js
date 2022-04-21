@@ -59,7 +59,7 @@ function SongButtonDots({ user, allAlbumsIndex, songId }) {
         Edit
       </button>
         {showMenu && (
-          <div className="albumSettingsDiv">
+          <div className="songSettingsDiv">
             <button
               className="deleteAlbumButton"
               // onClick={() => deleteAlbumDispatch(allAlbumsIndex?.id)}

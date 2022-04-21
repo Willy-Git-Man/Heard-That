@@ -15,16 +15,17 @@ export default function NavLinks({ playing, setPlaying, pic }) {
 
 
   return (
+    <>
     <div className="navigationLinks">
       <div className="navLinkUpper">
         <NavLink className="logoTopLeft" activeClassName="logoTopLeft" to="/Albums/1">
-        <h1>Heard-That</h1>
+        <h1 className="logoH1">Heard-That</h1>
         </NavLink>
         <CreateAlbumModal userInfo={userInfo} />
         <CreateSongModal userInfo={userInfo} />
 
         <ProfileButton user={userInfo} />
-        {/* <span className="navUpperBottomLine"></span> */}
+        <span className="navUpperBottomLine"></span>
       </div>
 
       <div className="sideBarSearchAndLinks">
@@ -36,7 +37,8 @@ export default function NavLinks({ playing, setPlaying, pic }) {
 
       </div>
 
-      <AudioPlayerGlobal playing={playing} pic={pic} />
     </div>
+      <AudioPlayerGlobal playing={playing} pic={pic} />
+    </>
   );
 }

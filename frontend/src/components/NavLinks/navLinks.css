@@ -37,7 +37,7 @@
 
 
 .navUpperBottomLine {
-  color: white;
+  color: #E0E1DD;
   display: flex;
   justify-content: center;
   width: 90%;
@@ -118,3 +118,14 @@
   height: 2.5%;
   /* height: 5vh; */
 }
+
+
+.logoH1 {
+  color: #E0E1DD;
+}
+
+/* .rhap_download-progress {
+  color: #E0E1DD;
+  background-color: #E0E1DD;
+  color: black;
+} */
