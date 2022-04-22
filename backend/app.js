@@ -16,6 +16,8 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false })); //////
 app.use(express.json());
+app.use(cors());
+
 
 // Security Middleware
 if (!isProduction) {
@@ -30,8 +32,12 @@ if (!isProduction) {
 //   })
 // );
 
+// app.use(helmet({
+//   contentSecurityPolicy: false
+// }));
+
 app.use(helmet({
-  contentSecurityPolicy: false
+  crossOriginEmbedderPolicy: false
 }));
 
 // Set the _csrf token and create req.csrfToken method
