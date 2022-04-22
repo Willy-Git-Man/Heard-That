@@ -32,17 +32,24 @@ function App() {
   // const songInfo = useSele/ctor((state) => state.songs);
   //TODO: THIS LINE ^ IS KEEPING CAROUSEL WORKING
 
-  if (!userInfo)
-    return (
-      <>
-        <LoginRoute />
-      </>
-    );
+  // if (!userInfo)
+  //   return (
+  //     <>
+  //       <LoginRoute />
+  //     </>
+  //   );
 
   return (
     <>
 
       <Switch>
+        {!userInfo && (
+            <Route path="/">
+              <Redirect to="/" />
+        <LoginRoute />
+
+          </Route>
+        )}
 
         <ProtectedRoute exact path="/Albums/:id">
           <AlbumSongs userInfo={userInfo} albumState={albumState} />
