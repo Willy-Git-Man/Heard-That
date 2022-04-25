@@ -17,6 +17,9 @@ import UpdateSongModal from "../Songs/UpdateSongModal";
 import SongButtonDots from "../Songs/songButtonDots";
 import AudioPlayerGlobal from "../NavLinks/audioPlayer";
 
+import { FaPlayCircle } from "react-icons/fa";
+import { FcDisplay } from "react-icons/fc";
+
 export default function AlbumSongs({ userInfo }) {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -81,14 +84,33 @@ export default function AlbumSongs({ userInfo }) {
                     src={allSongs[key]?.imageUrl}
                     alt="Broken Img Url"
                   />
-                  <button
-                    className="songDivButton"
-                    onClick={() =>
-                      test(allSongs[key].songUrl, allSongs[key].imageUrl)
-                    }
-                  >
-                    <i className="fab fa-grav"></i>
-                  </button>
+                  {playing !== allSongs[key].songUrl && (
+                    <button
+                      className="songDivButton"
+                      onClick={() =>
+                        test(allSongs[key].songUrl, allSongs[key].imageUrl)
+                      }
+                    >
+                      <h3>
+                        {" "}
+                        <FaPlayCircle />{" "}
+                      </h3>
+                    </button>
+                  )}
+
+                  {playing === allSongs[key].songUrl && (
+                    <button
+                      className="songDivButton"
+                      onClick={() =>
+                        test("allSongs[key].songUrl", "allSongs[key].imageUrl")
+                      }
+                    >
+                      <h3>
+                        {" "}
+                        <FcDisplay />{" "}
+                      </h3>
+                    </button>
+                  )}
                 </div>
                 <div className="songTitleAndArtistDiv">
                   <li className="songListItem">{allSongs[key].songName}</li>

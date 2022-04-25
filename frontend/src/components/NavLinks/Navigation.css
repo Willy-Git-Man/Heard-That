@@ -30,6 +30,8 @@
   list-style: none;
   z-index: 999;
   background-color: black;
+  background-color: #0d1b2a;
+
   outline: 10px white solid;
   /* overflow: scroll; */
   /* text-align: center; */
@@ -79,8 +81,10 @@
 .logoutButton {
  /* background-image: url("../../../public/pics/loginTest.png"); */
  background-color: rgba(117, 235, 14, 0.995);
+ background-color: #778DA9;
 
- color: white;
+
+ color: #E0E1DD;
  /* height: 5vh; */
  font-size: 2em;
  /* padding-left: 5%; */

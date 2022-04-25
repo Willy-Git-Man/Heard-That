@@ -6,23 +6,16 @@ import { getAllSongsThunk } from "../../store/songs";
 import AudioPlayer from "react-h5-audio-player";
 import NavLinks from "../NavLinks/navLinks";
 
+import { FaPlayCircle } from "react-icons/fa";
+import { FcDisplay } from "react-icons/fc";
+
 const SearchBar = ({ playing, setPlaying }) => {
   const [searchValue, setSearchValue] = useState("");
   const [songs, setSongs] = useState([]);
   const [pic, setPic] = useState([]);
 
-  // const [playing, setPlaying] = useState("")
   const dispatch = useDispatch();
   const history = useHistory();
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const response = await fetch("/api/songs/");
-  //     const responseData = await response.json();
-  //     setSongs(responseData.songs);
-  //   }
-  //   fetchData();
-  // }, [dispatch]);
 
   useEffect(() => {
     dispatch(getAllSongsThunk());
@@ -66,26 +59,42 @@ const SearchBar = ({ playing, setPlaying }) => {
           })
           .map((song) => (
             <div className="albumSongListDivSearch" key={song.id}>
-              {/* <AlbumButtonDots /> */}
-              {/* <div
-                className="songUlSearch"
-                style={{ backgroundImage: `url(${song.imageUrl})` }}
-                alt="Broken Img Url"
-                // onclick={() => setPlaying(song.songUrl)}
-                onClick={() => test(song.songUrl, song.imageUrl)}
-              > */}
               <div className="searchLi">
-                <li className="songListItem">{song.songName}</li>
+                <li className="songListItemSearch">{song.songName}</li>
 
-                <li className="songListItem">{song.artistName}</li>
+                <li className="songListItemSearch">{song.artistName}</li>
               </div>
-              <button
-                className="songDivButton"
-                // style={{ backgroundImage: `url(${song.imageUrl})` }}
-                onClick={() => test(song.songUrl, song.imageUrl)}
-              >
-                <h1><i className="fab fa-grav"></i></h1>
-              </button>
+              {playing !== song.songUrl && (
+                <button
+                  className="songDivButton"
+                  onClick={() => test(song.songUrl, song.imageUrl)}
+                >
+                  <h1>
+                    {/* <i className="fab fa-grav"></i> */}
+                    <h3>
+                      {" "}
+                      <FaPlayCircle />{" "}
+                    </h3>
+                    {/* AiFillPlayCircle */}
+                  </h1>
+                </button>
+              )}
+
+              {playing === song.songUrl && (
+                <button
+                  className="songDivButton"
+                  onClick={() => test("song.songUrl", "song.imageUrl")}
+                >
+                  <h1>
+                    {/* <i className="fab fa-grav"></i> */}
+                    <h3>
+                      {" "}
+                      <FcDisplay />{" "}
+                    </h3>
+                    {/* AiFillPlayCircle */}
+                  </h1>
+                </button>
+              )}
             </div>
             // </div>
           ))}
@@ -100,24 +109,12 @@ const SearchBar = ({ playing, setPlaying }) => {
           })
           .map((album) => (
             <div
-              className=""
-              key={album.id}
-              onclick={() => albumSearchHistoryPush(album.id)}
+              href="/Albums/1"
+              className="albumDivButton"
+              style={{ backgroundImage: `url(${album.imageUrl})` }}
+              onClick={() => albumSearchHistoryPush(album.id)}
             >
-              {/* <AlbumButtonDots /> */}
-              <div
-                className="songUl"
-                style={{ backgroundImage: `url(${album.imageUrl})` }}
-                alt="Broken Img Url"
-                onclick={() => albumSearchHistoryPush(album.id)}
-              >
-                <div
-                  href="/Albums/1"
-                  className="songDivButton"
-                  style={{ backgroundImage: `url(${album.imageUrl})` }}
-                  onClick={() => albumSearchHistoryPush(album.id)}
-                ></div>
-              </div>
+              <h3 className="albumSearchName">{album.title}</h3>
             </div>
           ))}
 

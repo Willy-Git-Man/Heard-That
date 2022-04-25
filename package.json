@@ -25,6 +25,7 @@
   "homepage": "https://github.com/Willy-Git-Man/Solo-Project#readme",
   "dependencies": {
     "react-h5-audio-player": "^3.8.2",
+    "react-icons": "^4.3.1",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1"
   }

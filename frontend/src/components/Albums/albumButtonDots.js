@@ -50,7 +50,8 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
 
   return (
     <>
-      <button className={"albumButtonDotsButton"} onClick={openMenu}>
+
+  <button className={"albumButtonDotsButton"} onClick={openMenu}>
         Edit
       </button>
         {showMenu && (

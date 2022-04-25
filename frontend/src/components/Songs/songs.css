@@ -79,11 +79,42 @@ font-size: large;
   background-size: 100% 100%;
   width: 100%;
 }
+.albumSearch {
+  padding-left: 0;
+  position: relative;
+  top: 0;
+  height: 100px;
+  margin: 0;
+  left: 0;
+  /* z-index: 2; */
+  background-size: 100% 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.albumSearchName {
+  color: #E0E1DD;
+  background-color: #353535;
+  background-color: #0D1B2A;
+  width: 0=80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}
+.albumDivButton {
+  display: flex;
+  justify-content:  center;
+  align-items: center;
+  height: 10%;
+  margin-bottom: 5%;
+  background-size: 100%;
+
+}
 
 .songUlSearch {
   padding-left: 0;
   background-size: 100% 100%;
-  background-color: white;
+  background-color: #E0E1DD;
 }
 
 .songListItem {
@@ -106,6 +137,9 @@ font-size: large;
   color: #E0E1DD;
   font-size: 1.85em;
   width: 100%;
+  }
+  .songListItemSearch {
+    list-style-type: none;
   }
 
   .songListItemUrl {
