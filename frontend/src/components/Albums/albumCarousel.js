@@ -158,12 +158,12 @@ export default function AlbumCarousel({ userInfo }) {
               to={`/Albums/${allAlbums[+id]?.id}`}
             >
               <div
-                className="albumNameLink"
+                className="albumNameLinkLower"
                 style={{
                   backgroundImage: `url(${allAlbums[+id]?.imageUrl})`,
                 }}
               >
-                <h1 className="albumCarouselAlbumTitle">
+                <h1 className="albumCarouselAlbumTitleLower">
                   {allAlbums[+id]?.title}
                 </h1>
               </div>

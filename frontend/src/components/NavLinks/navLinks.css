@@ -65,6 +65,8 @@
   font-size: 1em;
   color: #E0E1DD;
   text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 .navAlbumNavLink.active {
   width: 100%;
@@ -78,6 +80,8 @@
   background-color: #E0E1DD;
   display: flex;
   padding-left: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 
@@ -92,6 +96,20 @@
   background-color: #778DA9;
 
 
+}
+
+.rhap_button-clear.rhap_main-controls-button.rhap_play-pause-button {
+  background-color: #0d1b2a;
+  height: 5vh;
+  width: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25%;
+
+}
+svg {
+  /* background-color: #778DA9; */
 }
 
 .rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
@@ -119,6 +137,7 @@
 
 .logoH1 {
   color: #E0E1DD;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* .rhap_download-progress {

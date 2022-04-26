@@ -137,6 +137,8 @@ font-size: large;
   color: #E0E1DD;
   font-size: 1.85em;
   width: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
   }
   .songListItemSearch {
     list-style-type: none;
