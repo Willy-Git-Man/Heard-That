@@ -154,7 +154,7 @@ justify-content: space-between;
 
 .albumSettingsDiv {
   height: 5%;
-  top: 15%;
+  top: 12.5%;
   position: relative;
   width: 10%;
   background-color: white;
@@ -169,6 +169,7 @@ justify-content: space-between;
   height: 100%;
   width: 10vw;
   display: flex;
+  position: relative;
 }
 
 .mainPageAlbums {

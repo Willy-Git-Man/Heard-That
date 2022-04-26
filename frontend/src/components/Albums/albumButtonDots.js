@@ -7,17 +7,18 @@ import { getAllSongsThunk } from "../../store/songs";
 import UpdateAlbumModal from "../Albums/UpdateAlbumModal";
 import { NavLink, useParams } from "react-router-dom";
 
-
 function AlbumButtonDots({ user, allAlbumsIndex }) {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
-  const {id} = useParams()
-  console.log('ggggg', +id)
+  const { id } = useParams();
 
   const openMenu = () => {
-    if (showMenu) return;
+    if (showMenu) {
+    }
     setShowMenu(true);
+
+    // document.getElementById("albumButtonDotsButton").style.zIndex = "-1";
   };
 
   const closeMenu = () => {
@@ -25,11 +26,10 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
   };
 
   const deleteSubmit = (id) => {
-    deleteAlbumDispatch(id)
-    closeMenu()
-    history.push('/Albums/1')
-  }
-
+    deleteAlbumDispatch(id);
+    closeMenu();
+    history.push("/Albums/1");
+  };
   useEffect(() => {
     if (!showMenu) return;
 
@@ -39,6 +39,7 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
     // };
 
     // document.addEventListener("click", closeMenu);
+    // document.getElementById("test").style.zIndex = "-1";
 
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
@@ -50,27 +51,31 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
 
   return (
     <>
+      {!showMenu && (
+        <button
+          className={"albumButtonDotsButton"}
+          onClick={openMenu}
+          id="test"
+        >
+          Edit
+        </button>
+      )}
+      {showMenu && (
+        <div className="albumSettingsDiv">
+          <button
+            className="deleteAlbumButton"
+            // onClick={() => deleteAlbumDispatch(allAlbumsIndex?.id)}
+            onClick={() => deleteSubmit(+id)}
+          >
+            <i className="far fa-trash-alt"></i>
+          </button>
 
-  <button className={"albumButtonDotsButton"} onClick={openMenu}>
-        Edit
-      </button>
-        {showMenu && (
-          <div className="albumSettingsDiv">
-            <button
-              className="deleteAlbumButton"
-              // onClick={() => deleteAlbumDispatch(allAlbumsIndex?.id)}
-              onClick={() => deleteSubmit(+id)}
-
-            >
-              <i className="far fa-trash-alt"></i>
-            </button>
-
-            <UpdateAlbumModal
-              albumId={+id}
-              closeMenu={closeMenu}
-            />
-          </div>
-        )}
+          <UpdateAlbumModal albumId={+id} closeMenu={closeMenu} />
+            <button className={"songButtonDotsButton"} onClick={closeMenu}>
+            Close
+          </button>
+        </div>
+      )}
     </>
   );
 }
