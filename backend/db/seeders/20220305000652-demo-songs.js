@@ -13,7 +13,6 @@ module.exports = {
       }], {});
     */
       return queryInterface.bulkInsert('Songs', [
-        { userId: 1, albumId: 1, songName: 'Novacaine',artistName: 'The Unlikely Candidates', songUrl: "https://www.mboxdrive.com/The_Unlikely_Candidates_-_Novocaine_(musmore.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://e.snmc.io/i/600/s/0a3e1f3366add9a1652c15cc5766c41d/4917674/various-artists-novocaine-Cover-Art.jpg"},
 
         { userId: 1, albumId: 3, songName: 'God Breathed',artistName: 'Kanye West', songUrl: "https://cdn.trendybeatz.com/audio/Kanye-West-Ft-Vory-God-Breathed-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Kanye-West-Donda-Cover-Album-Art.jpg"},
         { userId: 1, albumId: 3, songName: 'Donda Chant',artistName: 'Kanye West', songUrl: "https://cdn.trendybeatz.com/audio/Kanye-West-Ft-Syleena-Johnson-Donda-Chant-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Kanye-West-Donda-Cover-Album-Art.jpg"},
@@ -39,6 +38,23 @@ module.exports = {
         { userId: 1, albumId: 3, songName: 'Pure Souls',artistName: 'Kanye West', songUrl: "https://cdn.trendybeatz.com/audio/Kanye-West-Ft-Roddy-Ricch-Shenseea-Pure-Souls-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Kanye-West-Donda-Album-Art.jpg"},
         { userId: 1, albumId: 3, songName: 'New Again',artistName: 'Kanye West', songUrl: "https://cdn.trendybeatz.com/audio/Kanye-West-Ft-Chris-Brown-New-Again-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Kanye-West-Donda-Cover-Album-Art.jpg"},
 
+
+
+        { userId: 1, albumId: 1, songName: 'Praise God',artistName: 'Kanye West', songUrl: "https://cdn.trendybeatz.com/audio/Kanye-West-Praise-God-Ft-Donda-West-Baby-Keem-And-Travis-Scott-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Kanye-West-Donda-Cover-Album-Art.jpg"},
+        { userId: 1, albumId: 1, songName: 'Keep My Spirit Alive',artistName: 'Kanye West', songUrl: "https://cdn.trendybeatz.com/audio/Kanye-West-Keep-My-Spirit-Alive-Ft-Conway-The-Machine-KayCyy-And-Westside-Gunn-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Kanye-West-Donda-Cover-Album-Art.jpg"},
+        { userId: 1, albumId: 1, songName: 'Heaven And Hell',artistName: 'Kanye West', songUrl: "https://cdn.trendybeatz.com/audio/Kanye-West-Heaven-And-Hell-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Kanye-West-Donda-Cover-Album-Art.jpg"},
+        { userId: 1, albumId: 1, songName: '24',artistName: 'Kanye West', songUrl: "https://cdn.trendybeatz.com/audio/Kanye-West-14-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Kanye-West-Donda-Cover-Album-Art.jpg"},
+        { userId: 1, albumId: 1, songName: 'Lord I Need You',artistName: 'Kanye West', songUrl: "https://cdn.trendybeatz.com/audio/Kanye-West-Ft-Sunday-Service-Choir-Lord-I-Need-You-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Kanye-West-Donda-Cover-Album-Art.jpg"},
+        { userId: 1, albumId: 3, songName: 'Tell The Vision',artistName: 'Kanye West', songUrl: "https://cdn.trendybeatz.com/audio/Kanye-West-Ft-Pop-Smoke-Tell-The-Vision-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Kanye-West-Donda-Cover-Album-Art.jpg"},
+        { userId: 1, albumId: 1, songName: 'Lonely',artistName: 'Joe Boy', songUrl: "https://cdn.trendybeatz.com/audio/Joeboy-Lonely-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Joeboy-Somewhere-Between-Beauty-And-Magic-Album-Artwork2.jpg"},
+        { userId: 1, albumId: 1, songName: 'Buju',artistName: 'Kilometer', songUrl: "https://cdn.trendybeatz.com/audio/BNXN-Kilometer-Remix-Ft-Zinoleesky-(TrendyBeatz.com).mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/BNXN-Kilometer-Remix-Artwork.jpg"},
+        { userId: 1, albumId: 1, songName: 'Back To Start',artistName: 'Adekunle Gold', songUrl: "https://cdn.trendybeatz.com/audio/Adekunle-Gold-Back-to-Start.mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Adekunle-Gold-About-30-Album-Cover.jpg"},
+        { userId: 1, albumId: 1, songName: 'Wonderful',artistName: 'Burna Boy', songUrl: "https://cdn.trendybeatz.com/audio/Burna-Boy-Wonderful.mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Burna-Boy-Wonderful-art.jpg"},
+        { userId: 1, albumId: 1, songName: 'Alarm Clock',artistName: 'Burna Boy', songUrl: "https://cdn.trendybeatz.com/audio/Burna-Boy-Alarm-Clock.mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Burna-Boy-Twice-As-Tall-Album-Cover.jpg"},
+        { userId: 1, albumId: 1, songName: 'You Made Me',artistName: 'Burna Boy', songUrl: "https://cdn.trendybeatz.com/audio/Burna-Boy-Monsters-You-Made-ft-Chris-Martin.mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Burna-Boy-Twice-As-Tall-Album-Cover.jpg"},
+        { userId: 1, albumId: 1, songName: 'Monsters Your Made',artistName: 'Burna Boy', songUrl: "https://cdn.trendybeatz.com/audio/Burna-Boy-Monsters-You-Made-ft-Chris-Martin.mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Burna-Boy-Twice-As-Tall-Album-Cover.jpg"},
+        { userId: 1, albumId: 1, songName: 'Bebo',artistName: 'Burna Boy', songUrl: "https://cdn.trendybeatz.com/audio/Burna-Boy-Bebo.mp3", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Burna-Boy-Twice-As-Tall-Album-Cover.jpg"},
+        { userId: 1, albumId: 1, songName: 'Oma Ropala',artistName: 'Niniola', songUrl: "https://trendybeatz.com/images/Niniola-Omo.jpg", createdAt: new Date(), updatedAt: new Date(), imageUrl: "https://trendybeatz.com/images/Niniola-Omo.jpg"},
 
 
 

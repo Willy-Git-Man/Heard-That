@@ -21,7 +21,21 @@ export default function AlbumNavLinks({ allAlbums }) {
         <NavLink className="navAlbumNavLink" to={`/Albums/${3}`}>
           {allAlbums[2]?.title}
         </NavLink>
-
+        <NavLink className="navAlbumNavLink" to={`/Albums/${4}`}>
+          {allAlbums[3]?.title}
+        </NavLink>{" "}
+        <NavLink className="navAlbumNavLink" to={`/Albums/${5}`}>
+          {allAlbums[4]?.title}
+        </NavLink>{" "}
+        <NavLink className="navAlbumNavLink" to={`/Albums/${6}`}>
+          {allAlbums[5]?.title}
+        </NavLink>{" "}
+        <NavLink className="navAlbumNavLink" to={`/Albums/${7}`}>
+          {allAlbums[6]?.title}
+        </NavLink>
+        <NavLink className="navAlbumNavLink" to={`/Albums/${8}`}>
+          {allAlbums[7]?.title}
+        </NavLink>
         {allAlbums
           .filter((el) => el.userId === userInfo.id)
           .map((album) => (

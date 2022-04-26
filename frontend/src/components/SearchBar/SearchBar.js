@@ -69,14 +69,12 @@ const SearchBar = ({ playing, setPlaying }) => {
                   className="songDivButton"
                   onClick={() => test(song.songUrl, song.imageUrl)}
                 >
-                  <h1>
                     {/* <i className="fab fa-grav"></i> */}
-                    <h3>
+                    <h3 className="songButtonH3">
                       {" "}
                       <FaPlayCircle />{" "}
                     </h3>
                     {/* AiFillPlayCircle */}
-                  </h1>
                 </button>
               )}
 
@@ -85,14 +83,14 @@ const SearchBar = ({ playing, setPlaying }) => {
                   className="songDivButton"
                   onClick={() => test("song.songUrl", "song.imageUrl")}
                 >
-                  <h1>
+                  <h3>
                     {/* <i className="fab fa-grav"></i> */}
-                    <h3>
+                    <h3 className="songButtonH3">
                       {" "}
                       <FcDisplay />{" "}
                     </h3>
                     {/* AiFillPlayCircle */}
-                  </h1>
+                  </h3>
                 </button>
               )}
             </div>

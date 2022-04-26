@@ -63,6 +63,12 @@ h2 {
   /* min-width: 50px; */
   /* opacity: .5; */
 }
+
+.songButtonH3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .songButtonDotsButton {
   background-color: #415A77;
   color: #E0E1DD;

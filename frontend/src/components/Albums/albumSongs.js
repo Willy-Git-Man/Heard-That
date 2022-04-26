@@ -36,6 +36,8 @@ export default function AlbumSongs({ userInfo }) {
   const allAlbums = useSelector((state) => state.albums.albums);
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectKeys = Object.keys(allSongs);
+  const testing = allSongsObjectKeys.filter((el) => allSongs[el].albumId === +id)
+  console.log("run it", testing);
 
   const test = (playing, pic) => {
     setPlaying(playing);
@@ -69,14 +71,20 @@ export default function AlbumSongs({ userInfo }) {
       <div className="albumSongsListDiv">
         <MyAlbums userInfo={userInfo} />
 
+{/* {!allSongs[+id]} */}
         <div className="albumSongsListInnerDiv">
-          {allSongsObjectKeys
+          {/* {allSongsObjectKeys
             ?.filter(
               (key) =>
                 allSongs[key]?.userId === userInfo.id &&
                 allSongs[key]?.albumId === allAlbums[id].id
-            )
+            ) */}
+            {!testing.length > 0 && (
+              <h1>Add Songs To Enjoy The Music!</h1>
+            )}
+            {testing
             .map((key) => (
+
               <div className="everySongDiv" key={key} alt="Broken Img Url">
                 <div className="songImageAndPlayButton">
                   <img
@@ -91,7 +99,7 @@ export default function AlbumSongs({ userInfo }) {
                         test(allSongs[key].songUrl, allSongs[key].imageUrl)
                       }
                     >
-                      <h3>
+                      <h3 className="songButtonH3">
                         {" "}
                         <FaPlayCircle />{" "}
                       </h3>
@@ -105,7 +113,7 @@ export default function AlbumSongs({ userInfo }) {
                         test("allSongs[key].songUrl", "allSongs[key].imageUrl")
                       }
                     >
-                      <h3>
+                      <h3 className="songButtonH3">
                         {" "}
                         <FcDisplay />{" "}
                       </h3>
@@ -120,8 +128,12 @@ export default function AlbumSongs({ userInfo }) {
 
                 <SongButtonDots songId={allSongs[key].id} />
               </div>
+
             ))}
         </div>
+        {/* {allSongsObjectKeys.length < 1 && (
+          <h1>Hello</h1>
+        )} */}
       </div>
       <AudioPlayerGlobal playing={playing} pic={pic} />
     </div>
