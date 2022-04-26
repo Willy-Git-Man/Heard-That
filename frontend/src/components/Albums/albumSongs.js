@@ -36,7 +36,9 @@ export default function AlbumSongs({ userInfo }) {
   const allAlbums = useSelector((state) => state.albums.albums);
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectKeys = Object.keys(allSongs);
-  const testing = allSongsObjectKeys.filter((el) => allSongs[el].albumId === +id)
+  const testing = allSongsObjectKeys.filter(
+    (el) => allSongs[el].albumId === +id
+  );
   console.log("run it", testing);
 
   const test = (playing, pic) => {
@@ -71,7 +73,7 @@ export default function AlbumSongs({ userInfo }) {
       <div className="albumSongsListDiv">
         <MyAlbums userInfo={userInfo} />
 
-{/* {!allSongs[+id]} */}
+        {/* {!allSongs[+id]} */}
         <div className="albumSongsListInnerDiv">
           {/* {allSongsObjectKeys
             ?.filter(
@@ -79,57 +81,74 @@ export default function AlbumSongs({ userInfo }) {
                 allSongs[key]?.userId === userInfo.id &&
                 allSongs[key]?.albumId === allAlbums[id].id
             ) */}
-            {!testing.length > 0 && (
-              <h1>Add Songs To Enjoy The Music!</h1>
-            )}
-            {testing
-            .map((key) => (
+          {!testing.length > 0 && <h1>Add Songs To Enjoy The Music!</h1>}
+          {/* <div className="everySongDivUpper" key={1} alt="Broken Img Url">
 
-              <div className="everySongDiv" key={key} alt="Broken Img Url">
-                <div className="songImageAndPlayButton">
-                  <img
-                    className="songImageInAlbum"
-                    src={allSongs[key]?.imageUrl}
-                    alt="Broken Img Url"
-                  />
-                  {playing !== allSongs[key].songUrl && (
-                    <button
-                      className="songDivButton"
-                      onClick={() =>
-                        test(allSongs[key].songUrl, allSongs[key].imageUrl)
-                      }
-                    >
-                      <h3 className="songButtonH3">
-                        {" "}
-                        <FaPlayCircle />{" "}
-                      </h3>
-                    </button>
-                  )}
+            <div className="songTitleAndArtistDiv">
+              <div className="songTitleAndArtistDivs">
+                <p className="songDescription">Title</p>
+                <li className="songListItem">yes</li>
+              </div>
+              <div className="songTitleAndArtistDivs">
+                <p className="songDescription">Artist</p>
 
-                  {playing === allSongs[key].songUrl && (
-                    <button
-                      className="songDivButton"
-                      onClick={() =>
-                        test("allSongs[key].songUrl", "allSongs[key].imageUrl")
-                      }
-                    >
-                      <h3 className="songButtonH3">
-                        {" "}
-                        <FcDisplay />{" "}
-                      </h3>
-                    </button>
-                  )}
-                </div>
-                <div className="songTitleAndArtistDiv">
+                <li className="songListItem">yes</li>
+              </div>
+            </div>
+          </div> */}
+
+          {testing.map((key) => (
+            <div className="everySongDiv" key={key} alt="Broken Img Url">
+              <div className="songImageAndPlayButton">
+                <img
+                  className="songImageInAlbum"
+                  src={allSongs[key]?.imageUrl}
+                  alt="Broken Img Url"
+                />
+                {playing !== allSongs[key].songUrl && (
+                  <button
+                    className="songDivButton"
+                    onClick={() =>
+                      test(allSongs[key].songUrl, allSongs[key].imageUrl)
+                    }
+                  >
+                    <h3 className="songButtonH3">
+                      {" "}
+                      <FaPlayCircle />{" "}
+                    </h3>
+                  </button>
+                )}
+
+                {playing === allSongs[key].songUrl && (
+                  <button
+                    className="songDivButton"
+                    onClick={() =>
+                      test("allSongs[key].songUrl", "allSongs[key].imageUrl")
+                    }
+                  >
+                    <h3 className="songButtonH3">
+                      {" "}
+                      <FcDisplay />{" "}
+                    </h3>
+                  </button>
+                )}
+              </div>
+
+              <div className="songTitleAndArtistDiv">
+                <div className="songTitleAndArtistDivs">
+                  <p className="songDescription">Title</p>
                   <li className="songListItem">{allSongs[key].songName}</li>
+                </div>
+                <div className="songTitleAndArtistDivs">
+                  <p className="songDescription">Artist</p>
 
                   <li className="songListItem">{allSongs[key].artistName}</li>
                 </div>
-
-                <SongButtonDots songId={allSongs[key].id} />
               </div>
 
-            ))}
+              <SongButtonDots songId={allSongs[key].id} />
+            </div>
+          ))}
         </div>
         {/* {allSongsObjectKeys.length < 1 && (
           <h1>Hello</h1>

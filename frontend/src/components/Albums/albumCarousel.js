@@ -132,7 +132,7 @@ export default function AlbumCarousel({ userInfo }) {
               to={`/Albums/${allAlbums[album].id}`}
             >
               <div
-                className="albumNameLink"
+                className="albumNameLinkAlbum"
                 style={{
                   backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
                 }}
@@ -146,7 +146,7 @@ export default function AlbumCarousel({ userInfo }) {
         ))}
       </Slider>
 
-      <Slider
+      <Slider className="test"
         {...lowerCarouselSettings}
         // asNavFor={firstSlider}
         // ref={(slider2) => setsecondSlider(slider2)}
