@@ -42,7 +42,7 @@ const SearchBar = ({ playing, setPlaying }) => {
       <div>
         <input
           className="searchInput"
-          placeholder="Search Songs..."
+          placeholder="Search..."
           onChange={(e) => {
             setSearchValue(e.target.value);
           }}

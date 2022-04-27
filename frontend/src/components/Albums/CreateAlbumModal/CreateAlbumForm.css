@@ -10,6 +10,7 @@
   border: none;
   display: flex;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding-left: 7.5%;
 
 
 }
@@ -25,7 +26,8 @@
 
   font-size: 2em;
   width: 33vw;
-  width: 100%;
+  /* padding-left: 12.5%; */
+
 }
 
 .createNewSongDiv {

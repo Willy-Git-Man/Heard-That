@@ -119,17 +119,51 @@ export default function AlbumCarousel({ userInfo }) {
 
   return (
     <div className="mainCarouselDiv">
-      <Slider
+           <Slider
         {...multipleAlbumCarouselSettings}
         // asNavFor={firstSlider}
         // ref={(slider2) => setsecondSlider(slider2)}
       >
         {allAlbumKeys.map((album) => (
-          <div className="mainAlbumsEachAlbumDiv" key={allAlbums[album]?.id}>
+          <div className="mainAlbumsEachAlbumDiv" key={allAlbums[album]?.id } >
 
             <NavLink
               className="mainAlbumsEachAlbumDivNavLink"
               to={`/Albums/${allAlbums[album].id}`}
+              // style={{
+              //   backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
+              // }}
+            >
+              {/* <div
+                className="albumNameLinkAlbum"
+                // style={{
+                //   backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
+                // }}
+              > */}
+                <h1 className="albumCarouselAlbumTitle" style={{
+                  backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
+                }}>
+                  {allAlbums[album]?.title}
+                </h1>
+              {/* </div> */}
+            </NavLink>
+          </div>
+        ))}
+      </Slider>
+      {/* <Slider
+        {...multipleAlbumCarouselSettings}
+        // asNavFor={firstSlider}
+        // ref={(slider2) => setsecondSlider(slider2)}
+      >
+        {allAlbumKeys.map((album) => (
+          <div className="mainAlbumsEachAlbumDiv" key={allAlbums[album]?.id } >
+
+            <NavLink
+              className="mainAlbumsEachAlbumDivNavLink"
+              to={`/Albums/${allAlbums[album].id}`}
+              // style={{
+              //   backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
+              // }}
             >
               <div
                 className="albumNameLinkAlbum"
@@ -144,7 +178,7 @@ export default function AlbumCarousel({ userInfo }) {
             </NavLink>
           </div>
         ))}
-      </Slider>
+      </Slider> */}
 
       <Slider className="test"
         {...lowerCarouselSettings}

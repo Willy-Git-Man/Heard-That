@@ -6,6 +6,7 @@ import * as sessionActions from "../../store/session";
 import { getAllSongsThunk } from "../../store/songs";
 import UpdateAlbumModal from "../Albums/UpdateAlbumModal";
 import { NavLink, useParams } from "react-router-dom";
+import { FaEdit } from "react-icons/fa";
 
 function AlbumButtonDots({ user, allAlbumsIndex }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -57,7 +58,7 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
           onClick={openMenu}
           id="test"
         >
-          Edit
+          <FaEdit />
         </button>
       )}
       {showMenu && (
@@ -71,7 +72,7 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
           </button>
 
           <UpdateAlbumModal albumId={+id} closeMenu={closeMenu} />
-            <button className={"songButtonDotsButton"} onClick={closeMenu}>
+          <button className={"songButtonDotsButton"} onClick={closeMenu}>
             Close
           </button>
         </div>

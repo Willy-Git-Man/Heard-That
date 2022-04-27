@@ -10,50 +10,50 @@
   height: 100%;
   width: 100%;
   background-color: #0d1b2a;
-
 }
 
-
-
 .navLinkUpper {
-  height: 20%;
+  /* height: 22.5%; */
+  height: ;
+  margin-bottom: 5%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   width: 100%;
-  padding-left: 7.5%;
+  /* padding-left: 7.5%; */
 }
 
 .logoTopLeft {
   display: flex;
   /* background-color: black; */
   width: 100%;
-  color: #E0E1DD;
+  color: #e0e1dd;
   font-size: 1em;
   /* background-color: #0D1B2A; */
   margin-bottom: 5%;
   text-decoration: none;
 }
 
-
-
 .navUpperBottomLine {
-  color: #E0E1DD;
+  color: #e0e1dd;
   display: flex;
   justify-content: center;
   width: 90%;
   margin-left: 5%;
   border-bottom: white solid 2px;
-  margin-top: 20%;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .navigationLink {
   /* height: 30%; */
-  width: 100%;
+  width: 90%;
   margin-bottom: 50%;
   display: flex;
   margin: 0;
   flex-direction: column;
+  padding-left: 2.5%;
+
 }
 
 .navAlbumNavLink {
@@ -63,10 +63,10 @@
   display: flex;
   justify-content: space-between;
   font-size: 1em;
-  color: #E0E1DD;
+  color: #e0e1dd;
   text-decoration: none;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 .navAlbumNavLink.active {
   width: 100%;
@@ -76,14 +76,13 @@
   align-items: center;
   margin-bottom: 1%;
   font-size: 1.5em;
-  color: #0D1B2A;
-  background-color: #E0E1DD;
+  color: #0d1b2a;
+  background-color: #e0e1dd;
   display: flex;
   padding-left: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
-
 
 .sideBarSearchAndLinks {
   width: 100%;
@@ -93,40 +92,73 @@
   height: 100%;
   /* background-color: #778DA9; */
   /* background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A); */
-  background-color: #778DA9;
-
-
+  background-color: #778da9;
 }
 
 .rhap_button-clear.rhap_main-controls-button.rhap_play-pause-button {
   background-color: #0d1b2a;
-  height: 5vh;
-  width: 5vw;
+  height: 7.5vh;
+  /* left: 0; */
+  width: 7.5vw;
+  width: 125px;
+  height: 125px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 25%;
-
+  border-radius: 50%;
+  margin-bottom: 2.5vh;
+}
+.rhap_main-controls {
+  height: 10vh;
+}
+.rhap_button-clear.rhap_main-controls-button.rhap_play-pause-button.svg {
+  height: 10vh;
 }
 svg {
   /* background-color: #778DA9; */
+}
+.rhap_button-clear.rhap_main-controls-button.rhap_rewind-button {
+  background-color: #0d1b2a;
+  height: 7.5vh;
+  /* left: 0; */
+  width: 7.5vw;
+  width: 125px;
+  height: 125px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 2.5vh;
+}
+.rhap_button-clear.rhap_main-controls-button.rhap_forward-button {
+  background-color: #0d1b2a;
+  height: 7.5vh;
+  /* left: 0; */
+  width: 7.5vw;
+  width: 125px;
+  height: 125px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 2.5vh;
 }
 
 .rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
   height: 100%;
   /* height: 50vh; */
   /* opacity: .3; */
-  background-color: #778DA9;
+  background-color: #778da9;
   /* background-color: #778DA9; */
   /* background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A); */
-
-
 }
 
 .rhap_additional-controls {
   z-index: -1;
 }
-
 
 .albumNavLinkAndEdit {
   display: flex;
@@ -134,10 +166,14 @@ svg {
   /* height: 5vh; */
 }
 
-
 .logoH1 {
-  color: #E0E1DD;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #e0e1dd;
+  padding-left: 5%;
+  padding-top: 2.5%;
+  margin-bottom: 2.5%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+    padding-left: 12.5%;
 }
 
 /* .rhap_download-progress {
@@ -146,7 +182,6 @@ svg {
   color: black;
 } */
 
-
 .sideBarLower {
-  padding-left: 7.5%;
+  /* padding-left: 7.5%; */
 }

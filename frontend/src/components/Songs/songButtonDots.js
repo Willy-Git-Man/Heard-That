@@ -7,6 +7,10 @@ import { deleteSongThunk, getAllSongsThunk } from "../../store/songs";
 import UpdateAlbumModal from "../Albums/UpdateAlbumModal";
 import { NavLink, useParams } from "react-router-dom";
 import UpdateSongModal from "./UpdateSongModal";
+// import { BsThreeDots } from "react-icons/bs";
+// import { BiDotsHorizontalRounded } from "react-icons/bi";
+
+import { FaEdit } from "react-icons/fa";
 
 function SongButtonDots({ user, allAlbumsIndex, songId }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -51,8 +55,7 @@ function SongButtonDots({ user, allAlbumsIndex, songId }) {
     <>
     {!showMenu && (
 
-      <button className={"songButtonDotsButton"} onClick={openMenu}>
-        Edit
+      <button className={"songButtonDotsButton"} onClick={openMenu}><FaEdit />
       </button>
         )}
       {showMenu && (

@@ -67,7 +67,10 @@ export default function AlbumSongs({ userInfo }) {
   return (
     <div className="albumMainPage">
       <div className="sideBar">
+        <div className="SideBarInner">
+
         <NavLinks playing={playing} setPlaying={setPlaying} pic={pic} />
+        </div>
       </div>
 
       <div className="albumSongsListDiv">
@@ -100,17 +103,19 @@ export default function AlbumSongs({ userInfo }) {
           {testing.map((key) => (
             <div className="everySongDiv" key={key} alt="Broken Img Url">
               <div className="songImageAndPlayButton">
-                <img
+                {/* <img
                   className="songImageInAlbum"
                   src={allSongs[key]?.imageUrl}
                   alt="Broken Img Url"
-                />
+                /> */}
                 {playing !== allSongs[key].songUrl && (
                   <button
                     className="songDivButton"
                     onClick={() =>
                       test(allSongs[key].songUrl, allSongs[key].imageUrl)
                     }
+style={{ backgroundImage: `url(${allSongs[key]?.imageUrl})`   }}
+
                   >
                     <h3 className="songButtonH3">
                       {" "}
