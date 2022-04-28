@@ -19,10 +19,14 @@
   display: flex;
 
   padding: 0.4em 0.4em;
-  color: white;
+  /* color: white; */
+  color: #E0E1DD;
+
   border-radius: 0.35em;
   background-color: rgb(31, 211, 8);
   background-color: rgba(117, 235, 14, 0.995);
+  background-color: #1b263b;
+
 
   font-size: 2em;
   width: 33vw;

@@ -2,15 +2,17 @@
   padding-left: 30px;
   padding-right: 30px;
   max-width: 275px;
-  background-color: #f7f7f7;
+  background-color: #E0E1DD;
+  /* background-color: #0D1B2A; */
   margin: 0 auto;
   border-radius: 2px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); */
   overflow: hidden;
   box-sizing: border-box;
   z-index:99999;
   border-radius: 10%;
-  background-color: black;
+  background-color: #778da9;
+  /* background-color: black; */
   /* z-index: 999999; */
 }
 
@@ -19,14 +21,27 @@
   display: block;
   margin-bottom: 10px;
   position: relative;
-  font-size: 17px;
+  font-size: 1.5em;
 }
 
 .createNewSongForm label {
+  font-size: 1.5em;
   width: 100%;
   display: block;
   position: relative;
   text-align: center;
+  color: #0D1B2A;
+  /* background-color: #0D1B2A; */
+}
+
+.createNewSongForm select {
+  font-size: 1.5em;
+  width: 100%;
+  display: block;
+  position: relative;
+  text-align: center;
+  color: #0D1B2A;
+  /* background-color: #0D1B2A; */
 }
 
 .createNewSongForm button {
@@ -59,7 +74,7 @@
   border-radius: 0.35em;
   background-color: rgb(31, 211, 8);
   background-color: rgba(117, 235, 14, 0.995);
-
+  background-color: #1b263b;
   font-size: 2em;
   width: 33vw;
   width: 100%;
@@ -67,7 +82,9 @@
 }
 
 .createNewSongDiv {
-  background-color: rgba(117, 235, 14, 0.995);
+  background-color: #1b263b;
+  /* background: linear-gradient(#e0e1dd, #778da9, #415a77, #1b263b, #0d1b2a); */
+
 
 }
 
