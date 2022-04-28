@@ -9,7 +9,8 @@ import {
   updateTestSongThunk,
 } from "../../store/songs";
 import "./albums.css";
-
+// import { FaGithub } from "react-icons/fa";
+// import { FaLinkedinIn } from "react-icons/fa";
 import "react-h5-audio-player/lib/styles.css";
 import NavLinks from "../NavLinks/navLinks";
 import MyAlbums from ".";
@@ -155,6 +156,7 @@ style={{ backgroundImage: `url(${allSongs[key]?.imageUrl})`   }}
             </div>
           ))}
         </div>
+
         {/* {allSongsObjectKeys.length < 1 && (
           <h1>Hello</h1>
         )} */}

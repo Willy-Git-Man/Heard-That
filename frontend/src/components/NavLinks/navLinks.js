@@ -8,7 +8,8 @@ import SearchBar from "../SearchBar/SearchBar";
 import "./navLinks.css";
 import AudioPlayerGlobal from "./audioPlayer";
 import AlbumNavLinks from "./albumNavlinks";
-
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 export default function NavLinks({ playing, setPlaying, pic }) {
   const userInfo = useSelector((state) => state.session.user);
   const allAlbums = Object.values(useSelector((state) => state.albums.albums));
@@ -34,6 +35,16 @@ export default function NavLinks({ playing, setPlaying, pic }) {
 
         <AlbumNavLinks allAlbums={allAlbums} />
         <SearchBar playing={playing} setPlaying={setPlaying} />
+        <div className="socialLinks">
+
+        <div className="gitLinkedInDivs">
+
+<a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><h2><FaGithub /></h2></a>
+{/* <br></br> */}
+
+<a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><h2><FaLinkedinIn /></h2></a>
+</div>
+        </div>
       </div>
     </>
   );

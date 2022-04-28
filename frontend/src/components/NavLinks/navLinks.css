@@ -185,3 +185,14 @@ svg {
 .sideBarLower {
   /* padding-left: 7.5%; */
 }
+
+
+.socialLinks {
+  /* height: 20vh; */
+  bottom: 10vh;
+  /* width: 100%; */
+  display: flex;
+  position: absolute;
+  /* width: 100%; */
+  /* justify-content: space-between; */
+}
