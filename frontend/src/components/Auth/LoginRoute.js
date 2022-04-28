@@ -39,7 +39,7 @@ function LoginRoute() {
                 <h2>Login or Signup below to start listening</h2>
                 {/* <h1><FaGithub /></h1> */}
 
-                <div className="gitLinkedInDivs">
+                <div className="gitLinkedInDivsSplash">
 
                 <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><h2><FaGithub /></h2></a>
                 {/* <br></br> */}
