@@ -67,10 +67,10 @@ export default function AlbumSongs({ userInfo }) {
 
   return (
     <div className="albumMainPage">
+
       <div className="sideBar">
         <div className="SideBarInner">
-
-        <NavLinks playing={playing} setPlaying={setPlaying} pic={pic} />
+          <NavLinks playing={playing} setPlaying={setPlaying} pic={pic} />
         </div>
       </div>
 
@@ -115,8 +115,9 @@ export default function AlbumSongs({ userInfo }) {
                     onClick={() =>
                       test(allSongs[key].songUrl, allSongs[key].imageUrl)
                     }
-style={{ backgroundImage: `url(${allSongs[key]?.imageUrl})`   }}
-
+                    style={{
+                      backgroundImage: `url(${allSongs[key]?.imageUrl})`,
+                    }}
                   >
                     <h3 className="songButtonH3">
                       {" "}
@@ -124,6 +125,26 @@ style={{ backgroundImage: `url(${allSongs[key]?.imageUrl})`   }}
                     </h3>
                   </button>
                 )}
+                <div className="prevNextButtonsDiv">
+              <button
+                className="deleteSongButton"
+                onClick={() =>
+                  test(allSongs[+key -1].songUrl, allSongs[key].imageUrl)
+                  // console.log(+key,"keyyy")
+                }
+              >
+                Prev
+              </button>
+                 <button
+                className="deleteSongButton"
+                onClick={() =>
+                  test(allSongs[+key +1].songUrl, allSongs[key].imageUrl)
+                  // console.log(+key,"keyyy")
+                }
+              >
+                Next
+              </button>
+              </div>
 
                 {playing === allSongs[key].songUrl && (
                   <button

@@ -49,6 +49,7 @@ export default function MySongs({ userInfo, setShowModal }) {
                 src={allSongs[key] ? allSongs[key].songUrl : null}
                 onPlay={(e) => console.log("onPlay")}
               />
+              
               <img
                 className="songImage"
                 src={allSongs[key].imageUrl}

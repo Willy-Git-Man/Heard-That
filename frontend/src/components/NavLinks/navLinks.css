@@ -198,3 +198,8 @@ svg {
   /* width: 100%; */
   /* justify-content: space-between; */
 }
+
+.prevNextButtonsDiv {
+  /* position: absolute; */
+  /* width: 20vw; */
+}

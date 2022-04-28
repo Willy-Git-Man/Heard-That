@@ -23,6 +23,9 @@ export default function AudioPlayerGlobal({playing, pic}) {
                 // style={{ backgroundImage: `url(${pic})`, backgroundRepeat: 'no-repeat', objectFit: 'cover', backgroundColor: "#666666", backgroundColor: '#1B263B'  }}
                 src={playing}
                 onPlay={(e) => console.log("onPlay")}
+                loop={true}
+                // showSkipControls={true}
+
               />
 
 
