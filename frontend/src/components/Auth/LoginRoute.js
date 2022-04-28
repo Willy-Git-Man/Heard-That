@@ -38,6 +38,7 @@ function LoginRoute() {
                 <h1 className="welcomeGreetingTop">Welcome to Heard-That!</h1>
                 <h2>Login or Signup below to start listening</h2>
                 {/* <h1><FaGithub /></h1> */}
+                
                 <div className="gitLinkedInDivs">
 
                 <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><h2><FaGithub /></h2></a>

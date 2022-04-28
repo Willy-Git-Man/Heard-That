@@ -236,8 +236,10 @@ font-size: large;
 
 
   .loginModalButton {
-    background-color: aqua;
+    /* background-color: aqua; */
     background-image: url("../../../public/pics/loginTest.png");
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+/* color: black; */
     position: absolute;
     bottom: 0;
     left: 0;

@@ -121,6 +121,8 @@ padding-left: 7.5%;
   align-items: center;
   background-color: black;
   height: 100vw;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
   /* height: 100vh; */
   object-fit: cover;
   width: 100%;

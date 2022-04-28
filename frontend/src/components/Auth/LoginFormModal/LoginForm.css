@@ -59,12 +59,14 @@
 }
 
 .loginFormNormalButton {
-    /* background-image: url("../../../public/pics/loginTest.png"); */
-    background-color: rgba(117, 235, 14, 0.995);
-
-    color: white;
-    /* height: 5vh; */
-    font-size: 2em;
-  border-radius: 10%;
+  height: 2.5vh;
+  width:90%;
+  color: #E0E1DD;
+  font-size: 1em;
+  background-color: #0D1B2A;
+  border: none;
+  display: flex;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding-left: 7.5%;
 
 }

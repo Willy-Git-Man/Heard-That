@@ -50,7 +50,8 @@
 }
 
 .signUpFormButton {
-  background-color: rgba(117, 235, 14, 0.995);
+  /* background-color: rgba(117, 235, 14, 0.995); */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
     color: white;
     /* height: 5vh; */

@@ -30,9 +30,9 @@ function SignupForm() {
   };
 
   return (
-    <div className="signupFormDiv">
+    <div className="createNewSongDiv">
 
-    <form className="signupForm" onSubmit={handleSubmit}>
+    <form className="createNewSongForm" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
@@ -72,7 +72,7 @@ function SignupForm() {
           required
           />
       </label>
-      <button className="signUpFormButton" type="submit">Sign Up</button>
+      <button className="createSongButton" type="submit">Sign Up</button>
     </form>
           </div>
   );

@@ -28,8 +28,8 @@ function LoginForm() {
   };
 
   return (
-    <div className="loginFormDiv">
-      <form className="loginForm" onSubmit={handleSubmit}>
+    <div className="createNewSongDiv">
+      <form className="createNewSongForm" onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
@@ -53,12 +53,12 @@ function LoginForm() {
             required
           />
         </label>
-        <button className={"loginFormNormalButton"} type="submit">
+        <button className={"createSongButton"} type="submit">
           Log In
         </button>
 
         <button
-          className={"demoButton"}
+          className={"createSongButton"}
           type="submit"
           onClick={() => {
             setCredential("Demo-lition");
