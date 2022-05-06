@@ -77,29 +77,10 @@ export default function AlbumSongs({ userInfo }) {
       <div className="albumSongsListDiv">
         <MyAlbums userInfo={userInfo} />
 
-        {/* {!allSongs[+id]} */}
         <div className="albumSongsListInnerDiv">
-          {/* {allSongsObjectKeys
-            ?.filter(
-              (key) =>
-                allSongs[key]?.userId === userInfo.id &&
-                allSongs[key]?.albumId === allAlbums[id].id
-            ) */}
+
           {!testing.length > 0 && <h1>Add Songs To Enjoy The Music!</h1>}
-          {/* <div className="everySongDivUpper" key={1} alt="Broken Img Url">
 
-            <div className="songTitleAndArtistDiv">
-              <div className="songTitleAndArtistDivs">
-                <p className="songDescription">Title</p>
-                <li className="songListItem">yes</li>
-              </div>
-              <div className="songTitleAndArtistDivs">
-                <p className="songDescription">Artist</p>
-
-                <li className="songListItem">yes</li>
-              </div>
-            </div>
-          </div> */}
 
           {testing.map((key) => (
             <div className="everySongDiv" key={key} alt="Broken Img Url">
@@ -130,7 +111,6 @@ export default function AlbumSongs({ userInfo }) {
                 className="deleteSongButton"
                 onClick={() =>
                   test(allSongs[+key -1].songUrl, allSongs[key].imageUrl)
-                  // console.log(+key,"keyyy")
                 }
               >
                 Prev
@@ -139,7 +119,6 @@ export default function AlbumSongs({ userInfo }) {
                 className="deleteSongButton"
                 onClick={() =>
                   test(allSongs[+key +1].songUrl, allSongs[key].imageUrl)
-                  // console.log(+key,"keyyy")
                 }
               >
                 Next
@@ -178,9 +157,7 @@ export default function AlbumSongs({ userInfo }) {
           ))}
         </div>
 
-        {/* {allSongsObjectKeys.length < 1 && (
-          <h1>Hello</h1>
-        )} */}
+    
       </div>
       <AudioPlayerGlobal playing={playing} pic={pic} />
     </div>
