@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
-// import { Redirect } from "react-router";
 import * as sessionActions from "../../store/session";
 
 import "./Navigation.css";
@@ -32,13 +31,11 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
-    // history.push("/Splash");
   };
 
   return (
     <>
       <button className={"profileButton"} onClick={openMenu}>
-        {/* <i className="fas fa-user-circle" /> */}
         Logout
       </button>
       <div className={"dropDownMenu"}>

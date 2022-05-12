@@ -17,16 +17,8 @@ padding-left: 7.5%;
   justify-content: space-around;
   align-items: center;
   position: absolute;
-  /* background-color: black(0, 0, 0); */
-  /* top: 10vh; */
-  /* top: 0; */
   bottom: 0;
-  /* left: 7.5%; */
-  /* width: 20%; */
-
-  /* height: 12.5%; */
   height: 10vh;
-  /* width: 85vw; */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -123,15 +115,12 @@ padding-left: 7.5%;
   height: 100vw;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
-  /* height: 100vh; */
   object-fit: cover;
   width: 100%;
   height: auto;
   height: 100vh;
-  /* opacity: 0.6; */
   object-fit: cover;
   width: 50%;
-  /* height: 100px; */
   background-size: auto;
 }
 
@@ -141,7 +130,6 @@ padding-left: 7.5%;
 
 .welcomeGreetingTop {
   color: white;
-  /* margin-top: 10%; */
   font-size: 3em;
 
 }

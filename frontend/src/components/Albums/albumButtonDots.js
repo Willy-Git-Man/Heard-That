@@ -65,7 +65,6 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
         <div className="albumSettingsDiv">
           <button
             className="deleteAlbumButton"
-            // onClick={() => deleteAlbumDispatch(allAlbumsIndex?.id)}
             onClick={() => deleteSubmit(+id)}
           >
             <i className="far fa-trash-alt"></i>

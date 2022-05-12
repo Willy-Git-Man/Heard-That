@@ -13,11 +13,10 @@ import React from "react";
 import AlbumCarousel from "./albumCarousel";
 
 export default function MyAlbums({ userInfo }) {
- 
+
     return (
       <div className="albumSecondDiv">
         <AlbumCarousel userInfo={userInfo} />
-        {/* <h1 className="splashMessage">Welcome back, Doctor</h1> */}
       </div>
     );
 }

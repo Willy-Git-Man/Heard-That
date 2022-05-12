@@ -9,35 +9,11 @@ body {
 
 html {
   background-color: #415a77;
-  /* background-color: black; */
-  /* background: linear-(
-    #0d1b2a,
-    #1b263b,
-    #415a77,
-    #778da9,
-    #e0e1dd,
-    #778da9,
-    #415a77,
-    #1b263b,
-    #0d1b2a
-  ); */
-  /* background-color: rgba(0, 255, 255, .1); */
-  /* background: linear-gradient(#e0e1dd, #778da9, #415a77, #1b263b, #0d1b2a); */
-  /* background: linear-gradient(#0d1b2a, #778da9, #415a77, #778da9, #0d1b2a); */
-  /* background: linear-gradient(#778da9, #1b263b); */
-  /* background-color: #E0E1DD; */
+
   height: 100%;
 
   overflow: hidden;
 
-  /* background: #778DA9 */
-
-  /* width: 100%; */
-  /* margin: 0; */
-  /* margin-right: 0; */
-  /* height: 100%; */
-  /* margin: 0; */
-  /* background-image: url("/frontend/public/pics/albums.png"); */
 }
 
 li {

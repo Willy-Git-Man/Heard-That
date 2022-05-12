@@ -25,7 +25,6 @@
 
 .logoTopLeft {
   display: flex;
-  /* background-color: black; */
   width: 100%;
   color: #e0e1dd;
   font-size: 1em;
@@ -46,7 +45,6 @@
 }
 
 .navigationLink {
-  /* height: 30%; */
   width: 90%;
   margin-bottom: 50%;
   display: flex;
@@ -188,15 +186,11 @@ svg {
 
 
 .socialLinks {
-  /* height: 20vh; */
   bottom: 10vh;
-  /* width: 100%; */
   display: flex;
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* width: 100%; */
-  /* justify-content: space-between; */
 }
 
 .prevNextButtonsDiv {

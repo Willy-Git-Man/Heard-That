@@ -24,7 +24,6 @@ export default function AudioPlayerGlobal({playing, pic}) {
                 src={playing}
                 onPlay={(e) => console.log("onPlay")}
                 loop={true}
-                // showSkipControls={true}
 
               />
 
