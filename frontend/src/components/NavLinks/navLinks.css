@@ -117,9 +117,8 @@ svg {
   /* background-color: #778DA9; */
 }
 .rhap_button-clear.rhap_main-controls-button.rhap_rewind-button {
-  background-color: #0d1b2a;
+  /* background-color: #0d1b2a;
   height: 7.5vh;
-  /* left: 0; */
   width: 7.5vw;
   width: 125px;
   height: 125px;
@@ -128,12 +127,12 @@ svg {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  margin-bottom: 2.5vh;
+  margin-bottom: 2.5vh; */
+  z-index: -1;
 }
 .rhap_button-clear.rhap_main-controls-button.rhap_forward-button {
-  background-color: #0d1b2a;
+  /* background-color: #0d1b2a;
   height: 7.5vh;
-  /* left: 0; */
   width: 7.5vw;
   width: 125px;
   height: 125px;
@@ -142,7 +141,8 @@ svg {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  margin-bottom: 2.5vh;
+  margin-bottom: 2.5vh; */
+  z-index: -1;
 }
 
 .rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
