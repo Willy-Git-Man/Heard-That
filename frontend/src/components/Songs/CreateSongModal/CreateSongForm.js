@@ -114,7 +114,7 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
             onChange={newImageUrl}
             required
           />
-{/*
+          {/*
           <label htmlFor="albumIdLabel"></label>
           <input
             type="text"
@@ -123,29 +123,41 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
             onChange={newAlbumId}
             required
           /> */}
-            <label htmlFor="albumIdLabel">Ablum : </label>
-        <select
-          type="text"
-          name="albumId"
-          value={albumId}
-          onChange={newAlbumId}
-          required
-        >
-          <option value={1} key={1}>
-            {allAlbums[1].title}
-          </option>
-          <option value={2} key={2}>
-            {allAlbums[2].title}
-          </option>
-          <option value={3} key={3}>
-            {allAlbums[3].title}
-          </option>
-          {allAlbumObjectArrayFiltered.map((album) => (
-            <option value={album.id} key={album.id}>
-              {album.title}
+          <label htmlFor="albumIdLabel">Ablum : </label>
+          <select
+            type="text"
+            name="albumId"
+            value={albumId}
+            onChange={newAlbumId}
+            required
+          >
+            <option value={1} key={1}>
+              {allAlbums[1].title}
             </option>
-          ))}
-        </select>
+            <option value={2} key={2}>
+              {allAlbums[2].title}
+            </option>
+            <option value={3} key={3}>
+              {allAlbums[3].title}
+            </option>
+            <option value={4} key={4}>
+              {allAlbums[4].title}
+            </option>   <option value={5} key={5}>
+              {allAlbums[5].title}
+            </option>   <option value={6} key={6}>
+              {allAlbums[6].title}
+            </option>  <option value={7} key={7}>
+              {allAlbums[7].title}
+            </option> <option value={8} key={8}>
+              {allAlbums[8].title}
+            </option>
+
+            {allAlbumObjectArrayFiltered.map((album) => (
+              <option value={album.id} key={album.id}>
+                {album.title}
+              </option>
+            ))}
+          </select>
 
           <button className="createSongButton" type="submit">
             Create

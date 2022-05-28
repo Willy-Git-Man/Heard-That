@@ -95,16 +95,12 @@
 
 .rhap_button-clear.rhap_main-controls-button.rhap_play-pause-button {
   background-color: #0d1b2a;
-  height: 7.5vh;
-  /* left: 0; */
-  width: 7.5vw;
-  width: 125px;
-  height: 125px;
-
+  height: 5vh;
+  width: 5vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 25%;
   margin-bottom: 2.5vh;
 }
 .rhap_main-controls {
