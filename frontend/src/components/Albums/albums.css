@@ -398,6 +398,7 @@ justify-content: space-around;
 }
 
 .slick-slide.slick-active.slick-center.slick-current {
+  /* width: 90vw; */
 }
 
 
@@ -442,12 +443,16 @@ justify-content: space-around;
 
   /* opacity: 1; */
   background-size: cover;
-  width: 100%;
+  width: 90%;
+  margin-left: 5%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+overflow: hidden;
 }
 
 .albumCarouselAlbumTitleLower {
