@@ -190,36 +190,40 @@ svg {
 }
 
 .prevNextButtonsDiv {
-  position: absolute;
-  bottom: 0;
-  width: 20vw;
-  left: 40vw;
-  height: 5vh;
-  display: flex;
-  align-items: center;
-  /* z-index: 10000; */
-  /* width: 20vw; */
+
 
 }
 
 .nextButton{
-  width: 30%;
+  position: absolute;
+
+  width: 5vw;
   background-color: red;
   background-color: #0d1b2a;
   color: white;
   color: #e0e1dd;
 
   font-weight: 500;
+  bottom:0;
+  right: 40%;
 
 
   height: 75%;
+  height: 5vh;
   border-radius:12.5%;
 
 }
 
 .prevButton {
+  position: absolute;
+  bottom: 0;
+  left: 40vw;
   width: 30%;
+  width: 5vw;
+
   height: 75%;
+  height: 5vh;
+
   margin-right: 40%;
   background-color: black;
   background-color: #0d1b2a;

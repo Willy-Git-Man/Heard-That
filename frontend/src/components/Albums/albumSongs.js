@@ -47,23 +47,23 @@ export default function AlbumSongs({ userInfo }) {
     setPic(pic);
   };
 
-  const deleteDispatch = (songId) => {
-    dispatch(deleteSongThunk(songId));
-  };
+  // const deleteDispatch = (songId) => {
+  //   dispatch(deleteSongThunk(songId));
+  // };
 
-  const likeSongDispatch = async (id) => {
-    const likedSongPayload = {
-      songName: allSongs[id].songName,
-      artistName: allSongs[id].artistName,
-      songUrl: allSongs[id].songUrl,
-      imageUrl: allSongs[id].imageUrl,
-      albumId: 3,
-      userId: userInfo.id,
-    };
+  // const likeSongDispatch = async (id) => {
+  //   const likedSongPayload = {
+  //     songName: allSongs[id].songName,
+  //     artistName: allSongs[id].artistName,
+  //     songUrl: allSongs[id].songUrl,
+  //     imageUrl: allSongs[id].imageUrl,
+  //     albumId: 3,
+  //     userId: userInfo.id,
+  //   };
 
-    const newSong = await dispatch(addLikedSongThunk(likedSongPayload));
-    history.push("/Albums/3");
-  };
+  //   const newSong = await dispatch(addLikedSongThunk(likedSongPayload));
+  //   history.push("/Albums/3");
+  // };
 
   return (
     <div className="albumMainPage">
@@ -127,7 +127,7 @@ export default function AlbumSongs({ userInfo }) {
                   </button>
                 </div> */}
 
-                {playing === allSongs[key].songUrl && (
+                {playing === allSongs[key].songUrl  && (
                   <>
                   <div className="prevNextButtonsDiv">
                   <button
