@@ -106,26 +106,48 @@ export default function AlbumSongs({ userInfo }) {
                     </h3>
                   </button>
                 )}
-                <div className="prevNextButtonsDiv">
-              <button
-                className="deleteSongButton"
-                onClick={() =>
-                  test(allSongs[+key -1].songUrl, allSongs[key].imageUrl)
-                }
-              >
-                Prev
-              </button>
-                 <button
-                className="deleteSongButton"
-                onClick={() =>
-                  test(allSongs[+key +1].songUrl, allSongs[key].imageUrl)
-                }
-              >
-                Next
-              </button>
-              </div>
+
+                {}
+                {/* <div className="prevNextButtonsDiv">
+                  <button
+                    className="deleteSongButton"
+                    onClick={() =>
+                      test(allSongs[+key - 1].songUrl, allSongs[key].imageUrl)
+                    }
+                  >
+                    Prev
+                  </button>
+                  <button
+                    className="deleteSongButton"
+                    onClick={() =>
+                      test(allSongs[+key + 1].songUrl, allSongs[key].imageUrl)
+                    }
+                  >
+                    Next
+                  </button>
+                </div> */}
 
                 {playing === allSongs[key].songUrl && (
+                  <>
+                  <div className="prevNextButtonsDiv">
+                  <button
+                    className="prevButton"
+                    onClick={() =>
+                      test(allSongs[+key - 1].songUrl, allSongs[key].imageUrl)
+                    }
+                  >
+                    Prev
+                  </button>
+                  <button
+                    className="nextButton"
+                    onClick={() =>
+                      test(allSongs[+key + 1].songUrl, allSongs[key].imageUrl)
+                    }
+                  >
+                    Next
+                  </button>
+                </div>
+
                   <button
                     className="songDivButton"
                     onClick={() =>
@@ -137,6 +159,9 @@ export default function AlbumSongs({ userInfo }) {
                       <FcDisplay />{" "}
                     </h3>
                   </button>
+                  </>
+
+
                 )}
               </div>
 
@@ -157,7 +182,7 @@ export default function AlbumSongs({ userInfo }) {
           ))}
         </div>
 
-    
+
       </div>
       <AudioPlayerGlobal playing={playing} pic={pic} />
     </div>
