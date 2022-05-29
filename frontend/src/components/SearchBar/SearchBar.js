@@ -39,7 +39,7 @@ const SearchBar = ({ playing, setPlaying }) => {
 
   return (
     <div className="searchBarMainDiv">
-      <div>
+      <div className="searchInputDiv">
         <input
           className="searchInput"
           placeholder="Search..."

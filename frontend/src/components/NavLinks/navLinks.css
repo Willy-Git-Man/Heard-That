@@ -14,7 +14,7 @@
 
 .navLinkUpper {
   /* height: 22.5%; */
-  height: ;
+  height: 20vh;
   margin-bottom: 5%;
   display: flex;
   justify-content: flex-start;
@@ -159,6 +159,8 @@ svg {
   height: 2.5%;
   /* height: 5vh; */
 }
+
+
 
 .logoH1 {
   color: #e0e1dd;

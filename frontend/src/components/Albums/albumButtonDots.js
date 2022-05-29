@@ -71,7 +71,7 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
           </button>
 
           <UpdateAlbumModal albumId={+id} closeMenu={closeMenu} />
-          <button className={"songButtonDotsButton"} onClick={closeMenu}>
+          <button className={"albumButtonCloseButton"} onClick={closeMenu}>
             Close
           </button>
         </div>

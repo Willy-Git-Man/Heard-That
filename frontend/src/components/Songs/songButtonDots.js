@@ -64,7 +64,7 @@ function SongButtonDots({ user, allAlbumsIndex, songId }) {
             Close
           </button>
           <button
-            className="deleteAlbumButton"
+            className="deleteSongButton"
             // onClick={() => deleteAlbumDispatch(allAlbumsIndex?.id)}
             onClick={() => deleteSubmit(songId)}
           >
