@@ -109,3 +109,20 @@
   color: #00ff3e;
 font-size: .75em;
 }
+
+
+.searchDivPlayButton {
+
+  background-color: #415A77;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border: none;
+  font-size: 2em;
+
+  background-position: 10px center;
+
+  background-size: cover;
+  width: 50%;
+}

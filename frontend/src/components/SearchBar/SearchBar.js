@@ -66,7 +66,7 @@ const SearchBar = ({ playing, setPlaying }) => {
               </div>
               {playing !== song.songUrl && (
                 <button
-                  className="songDivButton"
+                  className="searchDivPlayButton"
                   onClick={() => test(song.songUrl, song.imageUrl)}
                 >
                     {/* <i className="fab fa-grav"></i> */}

@@ -387,11 +387,13 @@ justify-content: space-around;
 .albumSongListDivSearch {
   height: 5vh;
   display: flex;
+  margin-bottom: 10px;
 }
 
 .searchLi {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   /* align-items: center; */
   padding-left: 7.5%;
   width: 75%;
