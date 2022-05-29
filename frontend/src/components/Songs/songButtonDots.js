@@ -60,7 +60,7 @@ function SongButtonDots({ user, allAlbumsIndex, songId }) {
         )}
       {showMenu && (
         <div className="songSettingsDiv">
-          <button className={"songButtonDotsButton"} onClick={closeMenu}>
+          <button className={"songEditCloseButton"} onClick={closeMenu}>
             Close
           </button>
           <button

@@ -108,6 +108,24 @@ h2 {
   opacity: .5; */
 }
 
+.songEditCloseButton {
+   /* border: 5px solid black; */
+   background-color: #415A77;
+   color: #E0E1DD;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* height: 100%; */
+   width: 30%;
+   height: 75%;
+   font-size: 1.25em;
+   border: none;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+   /* min-width: 50px;
+   opacity: .5; */
+}
+
 .albumButtonDotsButton {
     background-color: #415A77;
     color: #E0E1DD;
@@ -214,7 +232,7 @@ justify-content: space-around;
     justify-content: center;
     align-items: center;
     height: 75%;
-    width: 5vw;
+    width: 30%;
     font-size: 1em;
     border: none;
 }
@@ -244,6 +262,9 @@ justify-content: space-around;
   height: 100%;
   width: 10vw;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 1%;
   position: relative;
 }
 
