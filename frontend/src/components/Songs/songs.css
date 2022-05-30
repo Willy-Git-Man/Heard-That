@@ -280,8 +280,9 @@ font-size: large;
    bottom: 0;
    right: 0;
  width: 100vw;
- color: white;
- /* background-color: #1B263B; */
+ /* color: white;
+ back */
+ background-color: #1B263B;
  /* background: linear-gradient(#0D1B2A, #778DA9, #415A77, #778DA9, #0D1B2A); */
 
  }

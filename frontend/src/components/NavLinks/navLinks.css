@@ -86,6 +86,29 @@
   width: 100%;
 }
 
+.rhap_container.rhap_loop--on.rhap_play-status--paused.audioPlayer {
+position: absolute;
+top: 0;
+}
+.rhap_main.rhap_stacked {
+  background-color: #415A77;
+  height: 5vh;
+  /* position: absolute; */
+}
+.rhap_progress-indicator {
+  background-color: #0d1b2a;
+  /* height: 2vh; */
+}
+
+.rhap_progress-container {
+  color: #e0e1dd;
+  /* background-color: #e0e1dd; */
+  height: 1vh;
+}
+.rhap_progress-bar.rhap_progress-bar-show-download {
+  background-color: #e0e1dd;
+
+}
 .rhap_container.rhap_loop--off.rhap_play-status--playing.audioPlayer {
   height: 100%;
   /* background-color: #778DA9; */
@@ -101,13 +124,15 @@
   justify-content: center;
   align-items: center;
   border-radius: 25%;
-  margin-bottom: 2.5vh;
+  color: #e0e1dd;
+  /* margin-bottom: 2.5vh; */
 }
 .rhap_main-controls {
   height: 10vh;
 }
 .rhap_button-clear.rhap_main-controls-button.rhap_play-pause-button.svg {
-  height: 10vh;
+  /* height: 10vh; */
+  /* background-color: black; */
 }
 svg {
   /* background-color: #778DA9; */
@@ -145,7 +170,19 @@ svg {
   height: 100%;
   /* height: 50vh; */
   /* opacity: .3; */
-  background-color: #778da9;
+  background-color: #e0e1dd;
+  padding: 0;
+  /* background-color: #778DA9; */
+  /* background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A); */
+}
+
+.rhap_container.rhap_loop--on.rhap_play-status--paused.audioPlayer {
+  height: 100%;
+  /* height: 50vh; */
+  padding: 0;
+
+  /* opacity: .3; */
+  background-color: #e0e1dd;
   /* background-color: #778DA9; */
   /* background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A); */
 }
@@ -160,7 +197,20 @@ svg {
   /* height: 5vh; */
 }
 
+.rhap_controls-section {
+  margin: 0;
+  margin-top: 0px;
 
+  color: white;
+  height: 5vh;
+}
+
+.rhap_progress-section {
+  height: 0vh;
+  position: relative;
+  border-top: 5px solid #e0e1dd;
+
+}
 
 .logoH1 {
   color: #e0e1dd;
