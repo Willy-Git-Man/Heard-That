@@ -29,7 +29,7 @@ height: 4vh;
 
 
 .searchInput::placeholder {
-
+/*
   height: 2.5vh;
   background-color: #0D1B2A;
   margin-left: 2.5%;
@@ -37,7 +37,9 @@ height: 4vh;
   border-right: 2px solid #E0E1DD;
   border-left: 2px solid #E0E1DD;
   color: #E0E1DD;
-  font-size: 1em;
+  font-size: 1em; */
+  color: #E0E1DD;
+
 }
 
 .emptySearchTest {
