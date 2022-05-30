@@ -17,35 +17,27 @@
   background-color: #0D1B2A;
   margin-left: 2.5%;
   width: 95%;
-  /* margin-left: 0; */
-  /* outline: 2px solid #E0E1DD; */
   border-right: 2px solid #E0E1DD;
   border-left: 2px solid #E0E1DD;
-
   color: #E0E1DD;
   outline: none;
   border: none;
-  font-size: .5em;
-  /* border: none; */
+  font-size: 3em;
+height: 4vh;
 
-  /* width: 90%; */
-
-  /* font-size: .325em; */
-  font-family: 'Press Start 2P', cursive;
-  /* margin-left: 37.5vw; */
 }
 
 
 .searchInput::placeholder {
+
+  height: 2.5vh;
+  background-color: #0D1B2A;
+  margin-left: 2.5%;
+  width: 95%;
+  border-right: 2px solid #E0E1DD;
+  border-left: 2px solid #E0E1DD;
   color: #E0E1DD;
-  font-size: 2em;
-  font-family: 'Press Start 2P', cursive;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  padding-left: 5%;
-  /* height: 2.5vh; */
-  border: 1px solid #E0E1DD;
-
-
+  font-size: 1em;
 }
 
 .emptySearchTest {

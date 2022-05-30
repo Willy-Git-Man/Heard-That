@@ -14,7 +14,7 @@ padding-left: 7.5%;
 .profile-dropdown {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
   bottom: 0;
@@ -30,7 +30,8 @@ padding-left: 7.5%;
   /* overflow: scroll; */
   /* text-align: center; */
   top: 40vh;
-  left: 25%;
+  left: 25vw;
+  width: 50vw;
   /* width: 50%; */
 }
 
