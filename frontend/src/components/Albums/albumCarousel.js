@@ -10,11 +10,14 @@ export default function AlbumCarousel({ userInfo }) {
   const { id } = useParams();
   const history = useHistory();
 
+
   const allAlbums = useSelector((state) => state.albums.albums);
 
   const allAlbumKeys = Object.keys(allAlbums);
 
   const allAlbumValues = Object.values(allAlbums);
+
+
   const userAlbums = allAlbumValues.filter(
     (album) => album.userId === userInfo.id || album.userId === 2
   );
