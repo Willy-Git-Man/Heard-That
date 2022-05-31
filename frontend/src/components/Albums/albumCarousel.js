@@ -132,61 +132,47 @@ export default function AlbumCarousel({ userInfo }) {
                 backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
               }}
             >
-
               <NavLink
                 className="mainAlbumsEachAlbumDivNavLink"
                 to={`/Albums/${allAlbums[album].id}`}
-
               >
+                {allAlbums[album].id !== +id && (
+                  <h1 className="albumCarouselAlbumTitle" style={{
+                  }}>
+                    {allAlbums[album]?.title}
+                  </h1>
+                )}
 
+                {allAlbums[album].id !== +id && (
                 <h1 className="albumCarouselAlbumTitle" style={{
-                  // backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
                 }}>
                   {allAlbums[album]?.title}
                 </h1>
-                {/* </div> */}
+                )}
+
+
+                {/* <h1 className="albumCarouselAlbumTitle" style={{
+                }}>
+                  {allAlbums[album]?.title}
+                </h1> */}
+
+
+
               </NavLink>
             </div>
-
           </div>
         ))}
       </Slider>
-      {/* <Slider
-        {...multipleAlbumCarouselSettings}
-        // asNavFor={firstSlider}
-        // ref={(slider2) => setsecondSlider(slider2)}
-      >
-        {allAlbumKeys.map((album) => (
-          <div className="mainAlbumsEachAlbumDiv" key={allAlbums[album]?.id } >
-
-            <NavLink
-              className="mainAlbumsEachAlbumDivNavLink"
-              to={`/Albums/${allAlbums[album].id}`}
-              // style={{
-              //   backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
-              // }}
-            >
-              <div
-                className="albumNameLinkAlbum"
-                style={{
-                  backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
-                }}
-              >
-                <h1 className="albumCarouselAlbumTitle">
-                  {allAlbums[album]?.title}
-                </h1>
-              </div>
-            </NavLink>
-          </div>
-        ))}
-      </Slider> */}
 
       <Slider className="test"
         {...lowerCarouselSettings}
       // asNavFor={firstSlider}
       // ref={(slider2) => setsecondSlider(slider2)}
       >
-        <div className="mainAlbumsEachAlbumDiv2" key={allAlbums[+id]?.id}>
+        <div className="mainAlbumsEachAlbumDiv2" key={allAlbums[+id]?.id}
+
+
+        >
 
           <NavLink
             className="mainAlbumsEachAlbumDivNavLink"

@@ -494,30 +494,19 @@ justify-content: space-around;
 
 .albumCarouselAlbumTitle {
   background-color: #0D1B2A;
-  opacity: .5;
+  opacity: .8;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-position: center;
-  color: #0D1B2A;
+  color: #E0E1DD;
   display: flex;
   justify-content: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 
-  /* background-size: cover;
-  width: 90%;
-  margin-left: 5%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-overflow: hidden; */
 }
 
 .albumCarouselAlbumTitleLower {
