@@ -275,7 +275,7 @@ font-size: large;
 
 
  .globalAudioPlayer {
-   height: 10%;
+   height: 10vh;
    position: absolute;
    bottom: 0;
    right: 0;

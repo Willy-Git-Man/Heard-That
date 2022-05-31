@@ -86,13 +86,11 @@
   width: 100%;
 }
 
-.rhap_container.rhap_loop--on.rhap_play-status--paused.audioPlayer {
-position: absolute;
-top: 0;
-}
+
 .rhap_main.rhap_stacked {
   background-color: #415A77;
-  height: 5vh;
+  height: 10vh;
+  padding: 0;
   /* position: absolute; */
 }
 .rhap_progress-indicator {
@@ -171,7 +169,18 @@ svg {
   /* height: 50vh; */
   /* opacity: .3; */
   background-color: #e0e1dd;
-  padding: 0;
+  padding: 0px;
+  /* background-color: #778DA9; */
+  /* background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A); */
+}
+
+.rhap_container.rhap_loop--on.rhap_play-status--playing.audioPlayer {
+  height: 100%;
+  /* height: 50vh; */
+  padding: 0px;
+
+  /* opacity: .3; */
+  background-color: #e0e1dd;
   /* background-color: #778DA9; */
   /* background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A); */
 }
@@ -179,7 +188,7 @@ svg {
 .rhap_container.rhap_loop--on.rhap_play-status--paused.audioPlayer {
   height: 100%;
   /* height: 50vh; */
-  padding: 0;
+  padding: 0px;
 
   /* opacity: .3; */
   background-color: #e0e1dd;
@@ -206,7 +215,7 @@ svg {
 }
 
 .rhap_progress-section {
-  height: 0vh;
+  height: 2vh;
   position: relative;
   border-top: 5px solid #e0e1dd;
 
