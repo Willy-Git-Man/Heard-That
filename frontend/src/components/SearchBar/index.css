@@ -16,14 +16,16 @@
   height: 2.5vh;
   background-color: #0D1B2A;
   margin-left: 2.5%;
-  width: 95%;
+  width: 90%;
   border-right: 2px solid #E0E1DD;
   border-left: 2px solid #E0E1DD;
   color: #E0E1DD;
   outline: none;
   border: none;
-  font-size: 3em;
+  font-size: 2em;
 height: 4vh;
+border: 5px solid #E0E1DD;
+
 
 }
 
@@ -38,6 +40,8 @@ height: 4vh;
   border-left: 2px solid #E0E1DD;
   color: #E0E1DD;
   font-size: 1em; */
+  display: flex;
+align-items: flex-end;
   color: #E0E1DD;
 
 }
