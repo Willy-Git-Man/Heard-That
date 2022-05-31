@@ -10,8 +10,16 @@ import {
 } from "../../store/songs";
 import "./albums.css";
 // import { FaGithub } from "react-icons/fa";
-// import { FaLinkedinIn } from "react-icons/fa";
+import { FaArrowCircleLeft } from "react-icons/fa";
+import { FaArrowCircleRight } from "react-icons/fa";
+
+
+// FaArrowCircleLeft
 import "react-h5-audio-player/lib/styles.css";
+
+
+
+
 import NavLinks from "../NavLinks/navLinks";
 import MyAlbums from ".";
 import UpdateSongModal from "../Songs/UpdateSongModal";
@@ -85,70 +93,39 @@ export default function AlbumSongs({ userInfo }) {
           {testing.map((key) => (
             <div className="everySongDiv" key={key} alt="Broken Img Url">
               <div className="songImageAndPlayButton">
-                {/* <img
-                  className="songImageInAlbum"
-                  src={allSongs[key]?.imageUrl}
-                  alt="Broken Img Url"
-                /> */}
                 {playing !== allSongs[key].songUrl && (
-                  <button
-                    className="songDivButton"
-                    onClick={() =>
-                      test(allSongs[key].songUrl, allSongs[key].imageUrl)
-                    }
+
+                  <div className="albumDivPlayButton"
                     style={{
                       backgroundImage: `url(${allSongs[key]?.imageUrl})`,
                     }}
                   >
-                    <h3 className="songButtonH3">
-                      {" "}
-                      <FaPlayCircle />{" "}
-                    </h3>
-                  </button>
+                    <button
+                      className="songDivButton"
+                      onClick={() =>
+                        test(allSongs[key].songUrl, allSongs[key].imageUrl)
+                      }
+                      style={{
+                        backgroundImage: `url(${allSongs[key]?.imageUrl})`,
+                      }}
+                    >
+                      <h3 className="songButtonH3">
+                        {" "}
+                        <FaPlayCircle />{" "}
+                      </h3>
+                    </button>
+                  </div>
                 )}
 
-                {}
-                {/* <div className="prevNextButtonsDiv">
-                  <button
-                    className="deleteSongButton"
-                    onClick={() =>
-                      test(allSongs[+key - 1].songUrl, allSongs[key].imageUrl)
-                    }
-                  >
-                    Prev
-                  </button>
-                  <button
-                    className="deleteSongButton"
-                    onClick={() =>
-                      test(allSongs[+key + 1].songUrl, allSongs[key].imageUrl)
-                    }
-                  >
-                    Next
-                  </button>
-                </div> */}
 
-                {playing === allSongs[key].songUrl  && (
+                {playing === allSongs[key].songUrl && (
                   <>
-                  <div className="prevNextButtonsDiv">
-                  <button
-                    className="prevButton"
-                    onClick={() =>
-                      test(allSongs[+key - 1].songUrl, allSongs[key].imageUrl)
-                    }
-                  >
-                    Prev
-                  </button>
-                  <button
-                    className="nextButton"
-                    onClick={() =>
-                      test(allSongs[+key + 1].songUrl, allSongs[key].imageUrl)
-                    }
-                  >
-                    Next
-                  </button>
-                </div>
+                    <div className="albumDivPlayButton"
 
-                  <button
+                    style={{
+                      backgroundImage: `url(${allSongs[key]?.imageUrl})`,
+                    }}>
+                    <button
                     className="songDivButton"
                     onClick={() =>
                       test("allSongs[key].songUrl", "allSongs[key].imageUrl")
@@ -159,6 +136,38 @@ export default function AlbumSongs({ userInfo }) {
                       <FcDisplay />{" "}
                     </h3>
                   </button>
+
+
+                      <button
+                        className="prevButton"
+                        onClick={() =>
+                          test(allSongs[+key - 1].songUrl, allSongs[key].imageUrl)
+                        }
+                      >
+                                               <FaArrowCircleLeft />
+
+                      </button>
+                      <button
+                        className="nextButton"
+                        onClick={() =>
+                          test(allSongs[+key + 1].songUrl, allSongs[key].imageUrl)
+                        }
+                      >
+                        <FaArrowCircleRight />
+                      </button>
+                    </div>
+
+                    {/* <button
+                      className="songDivButton"
+                      onClick={() =>
+                        test("allSongs[key].songUrl", "allSongs[key].imageUrl")
+                      }
+                    >
+                      <h3 className="songButtonH3">
+                        {" "}
+                        <FcDisplay />{" "}
+                      </h3>
+                    </button> */}
                   </>
 
 

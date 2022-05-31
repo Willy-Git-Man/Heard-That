@@ -61,12 +61,16 @@ const SearchBar = ({ playing, setPlaying }) => {
             <div className="albumSongListDivSearch" key={song.id} >
 
               {playing !== song.songUrl && (
+                <div className="searchDivPlayButton"
+                style={{
+                  backgroundImage: `url(${song?.imageUrl})`,
+                }}
+                >
+
                 <button
                   className="searchDivPlayButton"
                   onClick={() => test(song.songUrl, song.imageUrl)}
-                  style={{
-                    backgroundImage: `url(${song?.imageUrl})`,
-                  }}
+
 
                 >
                     {/* <i className="fab fa-grav"></i> */}
@@ -76,9 +80,15 @@ const SearchBar = ({ playing, setPlaying }) => {
                     </h3>
                     {/* AiFillPlayCircle */}
                 </button>
+                </div>
               )}
 
               {playing === song.songUrl && (
+                 <div className="searchDivPlayButton"
+                 style={{
+                   backgroundImage: `url(${song?.imageUrl})`,
+                 }}
+                 >
                 <button
                   className="songDivButton"
                   onClick={() => test("song.songUrl", "song.imageUrl")}
@@ -95,6 +105,7 @@ const SearchBar = ({ playing, setPlaying }) => {
                     {/* AiFillPlayCircle */}
                   </h3>
                 </button>
+                </div>
               )}
             <div className="searchLi">
                 <li className="songListItemSearch">{song.songName}</li>

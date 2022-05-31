@@ -114,16 +114,35 @@ font-size: .75em;
 
 .searchDivPlayButton {
 
-  background-color: #415A77;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
   border: none;
-  font-size: 2em;
+  font-size: 1.75em;
+  background: none;
 
   background-position: 10px center;
 
   background-size: cover;
   width: 50%;
+  background-position: 50% 50%;
+}
+
+.albumDivPlayButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 1.75em;
+  background: none;
+
+  background-position: 10px center;
+
+  background-size: cover;
+  width: 100%;
+  background-position: 50% 50%;
 }

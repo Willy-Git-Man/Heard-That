@@ -117,24 +117,19 @@
 .rhap_button-clear.rhap_main-controls-button.rhap_play-pause-button {
   background-color: #0d1b2a;
   height: 5vh;
-  width: 5vw;
+  width: 5.5vw;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 25%;
   color: #e0e1dd;
+  margin-bottom: 1vh;
   /* margin-bottom: 2.5vh; */
 }
 .rhap_main-controls {
   height: 10vh;
 }
-.rhap_button-clear.rhap_main-controls-button.rhap_play-pause-button.svg {
-  /* height: 10vh; */
-  /* background-color: black; */
-}
-svg {
-  /* background-color: #778DA9; */
-}
+
 .rhap_button-clear.rhap_main-controls-button.rhap_rewind-button {
   /* background-color: #0d1b2a;
   height: 7.5vh;
@@ -251,27 +246,51 @@ svg {
 }
 
 .prevNextButtonsDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 1.75em;
+  background: none;
+  background-position: 10px center;
+  background-size: cover;
+  width: 50%;
+  background-position: 50% 50%;
 
 
 }
 
 .nextButton{
   position: absolute;
-
+  bottom: 0;
+  right: 40vw;
   width: 5vw;
-  background-color: red;
-  background-color: #0d1b2a;
-  color: white;
-  color: #e0e1dd;
-
-  font-weight: 500;
-  bottom:0;
-  right: 40%;
-
-
+  font-size: 100%;
   height: 75%;
   height: 5vh;
-  border-radius:12.5%;
+  margin-bottom: 1vh;
+
+  background-color: black;
+  background-color: #0d1b2a;
+  color: white;
+  font-weight: 500;
+
+
+  border-radius: 12.5%;
+
+  background-color: #0d1b2a;
+  height: 5vh;
+  width: 5.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25%;
+  color: #e0e1dd;
+  margin-bottom: 1vh;
+  border: none;
+  outline: line;
 
 }
 
@@ -281,6 +300,7 @@ svg {
   left: 40vw;
   width: 30%;
   width: 5vw;
+  font-size: 100%;
 
   height: 75%;
   height: 5vh;
@@ -290,7 +310,20 @@ svg {
   background-color: #0d1b2a;
   color: white;
   font-weight: 500;
+  border: none;
 
 
   border-radius: 12.5%;
+  margin-bottom: 1vh;
+
+  background-color: #0d1b2a;
+  height: 5vh;
+  width: 5.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25%;
+  color: #e0e1dd;
+  margin-bottom: 1vh;
+
 }

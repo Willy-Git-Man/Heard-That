@@ -82,6 +82,8 @@ h2 {
   /* border-radius: 25
   %; */
   /* min-width: 50px; */
+  background-position: 50% 50%;
+
   /* opacity: .5; */
 }
 
@@ -541,4 +543,6 @@ justify-content: space-around;
   display: flex;
   justify-content: center;
   align-items: center;
+  object-fit: cover;
+  background-position: 50% 50%;
 }
