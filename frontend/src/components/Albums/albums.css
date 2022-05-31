@@ -493,21 +493,21 @@ justify-content: space-around;
 
 
 .albumCarouselAlbumTitle {
-  /* background-color: #0D1B2A;
-  opacity: .9;
-  width: 80%;
+  background-color: #0D1B2A;
+  opacity: .5;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-position: center;
-  color: #E0E1DD;
+  color: #0D1B2A;
   display: flex;
   justify-content: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
-  /* opacity: 1; */
-  background-size: cover;
+
+  /* background-size: cover;
   width: 90%;
   margin-left: 5%;
   height: 100%;
@@ -517,7 +517,7 @@ justify-content: space-around;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-overflow: hidden;
+overflow: hidden; */
 }
 
 .albumCarouselAlbumTitleLower {
@@ -532,4 +532,24 @@ overflow: hidden;
   display: flex;
   justify-content: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.albumPictureDiv {
+  background-size: cover;
+  width: 90%;
+  margin-left: 5%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  overflow: hidden;
+  background-position: 10px center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
