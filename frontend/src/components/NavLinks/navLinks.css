@@ -20,6 +20,7 @@
   justify-content: flex-start;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
   /* padding-left: 7.5%; */
 }
 

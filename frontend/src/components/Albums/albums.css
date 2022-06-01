@@ -50,6 +50,7 @@ h2 {
   background-color: #0D1B2A;
   height: 10%;
   width: 100%;
+  /* overflow: hidden; */
 }
 .everySongDiv::-webkit-scrollbar {
   display: none;
@@ -491,6 +492,7 @@ justify-content: space-around;
 .songTitleAndArtistDiv {
   display: flex;
   width: 60%;
+  overflow: hidden;
 }
 
 
