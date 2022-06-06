@@ -1,14 +1,14 @@
 .profileButton {
   height: 2.5vh;
   width: 90%;
-  color: #E0E1DD;
+  color: #e0e1dd;
   font-size: 1em;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   border: none;
   display: flex;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-padding-left: 7.5%;
-
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  padding-left: 7.5%;
 }
 
 .profile-dropdown {
@@ -25,14 +25,10 @@ padding-left: 7.5%;
   z-index: 999;
   background-color: black;
   background-color: #0d1b2a;
-
   outline: 10px white solid;
-  /* overflow: scroll; */
-  /* text-align: center; */
   top: 40vh;
   left: 25vw;
   width: 50vw;
-  /* width: 50%; */
 }
 
 .userName {
@@ -44,18 +40,11 @@ padding-left: 7.5%;
 }
 
 .navDiv {
-  /* position: relative; */
-  /* height: 5vh; */
   width: 90.5%;
   margin-left: 9.5%;
-  /* min-height: 50px; */
-  /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* justify-content: space-between; */
-  /* background-color: black; */
-  /* border: solid black 5px; */
   background-color: rgba(0, 208, 255, 0.797);
   background-color: rgba(7, 158, 193, 0.6);
   background-color: rgba(255, 255, 255, 0.1);
@@ -63,30 +52,18 @@ padding-left: 7.5%;
 }
 
 .navUl {
-  /* display: flex; */
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
-/* .navLi {
-  margin-left: 0;
-} */
-
 .logoutButton {
- /* background-image: url("../../../public/pics/loginTest.png"); */
- background-color: rgba(117, 235, 14, 0.995);
- background-color: #778DA9;
-
-
- color: #E0E1DD;
- /* height: 5vh; */
- font-size: 2em;
- /* padding-left: 5%; */
- /* margin-top: 10%; */
- width: 50vw;
+  background-color: rgba(117, 235, 14, 0.995);
+  background-color: #778da9;
+  color: #e0e1dd;
+  font-size: 2em;
+  width: 50vw;
 }
-
 
 .loginDiv {
   background-color: black;
@@ -114,8 +91,8 @@ padding-left: 7.5%;
   align-items: center;
   background-color: black;
   height: 100vw;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   object-fit: cover;
   width: 100%;
   height: auto;
@@ -132,7 +109,6 @@ padding-left: 7.5%;
 .welcomeGreetingTop {
   color: white;
   font-size: 3em;
-
 }
 
 .splashMessage {
@@ -140,13 +116,9 @@ padding-left: 7.5%;
   justify-content: center;
   display: flex;
   justify-content: center;
-  /* width: 400px; */
-  /* background-image: url("../../../public/pics/deadBears.png"); */
   background-size: contain cover;
   width: 100%;
-  /* width: 1000px; */
-
-height: 100vh;
-position: absolute;
-z-index: -1;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
 }

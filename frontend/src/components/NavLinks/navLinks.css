@@ -13,7 +13,6 @@
 }
 
 .navLinkUpper {
-  /* height: 22.5%; */
   height: 20vh;
   margin-bottom: 5%;
   display: flex;
@@ -21,7 +20,6 @@
   flex-direction: column;
   width: 100%;
   overflow: hidden;
-  /* padding-left: 7.5%; */
 }
 
 .logoTopLeft {
@@ -29,7 +27,6 @@
   width: 100%;
   color: #e0e1dd;
   font-size: 1em;
-  /* background-color: #0D1B2A; */
   margin-bottom: 5%;
   text-decoration: none;
 }
@@ -87,31 +84,26 @@
   width: 100%;
 }
 
-
 .rhap_main.rhap_stacked {
   background-color: #415A77;
   height: 10vh;
   padding: 0;
-  /* position: absolute; */
 }
 .rhap_progress-indicator {
   background-color: #0d1b2a;
-  /* height: 2vh; */
 }
 
 .rhap_progress-container {
   color: #e0e1dd;
-  /* background-color: #e0e1dd; */
   height: 1vh;
 }
+
 .rhap_progress-bar.rhap_progress-bar-show-download {
   background-color: #e0e1dd;
-
 }
+
 .rhap_container.rhap_loop--off.rhap_play-status--playing.audioPlayer {
   height: 100%;
-  /* background-color: #778DA9; */
-  /* background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A); */
   background-color: #778da9;
 }
 
@@ -125,71 +117,35 @@
   border-radius: 25%;
   color: #e0e1dd;
   margin-bottom: 1vh;
-  /* margin-bottom: 2.5vh; */
 }
+
 .rhap_main-controls {
   height: 10vh;
 }
 
 .rhap_button-clear.rhap_main-controls-button.rhap_rewind-button {
-  /* background-color: #0d1b2a;
-  height: 7.5vh;
-  width: 7.5vw;
-  width: 125px;
-  height: 125px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  margin-bottom: 2.5vh; */
   z-index: -1;
 }
 .rhap_button-clear.rhap_main-controls-button.rhap_forward-button {
-  /* background-color: #0d1b2a;
-  height: 7.5vh;
-  width: 7.5vw;
-  width: 125px;
-  height: 125px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  margin-bottom: 2.5vh; */
   z-index: -1;
 }
 
 .rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
   height: 100%;
-  /* height: 50vh; */
-  /* opacity: .3; */
   background-color: #e0e1dd;
   padding: 0px;
-  /* background-color: #778DA9; */
-  /* background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A); */
 }
 
 .rhap_container.rhap_loop--on.rhap_play-status--playing.audioPlayer {
   height: 100%;
-  /* height: 50vh; */
   padding: 0px;
-
-  /* opacity: .3; */
   background-color: #e0e1dd;
-  /* background-color: #778DA9; */
-  /* background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A); */
 }
 
 .rhap_container.rhap_loop--on.rhap_play-status--paused.audioPlayer {
   height: 100%;
-  /* height: 50vh; */
   padding: 0px;
-
-  /* opacity: .3; */
   background-color: #e0e1dd;
-  /* background-color: #778DA9; */
-  /* background: linear-gradient(#0D1B2A, #1B263B, #415A77, #778DA9, #778DA9, #415A77, #1B263B, #0D1B2A); */
 }
 
 .rhap_additional-controls {
@@ -199,13 +155,11 @@
 .albumNavLinkAndEdit {
   display: flex;
   height: 2.5%;
-  /* height: 5vh; */
 }
 
 .rhap_controls-section {
   margin: 0;
   margin-top: 0px;
-
   color: white;
   height: 5vh;
 }
@@ -214,7 +168,6 @@
   height: 2vh;
   position: relative;
   border-top: 5px solid #e0e1dd;
-
 }
 
 .logoH1 {
@@ -227,16 +180,9 @@
     padding-left: 12.5%;
 }
 
-/* .rhap_download-progress {
-  color: #E0E1DD;
-  background-color: #E0E1DD;
-  color: black;
-} */
-
 .sideBarLower {
   /* padding-left: 7.5%; */
 }
-
 
 .socialLinks {
   bottom: 10vh;
@@ -259,8 +205,6 @@
   background-size: cover;
   width: 50%;
   background-position: 50% 50%;
-
-
 }
 
 .nextButton{
@@ -272,15 +216,11 @@
   height: 75%;
   height: 5vh;
   margin-bottom: 1vh;
-
   background-color: black;
   background-color: #0d1b2a;
   color: white;
   font-weight: 500;
-
-
   border-radius: 12.5%;
-
   background-color: #0d1b2a;
   height: 5vh;
   width: 5.5vw;
@@ -302,21 +242,16 @@
   width: 30%;
   width: 5vw;
   font-size: 100%;
-
   height: 75%;
   height: 5vh;
-
   margin-right: 40%;
   background-color: black;
   background-color: #0d1b2a;
   color: white;
   font-weight: 500;
   border: none;
-
-
   border-radius: 12.5%;
   margin-bottom: 1vh;
-
   background-color: #0d1b2a;
   height: 5vh;
   width: 5.5vw;
@@ -326,5 +261,4 @@
   border-radius: 25%;
   color: #e0e1dd;
   margin-bottom: 1vh;
-
 }
