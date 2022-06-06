@@ -17,7 +17,6 @@ function SongButtonDots({ user, allAlbumsIndex, songId }) {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
-  console.log("ggggg", +id);
 
   const openMenu = () => {
     if (showMenu) setShowMenu(false);

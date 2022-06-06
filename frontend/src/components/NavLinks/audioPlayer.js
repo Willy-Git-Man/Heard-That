@@ -20,10 +20,10 @@ export default function AudioPlayerGlobal({ playing, pic }) {
       <AudioPlayer
         className="audioPlayer"
         src={playing}
-        onPlay={(e) => console.log("onPlay")}
+        // onPlay={(e) => console.log("onPlay")}
         loop={true}
       />
-      
+
     </div>
   )
 }

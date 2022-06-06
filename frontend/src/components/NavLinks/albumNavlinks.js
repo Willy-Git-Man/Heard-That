@@ -12,14 +12,13 @@ export default function AlbumNavLinks({ allAlbums }) {
 
   const mainAlbumKeys = Object.keys(allAlbums)
   const mainAlbums = mainAlbumKeys.splice(0,8)
-  console.log(mainAlbums)
 
   return (
     <div className="navigationLink">
       <div className="navigationLink">
         {mainAlbums.map((album) => (
 
-          <NavLink className="navAlbumNavLink" to={`/Albums/${+album + 1}`}>
+          <NavLink className="navAlbumNavLink" to={`/Albums/${+album + 1}`} key={album}>
            {allAlbums[album]?.title}
          </NavLink>
              )

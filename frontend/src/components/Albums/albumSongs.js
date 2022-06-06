@@ -40,7 +40,6 @@ export default function AlbumSongs({ userInfo }) {
   const allSongs = useSelector((state) => state.songs.songs);
 
   const albumSongObjectValues = Object.values(allSongs).filter((song) => song.albumId === +id)
-  console.log(albumSongObjectValues, allSongs)
 
   const allAlbumsObjectKeys = Object.keys(allSongs).filter(
     (el) => allSongs[el].albumId === +id
@@ -52,12 +51,9 @@ export default function AlbumSongs({ userInfo }) {
     albumSongsObject[i] = albumSongObjectValues[i]
   }
 
-  // console.log('obj', albumSongsObject[0].songUrl)
-
   const allSongsObjectKeys = Object.keys(albumSongsObject)
 
 
-  console.log('allAlbumObjectKeys', allSongsObjectKeys,)
 
   const test = (playing, pic) => {
     setPlaying(playing);
