@@ -52,7 +52,7 @@ export default function AlbumSongs({ userInfo }) {
     albumSongsObject[i] = albumSongObjectValues[i]
   }
 
-  console.log('obj', albumSongsObject)
+  console.log('obj', albumSongsObject[0].songUrl)
 
   const allSongsObjectKeys = Object.keys(albumSongsObject)
 
@@ -102,13 +102,7 @@ export default function AlbumSongs({ userInfo }) {
 
             <div className="everySongDiv" key={key} alt="Broken Img Url">
 
-
               <div className="songImageAndPlayButton">
-
-
-
-
-                {/* {playing !== allSongs[key].songUrl && ( */}
 
                 <div className="albumDivPlayButton"
                   style={{
@@ -134,7 +128,7 @@ export default function AlbumSongs({ userInfo }) {
 
                   {playing === allSongs[key].songUrl && (
                     <>
-                      <button
+                      <div
                         className="songDivButton"
                         onClick={() =>
                           test("allSongs[key].songUrl", "allSongs[key].imageUrl")
@@ -143,12 +137,12 @@ export default function AlbumSongs({ userInfo }) {
                         <h3 className="songButtonH3">
                           <FcDisplay />
                         </h3>
-                      </button>
+                      </div>
 
                       <button
                         className="prevButton"
                         onClick={() =>
-                          test(allSongs[+key - 1].songUrl, allSongs[key].imageUrl)
+                          test(allSongs[+key - 1].songUrl)
                         }
                       >
                         <FaArrowCircleLeft />
@@ -157,20 +151,14 @@ export default function AlbumSongs({ userInfo }) {
                       <button
                         className="nextButton"
                         onClick={() =>
-                          test(allSongs[+key + 1].songUrl, allSongs[key].imageUrl)
+                          test(allSongs[+key + 1].songUrl)
                         }
                       >
                         <FaArrowCircleRight />
                       </button>
                     </>
-
                   )}
-
-
                 </div>
-
-
-
               </div>
 
               <div className="songTitleAndArtistDiv">
