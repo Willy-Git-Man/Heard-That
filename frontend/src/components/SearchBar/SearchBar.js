@@ -62,58 +62,48 @@ const SearchBar = ({ playing, setPlaying }) => {
 
               {playing !== song.songUrl && (
                 <div className="searchDivPlayButton"
-                style={{
-                  backgroundImage: `url(${song?.imageUrl})`,
-                }}
+                  style={{
+                    backgroundImage: `url(${song?.imageUrl})`,
+                  }}
                 >
-
-                <button
-                  className="searchDivPlayButton"
-                  onClick={() => test(song.songUrl, song.imageUrl)}
-
-
-                >
-                    {/* <i className="fab fa-grav"></i> */}
+                  <button
+                    className="searchDivPlayButton"
+                    onClick={() => test(song.songUrl, song.imageUrl)}
+                  >
                     <h3 className="songButtonH3">
-                      {" "}
-                      <FaPlayCircle />{" "}
+                      <FaPlayCircle />
                     </h3>
-                    {/* AiFillPlayCircle */}
-                </button>
+                  </button>
                 </div>
               )}
 
               {playing === song.songUrl && (
-                 <div className="searchDivPlayButton"
-                 style={{
-                   backgroundImage: `url(${song?.imageUrl})`,
-                 }}
-                 >
-                <button
-                  className="songDivButton"
-                  onClick={() => test("song.songUrl", "song.imageUrl")}
+                <div className="searchDivPlayButton"
                   style={{
-                    backgroundImage: `url(${allSongs[song]?.imageUrl})`,
+                    backgroundImage: `url(${song?.imageUrl})`,
                   }}
                 >
-                  <h3>
-                    {/* <i className="fab fa-grav"></i> */}
-                    <h3 className="songButtonH3">
-                      {" "}
-                      <FcDisplay />{" "}
+                  <button
+                    className="songDivButton"
+                    onClick={() => test("song.songUrl", "song.imageUrl")}
+                    style={{
+                      backgroundImage: `url(${allSongs[song]?.imageUrl})`,
+                    }}
+                  >
+                    <h3>
+                      <h3 className="songButtonH3">
+                        <FcDisplay />
+                      </h3>
                     </h3>
-                    {/* AiFillPlayCircle */}
-                  </h3>
-                </button>
+                  </button>
                 </div>
               )}
-            <div className="searchLi">
+              <div className="searchLi">
                 <li className="songListItemSearch">{song.songName}</li>
 
                 <li className="songListItemSearch">{song.artistName}</li>
               </div>
             </div>
-            // </div>
           ))}
 
         {allAlbums
