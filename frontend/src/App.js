@@ -18,8 +18,7 @@ export const PlayingContext = React.createContext();
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
-  // dispatch(getAllAlbumsThunk());
-  // dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+
 
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
@@ -29,24 +28,14 @@ function App() {
   const userInfo = useSelector((state) => state.session.user);
   const albumState = useSelector((state) => state.albums.albums);
 
-  // const songInfo = useSele/ctor((state) => state.songs);
-  //TODO: THIS LINE ^ IS KEEPING CAROUSEL WORKING
-
-  // if (!userInfo)
-  //   return (
-  //     <>
-  //       <LoginRoute />
-  //     </>
-  //   );
-
   return (
     <>
 
       <Switch>
         {!userInfo && (
-            <Route path="/">
-              <Redirect to="/" />
-        <LoginRoute />
+          <Route path="/">
+            <Redirect to="/" />
+            <LoginRoute />
 
           </Route>
         )}
