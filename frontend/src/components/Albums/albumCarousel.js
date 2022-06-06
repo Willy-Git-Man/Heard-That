@@ -147,20 +147,11 @@ export default function AlbumCarousel({ userInfo }) {
                 )}
 
                 {allAlbums[album].id !== +id && (
-                <h1 className="albumCarouselAlbumTitle" style={{
-                }}>
-                  {allAlbums[album]?.title}
-                </h1>
+                  <h1 className="albumCarouselAlbumTitle" style={{
+                  }}>
+                    {allAlbums[album]?.title}
+                  </h1>
                 )}
-
-
-                {/* <h1 className="albumCarouselAlbumTitle" style={{
-                }}>
-                  {allAlbums[album]?.title}
-                </h1> */}
-
-
-
               </NavLink>
             </div>
           </div>
@@ -169,14 +160,9 @@ export default function AlbumCarousel({ userInfo }) {
 
       <Slider className="test"
         {...lowerCarouselSettings}
-      // asNavFor={firstSlider}
-      // ref={(slider2) => setsecondSlider(slider2)}
       >
         <div className="mainAlbumsEachAlbumDiv2" key={allAlbums[+id]?.id}
-
-
         >
-
           <NavLink
             className="mainAlbumsEachAlbumDivNavLink"
             to={`/Albums/${allAlbums[+id]?.id}`}
