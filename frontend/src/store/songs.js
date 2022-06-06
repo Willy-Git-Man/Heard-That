@@ -5,18 +5,7 @@ const ADD_SONG = "songs/ADD_SONG";
 const UPDATE_SONG = "songs/UPDATE_SONG";
 const DELETE_SONG = "songs/DELETE_SONGS";
 
-
-
-
-
 const MOVE_SONG_ALBUM = 'albums/MOVE_SONG_ALBUM'
-
-
-
-
-
-
-
 
 const getAllSongs = (allSongs) => ({
   type: GET_ALL_SONGS,
@@ -39,27 +28,10 @@ const deleteSong = (songToDelete) => ({
 });
 
 
-
-
-
-
-
 const moveSongAlbum = (song) => ({
   type:MOVE_SONG_ALBUM,
   payload: song
 })
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export const getAllSongsThunk = () => async (dispatch) => {
@@ -87,9 +59,6 @@ export const addSongThunk = (newSong) => async (dispatch) => {
 
 
 
-
-
-
 export const addLikedSongThunk = (newSong) => async (dispatch) => {
   const response = await csrfFetch("/api/songs", {
     method: "POST",
@@ -102,15 +71,6 @@ export const addLikedSongThunk = (newSong) => async (dispatch) => {
     return songRequest;
   }
 };
-
-
-
-
-
-
-
-
-
 
 
 export const updateSongThunk = (updatedSong) => async (dispatch) => {
@@ -126,13 +86,6 @@ export const updateSongThunk = (updatedSong) => async (dispatch) => {
 };
 
 
-
-
-
-
-
-
-
 export const updateTestSongThunk = (updatedSong) => async (dispatch) => {
   const response = await csrfFetch(`/api/songs/${+updatedSong.id}`, {
     method: "PUT",
@@ -146,12 +99,6 @@ export const updateTestSongThunk = (updatedSong) => async (dispatch) => {
 };
 
 
-
-
-
-
-
-
 export const deleteSongThunk = (songIdToDelete) => async (dispatch) => {
   const response = await csrfFetch(`/api/songs/${songIdToDelete}`, {
     method: "DELETE",
@@ -160,7 +107,6 @@ export const deleteSongThunk = (songIdToDelete) => async (dispatch) => {
     dispatch(deleteSong(songIdToDelete));
   }
 };
-//seems like I need to grab the id from the argument not the whole thing
 
 const initialState = {songs: {}};
 
@@ -179,9 +125,7 @@ const songsReducer = (state = initialState, action) => {
       return newState;
 
     case DELETE_SONG:
-      // newState = {...state};
       newState= {...state, songs: {...state.songs}};
-
       const id = action.payload
       delete newState.songs[id]
       return newState;

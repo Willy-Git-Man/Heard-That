@@ -11,7 +11,6 @@ const DELETE_SONG = "songs/DELETE_SONGS";
 const getAllAlbums = (allAlbums) => ({
   type: GET_ALL_ALBUMS,
   payload: allAlbums,
-  // {allAlbums}
 });
 
 const getAlbumSongs = (albumSongs) => ({
@@ -86,21 +85,6 @@ export const deleteAlbumThunk = (albumToDelete) => async (dispatch) => {
   }
 };
 
-// export const deleteAlbumThunk = (albumToDelete) => async (dispatch) => {
-//   const deleteAlbumResponse = await csrfFetch(`/api/albums/${albumToDelete}`, {
-//     method: "DELETE",
-//   });
-
-//   const deleteAlbumSongResponse = await csrfFetch(`/api/albums/songs/${albumToDelete}`, {
-//     method: "DELETE",
-//   });
-//   if (deleteAlbumResponse.ok) {
-//     dispatch(deleteAlbum(albumToDelete))
-//   }
-//   if (deleteAlbumSongResponse.ok) {
-//     dispatch(deleteSong(albumToDelete))
-//   }
-// };
 
 const initialState = { albums: {} };
 
@@ -110,10 +94,7 @@ const albumsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_ALBUMS:
       newState = { ...state };
-
       action.payload.forEach((album) => (newState.albums[album.id] = album));
-      // newState = action.payload.albums
-
       return newState;
 
     case ADD_ALBUM:
@@ -125,10 +106,7 @@ const albumsReducer = (state = initialState, action) => {
 
     case DELETE_ALBUM:
       newState = { ...state, albums: { ...state.albums } };
-      // newState = { ...state, albums: { ...state.albums }, songs: {...state.songs} };
-
       delete newState.albums[action.payload];
-      // delete newState.songs[action.payload];
       return newState;
 
     case UPDATE_ALBUM:

@@ -1,24 +1,14 @@
 .songsMainDiv {
-  /* height: 100px; */
-  /* border: black solid 5px; */
   display: block;
-  /* margin-left: 1%; */
-  /* display: block; */
-  /* margin-bottom: 50px; */
   background-color: rgba(50, 80, 150, .9);
   background-color: rgba(0, 208, 255, 0.3);
   background-color: rgba(7, 158, 193, 0.6);
   background-color: black;
-  /* outline: solid black 5px; */
   position:absolute;
   width:100%;
   right:0;
   height: 60%;
   bottom: 10%;
-
-
-  /* margin-bottom: 60px; */
-  /* height: 100%; */
 }
 
 .songListDiv {
@@ -27,16 +17,9 @@
   flex-direction: row-reverse;
   height: 20%;
   min-height: 225px;
-
-  /* width: %; */
-  /* width: 75%; */
-  /* margin-top: 50px; */
   position: relative;
-  /* width: 150%; */
-  /* margin-left: 20%; */
   margin-top: 5%;
   min-width: 400px;
-  /* z-index: 99999; */
 }
 .songListDivSearch {
   display: flex;
@@ -44,28 +27,16 @@
   flex-direction: row-reverse;
   height: 20%;
   min-height: 225px;
-
-  /* width: %; */
-  /* width: 75%; */
-  /* margin-top: 50px; */
   position: relative;
-  /* width: 150%; */
-  /* margin-left: 20%; */
   margin-top: 5%;
-  /* min-width: 400px; */
-  /* z-index: 99999; */
 }
 
 .songImage {
 height: 60%;
-/* width: 70%; */
 position:absolute;
-/* opacity: .3; */
-/* height: 25vh; */
 z-index: 1;
 color: white;
 font-size: large;
-/* margin-bottom: 10%; */
 }
 
 .songUl {
@@ -128,36 +99,26 @@ font-size: large;
   width: 100%;
   display: flex;
   margin-top: 0;
-  /* color: white; */
   color: #E0E1DD;
   font-size: .85em;
-
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
 .songListItem {
-  /* background-color: black; */
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   width: 50%;
   margin: 0;
-  /* height: 85%; */
   padding: 0;
   list-style: none;
-  /* position:absolute; */
-  /* position: relative; */
   z-index: 1;
   list-style: none;
   padding-left: 0;
   font-size: 1.5em;
   position: relative;
-  /* margin-bottom: 2.5%; */
   color: #E0E1DD;
   font-size: 1.5em;
   width: 100%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
   }
   .songListItemSearch {
     list-style-type: none;
@@ -166,7 +127,6 @@ font-size: large;
   .songListItemUrl {
   margin-left: 20%;
   color: white;
-
   }
 
   .songDivTitle {
@@ -174,32 +134,25 @@ font-size: large;
   }
 
   .songsDiv {
-
     height: 60vh;
     margin-left: 10%;
     margin-top: 10vh;
     top: 30%;
     z-index: 999;
     position: absolute;
-  background-color: black;
+    background-color: black;
     width: 90%;
     overflow-y: scroll;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* background-image: url(../../../public/pics/mixtape.png); */
     background-size: auto;
-
   }
 
   .songsDiv::-webkit-scrollbar {
     display: none;
   }
-
-
-
-
 
   .songButtonsDiv {
     width: 20%;
@@ -207,24 +160,19 @@ font-size: large;
 
   .updateSongModalButton {
     background-color: #415A77;
-  color: #E0E1DD;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 75%;
-  width: 30%;
-  font-size: 1em;
-  border: none;
-
+    color: #E0E1DD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+    width: 30%;
+    font-size: 1em;
+    border: none;
   }
 
-
-
   .loginModalButton {
-    /* background-color: aqua; */
     background-image: url("../../../public/pics/loginTest.png");
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-/* color: black; */
     position: absolute;
     bottom: 0;
     left: 0;
@@ -247,17 +195,6 @@ font-size: large;
     border-radius: 10%;
   }
 
-
-
-
-  svg {
-    /* position: absolute; */
-    /* position: relative; */
-    /* bottom: 0; */
-  }
-
-
-
  .albumLink {
    z-index: 9999;
    color: white;
@@ -265,28 +202,16 @@ font-size: large;
    color: black;
  }
 
-
-
-
-
  .welcome {
   margin: 0;
  }
-
 
  .globalAudioPlayer {
    height: 10vh;
    position: absolute;
    bottom: 0;
    right: 0;
- width: 100vw;
- /* color: white;
- back */
+  width: 100vw;
  background-color: #1B263B;
- /* background: linear-gradient(#0D1B2A, #778DA9, #415A77, #778DA9, #0D1B2A); */
-
  }
 
- .rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
-/* background-color: black; */
- }
