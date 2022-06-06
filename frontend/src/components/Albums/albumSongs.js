@@ -27,27 +27,17 @@ import { FaPlayCircle } from "react-icons/fa";
 import { FcDisplay } from "react-icons/fc";
 
 export default function AlbumSongs({ userInfo }) {
-  const history = useHistory();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getAllAlbumsThunk());
-
     dispatch(getAllSongsThunk());
   }, [dispatch]);
+
   const { id } = useParams();
   const [playing, setPlaying] = useState("");
   const [pic, setPic] = useState("");
 
-  const allAlbums = useSelector((state) => state.albums.albums);
   const allSongs = useSelector((state) => state.songs.songs);
-  // console.log(Object.values(allSongs))
-  // const allSongsObjectKeys = Object.keys(allSongs);
-
-  // const allAlbumsObjectKeys = Object.keys(allAlbums).filter(
-  //   (el) => allAlbums[el].albumId === +id
-  // );
-
 
   const albumSongObjectValues = Object.values(allSongs).filter((song) => song.albumId === +id)
   console.log(albumSongObjectValues, allSongs)
@@ -62,12 +52,12 @@ export default function AlbumSongs({ userInfo }) {
     albumSongsObject[i] = albumSongObjectValues[i]
   }
 
-console.log('obj',albumSongsObject)
+  console.log('obj', albumSongsObject)
 
-const allSongsObjectKeys = Object.keys(albumSongsObject)
+  const allSongsObjectKeys = Object.keys(albumSongsObject)
 
 
-  console.log('allAlbumObjectKeys',allSongsObjectKeys,)
+  console.log('allAlbumObjectKeys', allSongsObjectKeys,)
 
   const test = (playing, pic) => {
     setPlaying(playing);
@@ -105,19 +95,28 @@ const allSongsObjectKeys = Object.keys(albumSongsObject)
         <MyAlbums userInfo={userInfo} />
 
         <div className="albumSongsListInnerDiv">
+
           {!allAlbumsObjectKeys.length && <h1>Add Songs To Enjoy The Music!</h1>}
 
           {allAlbumsObjectKeys.map((key) => (
 
             <div className="everySongDiv" key={key} alt="Broken Img Url">
-              <div className="songImageAndPlayButton">
-                {playing !== allSongs[key].songUrl && (
 
-                  <div className="albumDivPlayButton"
-                    style={{
-                      backgroundImage: `url(${allSongs[key]?.imageUrl})`,
-                    }}
-                  >
+
+              <div className="songImageAndPlayButton">
+
+
+
+
+                {/* {playing !== allSongs[key].songUrl && ( */}
+
+                <div className="albumDivPlayButton"
+                  style={{
+                    backgroundImage: `url(${allSongs[key]?.imageUrl})`,
+                  }}
+                >
+                  {playing !== allSongs[key].songUrl && (
+
                     <button
                       className="songDivButton"
                       onClick={() =>
@@ -131,70 +130,47 @@ const allSongsObjectKeys = Object.keys(albumSongsObject)
                         <FaPlayCircle />
                       </h3>
                     </button>
-                  </div>
-                )}
+                  )}
+
+                  {playing === allSongs[key].songUrl && (
+                    <>
+                      <button
+                        className="songDivButton"
+                        onClick={() =>
+                          test("allSongs[key].songUrl", "allSongs[key].imageUrl")
+                        }
+                      >
+                        <h3 className="songButtonH3">
+                          <FcDisplay />
+                        </h3>
+                      </button>
+
+                      <button
+                        className="prevButton"
+                        onClick={() =>
+                          test(allSongs[+key - 1].songUrl, allSongs[key].imageUrl)
+                        }
+                      >
+                        <FaArrowCircleLeft />
+
+                      </button>
+                      <button
+                        className="nextButton"
+                        onClick={() =>
+                          test(allSongs[+key + 1].songUrl, allSongs[key].imageUrl)
+                        }
+                      >
+                        <FaArrowCircleRight />
+                      </button>
+                    </>
+
+                  )}
 
 
-                {playing === allSongs[key].songUrl && (
-                  <div className="albumDivPlayButton"
-
-                    style={{
-                      backgroundImage: `url(${allSongs[key]?.imageUrl})`,
-                    }}>
-                    <button
-                      className="songDivButton"
-                      onClick={() =>
-                        test("allSongs[key].songUrl", "allSongs[key].imageUrl")
-                      }
-                    >
-                      <h3 className="songButtonH3">
-                        <FcDisplay />
-                      </h3>
-                    </button>
-
-                    <button
-                      className="prevButton"
-                      onClick={() =>
-                        test(allSongs[+key - 1].songUrl, allSongs[key].imageUrl)
-                      }
-                    >
-                      <FaArrowCircleLeft />
-
-                    </button>
-                    <button
-                      className="nextButton"
-                      onClick={() =>
-                        test(allSongs[+key + 1].songUrl, allSongs[key].imageUrl)
-                      }
-                    >
-                      <FaArrowCircleRight />
-                    </button>
-                  </div>
+                </div>
 
 
-                )}
 
-                {/* {playing === allSongs[key].songUrl && (
-        <>
-            <button
-                      className="prevButton"
-                      onClick={() =>
-                        test(allSongs[+key - 1].songUrl, allSongs[key].imageUrl)
-                      }
-                    >
-                      <FaArrowCircleLeft />
-
-                    </button>
-                    <button
-                      className="nextButton"
-                      onClick={() =>
-                        test(allSongs[+key + 1].songUrl, allSongs[key].imageUrl)
-                      }
-                    >
-                      <FaArrowCircleRight />
-                    </button>
-        </>
-      )} */}
               </div>
 
               <div className="songTitleAndArtistDiv">
