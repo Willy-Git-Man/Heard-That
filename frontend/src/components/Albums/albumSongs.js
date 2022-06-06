@@ -42,6 +42,8 @@ export default function AlbumSongs({ userInfo }) {
   const allAlbums = useSelector((state) => state.albums.albums);
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectKeys = Object.keys(allSongs);
+
+  
   const testing = allSongsObjectKeys.filter(
     (el) => allSongs[el].albumId === +id
   );
@@ -150,6 +152,28 @@ export default function AlbumSongs({ userInfo }) {
 
 
                 )}
+
+                {/* {playing === allSongs[key].songUrl && (
+        <>
+            <button
+                      className="prevButton"
+                      onClick={() =>
+                        test(allSongs[+key - 1].songUrl, allSongs[key].imageUrl)
+                      }
+                    >
+                      <FaArrowCircleLeft />
+
+                    </button>
+                    <button
+                      className="nextButton"
+                      onClick={() =>
+                        test(allSongs[+key + 1].songUrl, allSongs[key].imageUrl)
+                      }
+                    >
+                      <FaArrowCircleRight />
+                    </button>
+        </>
+      )} */}
               </div>
 
               <div className="songTitleAndArtistDiv">
@@ -172,6 +196,7 @@ export default function AlbumSongs({ userInfo }) {
 
       </div>
       <AudioPlayerGlobal playing={playing} pic={pic} />
+
     </div>
   );
 }
