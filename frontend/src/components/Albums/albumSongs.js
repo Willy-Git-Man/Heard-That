@@ -56,9 +56,18 @@ export default function AlbumSongs({ userInfo }) {
     (el) => allSongs[el].albumId === +id
   );
 
+  const albumSongsObject = {}
+
+  for (let i = 0; i < allAlbumsObjectKeys.length; i++) {
+    albumSongsObject[i] = albumSongObjectValues[i]
+  }
+
+console.log('obj',albumSongsObject)
+
+const allSongsObjectKeys = Object.keys(albumSongsObject)
 
 
-  console.log(allAlbumsObjectKeys)
+  console.log('allAlbumObjectKeys',allSongsObjectKeys,)
 
   const test = (playing, pic) => {
     setPlaying(playing);

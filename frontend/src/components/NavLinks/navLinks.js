@@ -16,7 +16,9 @@ export default function NavLinks({ playing, setPlaying, pic }) {
 
   return (
     <>
+
       <div className="navLinkUpper">
+
         <NavLink
           className="logoTopLeft"
           activeClassName="logoTopLeft"
@@ -29,22 +31,22 @@ export default function NavLinks({ playing, setPlaying, pic }) {
 
         <ProfileButton user={userInfo} />
         <span className="navUpperBottomLine"></span>
+        
       </div>
-      <div className="sideBarLower">
 
+      <div className="sideBarLower">
 
         <AlbumNavLinks allAlbums={allAlbums} />
         <SearchBar playing={playing} setPlaying={setPlaying} />
+
         <div className="socialLinks">
+          <div className="gitLinkedInDivs">
+            <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><h2><FaGithub /></h2></a>
 
-        <div className="gitLinkedInDivs">
-
-<a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><h2><FaGithub /></h2></a>
-{/* <br></br> */}
-
-<a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><h2><FaLinkedinIn /></h2></a>
-</div>
+            <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><h2><FaLinkedinIn /></h2></a>
+          </div>
         </div>
+
       </div>
     </>
   );
