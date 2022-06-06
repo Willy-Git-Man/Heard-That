@@ -41,13 +41,24 @@ export default function AlbumSongs({ userInfo }) {
 
   const allAlbums = useSelector((state) => state.albums.albums);
   const allSongs = useSelector((state) => state.songs.songs);
-  const allSongsObjectKeys = Object.keys(allSongs);
+  // console.log(Object.values(allSongs))
+  // const allSongsObjectKeys = Object.keys(allSongs);
 
-  
-  const testing = allSongsObjectKeys.filter(
+  // const allAlbumsObjectKeys = Object.keys(allAlbums).filter(
+  //   (el) => allAlbums[el].albumId === +id
+  // );
+
+
+  const albumSongObjectValues = Object.values(allSongs).filter((song) => song.albumId === +id)
+  console.log(albumSongObjectValues, allSongs)
+
+  const allAlbumsObjectKeys = Object.keys(allSongs).filter(
     (el) => allSongs[el].albumId === +id
   );
-  console.log("run it", testing);
+
+
+
+  console.log(allAlbumsObjectKeys)
 
   const test = (playing, pic) => {
     setPlaying(playing);
@@ -85,9 +96,10 @@ export default function AlbumSongs({ userInfo }) {
         <MyAlbums userInfo={userInfo} />
 
         <div className="albumSongsListInnerDiv">
-          {!testing.length > 0 && <h1>Add Songs To Enjoy The Music!</h1>}
+          {!allAlbumsObjectKeys.length && <h1>Add Songs To Enjoy The Music!</h1>}
 
-          {testing.map((key) => (
+          {allAlbumsObjectKeys.map((key) => (
+
             <div className="everySongDiv" key={key} alt="Broken Img Url">
               <div className="songImageAndPlayButton">
                 {playing !== allSongs[key].songUrl && (

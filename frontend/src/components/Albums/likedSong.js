@@ -41,7 +41,7 @@ export default function AlbumSongs({ userInfo }) {
       userId: userInfo.id,
     };
 
-    const newSong = await  dispatch(addLikedSongThunk(likedSongPayload));
+    const newSong = await dispatch(addLikedSongThunk(likedSongPayload));
     if (newSong) {
       setShowModal(false);
       history.push("/Albums/1");
@@ -82,7 +82,6 @@ export default function AlbumSongs({ userInfo }) {
             .map((key) => (
               <div
                 className="everySongDiv"
-                // style={{ backgroundImage: `url(${allSongs[key].imageUrl})` }}
                 alt="Broken Img Url"
                 onclick={() => setPlaying(allSongs[key].songUrl)}
               >
@@ -93,17 +92,13 @@ export default function AlbumSongs({ userInfo }) {
                 />
                 <button
                   className="songDivButton"
-                  // style={{
-                  //   backgroundImage: `url(${allSongs[key].imageUrl})`,
-                  // }}
+
                   onClick={() =>
                     test(allSongs[key].songUrl, allSongs[key].imageUrl)
                   }
                 >
-                  {/* <i className="fas fa-user-circle" /> */}
                   <h1 className="playButton">Play</h1>
 
-                  {/* <i className="fab fa-grav"></i> */}
                 </button>
                 <div>
                   <li className="songListItem">{allSongs[key].songName}</li>
@@ -111,14 +106,14 @@ export default function AlbumSongs({ userInfo }) {
                   <li className="songListItem">{allSongs[key].artistName}</li>
                 </div>
                 <div>
-                <UpdateSongModal songId={allSongs[key].id} />
+                  <UpdateSongModal songId={allSongs[key].id} />
 
-<button
-  className="deleteSongButto"
-  onClick={() => deleteDispatch(allSongs[key].id)}
->
-  <i className="far fa-trash-alt"></i>
-</button>
+                  <button
+                    className="deleteSongButto"
+                    onClick={() => deleteDispatch(allSongs[key].id)}
+                  >
+                    <i className="far fa-trash-alt"></i>
+                  </button>
                 </div>
               </div>
             ))}
