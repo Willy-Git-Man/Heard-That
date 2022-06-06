@@ -52,7 +52,7 @@ export default function AlbumSongs({ userInfo }) {
     albumSongsObject[i] = albumSongObjectValues[i]
   }
 
-  console.log('obj', albumSongsObject[0].songUrl)
+  // console.log('obj', albumSongsObject[0].songUrl)
 
   const allSongsObjectKeys = Object.keys(albumSongsObject)
 
