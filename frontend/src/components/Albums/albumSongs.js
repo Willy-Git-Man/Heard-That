@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllSongsThunk } from "../../store/songs";
 
@@ -21,12 +21,6 @@ import { FaPlayCircle } from "react-icons/fa";
 
 
 export default function AlbumSongs({ userInfo }) {
-  const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   // dispatch(getAllSongsThunk());
-
-  // }, [dispatch]);
 
   const { id } = useParams();
   const [pic, setPic] = useState("");

@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useHistory } from "react-router-dom";
+import {useHistory } from "react-router-dom";
 import "./index.css";
-import { getAllSongsThunk } from "../../store/songs";
-import AudioPlayer from "react-h5-audio-player";
-import NavLinks from "../NavLinks/navLinks";
 
 import { FaPlayCircle } from "react-icons/fa";
 import { FcDisplay } from "react-icons/fc";
@@ -14,12 +11,12 @@ const SearchBar = ({ playing, setPlaying }) => {
   const [songs, setSongs] = useState([]);
   const [pic, setPic] = useState([]);
 
-  const dispatch = useDispatch();
   const history = useHistory();
 
-  useEffect(() => {
-    dispatch(getAllSongsThunk());
-  }, [dispatch]);
+
+
+
+
   const allSongs = Object.values(useSelector((state) => state.songs.songs));
   const allAlbums = Object.values(useSelector((state) => state.albums.albums));
 
