@@ -39,6 +39,8 @@ export default function AlbumSongs({ userInfo }) {
 
   const allSongs = useSelector((state) => state.songs.songs);
 
+  const allSongsArray = Object.values(allSongs)
+
   const albumSongObjectValues = Object.values(allSongs).filter((song) => song.albumId === +id)
 
   const allAlbumsObjectKeys = Object.keys(allSongs).filter(
@@ -52,6 +54,11 @@ export default function AlbumSongs({ userInfo }) {
   }
 
   const allSongsObjectKeys = Object.keys(albumSongsObject)
+
+
+  const allAlbumSongsArray = allSongsArray.filter((song) => song.albumId === +id)
+
+  console.log(allAlbumSongsArray)
 
 
 
@@ -93,8 +100,80 @@ export default function AlbumSongs({ userInfo }) {
         <div className="albumSongsListInnerDiv">
 
           {!allAlbumsObjectKeys.length && <h1>Add Songs To Enjoy The Music!</h1>}
+          {allAlbumSongsArray.map((song, i) => (
+            <div className="everySongDiv">
 
-          {allAlbumsObjectKeys.map((key) => (
+
+              {playing !== song.songUrl && (
+
+                <button
+                  className="songDivButton"
+                  onClick={() =>
+                    test(song.songUrl, song.imageUrl)
+                  }
+                  style={{
+                    backgroundImage: `url(${song?.imageUrl})`,
+                  }}
+                >
+                  <h3 className="songButtonH3">
+                    <FaPlayCircle />
+                  </h3>
+                </button>
+              )}
+
+{playing === song.songUrl && (
+                    <>
+                      <div
+                        className="songDivButton"
+                        onClick={() =>
+                          test("song.songUrl", "song.imageUrl")
+                        }
+                      >
+                        <h3 className="songButtonH3">
+                          <FcDisplay />
+                        </h3>
+                      </div>
+
+                      <button
+                        className="prevButton"
+                        onClick={() =>
+                          test(allAlbumSongsArray[i - 1].songUrl)
+                        }
+                      >
+                        <FaArrowCircleLeft />
+
+                      </button>
+                      <button
+                        className="nextButton"
+                        onClick={() =>
+                          test(allAlbumSongsArray[i + 1].songUrl)
+                        }
+                      >
+                        <FaArrowCircleRight />
+                      </button>
+                    </>
+                  )}
+
+
+
+              <div className="songTitleAndArtistDiv">
+                <div className="songTitleAndArtistDivs">
+                  <p className="songDescription">Title</p>
+                  <li className="songListItem">{song.songName}</li>
+                </div>
+                <div className="songTitleAndArtistDivs">
+                  <p className="songDescription">Artist</p>
+
+                  <li className="songListItem">{song.artistName}</li>
+                </div>
+              </div>
+
+
+
+            </div>
+          ))}
+
+          {/* {allAlbumsObjectKeys.map((key) => (
 
             <div className="everySongDiv" key={key} alt="Broken Img Url">
 
@@ -171,7 +250,7 @@ export default function AlbumSongs({ userInfo }) {
 
               <SongButtonDots songId={allSongs[key].id} />
             </div>
-          ))}
+          ))} */}
         </div>
 
 
