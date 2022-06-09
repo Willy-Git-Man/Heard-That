@@ -14,6 +14,7 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FcDisplay } from "react-icons/fc";
 import { FaPlayCircle } from "react-icons/fa";
+import SongButtonDots from "../Songs/songButtonDots";
 
 
 
@@ -105,7 +106,7 @@ export default function AlbumSongs({ userInfo }) {
                   >
                     <FaArrowCircleLeft />
                   </button>
-                  
+
                   <button
                     className="nextButton"
                     onClick={() =>
@@ -128,6 +129,8 @@ export default function AlbumSongs({ userInfo }) {
                   <li className="songListItem">{song.artistName}</li>
                 </div>
               </div>
+
+              <SongButtonDots />
 
             </div>
           ))}
