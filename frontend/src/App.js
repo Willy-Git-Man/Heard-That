@@ -12,6 +12,8 @@ import ProtectedRoute from "./components/Auth/ProtectedRoute";
 import LoginFormModal from "./components/Auth/LoginFormModal";
 import SignupFormModal from "./components/Auth/SignupFormModal";
 import { getAllAlbumsThunk } from "./store/albums";
+import { getAllSongsThunk } from "./store/songs";
+
 import LoginRoute from "./components/Auth/LoginRoute";
 export const PlayingContext = React.createContext();
 
@@ -22,6 +24,8 @@ function App() {
 
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
+    dispatch(getAllSongsThunk());
+
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
