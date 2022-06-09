@@ -130,7 +130,7 @@ export default function AlbumSongs({ userInfo }) {
                 </div>
               </div>
 
-              <SongButtonDots />
+              <SongButtonDots songId={song.id}/>
 
             </div>
           ))}
