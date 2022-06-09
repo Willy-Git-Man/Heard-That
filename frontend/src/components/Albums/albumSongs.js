@@ -1,30 +1,21 @@
-import { useEffect, useState, createContext } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
-import { getAllAlbumsThunk } from "../../store/albums";
-import {
-  addLikedSongThunk,
-  deleteSongThunk,
-  getAllSongsThunk,
-  updateTestSongThunk,
-} from "../../store/songs";
-import "./albums.css";
-// import { FaGithub } from "react-icons/fa";
-import { FaArrowCircleLeft } from "react-icons/fa";
-import { FaArrowCircleRight } from "react-icons/fa";
-import "react-h5-audio-player/lib/styles.css";
+import { useParams } from "react-router-dom";
+import { getAllSongsThunk } from "../../store/songs";
 
-
-
-
-import NavLinks from "../NavLinks/navLinks";
 import MyAlbums from ".";
-import UpdateSongModal from "../Songs/UpdateSongModal";
-import SongButtonDots from "../Songs/songButtonDots";
+import NavLinks from "../NavLinks/navLinks";
 import AudioPlayerGlobal from "../NavLinks/audioPlayer";
 
-import { FaPlayCircle } from "react-icons/fa";
+import "./albums.css";
+import "react-h5-audio-player/lib/styles.css";
+import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleLeft } from "react-icons/fa";
 import { FcDisplay } from "react-icons/fc";
+import { FaPlayCircle } from "react-icons/fa";
+
+
+
 
 export default function AlbumSongs({ userInfo }) {
   const dispatch = useDispatch();
@@ -41,24 +32,7 @@ export default function AlbumSongs({ userInfo }) {
 
   const allSongsArray = Object.values(allSongs)
 
-  const albumSongObjectValues = Object.values(allSongs).filter((song) => song.albumId === +id)
-
-  const allAlbumsObjectKeys = Object.keys(allSongs).filter(
-    (el) => allSongs[el].albumId === +id
-  );
-
-  const albumSongsObject = {}
-
-  for (let i = 0; i < allAlbumsObjectKeys.length; i++) {
-    albumSongsObject[i] = albumSongObjectValues[i]
-  }
-
-  const allSongsObjectKeys = Object.keys(albumSongsObject)
-
-
   const allAlbumSongsArray = allSongsArray.filter((song) => song.albumId === +id)
-
-  console.log(allAlbumSongsArray)
 
 
 
@@ -99,7 +73,7 @@ export default function AlbumSongs({ userInfo }) {
 
         <div className="albumSongsListInnerDiv">
 
-          {!allAlbumsObjectKeys.length && <h1>Add Songs To Enjoy The Music!</h1>}
+          {!allAlbumSongsArray.length && <h1>Add Songs To Enjoy The Music!</h1>}
           {allAlbumSongsArray.map((song, i) => (
             <div className="everySongDiv">
 
