@@ -74,18 +74,10 @@ h2 {
   height: 100%;
   border: none;
   font-size: 2em;
-  /* margin-right: 10%; */
-
   background-position: 10px center;
-
   background-size: cover;
-  width: 100%;
-  /* border-radius: 25
-  %; */
-  /* min-width: 50px; */
+  width: 50%;
   background-position: 50% 50%;
-
-  /* opacity: .5; */
 }
 
 .songButtonH3 {

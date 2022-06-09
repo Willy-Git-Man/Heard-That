@@ -104,6 +104,8 @@ export default function AlbumSongs({ userInfo }) {
             <div className="everySongDiv">
 
 
+
+
               {playing !== song.songUrl && (
 
                 <button
@@ -121,38 +123,34 @@ export default function AlbumSongs({ userInfo }) {
                 </button>
               )}
 
-{playing === song.songUrl && (
-                    <>
-                      <div
-                        className="songDivButton"
-                        onClick={() =>
-                          test("song.songUrl", "song.imageUrl")
-                        }
-                      >
-                        <h3 className="songButtonH3">
-                          <FcDisplay />
-                        </h3>
-                      </div>
 
-                      <button
-                        className="prevButton"
-                        onClick={() =>
-                          test(allAlbumSongsArray[i - 1].songUrl)
-                        }
-                      >
-                        <FaArrowCircleLeft />
+              {playing === song.songUrl && (
+                <>
+                  <div className="songDivButton">
+                    <h3 className="songButtonH3">
+                      <FcDisplay />
+                    </h3>
+                  </div>
 
-                      </button>
-                      <button
-                        className="nextButton"
-                        onClick={() =>
-                          test(allAlbumSongsArray[i + 1].songUrl)
-                        }
-                      >
-                        <FaArrowCircleRight />
-                      </button>
-                    </>
-                  )}
+                  <button
+                    className="prevButton"
+                    onClick={() =>
+                      test(allAlbumSongsArray[i - 1].songUrl)
+                    }
+                  >
+                    <FaArrowCircleLeft />
+
+                  </button>
+                  <button
+                    className="nextButton"
+                    onClick={() =>
+                      test(allAlbumSongsArray[i + 1].songUrl)
+                    }
+                  >
+                    <FaArrowCircleRight />
+                  </button>
+                </>
+              )}
 
 
 
