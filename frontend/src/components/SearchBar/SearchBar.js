@@ -54,8 +54,8 @@ const SearchBar = ({ playing, setPlaying }) => {
             )
               return song;
           })
-          .map((song) => (
-            <div className="albumSongListDivSearch" key={song.id} >
+          .map((song, i) => (
+            <div className="albumSongListDivSearch" key={i} >
 
               {playing !== song.songUrl && (
                 <div className="searchDivPlayButton"
@@ -111,12 +111,13 @@ const SearchBar = ({ playing, setPlaying }) => {
             )
               return album;
           })
-          .map((album) => (
+          .map((album,i) => (
             <div
               href="/Albums/1"
               className="albumDivButton"
               style={{ backgroundImage: `url(${album.imageUrl})` }}
               onClick={() => albumSearchHistoryPush(album.id)}
+              keu={i}
             >
               <h3 className="albumSearchName">{album.title}</h3>
             </div>
