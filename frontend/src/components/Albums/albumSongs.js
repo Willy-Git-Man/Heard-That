@@ -82,11 +82,20 @@ export default function AlbumSongs({ userInfo }) {
 
               {playing === song.songUrl && (
                 <>
-                  <div className="songDivButtonActive">
-                    <h3 className="songButtonH3">
-                      <FcDisplay />
-                    </h3>
-                  </div>
+                 <button
+                  className="songDivButton"
+                  onClick={() =>
+                    test("", song.imageUrl)
+                  }
+                  style={{
+                    backgroundImage: `url(${song?.imageUrl})`,
+                  }}
+                >
+                  <h3 className="songButtonH3">
+                    <FcDisplay />
+
+                  </h3>
+                </button>
 
                   <button
                     className="prevButton"
@@ -95,8 +104,8 @@ export default function AlbumSongs({ userInfo }) {
                     }
                   >
                     <FaArrowCircleLeft />
-
                   </button>
+                  
                   <button
                     className="nextButton"
                     onClick={() =>
@@ -107,8 +116,6 @@ export default function AlbumSongs({ userInfo }) {
                   </button>
                 </>
               )}
-
-
 
               <div className="songTitleAndArtistDiv">
                 <div className="songTitleAndArtistDivs">
@@ -122,16 +129,12 @@ export default function AlbumSongs({ userInfo }) {
                 </div>
               </div>
 
-
-
             </div>
           ))}
-
-
         </div>
-
-
       </div>
+
+
       <AudioPlayerGlobal playing={playing} pic={pic} />
 
     </div>

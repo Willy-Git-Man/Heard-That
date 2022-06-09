@@ -26,7 +26,7 @@ function App() {
     dispatch(getAllAlbumsThunk());
     dispatch(getAllSongsThunk());
 
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    // dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
   const userInfo = useSelector((state) => state.session.user);

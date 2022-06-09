@@ -4,23 +4,12 @@ const GET_ALL_ALBUMS = "albums/GET_ALL_ALBUMS";
 const ADD_ALBUM = "albums/ADD_ALBUM";
 const UPDATE_ALBUM = "albums/UPDATE_ALBUM";
 const DELETE_ALBUM = "albums/DELETE_ALBUM";
-const GET_ALBUM_SONGS = "albums/GET_ALBUM_SONGS";
 
-const DELETE_SONG = "songs/DELETE_SONGS";
+
 
 const getAllAlbums = (allAlbums) => ({
   type: GET_ALL_ALBUMS,
   payload: allAlbums,
-});
-
-const getAlbumSongs = (albumSongs) => ({
-  type: GET_ALBUM_SONGS,
-  payload: albumSongs,
-});
-
-const deleteSong = (songToDelete) => ({
-  type: DELETE_SONG,
-  payload: songToDelete,
 });
 
 const addAlbum = (newAlbum) => ({
