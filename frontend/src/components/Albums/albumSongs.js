@@ -126,7 +126,7 @@ export default function AlbumSongs({ userInfo }) {
 
               {playing === song.songUrl && (
                 <>
-                  <div className="songDivButton">
+                  <div className="songDivButtonActive">
                     <h3 className="songButtonH3">
                       <FcDisplay />
                     </h3>
