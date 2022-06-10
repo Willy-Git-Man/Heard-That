@@ -420,6 +420,7 @@ h2 {
 .albumCarouselAlbumTitleLower {
   background-color: #0d1b2a;
   opacity: 0.8;
+  font-size: 5em;
   width: 100%;
   height: 100%;
   display: flex;
