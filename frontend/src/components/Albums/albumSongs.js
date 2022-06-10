@@ -65,68 +65,34 @@ export default function AlbumSongs({ userInfo }) {
 
               {playing !== song.songUrl && (
 
-                <button
-                  className="songDivButton"
-                  onClick={() =>
-                    test(song.songUrl, song.imageUrl)
-                  }
-                  // style={{
-                  //   backgroundImage: `url(${song?.imageUrl})`,
-                  // }}
-                >
-                  <h3 className="songButtonH3">
-                    <FaPlayCircle />
-                  </h3>
+                <button className="songDivButton" onClick={() => test(song.songUrl, song.imageUrl)}>
+                  <FaPlayCircle />
                 </button>
               )}
 
 
-              {playing === song.songUrl && (
-                <>
-                 <button
-                  className="songDivButton"
-                  onClick={() =>
-                    test("", song.imageUrl)
-                  }
-                  // style={{
-                  //   backgroundImage: `url(${song?.imageUrl})`,
-                  // }}
-                >
+              {playing === song.songUrl && ( <>
+                  <button className="songDivButton" onClick={() => test("", song.imageUrl)}  >
                     <FcDisplay />
-
-                </button>
+                  </button>
 
                   <button
-                    className="prevButton"
-                    onClick={() =>
-                      test(allAlbumSongsArray[i - 1].songUrl)
-                    }
-                  >
+                    className="prevButton" onClick={() => test(allAlbumSongsArray[i - 1].songUrl)}>
                     <FaArrowCircleLeft />
                   </button>
 
                   <button
-                    className="nextButton"
-                    onClick={() =>
-                      test(allAlbumSongsArray[i + 1].songUrl)
-                    }
-                  >
+                    className="nextButton" onClick={() => test(allAlbumSongsArray[i + 1].songUrl)}>
                     <FaArrowCircleRight />
                   </button>
-                </>
-              )}
+                </>)}
 
-              <div className="songTitleAndArtistDiv">
-                <div className="songTitleAndArtistDivs">
+              <ul className="songTitleAndArtistDiv">
                   <li className="songListItem">{song.songName}</li>
-                </div>
-                <div className="songTitleAndArtistDivs">
-
                   <li className="songListItem">{song.artistName}</li>
-                </div>
-              </div>
+              </ul>
 
-              <SongButtonDots songId={song.id}/>
+              <SongButtonDots songId={song.id} />
 
             </div>
           ))}
