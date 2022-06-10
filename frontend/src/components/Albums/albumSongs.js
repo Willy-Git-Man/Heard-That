@@ -92,10 +92,8 @@ export default function AlbumSongs({ userInfo }) {
                   //   backgroundImage: `url(${song?.imageUrl})`,
                   // }}
                 >
-                  <h3 className="songButtonH3">
                     <FcDisplay />
 
-                  </h3>
                 </button>
 
                   <button
