@@ -153,13 +153,7 @@ background-color: #0d1b2a;
 
 }
 
-.formDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  width: 100%;
-}
+
 
 .loginInputs {
   background-color: #fafafa;

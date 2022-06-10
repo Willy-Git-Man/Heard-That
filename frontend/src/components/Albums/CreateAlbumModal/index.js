@@ -37,7 +37,7 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
     e.preventDefault();
 
     const newAlbumPayload = {
-      
+
       title,
       imageUrl,
       userId: userInfo.id,
@@ -51,8 +51,10 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
   };
   return (
     <>
-      <div className="createNewSongDiv">
-        <form className="createNewSongForm" onSubmit={handleSubmit}>
+      <div className="createAlbumFormDiv">
+      <h3 className='createSongTitle'>Add Playlist</h3>
+
+        <form className="formDivAlbum" onSubmit={handleSubmit}>
           <ul className="errors">
             {errors.map((error) => (
               <li key={error}>{error}</li>
@@ -60,6 +62,8 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
           </ul>
           <label htmlFor="albumTitle">Album Name: </label>
           <input
+          className="createSongInput"
+
             type="text"
             name="albumTitle"
             value={title}
@@ -69,6 +73,8 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
 
           <label htmlFor="albumImage">Image Url: </label>
           <input
+          className="createSongInput"
+
             type="text"
             name="albumImage"
             value={imageUrl}
@@ -76,7 +82,7 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
             required
           />
 
-          <button className="createAlbumButton" type="submit">
+          <button className="createSongButton" type="submit">
             Create
           </button>
         </form>

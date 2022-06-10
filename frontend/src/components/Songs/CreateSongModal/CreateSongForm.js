@@ -72,8 +72,9 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
   };
   return (
     <>
-      <div className="createNewSongDiv">
-        <form className="createNewSongForm" onSubmit={handleSubmit}>
+      <div className="createSongFormDiv">
+      <h3 className='createSongTitle'>Add Song</h3>
+        <form className="formDiv" onSubmit={handleSubmit}>
           <ul className="errors">
             {errors.map((error) => (
               <li key={error}>{error}</li>
@@ -81,15 +82,18 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
           </ul>
           <label htmlFor="songNameLabel">Song Name: </label>
           <input
+          className="createSongInput"
             type="text"
             name="songName"
             value={songName}
+
             onChange={newSongName}
             required
           />
 
           <label htmlFor="artistNameLabel">Artist Name: </label>
           <input
+          className="createSongInput"
             type="text"
             name="artistName"
             value={artistName}
@@ -99,6 +103,7 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
 
           <label htmlFor="songUrlLabel">Song Url: </label>
           <input
+          className="createSongInput"
             type="text"
             name="songUrl"
             value={songUrl}
@@ -106,14 +111,14 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
             required
           />
 
-          <label htmlFor="imageUrlLabel">Image Url: </label>
+          {/* <label htmlFor="imageUrlLabel">Image Url: </label>
           <input
             type="text"
             name="imageUrl"
             value={imageUrl}
             onChange={newImageUrl}
             required
-          />
+          /> */}
           {/*
           <label htmlFor="albumIdLabel"></label>
           <input
@@ -127,6 +132,7 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
           <select
             type="text"
             name="albumId"
+            className="createSongInput"
             value={albumId}
             onChange={newAlbumId}
             required
