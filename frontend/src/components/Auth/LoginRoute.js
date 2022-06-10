@@ -11,9 +11,8 @@ import SignupFormModal from "./SignupFormModal";
 import LoginFormModal from "./LoginFormModal";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
-import './index.css'
+import HeardThatLogin from '../Images/HeardThatLogin.png'
 
-import { NavLink } from "react-router-dom";
 import LoginForm from "./LoginFormModal/LoginForm";
 
 export const PlayingContext = React.createContext();
@@ -31,23 +30,27 @@ function LoginRoute() {
     return (
       <>
         <div className="loginMainDiv">
+
+
       <div className="loginLeftSideDiv">
+        <h1>Welcome to Heard That</h1>
+      <img src={HeardThatLogin} className="loginImage"/>
 
-          <div className="profileDiv" >
 
 
-          </div>
-      </div>
-            <div className="loginDiv">
-              <LoginForm />
-            </div>
           <div className="gitLinkedInDivsSplash">
 
             <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><h2><FaGithub /></h2></a>
 
             <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><h2><FaLinkedinIn /></h2></a>
           </div>
+      </div>
+            <div className="loginDiv">
+              <LoginForm />
+            </div>
         </div>
+
+        
       </>
     );
 }
