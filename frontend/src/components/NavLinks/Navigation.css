@@ -1,7 +1,7 @@
 .loginMainDiv {
 display: flex;
 justify-content: center;
-height: 100%;
+height: 90%;
 width: 100%;
 }
 
@@ -158,13 +158,24 @@ width: 100%;
 .loginInputs {
   background-color: #fafafa;
   border: 1px solid #dddcdc;
-  font-size: small;
+  font-size: larger;
   padding: 5px;
   border-radius: 3px;
   box-sizing: border-box;
   width: 50%;
   height: 2.5vh;
   margin-bottom: 1vh;
+}
+
+.footer {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+.footer-content {
+
 }
 
 
@@ -218,4 +229,113 @@ width: 100%;
   height: 100vh;
   position: absolute;
   z-index: -1;
+}
+
+
+
+.footer{
+	background: #415a77;
+	width: 100%;
+	font: bold 3em;
+	padding: 1%;
+}
+
+
+.footer-left{
+	width: 40%;
+}
+
+.footer h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+
+
+.footer .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+
+.footer-center{
+	width: 35%;
+}
+
+.footer-center i{
+	color: #e0e1dd;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-center p{
+	display: inline-block;
+	color: #e0e1dd;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer .footer-center p a{
+	color:  #e0e1dd;
+	text-decoration: none;;
+}
+
+.footer .footer-links a:before {
+  font-weight:300;
+  font-size: 20px;
+  color: #e0e1dd;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-right{
+	width: 20%;
+}
+
+
+.footer .footer-company-about{
+	display: block;
+	color:  #e0e1dd;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-icons a{
+	font-size: 2em;
+	color: #e0e1dd;
+	text-align: center;
+	line-height: 35px;
+}
+
+.footerName {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.footerName span {
+  color: black;
 }

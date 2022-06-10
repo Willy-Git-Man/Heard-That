@@ -34,26 +34,72 @@ function LoginRoute() {
 
 
 
-          <div className="loginLeftSideDiv">
-            <img src={HeardThatLogin} className="loginImage" />
+            <div className="loginLeftSideDiv">
+              <img src={HeardThatLogin} className="loginImage" />
 
 
 
-            {/* <div className="gitLinkedInDivsSplash">
+              {/* <div className="gitLinkedInDivsSplash">
 
               <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><h2><FaGithub /></h2></a>
 
               <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><h2><FaLinkedinIn /></h2></a>
             </div> */}
-          </div>
+            </div>
 
-          <div className="loginDiv">
-            <LoginForm />
+            <div className="loginDiv">
+              <LoginForm />
 
-          </div>
+            </div>
           </div>
         </div>
 
+        <footer class="footer">
+
+          <div class="footer-left">
+
+            <h3 className="footerName">William <span>Grossman</span></h3>
+
+          </div>
+
+          <div class="footer-center">
+
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p> New York, NY</p>
+            </div>
+
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>434-242-8614</p>
+            </div>
+
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p>william.b.grossman@gmail.com</p>
+            </div>
+
+          </div>
+
+          <div class="footer-right">
+
+            <p class="footer-company-about">
+              <p>About Me</p>
+              <p>
+
+              I design applications across multiple full stacks
+              </p>
+            </p>
+
+
+            <div class="footer-icons">
+            <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><FaGithub /></a>
+
+          <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><FaLinkedinIn /></a>
+            </div>
+          </div>
+
+        </footer>
 
       </>
     );
