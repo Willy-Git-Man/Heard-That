@@ -18,6 +18,8 @@ h2 {
   justify-content: space-around;
   height: 90%;
   width: 100%;
+  background-color: black;
+  /* opacity: .9; */
 }
 .albumSongsListInnerDiv {
   display: flex;
@@ -373,6 +375,8 @@ h2 {
   height: 5vh;
   display: flex;
   margin-bottom: 10px;
+  width: 90%;
+  background-color: black;
 }
 
 .searchLi {
