@@ -5,7 +5,8 @@ body {
 }
 
 html {
-  background-color: #415a77;
+  /* background-color: #415a77; */
+  /* background-color: black; */
   height: 100%;
   overflow: hidden;
 }
@@ -18,5 +19,3 @@ li {
   height: 100%;
   overflow: hidden;
 }
-
-

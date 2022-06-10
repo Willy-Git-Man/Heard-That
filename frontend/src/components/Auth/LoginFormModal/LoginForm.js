@@ -4,6 +4,9 @@ import { useDispatch } from "react-redux";
 import {useHistory} from 'react-router'
 import SignupFormModal from "../SignupFormModal";
 
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+
 function LoginForm() {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
@@ -29,37 +32,39 @@ function LoginForm() {
   };
 
   return (
-    <div className="createNewSongDiv">
-      <form className="createNewSongForm" onSubmit={handleSubmit}>
+    <>
+    <div className="loginFormDiv">
+      <h3 className='loginTitle'>Heard That</h3>
+
+      <form className="formDiv" onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>
-          Username or Email
           <input
+          className="loginInputs"
+          placeholder="Username or Email"
             type="text"
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
             required
           />
-        </label>
-        <label>
-          Password
           <input
+          className="loginInputs"
+          placeholder="Password"
+
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-        </label>
-        <button className={"createSongButton"} type="submit">
+        <button className="loginButtons" type="submit">
           Log In
         </button>
 
         <button
-          className={"createSongButton"}
+          className="loginButtons"
           type="submit"
           onClick={() => {
             setCredential("Demo-lition");
@@ -69,8 +74,21 @@ function LoginForm() {
           Demo
         </button>
       </form>
-      <SignupFormModal />
     </div>
+      <div className='signUpOption'>
+        <p className='text'>
+        Don't have an account?
+        </p>
+      <SignupFormModal />
+      <div className="gitLinkedInDivsSplash">
+
+<a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><h2><FaGithub /></h2></a>
+
+<a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><h2><FaLinkedinIn /></h2></a>
+</div>
+      </div>
+    </>
+
   );
 }
 

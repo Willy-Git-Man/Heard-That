@@ -1,7 +1,16 @@
 .loginMainDiv {
 display: flex;
+justify-content: center;
 height: 100%;
 width: 100%;
+}
+
+.loginInnerMainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+  width: 75%;
 }
 
 
@@ -72,14 +81,12 @@ width: 100%;
 }
 
 .loginDiv {
-  background-color: black;
-  /* background-image: url("../../../public/pics/loginTest.png"); */
-  height: 100%;
-  background-color: white;
-  width: 50%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
+  height: 100%;
+  width: 50%;
 }
 
 .loginLeftDivSmaller {
@@ -88,16 +95,19 @@ width: 100%;
 }
 
 .loginLeftSideDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   height: 100%;
   width: 50%;
-  background-color: black;
 
 }
 .loginImage {
-  height: 50%;
+  height: 85%;
   width: 75%;
-  padding-left: 12.5%;
-  padding-top: 25%;
+  padding-left: 25%;
+  padding-top: 7.5%;
 }
 
 .profileDiv {
@@ -124,12 +134,40 @@ width: 100%;
 .gitLinkedInDivsSplash {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 5%;
-  width: 100%;
-  font-size: 2em;
-  height: 50%;
+  width: 75%;
+  width: 95%;
+  padding: 2.5%;
+  padding-bottom: 0;
+  font-size: 3em;
+  background-color: #415a77;
+  /* height: 50%; */
   justify-content: space-around;
+
 }
+
+.formDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.loginInputs {
+  background-color: #fafafa;
+  border: 1px solid #dddcdc;
+  font-size: small;
+  padding: 5px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  width: 50%;
+  height: 2.5vh;
+  margin-bottom: 1vh;
+}
+
+
 
 
 .userName {
