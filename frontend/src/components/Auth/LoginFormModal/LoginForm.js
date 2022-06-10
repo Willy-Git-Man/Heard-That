@@ -80,13 +80,13 @@ function LoginForm() {
         Don't have an account?
         </p>
       <SignupFormModal />
+      </div>
       <div className="gitLinkedInDivsSplash">
 
 <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><h2><FaGithub /></h2></a>
 
 <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><h2><FaLinkedinIn /></h2></a>
 </div>
-      </div>
     </>
 
   );

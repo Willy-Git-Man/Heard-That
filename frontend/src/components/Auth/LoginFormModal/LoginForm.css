@@ -56,8 +56,9 @@
   align-items: center;
   justify-content:flex-start;
   border: solid rgb(182, 179, 179) 1px;
-  height: 30vh;
+  height: 25vh;
   width: 75%;
+  padding-bottom: 5%;
 
 }
 
@@ -86,9 +87,9 @@
   display: flex;
   border-radius: 50%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 15vw;
-  height: 25vh;
+  height: 20vh;
 }
 
 .formDivAlbum {
@@ -126,6 +127,20 @@ color: #415a77;
 .loginButtons{
   width: 100%;
   height: 2.5vh;
+  font-size: 1.25em;
+  background-color: rgba(0,149,246,.3);
+  background-color: #415a77;
+
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  border-radius: 300px;
+}
+
+.signupModalButton {
+  width: 75%;
+  height: 2.5vh;
   font-size: 1.5em;
   background-color: rgba(0,149,246,.3);
   background-color: #415a77;
@@ -134,8 +149,9 @@ color: #415a77;
   border: none;
   border-radius: 3px;
   padding: 5px;
-}
+  border-radius: 300px;
 
+}
 .loginButtons:hover{
   background-color: rgba(0,149,246);
   background-color: white;
@@ -194,4 +210,5 @@ justify-content: center;
 align-items: center;
 font-size: 3em;
 color: #415a77;
+margin-bottom: 0;
 }
