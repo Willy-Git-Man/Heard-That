@@ -1,6 +1,6 @@
 form {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  
+
 }
 .createNewSongForm {
   padding-left: 30px;
@@ -61,7 +61,7 @@ form {
 }
 
 .createSongModalButton {
-  height: 2.5vh;
+  /* height: .5vh; */
   width:90%;
   color: #E0E1DD;
   font-size: 1em;

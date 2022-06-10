@@ -35,6 +35,8 @@ function LoginRoute() {
 
 
             <div className="loginLeftSideDiv">
+              <h1>Mobile</h1>
+
               <img src={HeardThatLogin} className="loginImage" />
 
 

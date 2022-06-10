@@ -19,15 +19,15 @@
   outline: none;
   font-size: 25px;
   font-weight: lighter;
-  height: 3vh;
+  height: 2.25vh;
   border: 1px solid #415A77;
 }
 
 .searchInput::placeholder {
-  display: flex;
-  align-items: flex-end;
   color: #E0E1DD;
-  font-weight: lighter;
+  /* opacity: .6; */
+  /* font-weight: lighter; */
+  font-size: .75em;
 }
 
 .emptySearchTest {
