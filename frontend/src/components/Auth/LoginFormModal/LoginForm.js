@@ -2,6 +2,7 @@ import React, {useState } from "react";
 import * as sessionActions from "../../../store/session";
 import { useDispatch } from "react-redux";
 import {useHistory} from 'react-router'
+import SignupFormModal from "../SignupFormModal";
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -68,6 +69,7 @@ function LoginForm() {
           Demo
         </button>
       </form>
+      <SignupFormModal />
     </div>
   );
 }

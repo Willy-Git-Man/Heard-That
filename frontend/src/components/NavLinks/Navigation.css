@@ -1,3 +1,10 @@
+.loginMainDiv {
+display: flex;
+height: 100%;
+width: 100%;
+}
+
+
 .profileButton {
   height: 2.5vh;
   width: 90%;
@@ -66,9 +73,23 @@
 
 .loginDiv {
   background-color: black;
-  background-image: url("../../../public/pics/loginTest.png");
+  /* background-image: url("../../../public/pics/loginTest.png"); */
   height: 100%;
   background-color: white;
+  width: 50%;
+}
+
+.loginLeftSideDiv {
+  height: 100%;
+  width: 50%;
+
+}
+
+.profileDiv {
+  background-image: url("../../../public/pics/HeardThatLogin.png");
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
 }
 
 .userName {
@@ -88,7 +109,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
   height: 100vw;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -99,11 +119,11 @@
   object-fit: cover;
   width: 50%;
   background-size: auto;
+  background-image: url("../../../public/pics/HeardThatLogin.png");
+
 }
 
-.loginMessage {
-  color: white;
-}
+
 
 .welcomeGreetingTop {
   color: white;
