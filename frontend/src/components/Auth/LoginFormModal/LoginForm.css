@@ -166,12 +166,13 @@ color: #415a77;
   align-items: center;
   justify-content: center;
   background-color: white;
-  margin-top: 15px;
+  margin-top: 2.5vh;
   border: solid rgb(182, 179, 179) 1px;
   padding: 10px;
   box-sizing: border-box;
   background-color: white;
   width: 75%;
+  /* height: 10vh; */
 }
 
 .rightDiv {

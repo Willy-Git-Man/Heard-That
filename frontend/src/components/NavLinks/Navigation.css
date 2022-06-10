@@ -144,13 +144,16 @@ background-color: #0d1b2a;
   margin-top: 5%;
   width: 75%;
   width: 95%;
-  padding: 2.5%;
   padding-bottom: 0;
-  font-size: 3em;
-  background-color: #415a77;
-  /* height: 50%; */
+  font-size: 25px;
+  height: 25px;
+  color: #415a77 ;
   justify-content: space-around;
 
+}
+
+.gitLinkedInDivsSplash svg {
+  color: #415a77;
 }
 
 
