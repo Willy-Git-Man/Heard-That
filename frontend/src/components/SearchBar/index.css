@@ -17,15 +17,17 @@
   width: 90%;
   color: #E0E1DD;
   outline: none;
-  font-size: 2em;
+  font-size: 25px;
+  font-weight: lighter;
   height: 3vh;
-  border: 1px solid #E0E1DD;
+  border: 1px solid #415A77;
 }
 
 .searchInput::placeholder {
   display: flex;
   align-items: flex-end;
   color: #E0E1DD;
+  font-weight: lighter;
 }
 
 .emptySearchTest {
