@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { getAllSongsThunk } from "../../store/songs";
 
 
-import MyAlbums from ".";
 import NavLinks from "../NavLinks/navLinks";
 import AudioPlayerGlobal from "../NavLinks/audioPlayer";
 
@@ -15,6 +14,7 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 import { FcDisplay } from "react-icons/fc";
 import { FaPlayCircle } from "react-icons/fa";
 import SongButtonDots from "../Songs/songButtonDots";
+import AlbumCarousel from "./albumCarousel";
 
 
 
@@ -52,7 +52,7 @@ export default function AlbumSongs({ userInfo }) {
       </div>
 
       <div className="albumSongsListDiv">
-        <MyAlbums userInfo={userInfo} />
+        <AlbumCarousel userInfo={userInfo} />
 
         <div className="albumSongsListInnerDiv">
 
@@ -70,9 +70,9 @@ export default function AlbumSongs({ userInfo }) {
                   onClick={() =>
                     test(song.songUrl, song.imageUrl)
                   }
-                  style={{
-                    backgroundImage: `url(${song?.imageUrl})`,
-                  }}
+                  // style={{
+                  //   backgroundImage: `url(${song?.imageUrl})`,
+                  // }}
                 >
                   <h3 className="songButtonH3">
                     <FaPlayCircle />
@@ -88,9 +88,9 @@ export default function AlbumSongs({ userInfo }) {
                   onClick={() =>
                     test("", song.imageUrl)
                   }
-                  style={{
-                    backgroundImage: `url(${song?.imageUrl})`,
-                  }}
+                  // style={{
+                  //   backgroundImage: `url(${song?.imageUrl})`,
+                  // }}
                 >
                   <h3 className="songButtonH3">
                     <FcDisplay />
@@ -120,11 +120,9 @@ export default function AlbumSongs({ userInfo }) {
 
               <div className="songTitleAndArtistDiv">
                 <div className="songTitleAndArtistDivs">
-                  <p className="songDescription">Title</p>
                   <li className="songListItem">{song.songName}</li>
                 </div>
                 <div className="songTitleAndArtistDivs">
-                  <p className="songDescription">Artist</p>
 
                   <li className="songListItem">{song.artistName}</li>
                 </div>

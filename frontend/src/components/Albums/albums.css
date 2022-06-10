@@ -8,7 +8,20 @@ h2 {
   display: flex;
   justify-content: center;
   width: 100%;
+  width: 95%;
+
   height: 30vh;
+}
+
+.mainCarouselDiv {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 95%;
+  background-color: white;
+  margin-left: 2.5%;
+
 }
 
 .albumSongsListDiv {
@@ -39,9 +52,9 @@ h2 {
 .everySongDiv {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   background-color: #0d1b2a;
-  height: 10%;
+  height: 5%;
   width: 100%;
 }
 .everySongDiv::-webkit-scrollbar {
@@ -59,18 +72,19 @@ h2 {
   width: 100%;
 }
 .songDivButton {
-  background-color: #415a77;
+  background:none;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5vh;
+  height: 100%;
   border: none;
-  font-size: 3.5vh;
+  /* font-size: 3.5vh; */
+  font-size: 25px;
   background-position: 10px center;
   background-size: cover;
-  width: 5vh;
+  width: 2.5vh;
   background-position: 50% 50%;
-  color: #0d1b2a;
+  color: #e0e1dd;
 }
 
 .songDivButtonActive {
@@ -93,14 +107,14 @@ h2 {
   align-items: center;
 }
 .songButtonDotsButton {
-  background-color: #415a77;
+  background: none;
   color: #e0e1dd;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0.5vw;
-  width: 4.5vw;
-  font-size: 1.25em;
+  width: 2.5vw;
+  font-size: 25px;
   border: none;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -172,13 +186,7 @@ h2 {
   height: 15vh;
 }
 
-.mainCarouselDiv {
-  height: 30vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90%;
-}
+
 
 .eachDivInCarousel::-webkit-scrollbar {
   display: none;
@@ -252,20 +260,31 @@ h2 {
 }
 
 .slick-slider.center.slick-initialized {
-  padding-left: 50px;
-  padding-right: 50px;
 }
 
 .slick-arrow.slick-prev {
   z-index: 1;
   border-radius: 25%;
+  color: black;
+}
+.slick-prev:before {
+  content: "";
+    font-family: 'FontAwesome';
+    font-size: 22px;
 }
 
+.slick-next:before {
+  content: ">";
+  color: red;
+  font-size: 30px;
+}
 .slick-arrow.slick-next {
   z-index: 1;
   border-radius: 25%;
   size: 50em;
 }
+
+
 
 .mainAlbumsEachAlbumDiv {
   height: 15vh;
