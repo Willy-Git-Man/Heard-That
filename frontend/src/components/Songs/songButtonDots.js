@@ -10,7 +10,7 @@ import UpdateSongModal from "./UpdateSongModal";
 // import { BsThreeDots } from "react-icons/bs";
 // import { BiDotsHorizontalRounded } from "react-icons/bi";
 
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaRegWindowClose } from "react-icons/fa";
 
 function SongButtonDots({ user, allAlbumsIndex, songId }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -73,7 +73,7 @@ function SongButtonDots({ user, allAlbumsIndex, songId }) {
             songId={songId}
           />
           <button className={"songEditCloseButton"} onClick={closeMenu}>
-            Close
+            <FaRegWindowClose />
           </button>
         </div>
       )}

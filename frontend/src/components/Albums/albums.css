@@ -121,17 +121,13 @@ h2 {
 }
 
 .songEditCloseButton {
-  background-color: #415a77;
-  color: #e0e1dd;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  height: 75%;
-  font-size: 1.25em;
+  background: none;
+  color: #e0e1dd;
+  font-size: 25px;
   border: none;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
 }
 
 .albumButtonDotsButton {
@@ -199,26 +195,22 @@ h2 {
 }
 
 .deleteAlbumButton {
-  background-color: #415a77;
-  color: #e0e1dd;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75%;
-  width: 33%;
-  font-size: 1em;
+  background: none;
+  color: #e0e1dd;
+  font-size: 25px;
   border: none;
 }
 
 .deleteSongButton {
-  background-color: #415a77;
-  color: #e0e1dd;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75%;
-  width: 30%;
-  font-size: 1em;
+  background: none;
+  color: #e0e1dd;
+  font-size: 25px;
   border: none;
 }
 
@@ -240,7 +232,7 @@ h2 {
 
 .songSettingsDiv {
   height: 100%;
-  width: 10vw;
+  width: 5vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -259,8 +251,6 @@ h2 {
   color: white;
 }
 
-.slick-slider.center.slick-initialized {
-}
 
 .slick-arrow.slick-prev {
   z-index: 1;
@@ -268,20 +258,18 @@ h2 {
   color: black;
 }
 .slick-prev:before {
-  content: "";
     font-family: 'FontAwesome';
     font-size: 22px;
 }
 
 .slick-next:before {
-  content: ">";
-  color: red;
-  font-size: 30px;
+    font-family: 'FontAwesome';
+    font-size: 22px;
 }
 .slick-arrow.slick-next {
   z-index: 1;
   border-radius: 25%;
-  size: 50em;
+  color: black;
 }
 
 
@@ -421,7 +409,7 @@ h2 {
 .songTitleAndArtistDiv {
   display: flex;
   width: 77%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .albumCarouselAlbumTitle {
@@ -457,22 +445,15 @@ h2 {
 }
 
 .albumPictureDiv {
-  background-size: cover;
-  width: 90%;
-  margin-left: 5%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
-  overflow: hidden;
   background-position: 10px center;
   background-size: cover;
+  background-position: 50% 50%;
+  object-fit: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  object-fit: cover;
-  background-position: 50% 50%;
+  width: 90%;
+  margin-left: 5%;
+  overflow: hidden;
 }
