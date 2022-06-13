@@ -174,18 +174,6 @@ background-color: #0d1b2a;
   /* margin-bottom: 1vh; */
 }
 
-.footer {
-  height: 10vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-}
-.footer-content {
-
-}
-
-
 
 
 .userName {
@@ -238,18 +226,20 @@ background-color: #0d1b2a;
   z-index: -1;
 }
 
+.footer {
+  background: #415a77;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
 
-
-.footer{
-	background: #415a77;
-	width: 100%;
-	font: bold 3em;
-	padding: 1%;
 }
 
 
 .footer-left{
-	width: 40%;
+	/* width: 40%; */
 }
 
 .footer h3{
@@ -269,7 +259,12 @@ background-color: #0d1b2a;
 
 
 .footer-center{
-	width: 35%;
+	/* width: 35%; */
+  /* height: 10vh; */
+}
+
+.footerCell {
+  height: 33%;
 }
 
 .footer-center i{
@@ -309,16 +304,12 @@ background-color: #0d1b2a;
 	text-decoration: none;;
 }
 
-.footer .footer-links a:before {
-  font-weight:300;
-  font-size: 20px;
-  color: #e0e1dd;
-  display: inline-block;
-  padding-right: 5px;
-}
 
 .footer-right{
 	width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content:   center;
 }
 
 

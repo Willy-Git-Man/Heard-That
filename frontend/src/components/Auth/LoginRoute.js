@@ -54,7 +54,7 @@ function LoginRoute() {
 
           <div class="footer-center">
 
-            <div>
+            <div className="footerCell">
               <i class="fa fa-map-marker"></i>
               <p> New York, NY</p>
             </div>
@@ -73,18 +73,11 @@ function LoginRoute() {
 
           <div class="footer-right">
 
-            <p class="footer-company-about">
-              <p>About Me</p>
-              <p>
-
-              I design applications across multiple full stacks
-              </p>
-            </p>
 
 
             <div class="footer-icons">
-            <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><FaGithub /></a>
 
+            <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><FaGithub /></a>
           <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><FaLinkedinIn /></a>
             </div>
           </div>
