@@ -89,6 +89,7 @@
 .formDiv {
   display: flex;
   border-radius: 50%;
+  height: 100%;
   flex-direction: column;
   justify-content: space-around;
   /* width: 15vw; */
@@ -99,9 +100,7 @@
   display: flex;
   border-radius: 50%;
   flex-direction: column;
-  justify-content: space-between;
-  width: 15vw;
-  height: 15vh;
+  justify-content: space-around;
 }
 
 .createSongInput {
