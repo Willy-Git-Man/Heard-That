@@ -32,22 +32,10 @@ function LoginRoute() {
         <div className="loginMainDiv">
           <div className="loginInnerMainDiv">
 
-
-
-            <div className="loginLeftSideDiv">
+            {/* <div className="loginLeftSideDiv">
               <h1>Mobile</h1>
-
               <img src={HeardThatLogin} className="loginImage" />
-
-
-
-              {/* <div className="gitLinkedInDivsSplash">
-
-              <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><h2><FaGithub /></h2></a>
-
-              <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><h2><FaLinkedinIn /></h2></a>
             </div> */}
-            </div>
 
             <div className="loginDiv">
               <LoginForm />

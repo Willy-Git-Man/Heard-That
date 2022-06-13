@@ -14,7 +14,7 @@ background-color: #0d1b2a;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75%;
+  height: 90vh;
   width: 75%;
 }
 
@@ -90,8 +90,8 @@ background-color: #0d1b2a;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 100%;
-  width: 50%;
+  height: 50%;
+  width: 100%;
 }
 
 .loginLeftDivSmaller {
