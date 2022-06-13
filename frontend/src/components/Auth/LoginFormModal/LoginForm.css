@@ -138,6 +138,13 @@ color: #415a77;
   border-radius: 300px;
 }
 
+.loginButtons:hover{
+  background-color: rgba(0,149,246);
+  background-color: white;
+  outline: 5px solid #415a77;
+  color: #415a77;
+}
+
 .signupModalButton {
   width: 75%;
   height: 2.5vh;
@@ -152,13 +159,12 @@ color: #415a77;
   border-radius: 300px;
 
 }
-.loginButtons:hover{
+.signupModalButton:hover{
   background-color: rgba(0,149,246);
   background-color: white;
   outline: 5px solid #415a77;
   color: #415a77;
 }
-
 .loginFormDiv label {
   color: white;
 }

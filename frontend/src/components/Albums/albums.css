@@ -19,9 +19,7 @@ h2 {
   flex-direction: column;
   justify-content: space-around;
   width: 95%;
-  /* background-color: white; */
   margin-left: 2.5%;
-
 }
 
 .albumSongsListDiv {
@@ -181,8 +179,6 @@ h2 {
 .secondSlider {
   height: 15vh;
 }
-
-
 
 .eachDivInCarousel::-webkit-scrollbar {
   display: none;
@@ -409,7 +405,6 @@ h2 {
 .songTitleAndArtistDiv {
   display: flex;
   width: 77%;
-  /* overflow: hidden; */
 }
 
 .albumCarouselAlbumTitle {
