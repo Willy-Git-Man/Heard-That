@@ -6,7 +6,8 @@ import * as sessionActions from "../../store/session";
 import { getAllSongsThunk } from "../../store/songs";
 import UpdateAlbumModal from "../Albums/UpdateAlbumModal";
 import { NavLink, useParams } from "react-router-dom";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaRegWindowClose } from "react-icons/fa";
+
 
 function AlbumButtonDots({ user, allAlbumsIndex }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -72,7 +73,7 @@ function AlbumButtonDots({ user, allAlbumsIndex }) {
 
           <UpdateAlbumModal albumId={+id} closeMenu={closeMenu} />
           <button className={"albumButtonCloseButton"} onClick={closeMenu}>
-            Close
+          <FaRegWindowClose />
           </button>
         </div>
       )}

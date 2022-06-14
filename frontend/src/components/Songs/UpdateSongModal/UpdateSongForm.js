@@ -73,8 +73,8 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId, closeMe
   };
 
   return (
-    <div className="createNewSongDiv">
-      <form className="createNewSongForm" onSubmit={handleSubmit}>
+    <div className="createSongFormDiv">
+      <form className="formDiv" onSubmit={handleSubmit}>
         <ul className="errors">
           {errors.map((error) => (
             <li key={error}>{error}</li>
@@ -82,6 +82,8 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId, closeMe
         </ul>
         <label htmlFor="songNameLabel">Song Name: </label>
         <input
+          className="createSongInput"
+
           type="text"
           name="songName"
           value={songName}
@@ -91,6 +93,8 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId, closeMe
 
         <label htmlFor="artistNameLabel">Artist Name: </label>
         <input
+          className="createSongInput"
+
           type="text"
           name="artistName"
           value={artistName}
@@ -100,6 +104,8 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId, closeMe
 
         <label htmlFor="songUrlLabel">Song Url: </label>
         <input
+          className="createSongInput"
+
           type="text"
           name="songUrl"
           value={songUrl}
@@ -109,6 +115,8 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId, closeMe
 
         <label htmlFor="imageUrlLabel">Image Url: </label>
         <input
+          className="createSongInput"
+
           type="text"
           name="imageUrl"
           value={imageUrl}
@@ -126,6 +134,8 @@ export default function UpdateSongForm({ userInfo, setShowModal, songId, closeMe
         /> */}
         <label htmlFor="albumIdLabel">Ablum : </label>
         <select
+          className="createSongInput"
+
           type="text"
           name="albumId"
           value={albumId}
