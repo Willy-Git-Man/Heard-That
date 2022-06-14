@@ -76,6 +76,18 @@
   padding: 10px;
 }
 
+.updateAlbumFormDiv {
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 10px;
+}
+
 .createAlbumFormDiv {
   align-items: center;
   width: 100%;
@@ -98,6 +110,8 @@
   /* width: 15vw; */
   /* height: 20vh; */
 }
+
+
 
 .formDivAlbum {
   display: flex;

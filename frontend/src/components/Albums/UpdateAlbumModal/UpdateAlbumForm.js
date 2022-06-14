@@ -62,8 +62,10 @@ export default function UpdateAlbumForm({
   };
 
   return (
-    <div className="createNewSongDiv">
-      <form className="createNewAlbumForm" onSubmit={handleSubmit}>
+    <div className="updateAlbumFormDiv">
+      <h3 className='createSongTitle'>Update Album</h3>
+
+      <form className="formDiv" onSubmit={handleSubmit}>
         <ul className="errors">
           {errors.map((error) => (
             <li key={error}>{error}</li>
@@ -71,6 +73,8 @@ export default function UpdateAlbumForm({
         </ul>
         <label htmlFor="songNameLabel">Album Title: </label>
         <input
+          className="createSongInput"
+
           type="text"
           name="songName"
           value={title}
@@ -80,6 +84,8 @@ export default function UpdateAlbumForm({
 
         <label htmlFor="artistNameLabel">Image Url: </label>
         <input
+          className="createSongInput"
+
           type="text"
           name="artistName"
           value={imageUrl}
@@ -87,7 +93,7 @@ export default function UpdateAlbumForm({
           required
         />
 
-        <button>Update</button>
+        <button className="createSongButton" type="submit">Update</button>
       </form>
     </div>
   );
