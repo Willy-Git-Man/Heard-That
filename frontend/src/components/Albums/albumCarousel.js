@@ -10,13 +10,9 @@ export default function AlbumCarousel({ userInfo }) {
   const { id } = useParams();
   const history = useHistory();
 
-
   const allAlbums = useSelector((state) => state.albums.albums);
-
   const allAlbumKeys = Object.keys(allAlbums);
-
   const allAlbumValues = Object.values(allAlbums);
-
 
   const userAlbums = allAlbumValues.filter(
     (album) => album.userId === userInfo.id || album.userId === 2
@@ -30,10 +26,6 @@ export default function AlbumCarousel({ userInfo }) {
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 6,
-
-    // speed: 5,
-    // fade: true,
-    // autoplay: true,
     // speed: 1000,
     nextArrow: <RightArrow />,
     prevArrow: <LeftArrow />,
@@ -41,21 +33,17 @@ export default function AlbumCarousel({ userInfo }) {
 
   const lowerCarouselSettings = {
     className: "center",
-    // centerMode: true,
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 1,
-
-    // speed: 5,
-    // fade: true,
-    // autoplay: true,
-    // speed: 1000,
     nextArrow: <RightArrow />,
     prevArrow: <LeftArrow />,
   };
+
   if (userInfo === undefined) {
     history.push("/");
   }
+
   const rightArrowNextId = () => {
     for (let i = 0; i < userAlbums.length; i++) {
       if (+userAlbums[i].id === +id) return +userAlbums[i + 1].id;

@@ -52,7 +52,7 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
   return (
     <>
       <div className="createAlbumFormDiv">
-      <h3 className='createSongTitle'>Add Playlist</h3>
+        <h3 className='createSongTitle'>Add Playlist</h3>
 
         <form className="formDivAlbum" onSubmit={handleSubmit}>
           <ul className="errors">
@@ -62,8 +62,7 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
           </ul>
           <label htmlFor="albumTitle">Album Name: </label>
           <input
-          className="createSongInput"
-
+            className="createSongInput"
             type="text"
             name="albumTitle"
             value={title}
@@ -73,8 +72,7 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
 
           <label htmlFor="albumImage">Image Url: </label>
           <input
-          className="createSongInput"
-
+            className="createSongInput"
             type="text"
             name="albumImage"
             value={imageUrl}

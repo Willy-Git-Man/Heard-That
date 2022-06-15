@@ -70,7 +70,7 @@ h2 {
   width: 100%;
 }
 .songDivButton {
-  background:none;
+  background: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,7 +147,7 @@ h2 {
 }
 
 .albumButtonCloseButton {
-  background:none;
+  background: none;
   color: #e0e1dd;
   display: flex;
   justify-content: center;
@@ -241,28 +241,25 @@ h2 {
   color: white;
 }
 
-
 .slick-arrow.slick-prev {
   z-index: 1;
   border-radius: 25%;
   color: black;
 }
 .slick-prev:before {
-    font-family: 'FontAwesome';
-    font-size: 22px;
+  font-family: "FontAwesome";
+  font-size: 22px;
 }
 
 .slick-next:before {
-    font-family: 'FontAwesome';
-    font-size: 22px;
+  font-family: "FontAwesome";
+  font-size: 22px;
 }
 .slick-arrow.slick-next {
   z-index: 1;
   border-radius: 25%;
   color: black;
 }
-
-
 
 .mainAlbumsEachAlbumDiv {
   height: 15vh;
