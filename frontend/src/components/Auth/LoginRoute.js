@@ -11,7 +11,6 @@ import SignupFormModal from "./SignupFormModal";
 import LoginFormModal from "./LoginFormModal";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
-import HeardThatLogin from '../Images/HeardThatLogin.png'
 
 import LoginForm from "./LoginFormModal/LoginForm";
 
@@ -32,28 +31,18 @@ function LoginRoute() {
         <div className="loginMainDiv">
           <div className="loginInnerMainDiv">
 
-            {/* <div className="loginLeftSideDiv">
-              <h1>Mobile</h1>
-              <img src={HeardThatLogin} className="loginImage" />
-            </div> */}
-
             <div className="loginDiv">
               <LoginForm />
-
             </div>
           </div>
         </div>
 
         <footer class="footer">
-
           <div class="footer-left">
-
             <h3 className="footerName">William <span>Grossman</span></h3>
-
           </div>
 
           <div class="footer-center">
-
             <div className="footerCell">
               <i class="fa fa-map-marker"></i>
               <p> New York, NY</p>
@@ -72,13 +61,9 @@ function LoginRoute() {
           </div>
 
           <div class="footer-right">
-
-
-
             <div class="footer-icons">
-
-            <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><FaGithub /></a>
-          <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><FaLinkedinIn /></a>
+              <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><FaGithub /></a>
+              <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><FaLinkedinIn /></a>
             </div>
           </div>
 

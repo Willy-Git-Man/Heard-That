@@ -14,12 +14,12 @@ import { FcDisplay } from "react-icons/fc";
 import { FaPlayCircle } from "react-icons/fa";
 
 export default function AlbumSongs({ userInfo }) {
-  const allSongs = useSelector((state) => state.songs.songs);
 
   const { id } = useParams();
   const [pic] = useState("");
   const [playing, setPlaying] = useState("");
 
+  const allSongs = useSelector((state) => state.songs.songs);
   const allAlbumSongsArray = Object.values(allSongs).filter((song) => song.albumId === +id)
 
   const playingState = (playing) => { setPlaying(playing)};
@@ -51,7 +51,7 @@ export default function AlbumSongs({ userInfo }) {
               )}
 
               {playing === song.songUrl && ( <>
-              
+
                   <button className="songDivButton" onClick={() => playingState("", song.imageUrl)}  >
                     <FcDisplay />
                   </button>
