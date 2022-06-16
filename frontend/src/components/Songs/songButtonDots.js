@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router";
-import { deleteAlbumThunk } from "../../store/albums";
-import * as sessionActions from "../../store/session";
-import { deleteSongThunk, getAllSongsThunk } from "../../store/songs";
-import UpdateAlbumModal from "../Albums/UpdateAlbumModal";
-import { NavLink, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
+import { deleteSongThunk} from "../../store/songs";
 import UpdateSongModal from "./UpdateSongModal";
-// import { BsThreeDots } from "react-icons/bs";
-// import { BiDotsHorizontalRounded } from "react-icons/bi";
-
 import { FaEdit, FaRegWindowClose } from "react-icons/fa";
 
 function SongButtonDots({ user, allAlbumsIndex, songId }) {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
-  const history = useHistory();
   const { id } = useParams();
 
   const openMenu = () => {
@@ -27,25 +19,14 @@ function SongButtonDots({ user, allAlbumsIndex, songId }) {
     setShowMenu(false);
   };
 
-  const deleteSongDispatch = (album) => {
-    dispatch(deleteSongThunk(album));
-    dispatch(getAllSongsThunk());
-  };
+
   const deleteSubmit = (id) => {
     dispatch(deleteSongThunk(id));
-
     closeMenu();
   };
 
   useEffect(() => {
     if (!showMenu) return;
-
-    // const closeMenu = () => {
-
-    //   setShowMenu(false);
-    // };
-
-    // document.addEventListener("click", closeMenu);
 
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);

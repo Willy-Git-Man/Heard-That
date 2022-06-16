@@ -6,15 +6,11 @@ import * as sessionActions from "../../store/session";
 
 import "slick-carousel/slick/slick.css";
 
+import LoginForm from "./LoginFormModal/LoginForm";
 import "slick-carousel/slick/slick-theme.css";
-import SignupFormModal from "./SignupFormModal";
-import LoginFormModal from "./LoginFormModal";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 
-import LoginForm from "./LoginFormModal/LoginForm";
-
-export const PlayingContext = React.createContext();
 
 function LoginRoute() {
   const dispatch = useDispatch();

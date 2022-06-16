@@ -13,10 +13,6 @@ const SearchBar = ({ playing, setPlaying }) => {
 
   const history = useHistory();
 
-
-
-
-
   const allSongs = Object.values(useSelector((state) => state.songs.songs));
   const allAlbums = Object.values(useSelector((state) => state.albums.albums));
 
