@@ -10,6 +10,10 @@
   padding: 10px;
 }
 
+.signupFormDiv li {
+  color: black;
+}
+
 .signupForm {
   display: flex;
   border-radius: 50%;

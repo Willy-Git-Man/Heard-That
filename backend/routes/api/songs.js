@@ -3,6 +3,9 @@ const router = express.Router();
 const { User, Songs } = require("../../db/models");
 const asyncHandler = require("express-async-handler");
 
+var multer = require('multer')
+var upload = multer({dest:'uploads/'})
+
 // const validateSongCreate = [
 
 //     check('songName')
@@ -16,6 +19,10 @@ const asyncHandler = require("express-async-handler");
 //       .withMessage('Please provide a password.'),
 //     handleValidationErrors
 //   ];
+
+router.post('/images', upload.single('image'), (req,res) => {
+  res.send('aws express working')
+})
 
 router.get(
   '/',

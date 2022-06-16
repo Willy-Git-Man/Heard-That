@@ -64,6 +64,10 @@
 
 }
 
+.loginFormDiv li{
+  color: black;
+}
+
 .createSongFormDiv {
   align-items: center;
   width: 100%;
