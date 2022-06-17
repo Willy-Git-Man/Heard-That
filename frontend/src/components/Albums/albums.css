@@ -443,3 +443,35 @@ h2 {
   margin-left: 5%;
   overflow: hidden;
 }
+
+.emptyPlaylistAddSongButton {
+  width: 10vw;
+  height: 10vh;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0);
+  justify-content: center;
+  /* align-items: center; */
+
+}
+
+
+.createSongEmptyAlbumModalButton {
+  width: 15%;
+  height: 5vh;
+  font-size: larger;
+  background-color: rgba(0,149,246,.3);
+  background-color: #415a77;
+
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  border-radius: 30px;
+}
+
+.createSongEmptyAlbumModalButton:hover {
+  background-color: rgba(0,149,246);
+  background-color: white;
+  outline: 5px solid #415a77;
+  color: #415a77;
+}

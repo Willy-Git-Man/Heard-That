@@ -11,15 +11,23 @@ import "react-h5-audio-player/lib/styles.css";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FcDisplay } from "react-icons/fc";
-import { FaPlayCircle } from "react-icons/fa";
+import { FaPlayCircle, FaFolderPlus } from "react-icons/fa";
+import CreateSongModal from "../Songs/CreateSongModal";
+import CreateSongForm from '../Songs/CreateSongModal/CreateSongForm';
+
+import { Modal } from '../../context/Modal';
+
 
 export default function AlbumSongs({ userInfo }) {
 
   const { id } = useParams();
   const [pic] = useState("");
   const [playing, setPlaying] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
 
   const allSongs = useSelector((state) => state.songs.songs);
+
   const allAlbumSongsArray = Object.values(allSongs).filter((song) => song.albumId === +id)
 
   const playingState = (playing) => {
@@ -41,7 +49,17 @@ export default function AlbumSongs({ userInfo }) {
         <AlbumCarousel userInfo={userInfo} />
         <div className="albumSongsListInnerDiv">
 
-          {!allAlbumSongsArray.length && <h1>Add Songs To Enjoy The Music!</h1>}
+          {!allAlbumSongsArray.length && (
+    <>
+
+    <button className={'createSongEmptyAlbumModalButton'} onClick={() => setShowModal(true)}> Add Songs</button>
+    {showModal && (
+      <Modal onClose={() => setShowModal(false)}>
+        <CreateSongForm setShowModal={setShowModal} userInfo={userInfo}/>
+      </Modal>
+    )}
+  </>
+          )}
 
           {allAlbumSongsArray.map((song, i) => (
 
