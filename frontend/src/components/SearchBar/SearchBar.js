@@ -55,9 +55,9 @@ const SearchBar = ({ playing, setPlaying }) => {
 
               {playing !== song.songUrl && (
                 <div className="searchDivPlayButton"
-                  style={{
-                    backgroundImage: `url(${song?.imageUrl})`,
-                  }}
+                  // style={{
+                  //   backgroundImage: `url(${song?.imageUrl})`,
+                  // }}
                 >
                   <button
                     className="searchDivPlayButton"
@@ -94,7 +94,7 @@ const SearchBar = ({ playing, setPlaying }) => {
               <div className="searchLi">
                 <li className="songListItemSearch">{song.songName}</li>
 
-                <li className="songListItemSearch">{song.artistName}</li>
+                {/* <li className="songListItemSearch">{song.artistName}</li> */}
               </div>
             </div>
           ))}

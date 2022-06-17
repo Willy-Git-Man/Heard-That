@@ -66,7 +66,7 @@ font-size: large;
   color: #E0E1DD;
   background-color: #353535;
   background-color: #0D1B2A;
-  width: 0=80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,6 +79,7 @@ font-size: large;
   height: 10%;
   margin-bottom: 5%;
   background-size: 100%;
+  width: 100%;
 
 }
 
