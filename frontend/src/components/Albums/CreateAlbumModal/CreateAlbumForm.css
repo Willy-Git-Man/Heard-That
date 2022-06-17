@@ -19,6 +19,12 @@
 align-items: center;
 /* justify-content: space-between; */
 gap: 5%;
+text-decoration: none;
+}
+
+.homeNav {
+  /* background-color: white; */
+  color: #4ECCA3;
 
 }
 

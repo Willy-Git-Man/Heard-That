@@ -27,7 +27,7 @@ export default function NavLinks({ playing, setPlaying, pic }) {
         </NavLink>
         <NavLink
           className="createAlbumModalButton"
-          activeClassName="logoTopLeft"
+          activeClassName="homeNav"
           to="/Albums/1"
         >
           <FaHome />

@@ -67,6 +67,8 @@
   margin-left: 5px;
   font-size: 1em;
   color: #e0e1dd;
+  color: #4ECCA3;
+
   text-decoration: none;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -98,11 +100,20 @@
 
 .rhap_progress-container {
   color: #e0e1dd;
+  color: #4ECCA3;
+
   height: 1vh;
 }
 
 .rhap_progress-bar.rhap_progress-bar-show-download {
   background-color: #e0e1dd;
+  color: #4ECCA3;
+
+}
+
+.rhap_progress-indicator {
+  color: #4ECCA3;
+
 }
 
 .rhap_container.rhap_loop--off.rhap_play-status--playing.audioPlayer {
