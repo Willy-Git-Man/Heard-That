@@ -22,7 +22,7 @@ function App() {
   // const [isLoaded, setIsLoaded] = useState(false);
 
 
-  
+
 
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
@@ -35,15 +35,23 @@ function App() {
   const userInfo = useSelector((state) => state.session.user);
 
   if (!userInfo) return (
-    <Route path="/">
+    // <Route path="/">
       <LoginRoute />
-    </Route>
+    // </Route>
   )
 
   return (
+
+    <>
         <ProtectedRoute exact path="/Albums/:id">
           <AlbumSongs userInfo={userInfo} albumState={albumState} />
         </ProtectedRoute>
+
+    <Route path="/">
+    <AlbumSongs userInfo={userInfo} albumState={albumState} />
+
+    </Route>
+    </>
   );
 }
 
