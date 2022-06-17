@@ -32,25 +32,18 @@ function App() {
   const albumState = useSelector((state) => state.albums.albums);
   const userInfo = useSelector((state) => state.session.user);
 
-  if (!userInfo) {
-    return (
-      <Route path="/">
+  if (!userInfo) return (
+    <Route path="/">
       <LoginRoute />
     </Route>
-    )
-  }
+  )
+
 
 
   return (
-    <>
-
-      <Switch>
         <ProtectedRoute exact path="/Albums/:id">
           <AlbumSongs userInfo={userInfo} albumState={albumState} />
         </ProtectedRoute>
-
-      </Switch>
-    </>
   );
 }
 
