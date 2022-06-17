@@ -8,8 +8,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import "./navLinks.css";
 import AudioPlayerGlobal from "./audioPlayer";
 import AlbumNavLinks from "./albumNavlinks";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaHome, FaPlus } from "react-icons/fa";
 export default function NavLinks({ playing, setPlaying, pic }) {
   const userInfo = useSelector((state) => state.session.user);
   const allAlbums = Object.values(useSelector((state) => state.albums.albums));
@@ -26,12 +25,22 @@ export default function NavLinks({ playing, setPlaying, pic }) {
         >
           <h1 className="logoH1">Heard-That</h1>
         </NavLink>
+        <NavLink
+          className="createAlbumModalButton"
+          activeClassName="logoTopLeft"
+          to="/Albums/1"
+        >
+          <FaHome />
+          Home
+        </NavLink>
         <CreateAlbumModal userInfo={userInfo} />
+
+        <FaPlus />
         <CreateSongModal userInfo={userInfo} />
 
         <ProfileButton user={userInfo} />
         <span className="navUpperBottomLine"></span>
-        
+
       </div>
 
       <div className="sideBarLower">

@@ -17,18 +17,21 @@
   background-color: #000;
 
 
+
   margin-left: 2.5%;
   width: 90%;
   color: #E0E1DD;
+  color: #4ECCA3;
+
   outline: none;
   font-size: 25px;
   font-weight: lighter;
   height: 2.25vh;
-  border: 1px solid #415A77;
+  border: 1px solid #4ECCA3;
 }
 
 .searchInput::placeholder {
-  color: #E0E1DD;
+  color: #4ECCA3;
   /* opacity: .6; */
   /* font-weight: lighter; */
   font-size: .75em;

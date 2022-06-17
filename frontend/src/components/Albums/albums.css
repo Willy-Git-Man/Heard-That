@@ -31,7 +31,7 @@ h2 {
   width: 100%;
   background-color: black;
   background-color: #A0D2EB;
-  background-color: #494D5F;
+  background-color: #393E46;
 
 
   /* opacity: .9; */
@@ -55,7 +55,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
-  background-color: #0d1b2a;
+  background-color: #232931;
   height: 5%;
   width: 100%;
 }
@@ -86,7 +86,8 @@ h2 {
   background-size: cover;
   width: 2.5vh;
   background-position: 50% 50%;
-  color: #e0e1dd;
+  color: #4ECCA3;
+  ;
 }
 
 .songDivButtonActive {
