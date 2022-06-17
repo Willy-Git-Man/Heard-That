@@ -33,6 +33,15 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
     (album) => album.userId === userInfo.id
   );
 
+
+  const allSongs = useSelector((state) => state.songs.songs);
+  const allSongsObjectArray = Object.values(allSongs);
+  const allSongsObjectArrayFiltered = allSongsObjectArray.filter(
+    (album) => album.userId === userInfo.id
+  );
+
+
+
   useEffect(() => {
     const validationErrors = [];
 
@@ -73,52 +82,44 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
   return (
     <>
       <div className="createSongFormDiv">
-      <h3 className='createSongTitle'>Add Song</h3>
+        <h3 className='createSongTitle'>Add Song</h3>
         <form className="formDiv" onSubmit={handleSubmit}>
           <ul className="errors">
             {errors.map((error) => (
               <li key={error}>{error}</li>
             ))}
           </ul>
-          <label htmlFor="songNameLabel">Song Name: </label>
+          {/* <label htmlFor="songNameLabel">Song Name: </label> */}
           <input
-          className="createSongInput"
+            className="createSongInput"
             type="text"
             name="songName"
-            value={songName}
+            value={"Song Name"}
 
             onChange={newSongName}
             required
           />
 
-          <label htmlFor="artistNameLabel">Artist Name: </label>
+          {/* <label htmlFor="artistNameLabel">Artist Name: </label> */}
           <input
-          className="createSongInput"
+            className="createSongInput"
             type="text"
             name="artistName"
-            value={artistName}
+            value={"Artist Name"}
             onChange={newArtistName}
             required
           />
 
-          <label htmlFor="songUrlLabel">Song Url: </label>
+          {/* <label htmlFor="songUrlLabel">Song Url: </label>
           <input
-          className="createSongInput"
+            className="createSongInput"
             type="text"
             name="songUrl"
             value={songUrl}
             onChange={newSongUrl}
             required
-          />
-
-          {/* <label htmlFor="imageUrlLabel">Image Url: </label>
-          <input
-            type="text"
-            name="imageUrl"
-            value={imageUrl}
-            onChange={newImageUrl}
-            required
           /> */}
+
           {/*
           <label htmlFor="albumIdLabel"></label>
           <input
@@ -128,15 +129,45 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
             onChange={newAlbumId}
             required
           /> */}
-          <label htmlFor="albumIdLabel">Ablum : </label>
+
           <select
             type="text"
             name="albumId"
             className="createSongInput"
-            value={albumId}
+            // value={allSongsObjectArrayFiltered[0].songUrl}
+            onChange={newSongUrl}
+            required
+          >
+
+            <option value="Archived Songs">
+              {"Archived Songs"}
+            </option>
+
+
+            {allSongsObjectArrayFiltered.map((song, i) => (
+
+              <option value={song.songUrl} key={i} >
+                {song.songName}
+              </option>
+            ))}
+          </select>
+
+
+
+          <select
+            type="text"
+            name="albumId"
+            className="createSongInput"
+            // value={albumId}
             onChange={newAlbumId}
             required
           >
+
+            <option value="Archived Songs">
+              {"Archived Albums"}
+            </option>
+
+
             <option value={1} key={1}>
               {allAlbums[1].title}
             </option>

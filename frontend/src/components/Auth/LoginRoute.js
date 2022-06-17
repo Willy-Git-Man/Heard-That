@@ -16,57 +16,54 @@ function LoginRoute() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const userInfo = useSelector((state) => state.session.user);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  if (!userInfo)
-    return (
-      <>
-        <div className="loginMainDiv">
-          <div className="loginInnerMainDiv">
+  return (
+    <>
+      <div className="loginMainDiv">
+        <div className="loginInnerMainDiv">
+          <div className="loginDiv">
+            <LoginForm isLoaded={isLoaded}/>
+          </div>
+        </div>
+      </div>
 
-            <div className="loginDiv">
-              <LoginForm />
-            </div>
+      <footer class="footer">
+        <div class="footer-left">
+          <h3 className="footerName">William <span>Grossman</span></h3>
+        </div>
+
+        <div class="footer-center">
+          <div className="footerCell">
+            <i class="fa fa-map-marker"></i>
+            <p> New York, NY</p>
+          </div>
+
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>434-242-8614</p>
+          </div>
+
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p>william.b.grossman@gmail.com</p>
+          </div>
+
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-icons">
+            <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><FaLinkedinIn /></a>
           </div>
         </div>
 
-        <footer class="footer">
-          <div class="footer-left">
-            <h3 className="footerName">William <span>Grossman</span></h3>
-          </div>
+      </footer>
 
-          <div class="footer-center">
-            <div className="footerCell">
-              <i class="fa fa-map-marker"></i>
-              <p> New York, NY</p>
-            </div>
-
-            <div>
-              <i class="fa fa-phone"></i>
-              <p>434-242-8614</p>
-            </div>
-
-            <div>
-              <i class="fa fa-envelope"></i>
-              <p>william.b.grossman@gmail.com</p>
-            </div>
-
-          </div>
-
-          <div class="footer-right">
-            <div class="footer-icons">
-              <a href="https://github.com/Willy-Git-Man/Heard-That" target="blank"><FaGithub /></a>
-              <a href="https://www.linkedin.com/in/william-b-grossman/" target="blank"><FaLinkedinIn /></a>
-            </div>
-          </div>
-
-        </footer>
-
-      </>
-    );
+    </>
+  );
 }
 
 export default LoginRoute;

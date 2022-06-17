@@ -22,6 +22,8 @@ function App() {
   // const [isLoaded, setIsLoaded] = useState(false);
 
 
+  
+
   useEffect(() => {
     dispatch(getAllAlbumsThunk());
     dispatch(getAllSongsThunk());
@@ -37,8 +39,6 @@ function App() {
       <LoginRoute />
     </Route>
   )
-
-
 
   return (
         <ProtectedRoute exact path="/Albums/:id">

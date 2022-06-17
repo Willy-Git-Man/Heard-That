@@ -7,13 +7,12 @@ import SignupFormModal from "../SignupFormModal";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 
-function LoginForm() {
+function LoginForm({loggedIn}) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const history = useHistory()
-
 
 
   const handleSubmit = (e) => {
@@ -24,7 +23,6 @@ function LoginForm() {
         const data = await res.json();
         if (data && data.errors) {
           setErrors(data.errors);
-          // history.push('/songs')
         }
       }
       );
