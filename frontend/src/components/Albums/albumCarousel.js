@@ -18,6 +18,8 @@ export default function AlbumCarousel({ userInfo }) {
     (album) => album.userId === userInfo.id || album.userId === 2
   );
 
+  console.log(userAlbums)
+
   const length = userAlbums.length;
 
   const multipleAlbumCarouselSettings = {
@@ -81,7 +83,7 @@ export default function AlbumCarousel({ userInfo }) {
 
           height: "2.5vh",
           width: "2.5vh",
-          zIndex:"9999"
+          zIndex: "9999"
         }}
         onClick={() => rightArrow()}
       />
@@ -108,7 +110,7 @@ export default function AlbumCarousel({ userInfo }) {
 
           height: "2.5vh",
           width: "2.5vh",
-          zIndex:"9999"
+          zIndex: "9999"
         }}
         onClick={() => leftArrow()}
       />
@@ -149,23 +151,16 @@ export default function AlbumCarousel({ userInfo }) {
         ))}
       </Slider>
 
-      <Slider className="test"
-        {...lowerCarouselSettings}
+
+
+      {/* <div
+        className="albumNameLinkLower"
+        style={{
+          backgroundImage: `url(${allAlbums[+id]?.imageUrl})`,
+        }}
       >
-        <div className="mainAlbumsEachAlbumDiv2" key={allAlbums[+id]?.id}
-        >
-          <NavLink className="mainAlbumsEachAlbumDivNavLink" to={`/Albums/${allAlbums[+id]?.id}`}>
-            <div
-              className="albumNameLinkLower"
-              style={{
-                backgroundImage: `url(${allAlbums[+id]?.imageUrl})`,
-              }}
-            >
-              <h1 className="albumCarouselAlbumTitleLower"> {allAlbums[+id]?.title}</h1>
-            </div>
-          </NavLink>
-        </div>
-      </Slider>
+        <h1 className="albumCarouselAlbumTitleLower"> {allAlbums[+id]?.title}</h1>
+      </div> */}
     </div>
   );
 }

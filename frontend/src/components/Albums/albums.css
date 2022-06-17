@@ -14,12 +14,13 @@ h2 {
 }
 
 .mainCarouselDiv {
-  height: 30vh;
+  /* height: 30vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 95%;
-  margin-left: 2.5%;
+  padding: 2.5%;
+
 }
 
 .albumSongsListDiv {
@@ -45,7 +46,7 @@ h2 {
   align-items: center;
   height: 55vh;
   width: 95%;
-  padding-left: 2.5%;
+  padding: 2.5%;
   overflow-y: scroll;
   z-index: 1;
   -webkit-overflow-scrolling: touch;
@@ -255,6 +256,8 @@ h2 {
   color: black; */
   /* font-family: "FontAwesome";
   font-size: 55px; */
+  position: absolute;
+  left: 0;
 }
 .slick-prev:before {
   /* font-family: "FontAwesome";
@@ -269,13 +272,18 @@ h2 {
   /* border-radius: 25%; */
   /* font-size: 25px; */
   /* color: black; */
+  position: absolute;
+  right: 0;
+}
+
+.slick-slider.center.slick-initialized {
 }
 
 .mainAlbumsEachAlbumDiv {
   height: 15vh;
   width: 25px;
   justify-content: center;
-  width: 100%;
+  width: 100px;
 }
 
 .mainAlbumsEachAlbumDiv2 {
@@ -297,6 +305,7 @@ h2 {
 
 .mainAlbumsEachAlbumDivNavLink {
   height: 15vh;
+  /* width: 100%; */
   width: 100%;
   text-decoration: none;
 }
@@ -330,8 +339,11 @@ h2 {
 }
 
 .albumNameLinkLower {
+  position: absolute;
+  bottom: 10vh;
   width: 100%;
   height: 100%;
+  height: 90vh;
   height: 12.5vh;
   display: flex;
   justify-content: center;
@@ -415,7 +427,8 @@ h2 {
 .songTitleAndArtistDiv {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 60%;
+  margin: 0;
 }
 
 .albumCarouselAlbumTitle {
@@ -459,8 +472,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  margin-left: 5%;
+  /* margin-left: 5%; */
   overflow: hidden;
 }
 
