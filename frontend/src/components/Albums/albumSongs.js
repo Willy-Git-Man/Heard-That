@@ -22,7 +22,11 @@ export default function AlbumSongs({ userInfo }) {
   const allSongs = useSelector((state) => state.songs.songs);
   const allAlbumSongsArray = Object.values(allSongs).filter((song) => song.albumId === +id)
 
-  const playingState = (playing) => { setPlaying(playing)};
+  const playingState = (playing) => {
+    // let nowPlaying = allAlbumSongsArray[0].songUrl
+    // allAlbumSongsArray.shift()
+    setPlaying(playing)
+  };
 
   return (
     <div className="albumMainPage">

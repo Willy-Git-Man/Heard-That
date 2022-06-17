@@ -19,7 +19,7 @@ export const PlayingContext = React.createContext();
 
 function App() {
   const dispatch = useDispatch();
-  const [isLoaded, setIsLoaded] = useState(false);
+  // const [isLoaded, setIsLoaded] = useState(false);
 
 
   useEffect(() => {
@@ -29,29 +29,26 @@ function App() {
     // dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  const userInfo = useSelector((state) => state.session.user);
   const albumState = useSelector((state) => state.albums.albums);
+  const userInfo = useSelector((state) => state.session.user);
+
+  if (!userInfo) {
+    return (
+      <Route path="/">
+      <LoginRoute />
+    </Route>
+    )
+  }
+
 
   return (
     <>
 
       <Switch>
-        {!userInfo && (
-          <Route path="/">
-            <Redirect to="/" />
-            <LoginRoute />
-
-          </Route>
-        )}
-
         <ProtectedRoute exact path="/Albums/:id">
           <AlbumSongs userInfo={userInfo} albumState={albumState} />
         </ProtectedRoute>
-        <ProtectedRoute path="/">
-          <>
-            <Redirect to="/Albums/1" />
-          </>
-        </ProtectedRoute>
+
       </Switch>
     </>
   );

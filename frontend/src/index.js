@@ -20,6 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.store = store;
 }
 function Root() {
+  // const userInfo = useSelector((state) => state.session.user);
   return (
     <Provider store={store}>
       <ModalProvider>
