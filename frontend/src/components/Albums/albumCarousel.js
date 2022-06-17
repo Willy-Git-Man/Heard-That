@@ -137,50 +137,30 @@ export default function AlbumCarousel({ userInfo }) {
             backgroundRepeat: 'no-repeat',
           }}> </h1>
           </NavLink>
-          <h1 className="albumCarouselTitleTest">{album.title}</h1>
-           </div>
-        ))}
-        {/* {allAlbumKeys.map((album) => (
-          <div className="mainAlbumsEachAlbumDiv" key={allAlbums[album]?.id}>
 
-            <div className="albumPictureDiv"
-              style={{
-                backgroundImage: `url(${allAlbums[album]?.imageUrl})`,
-              }}
+          <NavLink
+           className="mainAlbumsEachAlbumDivNavLink"
+           to={`/Albums/${album.id}`}
+
             >
-              <NavLink
-                className="mainAlbumsEachAlbumDivNavLink"
-                to={`/Albums/${allAlbums[album].id}`}
-              >
-                {allAlbums[album].id !== +id && (
-                  <h1 className="albumCarouselAlbumTitle" style={{
-                  }}>
-                    {allAlbums[album]?.title}
-                  </h1>
-                )}
+          <h1 className="albumCarouselTitleTest">{album.title}</h1>
+           </NavLink>
+           </div>
 
-                {allAlbums[album].id !== +id && (
-                  <h1 className="albumCarouselAlbumTitle" style={{
-                  }}>
-                    {allAlbums[album]?.title}
-                  </h1>
-                )}
-              </NavLink>
-            </div>
-          </div>
-        ))} */}
+        ))}
+
       </Slider>
-
-
-
-      {/* <div
-        className="albumNameLinkLower"
+      <div
+        className="carouselBackgroundImageDiv"
         style={{
           backgroundImage: `url(${allAlbums[+id]?.imageUrl})`,
         }}
       >
-        <h1 className="albumCarouselAlbumTitleLower"> {allAlbums[+id]?.title}</h1>
-      </div> */}
+        <h1 className="albumCarouselAlbumTitleLower"> {userAlbums[+id]?.title}</h1>
+      </div>
+
+
+
     </div>
   );
 }

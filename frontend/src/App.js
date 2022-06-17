@@ -53,7 +53,8 @@ function App() {
         </ProtectedRoute>
 
     <Route path="/">
-    <AlbumSongs userInfo={userInfo} albumState={albumState} />
+    {/* <AlbumSongs userInfo={userInfo} albumState={albumState} /> */}
+    <Redirect to="/Albums/1" />
 
     </Route>
     </>

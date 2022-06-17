@@ -27,8 +27,14 @@ export default function AlbumSongs({ userInfo }) {
 
 
   const allSongs = useSelector((state) => state.songs.songs);
+  const allAlbums = useSelector((state) => state.albums.albums);
+
 
   const allAlbumSongsArray = Object.values(allSongs).filter((song) => song.albumId === +id)
+  const allAlbumAlbumsArray = Object.values(allAlbums).filter((song) => song.albumId === +id)
+
+  console.log(allAlbumAlbumsArray)
+
   const [playing, setPlaying] = useState("");
   const [index, setIndex] = useState(0)
 
@@ -49,7 +55,9 @@ console.log("playing",playing)
 
       <div className="albumSongsListDiv">
         <AlbumCarousel userInfo={userInfo} />
-        <div className="albumSongsListInnerDiv">
+        <div className="albumSongsListInnerDiv" style={{
+            // backgroundImage: `url(${album?.imageUrl})`,
+           }} >
 
           {!allAlbumSongsArray.length && (
             <>
