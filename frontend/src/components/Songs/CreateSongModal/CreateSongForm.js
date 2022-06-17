@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addSongThunk } from "../../../store/songs";
+import { FaRegPlusSquare } from "react-icons/fa";
+
 
 import "./CreateSongForm.css";
 
@@ -82,6 +84,7 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
   return (
     <>
       <div className="createSongFormDiv">
+
         <h3 className='createSongTitle'>Add Song</h3>
         <form className="formDiv" onSubmit={handleSubmit}>
           <ul className="errors">

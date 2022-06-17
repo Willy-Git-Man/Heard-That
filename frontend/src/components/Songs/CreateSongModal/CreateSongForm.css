@@ -65,19 +65,23 @@ form {
 }
 
 .createSongModalButton {
-  /* height: .5vh; */
   width:100%;
   color: #E0E1DD;
   font-size: 1em;
-  /* background-color: #0D1B2A; */
-  background: none;
+  background-color: #0D1B2A;
+  background-color: #37465B;
+  background-color: #000;
+
+
   border: none;
   display: flex;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   padding-left: 7.5%;
   display: flex;
-  justify-content: ;
-  align-items: center;
+align-items: center;
+/* justify-content: space-between; */
+gap: 5%;
+text-decoration: none;
 
 
 }

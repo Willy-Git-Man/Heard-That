@@ -15,7 +15,8 @@ function CreateAlbumModal({ userInfo }) {
       >
         <FaRegPlusSquare  classNAme="plusSign"/>
 
-        <h5>Add Playlist</h5>
+        {/* <h5>Add Playlist</h5> */}
+        Add Playlist
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

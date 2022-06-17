@@ -35,7 +35,7 @@ export default function NavLinks({ playing, setPlaying, pic }) {
         </NavLink>
         <CreateAlbumModal userInfo={userInfo} />
 
-        <FaPlus />
+        {/* <FaPlus /> */}
         <CreateSongModal userInfo={userInfo} />
 
         <ProfileButton user={userInfo} />
