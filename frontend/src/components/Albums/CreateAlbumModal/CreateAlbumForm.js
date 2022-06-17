@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CreateAlbumForm from ".";
 import { Modal } from "../../../context/Modal";
+import { FaRegPlusSquare } from "react-icons/fa";
 
 import "./CreateAlbumForm.css";
 
@@ -12,7 +13,9 @@ function CreateAlbumModal({ userInfo }) {
         className={"createAlbumModalButton"}
         onClick={() => setShowModal(true)}
       >
-        Add Playlist
+        <FaRegPlusSquare  classNAme="plusSign"/>
+
+        <h5>Add Playlist</h5>
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

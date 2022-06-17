@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addAlbumThunk } from "../../../store/albums";
+import { FaRegPlusSquare } from "react-icons/fa";
+
 
 import "./CreateAlbumForm.css";
 
@@ -52,7 +54,8 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
   return (
     <>
       <div className="createAlbumFormDiv">
-        <h3 className='createSongTitle'>Add Playlist</h3>
+        <h3 className='createSongTitle'>
+          Add Playlist</h3>
 
         <form className="formDivAlbum" onSubmit={handleSubmit}>
           <ul className="errors">

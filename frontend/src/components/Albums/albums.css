@@ -30,6 +30,10 @@ h2 {
   height: 90%;
   width: 100%;
   background-color: black;
+  background-color: #A0D2EB;
+  background-color: #494D5F;
+
+
   /* opacity: .9; */
 }
 .albumSongsListInnerDiv {
@@ -358,6 +362,9 @@ h2 {
   height: 90vh;
   background-color: #353535;
   background-color: #0d1b2a;
+  background-color: #37465B;
+  background-color: #000;
+
 }
 .SideBarInner {
   width: 100%;

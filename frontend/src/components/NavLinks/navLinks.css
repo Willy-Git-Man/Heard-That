@@ -20,7 +20,7 @@
   flex-direction: column;
   width: 100%;
   overflow: hidden;
-  min-height: 150px;
+  min-height: 250px;
 }
 
 .logoTopLeft {
@@ -132,6 +132,8 @@
 }
 .rhap_main.rhap_stacked {
   background-color: #415A77;
+  background-color: ##0074D9;
+
   height: 10vh;
   width: 100%;
 }
