@@ -81,6 +81,7 @@ export default function AlbumCarousel({ userInfo }) {
           backgroundColor: "#4ECCA3",
           borderRadius: "30px",
           color:"black",
+          opacity: ".7",
 
           height: "3.5vh",
           width: "3.5vh",
@@ -109,6 +110,7 @@ export default function AlbumCarousel({ userInfo }) {
           color: "black",
           borderRadius: "30px",
           color:"black",
+          opacity: ".7",
 
           height: "3.5vh",
           width: "3.5vh",
