@@ -18,7 +18,7 @@ export default function AlbumCarousel({ userInfo }) {
     (album) => album.userId === userInfo.id || album.userId === 2
   );
 
-  console.log(userAlbums)
+  console.log(userAlbums, allAlbumKeys)
 
   const length = userAlbums.length;
 
@@ -27,7 +27,7 @@ export default function AlbumCarousel({ userInfo }) {
     // centerMode: true,
     infinite: true,
     centerPadding: "60px",
-    slidesToShow: 6,
+    slidesToShow: 5,
     // speed: 1000,
     nextArrow: <RightArrow />,
     prevArrow: <LeftArrow />,
@@ -119,8 +119,28 @@ export default function AlbumCarousel({ userInfo }) {
 
   return (
     <div className="mainCarouselDiv">
-      <Slider {...multipleAlbumCarouselSettings}>
-        {allAlbumKeys.map((album) => (
+      <Slider {...multipleAlbumCarouselSettings} className="testSlider">
+        {userAlbums.map((album) => (
+          <div className="albumCarouselEachAlbumDiv"   style={{
+            backgroundImage: `url(${album?.imageUrl})`,
+           }} >
+
+           <NavLink
+           className="mainAlbumsEachAlbumDivNavLink"
+           to={`/Albums/${album.id}`}
+
+            >
+          <h1 className="albumCarouselTitle" style={{
+            backgroundImage: `url(${album?.imageUrl})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          }}> </h1>
+          </NavLink>
+          <h1 className="albumCarouselTitleTest">{album.title}</h1>
+           </div>
+        ))}
+        {/* {allAlbumKeys.map((album) => (
           <div className="mainAlbumsEachAlbumDiv" key={allAlbums[album]?.id}>
 
             <div className="albumPictureDiv"
@@ -148,7 +168,7 @@ export default function AlbumCarousel({ userInfo }) {
               </NavLink>
             </div>
           </div>
-        ))}
+        ))} */}
       </Slider>
 
 

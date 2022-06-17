@@ -250,6 +250,14 @@ h2 {
   color: white;
 }
 
+.slick-list {
+  /* background-color: white;
+ display: flex;
+ flex-direction: column;
+ justify-content: center; */
+ /* justify-content: space-between; */
+}
+
 .slick-arrow.slick-prev {
   /* z-index: 1;
   border-radius: 25%;
@@ -303,11 +311,46 @@ h2 {
   justify-content: center;
 }
 
-.mainAlbumsEachAlbumDivNavLink {
+.albumCarouselEachAlbumDiv {
   height: 15vh;
-  /* width: 100%; */
   width: 100%;
-  text-decoration: none;
+
+}
+
+.albumCarouselTitle {
+  height: 90%;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.albumCarouselTitleTest {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin-left: 5%;
+  opacity: .6;
+  background-color: black;
+  overflow: hidden;
+}
+
+.albumCarouselTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testSlider {
+  /* height: 100vh; */
+  /* background-color: black; */
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.mainAlbumsEachAlbumDivNavLink {
+height: 100%;
+width: 100%;
+
 }
 
 .mainAlbumsAndOtherAlbumsCarouselDiv {
