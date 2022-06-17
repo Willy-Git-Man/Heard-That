@@ -75,9 +75,13 @@ export default function AlbumCarousel({ userInfo }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "#0D1B2A",
-          height: "5vh",
-          width: "5vh",
+          // fontSize: "50px",
+          background: "#4ECCA3",
+          borderRadius: "20px",
+
+          height: "2.5vh",
+          width: "2.5vh",
+          zIndex:"9999"
         }}
         onClick={() => rightArrow()}
       />
@@ -98,10 +102,13 @@ export default function AlbumCarousel({ userInfo }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "#0D1B2A",
+          background: "#4ECCA3",
+          color: "black",
+          borderRadius: "20px",
 
-          height: "5vh",
-          width: "5vh",
+          height: "2.5vh",
+          width: "2.5vh",
+          zIndex:"9999"
         }}
         onClick={() => leftArrow()}
       />

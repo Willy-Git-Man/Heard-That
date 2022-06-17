@@ -27,11 +27,11 @@ h2 {
   flex-direction: column;
   overflow-y: hidden;
   justify-content: space-around;
-  height: 90%;
+  height: 90vh;
   width: 100%;
-  background-color: black;
+  /* background-color: black;
   background-color: #A0D2EB;
-  background-color: #393E46;
+  background-color: #393E46; */
 
 
   /* opacity: .9; */
@@ -247,23 +247,25 @@ h2 {
 }
 
 .slick-arrow.slick-prev {
-  z-index: 1;
+  /* z-index: 1;
   border-radius: 25%;
-  color: black;
+  color: black; */
+  /* font-family: "FontAwesome";
+  font-size: 55px; */
 }
 .slick-prev:before {
-  font-family: "FontAwesome";
-  font-size: 22px;
+  /* font-family: "FontAwesome";
+  font-size: 25px; */
+  /* background-color: black; */
 }
 
 .slick-next:before {
-  font-family: "FontAwesome";
-  font-size: 22px;
 }
 .slick-arrow.slick-next {
-  z-index: 1;
-  border-radius: 25%;
-  color: black;
+  /* z-index: 1; */
+  /* border-radius: 25%; */
+  /* font-size: 25px; */
+  /* color: black; */
 }
 
 .mainAlbumsEachAlbumDiv {
