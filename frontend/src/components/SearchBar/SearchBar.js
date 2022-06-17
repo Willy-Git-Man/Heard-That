@@ -7,14 +7,35 @@ import { FaPlayCircle } from "react-icons/fa";
 import { FcDisplay } from "react-icons/fc";
 
 const SearchBar = ({ playing, setPlaying }) => {
+  const allAlbums = Object.values(useSelector((state) => state.albums.albums));
+  const allSongs = Object.values(useSelector((state) => state.songs.songs));
+
+
+
   const [searchValue, setSearchValue] = useState("");
   const [songs, setSongs] = useState([]);
   const [pic, setPic] = useState([]);
 
   const history = useHistory();
 
-  const allSongs = Object.values(useSelector((state) => state.songs.songs));
-  const allAlbums = Object.values(useSelector((state) => state.albums.albums));
+
+  const filteredSongs = allSongs.filter((song, i) => {
+    if (searchValue === "") return null;
+    else if (
+      song.songName.toLowerCase().includes(searchValue.toLowerCase())
+    )
+      return song;
+  })
+
+  const filteredAlbums = allAlbums.filter((album, i) => {
+    if (searchValue === "") return null;
+    else if (
+      album.title.toLowerCase().includes(searchValue.toLowerCase())
+      )
+      return album;
+  })
+  console.log(filteredAlbums)
+  console.log(filteredSongs)
 
   const handlePicture = (e) => {
     e.target.src =
@@ -41,17 +62,21 @@ const SearchBar = ({ playing, setPlaying }) => {
           }}
         />
       </div>
+
       <div className="searchDivWithResults">
-        <h1 className="searchSongsTitle">Songs</h1>
-        {allSongs
+        {/* {allSongs
           .filter((song, i) => {
             if (searchValue === "") return null;
             else if (
               song.songName.toLowerCase().includes(searchValue.toLowerCase())
-            )
+              )
               return song;
-          })
-          .map((song, i) => (
+            }) */}
+            {filteredSongs.length > 1 && (
+
+              <h1 className="searchSongsTitle">Songs</h1>
+            )}
+          { filteredSongs.map((song, i) => (
             <div className="albumSongListDivSearch" key={i} >
 
               {playing !== song.songUrl && (
@@ -70,6 +95,8 @@ const SearchBar = ({ playing, setPlaying }) => {
                   </button>
                 </div>
               )}
+
+
 
               {playing === song.songUrl && (
                 <div className="searchDivPlayButton"
@@ -100,24 +127,24 @@ const SearchBar = ({ playing, setPlaying }) => {
             </div>
           ))}
 
+{filteredAlbums.length > 1 && (
+
 <h1 className="searchSongsTitle">Albums</h1>
-        {allAlbums
-          .filter((album) => {
-            if (searchValue === "") return null;
-            else if (
-              album.title.toLowerCase().includes(searchValue.toLowerCase())
-              )
-              return album;
-            })
-          .map((album,i) => (
+)}
+        {filteredAlbums.map((album,i) => (
+          <div className="searchAlbumsOuterDiv">
             <div
               href="/Albums/1"
               className="albumDivButton"
               style={{ backgroundImage: `url(${album.imageUrl})` }}
               onClick={() => albumSearchHistoryPush(album.id)}
-              keu={i}
+              key={i}
             >
-              <h3 className="albumSearchName">{album.title}</h3>
+
+              {/* <h3 className="albumSearchName"  style={{ backgroundImage: `url(${album.imageUrl})` }}>{album.title}</h3> */}
+              <h3 className="albumSearchName" >{album.title}</h3>
+
+              </div>
             </div>
           ))}
 
