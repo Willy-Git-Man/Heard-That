@@ -16,7 +16,7 @@
   height: 11vh;
   /* margin-bottom: 5%; */
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: column;
   width: 100%;
   overflow: hidden;

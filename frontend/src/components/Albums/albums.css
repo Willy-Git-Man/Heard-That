@@ -403,7 +403,8 @@ h2 {
 
 .songTitleAndArtistDiv {
   display: flex;
-  width: 77%;
+  justify-content: space-between;
+  width: 90%;
 }
 
 .albumCarouselAlbumTitle {

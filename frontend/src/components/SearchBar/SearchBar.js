@@ -42,6 +42,7 @@ const SearchBar = ({ playing, setPlaying }) => {
         />
       </div>
       <div className="searchDivWithResults">
+        <h1 className="searchSongsTitle">Songs</h1>
         {allSongs
           .filter((song, i) => {
             if (searchValue === "") return null;
@@ -99,14 +100,15 @@ const SearchBar = ({ playing, setPlaying }) => {
             </div>
           ))}
 
+<h1 className="searchSongsTitle">Albums</h1>
         {allAlbums
           .filter((album) => {
             if (searchValue === "") return null;
             else if (
               album.title.toLowerCase().includes(searchValue.toLowerCase())
-            )
+              )
               return album;
-          })
+            })
           .map((album,i) => (
             <div
               href="/Albums/1"

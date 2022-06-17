@@ -63,7 +63,7 @@ font-size: large;
   width: 100%;
 }
 .albumSearchName {
-  color: #E0E1DD;
+  color: #4ECCA3;
   background-color: #353535;
   background-color: #0D1B2A;
   width: 100%;
@@ -76,10 +76,10 @@ font-size: large;
   display: flex;
   justify-content:  center;
   align-items: center;
-  height: 10%;
-  margin-bottom: 5%;
+  height: 7.5vh;
+  margin-bottom: 10%;
   background-size: 100%;
-  width: 100%;
+  width: 7.5vw;
 
 }
 
