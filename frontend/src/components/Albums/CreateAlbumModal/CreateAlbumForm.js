@@ -13,7 +13,7 @@ function CreateAlbumModal({ userInfo }) {
         className={"createAlbumModalButton"}
         onClick={() => setShowModal(true)}
       >
-        <FaRegPlusSquare  classNAme="plusSign"/>
+        <FaRegPlusSquare  className="plusSig"/>
 
         {/* <h5>Add Playlist</h5> */}
         Add Playlist

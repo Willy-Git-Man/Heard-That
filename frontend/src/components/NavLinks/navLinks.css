@@ -147,6 +147,8 @@ padding-left: 5%;
 .rhap_main.rhap_stacked {
   background-color: #415A77;
   background-color: #232931;
+  /* background-color: #000; */
+
 
   height: 10vh;
   width: 100%;
@@ -230,11 +232,11 @@ padding-left: 5%;
   display: flex;
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 270px;
 }
 
-.prevNextButtonsDiv {
-  display: flex;
+.prevNextButtonDiv {
+  /* display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -245,7 +247,14 @@ padding-left: 5%;
   background-position: 10px center;
   background-size: cover;
   width: 50%;
-  background-position: 50% 50%;
+  background-position: 50% 50%; */
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 .nextButton{
@@ -254,7 +263,8 @@ padding-left: 5%;
   justify-content: center;
   align-items: center;
   bottom: 0;
-  right: 40vw;
+  /* left: 70vw; */
+  right: 35%;
   font-size: 5vh;
   /* height: 5vh; */
   width: 5.5vw;
@@ -273,7 +283,7 @@ padding-left: 5%;
   justify-content: center;
   align-items: center;
   bottom: 0;
-  left: 40vw;
+  left: 35%;
   font-size: 5vh;
   /* height: 5vh; */
   width: 5.5vw;

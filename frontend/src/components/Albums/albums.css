@@ -26,12 +26,15 @@ h2 {
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
-  justify-content: space-around;
-  height: 90vh;
+  justify-content: space-between;
+  height: 100vh;
   width: 100%;
-  /* background-color: black;
+  background-color: black;
   background-color: #A0D2EB;
-  background-color: #393E46; */
+  background-color: #3e4444;
+  position: relative;
+
+  ;
 
 
   /* opacity: .9; */
@@ -357,12 +360,15 @@ h2 {
 
 .albumMainPage {
   display: flex;
-  height: 100%;
+  /* gap: 2.5%; */
+  background-color: white;
+  /* height: 1000%; */
 }
 
 .sideBar {
-  width: 280px;
-  height: 90vh;
+  width: 270px;
+  /* width: 15vw; */
+  height: 100vh;
   background-color: #353535;
   background-color: #0d1b2a;
   background-color: #37465B;
@@ -370,6 +376,9 @@ h2 {
 
 }
 .SideBarInner {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
   width: 100%;
   height: 100%;
   /* position: relative; */

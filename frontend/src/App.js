@@ -20,6 +20,11 @@ export const PlayingContext = React.createContext();
 function App() {
   const dispatch = useDispatch();
   // const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+  }, [dispatch]);
 
 
 

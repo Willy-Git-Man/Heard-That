@@ -14,6 +14,7 @@ import { FcDisplay } from "react-icons/fc";
 import { FaPlayCircle, FaFolderPlus } from "react-icons/fa";
 import CreateSongModal from "../Songs/CreateSongModal";
 import CreateSongForm from '../Songs/CreateSongModal/CreateSongForm';
+import AudioPlayer from "react-h5-audio-player";
 
 import { Modal } from '../../context/Modal';
 
@@ -22,20 +23,21 @@ export default function AlbumSongs({ userInfo }) {
 
   const { id } = useParams();
   const [pic] = useState("");
-  const [playing, setPlaying] = useState("");
   const [showModal, setShowModal] = useState(false);
 
 
   const allSongs = useSelector((state) => state.songs.songs);
 
   const allAlbumSongsArray = Object.values(allSongs).filter((song) => song.albumId === +id)
+  const [playing, setPlaying] = useState("");
+  const [index, setIndex] = useState(0)
 
   const playingState = (playing) => {
     // let nowPlaying = allAlbumSongsArray[0].songUrl
     // allAlbumSongsArray.shift()
     setPlaying(playing)
   };
-
+console.log("playing",playing)
   return (
     <div className="albumMainPage">
 
@@ -50,15 +52,15 @@ export default function AlbumSongs({ userInfo }) {
         <div className="albumSongsListInnerDiv">
 
           {!allAlbumSongsArray.length && (
-    <>
+            <>
 
-    <button className={'createSongEmptyAlbumModalButton'} onClick={() => setShowModal(true)}> Add Songs</button>
-    {showModal && (
-      <Modal onClose={() => setShowModal(false)}>
-        <CreateSongForm setShowModal={setShowModal} userInfo={userInfo}/>
-      </Modal>
-    )}
-  </>
+              <button className={'createSongEmptyAlbumModalButton'} onClick={() => setShowModal(true)}> Add Songs</button>
+              {showModal && (
+                <Modal onClose={() => setShowModal(false)}>
+                  <CreateSongForm setShowModal={setShowModal} userInfo={userInfo} />
+                </Modal>
+              )}
+            </>
           )}
 
           {allAlbumSongsArray.map((song, i) => (
@@ -72,26 +74,28 @@ export default function AlbumSongs({ userInfo }) {
                 </button>
               )}
 
-              {playing === song.songUrl && ( <>
+              {playing === song.songUrl && (<>
 
-                  <button className="songDivButton" onClick={() => playingState("", song.imageUrl)}  >
-                    <FcDisplay />
-                  </button>
+                <button className="songDivButton" onClick={() => playingState("", song.imageUrl)}  >
+                  <FcDisplay />
+                </button>
+              {/* <div className="prevNextButtonDiv"> */}
 
-                  <button
-                    className="prevButton" onClick={() => playingState(allAlbumSongsArray[i - 1].songUrl)}>
-                    <FaArrowCircleLeft />
-                  </button>
+                <button
+                  className="prevButton" onClick={() => playingState(allAlbumSongsArray[i - 1].songUrl)}>
+                  <FaArrowCircleLeft />
+                </button>
 
-                  <button
-                    className="nextButton" onClick={() => playingState(allAlbumSongsArray[i + 1].songUrl)}>
-                    <FaArrowCircleRight />
-                  </button>
-                </>)}
+                <button
+                  className="nextButton" onClick={() => playingState(allAlbumSongsArray[i + 1].songUrl)}>
+                  <FaArrowCircleRight />
+                </button>
+                    {/* </div> */}
+              </>)}
 
               <ul className="songTitleAndArtistDiv">
-                  <li className="songListItem">{song.songName}</li>
-                  <li className="songListItem">{song.artistName}</li>
+                <li className="songListItem">{song.songName}</li>
+                <li className="songListItem">{song.artistName}</li>
               </ul>
 
               <SongButtonDots songId={song.id} />
@@ -99,9 +103,21 @@ export default function AlbumSongs({ userInfo }) {
             </div>
           ))}
         </div>
-      </div>
 
-      <AudioPlayerGlobal playing={playing} pic={pic} />
+      {/* <AudioPlayerGlobal playing={playing} pic={pic} /> */}
+      <div className="globalAudioPlayer">
+
+
+      <AudioPlayer
+        className="audioPlayer"
+        src={playing}
+        // onPlay={(e) => console.log("onPlay")}
+        loop={true}
+        />
+
+
+      </div>
+        </div>
 
     </div>
   );

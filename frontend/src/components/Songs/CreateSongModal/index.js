@@ -12,7 +12,7 @@ function CreateSongModal({userInfo}) {
     <>
 
       <button className={'createSongModalButton'} onClick={() => setShowModal(true)}>
-      <FaRegPlusSquare  classNAme="plusSign"/>
+      <FaRegPlusSquare  className="plusSig"/>
 
       Add Song
 
