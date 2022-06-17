@@ -8,11 +8,9 @@ import { FaRegPlusSquare } from "react-icons/fa";
 import "./CreateSongForm.css";
 
 export default function CreateSongForm({ userInfo, setShowModal }) {
-  const [songName, setSongName] = useState("Space Disco");
+  const [songName, setSongName] = useState("Song Name");
   const [artistName, setArtistName] = useState("T. Schürger");
-  const [songUrl, setSongUrl] = useState(
-    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-  );
+  const [songUrl, setSongUrl] = useState("");
   const [imageUrl, setImageUrl] = useState(
     "https://i.icanvas.com/DGT44?d=2&sh=v&p=1&bg=g&t=1637676126"
   );
@@ -92,23 +90,22 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
               <li key={error}>{error}</li>
             ))}
           </ul>
-          {/* <label htmlFor="songNameLabel">Song Name: </label> */}
           <input
             className="createSongInput"
             type="text"
             name="songName"
-            value={"Song Name"}
-
+            placeholder="Song Name"
             onChange={newSongName}
             required
           />
 
-          {/* <label htmlFor="artistNameLabel">Artist Name: </label> */}
           <input
             className="createSongInput"
             type="text"
             name="artistName"
-            value={"Artist Name"}
+            // value={"Artist Name"}
+            placeholder="Artist Name"
+
             onChange={newArtistName}
             required
           />
@@ -123,39 +120,23 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
             required
           /> */}
 
-          {/*
-          <label htmlFor="albumIdLabel"></label>
-          <input
-            type="text"
-            name="albumId"
-            value={albumId}
-            onChange={newAlbumId}
-            required
-          /> */}
-
           <select
             type="text"
             name="albumId"
             className="createSongInput"
-            // value={allSongsObjectArrayFiltered[0].songUrl}
             onChange={newSongUrl}
             required
           >
-
             <option value="Archived Songs">
               {"Archived Songs"}
             </option>
 
-
             {allSongsObjectArrayFiltered.map((song, i) => (
-
               <option value={song.songUrl} key={i} >
                 {song.songName}
               </option>
             ))}
           </select>
-
-
 
           <select
             type="text"
@@ -169,7 +150,6 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
             <option value="Archived Songs">
               {"Archived Albums"}
             </option>
-
 
             <option value={1} key={1}>
               {allAlbums[1].title}

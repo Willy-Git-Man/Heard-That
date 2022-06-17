@@ -80,11 +80,7 @@ const SearchBar = ({ playing, setPlaying }) => {
             <div className="albumSongListDivSearch" key={i} >
 
               {playing !== song.songUrl && (
-                <div className="searchDivPlayButton"
-                  // style={{
-                  //   backgroundImage: `url(${song?.imageUrl})`,
-                  // }}
-                >
+                <div className="searchDivPlayButton" >
                   <button
                     className="searchDivPlayButton"
                     onClick={() => test(song.songUrl, song.imageUrl)}
@@ -99,11 +95,7 @@ const SearchBar = ({ playing, setPlaying }) => {
 
 
               {playing === song.songUrl && (
-                <div className="searchDivPlayButton"
-                  style={{
-                    backgroundImage: `url(${song?.imageUrl})`,
-                  }}
-                >
+                <div className="searchDivPlayButton">
                   <button
                     className="songDivButton"
                     onClick={() => test("song.songUrl", "song.imageUrl")}
