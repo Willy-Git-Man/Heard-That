@@ -63,22 +63,23 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
               <li key={error}>{error}</li>
             ))}
           </ul>
-          <label htmlFor="albumTitle">Album Name: </label>
           <input
             className="createSongInput"
             type="text"
             name="albumTitle"
-            value={title}
+            // value={title}
+            placeholder="Playlist Title"
             onChange={newTitle}
             required
           />
 
-          <label htmlFor="albumImage">Image Url: </label>
           <input
             className="createSongInput"
             type="text"
             name="albumImage"
-            value={imageUrl}
+            // value={imageUrl}
+            placeholder="Image Url"
+
             onChange={newAlbumImage}
             required
           />
