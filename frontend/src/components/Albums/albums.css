@@ -20,6 +20,12 @@ h2 {
   justify-content: space-around;
   width: 95%;
   padding: 2.5%;
+  padding-bottom: 1%;
+  /* padding-bottom: 1.5%; */
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
+  box-shadow: #232931 0px 20px 30px -10px;
+
 }
 
 .albumSongsListDiv {
@@ -30,8 +36,9 @@ h2 {
   height: 100vh;
   width: 100%;
   background-color: black;
-  background-color: #A0D2EB;
-  background-color: #3e4444;
+  /* background-color: #A0D2EB; */
+  /* background-color: #04293A; */
+  /* background-color: #232931; */
   position: relative;
 
   ;
@@ -49,6 +56,7 @@ h2 {
   overflow-y: scroll;
   z-index: 1;
   -webkit-overflow-scrolling: touch;
+  /* box-shadow: #232931 0px 10px 10px 10px; */
 }
 .albumSongsListInnerDiv::-webkit-scrollbar {
   display: none;
@@ -284,6 +292,7 @@ h2 {
 }
 
 .slick-slider.center.slick-initialized {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .mainAlbumsEachAlbumDiv {
@@ -313,29 +322,44 @@ h2 {
 .albumCarouselEachAlbumDiv {
   height: 15vh;
   width: 100%;
+  /* box-shadow: #232931 0px 20px 30px 10px; */
+  /* box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px; */
+  /* box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px; */
+  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+  /* box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px; */
 }
 
 .albumCarouselTitle {
   height: 90%;
   width: 90%;
   margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: .875;
 }
 
 .albumCarouselTitleTest {
   display: flex;
   justify-content: center;
   width: 90%;
+  height: 15%;
   margin-left: 5%;
-  opacity: .6;
-  background-color: black;
+  background-color: #000;
   overflow: hidden;
+  color: #4ECCA3;
+  text-decoration: none;
+  margin-top: 1%;
+  /* box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px; */
+
 }
 
-.albumCarouselTitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.albumCarouselTitleTest.active {
+  text-decoration: none;
+
 }
+
+
 
 .testSlider {
   /* height: 100vh; */
@@ -346,9 +370,18 @@ h2 {
 }
 
 .mainAlbumsEachAlbumDivNavLink {
-height: 100%;
+height: 90%;
 width: 100%;
+text-decoration: none;
+opacity: .5;
 }
+
+.mainAlbumsEachAlbumDivNavLink.active {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  opacity: 1;
+  }
 
 .mainAlbumsAndOtherAlbumsCarouselDiv {
   width: 100%;
@@ -428,6 +461,9 @@ width: 100%;
   background-color: #0d1b2a;
   background-color: #37465B;
   background-color: #000;
+  opacity: .9;
+  /* background-color: #37465B; */
+
 
 }
 .SideBarInner {
@@ -497,7 +533,8 @@ width: 100%;
   width: 100%;
   position: absolute;
   top: 0;
-  height: 100vh;
+  bottom: 10vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;

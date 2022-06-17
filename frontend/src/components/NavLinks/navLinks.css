@@ -148,7 +148,7 @@ padding-left: 5%;
   background-color: #415A77;
   background-color: #232931;
   /* background-color: #000; */
-
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 
   height: 10vh;
   width: 100%;

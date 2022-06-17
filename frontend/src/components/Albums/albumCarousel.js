@@ -78,11 +78,12 @@ export default function AlbumCarousel({ userInfo }) {
           justifyContent: "center",
           alignItems: "center",
           // fontSize: "50px",
-          background: "#4ECCA3",
-          borderRadius: "20px",
+          backgroundColor: "#4ECCA3",
+          borderRadius: "30px",
+          color:"black",
 
-          height: "2.5vh",
-          width: "2.5vh",
+          height: "3.5vh",
+          width: "3.5vh",
           zIndex: "9999"
         }}
         onClick={() => rightArrow()}
@@ -106,10 +107,11 @@ export default function AlbumCarousel({ userInfo }) {
           alignItems: "center",
           background: "#4ECCA3",
           color: "black",
-          borderRadius: "20px",
+          borderRadius: "30px",
+          color:"black",
 
-          height: "2.5vh",
-          width: "2.5vh",
+          height: "3.5vh",
+          width: "3.5vh",
           zIndex: "9999"
         }}
         onClick={() => leftArrow()}
@@ -121,43 +123,43 @@ export default function AlbumCarousel({ userInfo }) {
     <div className="mainCarouselDiv">
       <Slider {...multipleAlbumCarouselSettings} className="testSlider">
         {userAlbums.map((album) => (
-          <div className="albumCarouselEachAlbumDiv"   style={{
+          <div className="albumCarouselEachAlbumDiv" style={{
             backgroundImage: `url(${album?.imageUrl})`,
-           }} >
+          }} >
 
-           <NavLink
-           className="mainAlbumsEachAlbumDivNavLink"
-           to={`/Albums/${album.id}`}
+            <NavLink
+              className="mainAlbumsEachAlbumDivNavLink"
+              to={`/Albums/${album.id}`}
 
             >
-          <h1 className="albumCarouselTitle" style={{
-            backgroundImage: `url(${album?.imageUrl})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}> </h1>
-          </NavLink>
+              <h1 className="albumCarouselTitle" style={{
+                backgroundImage: `url(${album?.imageUrl})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+              }}> </h1>
+              <h3 className="albumCarouselTitleTest">{album.title}</h3>
+            </NavLink>
 
-          <NavLink
-           className="mainAlbumsEachAlbumDivNavLink"
-           to={`/Albums/${album.id}`}
+            <NavLink
+              className="mainAlbumsEachAlbumDivNavLink"
+              to={`/Albums/${album.id}`}
 
             >
-          <h1 className="albumCarouselTitleTest">{album.title}</h1>
-           </NavLink>
-           </div>
+            </NavLink>
+          </div>
 
         ))}
 
       </Slider>
-      <div
+      {/* <div
         className="carouselBackgroundImageDiv"
         style={{
           backgroundImage: `url(${allAlbums[+id]?.imageUrl})`,
         }}
       >
         <h1 className="albumCarouselAlbumTitleLower"> {userAlbums[+id]?.title}</h1>
-      </div>
+      </div> */}
 
 
 
