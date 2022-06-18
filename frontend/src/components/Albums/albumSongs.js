@@ -30,8 +30,12 @@ export default function AlbumSongs({ userInfo }) {
   const allAlbums = useSelector((state) => state.albums.albums);
 
 
+
   const allAlbumSongsArray = Object.values(allSongs).filter((song) => song.albumId === +id)
   const allAlbumAlbumsArray = Object.values(allAlbums).filter((song) => song.albumId === +id)
+
+
+
 
   console.log(allAlbumAlbumsArray)
 
@@ -43,7 +47,8 @@ export default function AlbumSongs({ userInfo }) {
     // allAlbumSongsArray.shift()
     setPlaying(playing)
   };
-console.log("playing",playing)
+  console.log('allSongs', allSongs)
+  console.log("playing", playing)
   return (
     <div className="albumMainPage">
 
@@ -56,8 +61,8 @@ console.log("playing",playing)
       <div className="albumSongsListDiv">
         <AlbumCarousel userInfo={userInfo} />
         <div className="albumSongsListInnerDiv" style={{
-            // backgroundImage: `url(${album?.imageUrl})`,
-           }} >
+          // backgroundImage: `url(${album?.imageUrl})`,
+        }} >
 
           {!allAlbumSongsArray.length && (
             <>
@@ -71,23 +76,37 @@ console.log("playing",playing)
             </>
           )}
 
+
+          <div className="aboveEverySongDiv" >
+
+
+            <ul className="songTitleAndArtistDiv">
+              <li className="songNumber"># </li>
+              <li className="songListItemAbove">Title</li>
+              <li className="songListItemArtist">Artist</li>
+            </ul>
+
+            <div>
+              <h1>Edit</h1>
+            </div>
+
+          </div>
           {allAlbumSongsArray.map((song, i) => (
 
             <div className="everySongDiv" key={i}>
-
+              <ul className="songTitleAndArtistDiv">
+              <li className="songNumber">{i + 1}</li>
               {playing !== song.songUrl && (
 
                 <button className="songDivButton" onClick={() => playingState(song.songUrl)}>
                   <FaPlayCircle />
                 </button>
               )}
-
               {playing === song.songUrl && (<>
 
                 <button className="songDivButton" onClick={() => playingState("", song.imageUrl)}  >
                   <FcDisplay />
                 </button>
-              {/* <div className="prevNextButtonDiv"> */}
 
                 <button
                   className="prevButton" onClick={() => playingState(allAlbumSongsArray[i - 1].songUrl)}>
@@ -98,34 +117,34 @@ console.log("playing",playing)
                   className="nextButton" onClick={() => playingState(allAlbumSongsArray[i + 1].songUrl)}>
                   <FaArrowCircleRight />
                 </button>
-                    {/* </div> */}
               </>)}
-
-              <ul className="songTitleAndArtistDiv">
                 <li className="songListItem">{song.songName}</li>
-                <li className="songListItem">{song.artistName}</li>
+                <li className="songListItemArtist">{song.artistName}</li>
+                {/* <li className="songListItem">{song.albumName}</li> */}
+
               </ul>
+<div>
 
               <SongButtonDots songId={song.id} />
-
+              </div>
             </div>
           ))}
         </div>
 
-      {/* <AudioPlayerGlobal playing={playing} pic={pic} /> */}
-      <div className="globalAudioPlayer">
+        {/* <AudioPlayerGlobal playing={playing} pic={pic} /> */}
+        <div className="globalAudioPlayer">
 
 
-      <AudioPlayer
-        className="audioPlayer"
-        src={playing}
-        // onPlay={(e) => console.log("onPlay")}
-        loop={true}
-        />
+          <AudioPlayer
+            className="audioPlayer"
+            src={playing}
+            // onPlay={(e) => console.log("onPlay")}
+            loop={true}
+          />
 
 
-      </div>
         </div>
+      </div>
 
     </div>
   );

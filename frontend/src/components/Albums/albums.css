@@ -61,16 +61,51 @@ h2 {
   display: none;
 }
 
+.aboveEverySongDiv {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  /* background-color: #232931; */
+  height: 3.5%;
+  width: 100%;
+  border-bottom: 2px solid #4ECCA3;
+  opacity: .45;
+  margin-bottom: 15px;
+}
+
+.aboveEverySongDiv h1 {
+  font-size: 1em;
+}
+
+.aboveSongsDiv {
+  width: 90%;
+}
 .everySongDiv {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
   background-color: #232931;
+  /* background-color: #000; */
+  opacity: .95;
+  /* background-color: white; */
+  opacity: .9;
   height: 5%;
   width: 100%;
+  min-height: 20px;
 }
 .everySongDiv::-webkit-scrollbar {
   display: none;
+}
+
+.songNumber {
+  background-color: black;
+  width: 35px;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  /* padding-rght: 15px; */
 }
 .everySongDivUpper {
   display: flex;
@@ -90,6 +125,7 @@ h2 {
   align-items: center;
   height: 100%;
   border: none;
+  background-color: black;
   /* font-size: 3.5vh; */
   font-size: 25px;
   background-position: 10px center;
@@ -125,8 +161,9 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5vw;
-  width: 2.5vw;
+  /* margin: 0.5vw; */
+  height: 100%;
+  width: 1.5vw;
   font-size: 25px;
   border: none;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -507,6 +544,9 @@ opacity: .5;
   justify-content: space-between;
   width: 60%;
   margin: 0;
+  padding: 0;
+
+  list-style-type: none;
 }
 
 .albumCarouselAlbumTitle {

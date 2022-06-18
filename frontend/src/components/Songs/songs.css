@@ -119,15 +119,50 @@ position: relative;
   align-items: center;
   list-style: none;
   z-index: 1;
+  margin-left: 2.5vh;
   /* height: 100%; */
   width: 100%;
-  margin: 0;
+  /* margin: 0; */
   padding: 0;
   padding-left: 0;
-  font-size: 1.5em;
+  font-size: 1em;
   color: #E0E1DD;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
+
+  .songListItemArtist {
+    position: relative;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    z-index: 1;
+    margin-left: 22.5vh;
+    /* height: 100%; */
+    width: 100%;
+    /* margin: 0; */
+    padding: 0;
+    padding-left: 0;
+    font-size: 1em;
+    color: #E0E1DD;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  .songListItemAbove {
+    position: relative;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    z-index: 1;
+    /* height: 100%; */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-left: 0;
+    font-size: 1em;
+    color: #E0E1DD;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 5vh;
+    }
   .songListItemSearch {
     list-style-type: none;
   }
