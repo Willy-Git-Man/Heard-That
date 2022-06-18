@@ -50,7 +50,6 @@
   align-items: center;
   width: 100%;
   top:0;
-  z-index:99;
   overflow-y: scroll;
   padding-top:1%;
   opacity: .9;

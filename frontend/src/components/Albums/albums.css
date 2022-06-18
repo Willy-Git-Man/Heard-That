@@ -54,7 +54,6 @@ h2 {
   width: 95%;
   padding: 2.5%;
   overflow-y: scroll;
-  z-index: 1;
   -webkit-overflow-scrolling: touch;
   /* box-shadow: #232931 0px 10px 10px 10px; */
 }

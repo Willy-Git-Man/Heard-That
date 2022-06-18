@@ -42,18 +42,16 @@ background-color: #0d1b2a;
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  bottom: 0;
   height: 10vh;
-  margin: 0;
+  width: 270px;
   padding: 0;
-  list-style: none;
-  z-index: 999;
+  bottom: 0;
+  margin: 0;
+  /* position: absolute; */
   background-color: black;
   background-color: #0d1b2a;
-  outline: 10px white solid;
-  top: 40vh;
-  left: 25vw;
-  width: 50vw;
+  z-index: 1;
+  /* width: 100%; */
 }
 
 .userName {
@@ -86,7 +84,7 @@ background-color: #0d1b2a;
   background-color: #415A78;
   color: #e0e1dd;
   font-size: 2em;
-  width: 50vw;
+  width: 270px;
 }
 
 .loginDiv {

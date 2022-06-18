@@ -8,6 +8,9 @@ import { FaRegPlusSquare } from "react-icons/fa";
 import "./CreateSongForm.css";
 
 export default function CreateSongForm({ userInfo, setShowModal }) {
+  const dispatch = useDispatch();
+
+
   const [songName, setSongName] = useState("Song Name");
   const [artistName, setArtistName] = useState("T. Schürger");
   const [songUrl, setSongUrl] = useState("");
@@ -25,7 +28,6 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
   const newAlbumId = (e) => setAlumbId(e.target.value);
 
   const history = useHistory();
-  const dispatch = useDispatch();
 
   const allAlbums = useSelector((state) => state.albums.albums);
   const allAlbumObjectArray = Object.values(allAlbums);
@@ -36,27 +38,19 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
 
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectArray = Object.values(allSongs);
-  const allSongsObjectArrayFiltered = allSongsObjectArray.filter(
-    (album) => album.userId === userInfo.id
-  );
-
+  const allSongsObjectArrayFiltered = allSongsObjectArray.filter((album) => album?.userId === userInfo?.id);
+  console.log('here', allSongsObjectArrayFiltered, userInfo)
 
 
   useEffect(() => {
     const validationErrors = [];
 
-    if (songName.length === 0)
-      validationErrors.push("Song name field is required");
-    if (artistName.length === 0)
-      validationErrors.push("Artist name field is required");
-    if (songName.length > 50)
-      validationErrors.push("Song name must be less than 50 characters");
-    if (artistName.length > 50)
-      validationErrors.push("Song name must be less than 50 characters");
-    if (songUrl.length > 255)
-      validationErrors.push("Song url must be less than 255 Characters");
-    if (imageUrl.length > 255)
-      validationErrors.push("Image url must be less than 255 characters");
+    if (songName.length === 0) validationErrors.push("Song name field is required");
+    if (artistName.length === 0) validationErrors.push("Artist name field is required");
+    if (songName.length > 50) validationErrors.push("Song name must be less than 50 characters");
+    if (artistName.length > 50) validationErrors.push("Song name must be less than 50 characters");
+    if (songUrl.length > 255) validationErrors.push("Song url must be less than 255 Characters");
+    if (imageUrl.length > 255) validationErrors.push("Image url must be less than 255 characters");
 
     setErrors(validationErrors);
   }, [songName, artistName, songUrl, imageUrl, albumId]);

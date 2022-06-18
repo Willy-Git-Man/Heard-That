@@ -31,13 +31,7 @@
   margin-top: 5%;
 }
 
-.songImage {
-height: 60%;
-position:absolute;
-z-index: 1;
-color: white;
-font-size: large;
-}
+
 
 .songUl {
   padding-left: 0;
@@ -195,7 +189,6 @@ position: relative;
   }
 
  .albumLink {
-   z-index: 9999;
    color: white;
    margin-left: 0;
    color: black;
