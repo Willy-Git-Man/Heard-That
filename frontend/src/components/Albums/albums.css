@@ -93,6 +93,20 @@ h2 {
   width: 100%;
   min-height: 20px;
 }
+
+.everySongDiv:hover {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  background-color: #232931;
+  /* background-color: #000; */
+  opacity: .95;
+  /* background-color: white; */
+  opacity: .3;
+  height: 5%;
+  width: 100%;
+  min-height: 20px;
+}
 .everySongDiv::-webkit-scrollbar {
   display: none;
 }
@@ -372,7 +386,17 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: .875;
+  opacity: .85;
+}
+
+.albumCarouselTitle:hover {
+  height: 90%;
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
 }
 
 .albumCarouselTitleTest {
@@ -418,6 +442,13 @@ opacity: .5;
   text-decoration: none;
   opacity: 1;
   }
+
+  .mainAlbumsEachAlbumDivNavLink {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    opacity: 1;
+    }
 
 .mainAlbumsAndOtherAlbumsCarouselDiv {
   width: 100%;
@@ -525,6 +556,15 @@ opacity: .5;
   justify-content: space-around;
   padding-left: 7.5%;
   width: 75%;
+}
+
+.searchLi:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 7.5%;
+  width: 75%;
+  opacity: .6;
 }
 
 .addLikedSong {

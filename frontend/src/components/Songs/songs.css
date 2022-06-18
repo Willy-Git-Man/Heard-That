@@ -92,6 +92,13 @@ position: relative;
   width: 100%;
 }
 
+.searchAlbumsOuterDiv:hover {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  opacity: .6;
+}
+
 .songUlSearch {
   padding-left: 0;
   background-size: 100% 100%;
@@ -121,8 +128,8 @@ position: relative;
   z-index: 1;
   margin-left: 2.5vh;
   /* height: 100%; */
-  width: 100%;
   /* margin: 0; */
+  width: 500px;
   padding: 0;
   padding-left: 0;
   font-size: 1em;
@@ -138,7 +145,7 @@ position: relative;
     z-index: 1;
     margin-left: 22.5vh;
     /* height: 100%; */
-    width: 100%;
+    width: 250px;
     /* margin: 0; */
     padding: 0;
     padding-left: 0;
