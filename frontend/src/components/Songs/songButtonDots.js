@@ -32,7 +32,7 @@ function SongButtonDots({ user, allAlbumsIndex, songId }) {
   }, [showMenu]);
 
   return (
-    <>
+    <div className="songDotsButtonDiv">
     {!showMenu && (
 
       <button className={"songButtonDotsButton"} onClick={openMenu}><FaEdit />
@@ -58,7 +58,7 @@ function SongButtonDots({ user, allAlbumsIndex, songId }) {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

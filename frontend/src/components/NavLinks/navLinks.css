@@ -117,11 +117,24 @@ padding-left: 5%;
 
 }
 
+.rhap_download-progress {
+  opacity: .5;
+  color: black;
+}
+
 .rhap_container.rhap_loop--off.rhap_play-status--playing.audioPlayer {
   height: 10vh;
   width: 100%;
   padding: 0px;
   background-color: #e0e1dd;
+}
+
+.rhap_current-time {
+ 
+}
+.rhap_progress-bar.rhap_progress-bar-show-download {
+  opacity: .25;
+  color: black;
 }
 .rhap_container.rhap_loop--off.rhap_play-status--paused.audioPlayer {
   height: 10vh;

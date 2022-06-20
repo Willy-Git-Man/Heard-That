@@ -19,12 +19,14 @@ h2 {
   flex-direction: column;
   justify-content: space-around;
   width: 95%;
-  padding: 2.5%;
+  /* padding: 2.5%; */
+  margin: 2.5%;
   padding-bottom: 1%;
   /* padding-bottom: 1.5%; */
   /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
   /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
-  box-shadow: #232931 0px 20px 30px -10px;
+  box-shadow: #4ECCA3 10px 20px 30px ;
+  box-shadow: rgb(38, 57, 77) 0px 20px 130px -10px;
 
 }
 
@@ -52,10 +54,14 @@ h2 {
   align-items: center;
   height: 60vh;
   width: 95%;
-  padding: 2.5%;
+  margin: 2.5%;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   /* box-shadow: #232931 0px 10px 10px 10px; */
+  /* box-shadow: #4ECCA3 0px 20px 20px -10px;
+  box-shadow: #4ECCA3 5px 5px 5px -5px; */
+
+
 }
 .albumSongsListInnerDiv::-webkit-scrollbar {
   display: none;
@@ -92,6 +98,9 @@ h2 {
   height: 5%;
   width: 100%;
   min-height: 20px;
+  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px; */
+  /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
+  box-shadow: rgb(38 57 77) 0px 25px 125px -10px;
 }
 
 .everySongDiv:hover {
@@ -119,6 +128,12 @@ h2 {
   justify-content: center;
   align-items: center;
   width: 100px;
+  /* padding-rght: 15px; */
+}
+
+.songNumberAbove {
+  display: flex;
+  width: 50px;
   /* padding-rght: 15px; */
 }
 .everySongDivUpper {
@@ -170,6 +185,9 @@ h2 {
   align-items: center;
 }
 .songButtonDotsButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
   color: #e0e1dd;
   display: flex;
@@ -177,11 +195,18 @@ h2 {
   align-items: center;
   /* margin: 0.5vw; */
   height: 100%;
-  width: 1.5vw;
-  font-size: 25px;
+  /* width: 1.5vw; */
+  font-size: 1em;
   border: none;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+}
+
+.songDotsButtonDiv {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .songEditCloseButton {
@@ -342,7 +367,10 @@ h2 {
 }
 
 .slick-slider.center.slick-initialized {
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
+  box-shadow: #4ECCA3 0px 20px 30px -10px;
+padding-top: 100PX;
+
 }
 
 .mainAlbumsEachAlbumDiv {
@@ -404,12 +432,13 @@ h2 {
   justify-content: center;
   width: 90%;
   height: 15%;
-  margin-left: 5%;
   background-color: #000;
+  margin-left: 5%;
   overflow: hidden;
   color: #4ECCA3;
   text-decoration: none;
   margin-top: 1%;
+  margin: 0;
   /* box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px; */
 
 }
@@ -528,7 +557,7 @@ opacity: .5;
   background-color: #0d1b2a;
   background-color: #37465B;
   background-color: #000;
-  opacity: .95;
+  opacity: .975;
   /* background-color: #37465B; */
 
 
@@ -582,7 +611,7 @@ opacity: .5;
 .songTitleAndArtistDiv {
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 80%;
   margin: 0;
   padding: 0;
 
@@ -667,4 +696,10 @@ opacity: .5;
   background-color: white;
   outline: 5px solid #415a77;
   color: #415a77;
+}
+
+
+.songNumberandPlayButton {
+  display: flex;
+  width: 50px;
 }

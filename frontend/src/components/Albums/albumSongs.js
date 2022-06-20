@@ -81,9 +81,12 @@ export default function AlbumSongs({ userInfo }) {
 
 
             <ul className="songTitleAndArtistDiv">
-              <li className="songNumber"># </li>
+              <li className="songNumberAbove"># </li>
+              <div className="titleAndArtistDiv">
+
               <li className="songListItemAbove">Title</li>
               <li className="songListItemArtist">Artist</li>
+              </div>
             </ul>
 
             <div>
@@ -95,7 +98,9 @@ export default function AlbumSongs({ userInfo }) {
 
             <div className="everySongDiv" key={i}>
               <ul className="songTitleAndArtistDiv">
-              <li className="songNumber">{i + 1}</li>
+                <div className="songNumberandPlayButton">
+
+                <li className="songNumber">{i + 1}</li>
               {playing !== song.songUrl && (
 
                 <button className="songDivButton" onClick={() => playingState(song.songUrl)}>
@@ -118,14 +123,20 @@ export default function AlbumSongs({ userInfo }) {
                   <FaArrowCircleRight />
                 </button>
               </>)}
+                    </div>
+                    <div className="titleAndArtistDiv">
+
                 <li className="songListItem">{song.songName}</li>
                 <li className="songListItemArtist">{song.artistName}</li>
+                    </div>
                 {/* <li className="songListItem">{song.albumName}</li> */}
 
               </ul>
 <div>
+<div className="songDotsButtonDiv">
 
               <SongButtonDots songId={song.id} />
+              </div>
               </div>
             </div>
           ))}

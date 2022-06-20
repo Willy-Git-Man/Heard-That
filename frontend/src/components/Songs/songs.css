@@ -126,15 +126,22 @@ position: relative;
   align-items: center;
   list-style: none;
   z-index: 1;
-  margin-left: 2.5vh;
   /* height: 100%; */
-  /* margin: 0; */
-  width: 500px;
+  width: 100%;
+  margin: 0;
   padding: 0;
   padding-left: 0;
   font-size: 1em;
   color: #E0E1DD;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: 5vh;
+  min-width: 50px;
+  }
+
+  .titleAndArtistDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
   }
 
   .songListItemArtist {
@@ -143,7 +150,7 @@ position: relative;
     align-items: center;
     list-style: none;
     z-index: 1;
-    margin-left: 22.5vh;
+    /* margin-left: 22.5vh; */
     /* height: 100%; */
     width: 250px;
     /* margin: 0; */
