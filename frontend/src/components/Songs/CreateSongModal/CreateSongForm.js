@@ -21,10 +21,14 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
 
   const [errors, setErrors] = useState([]);
 
+  const [image, setImage] = useState("")
+
   const newSongName = (e) => setSongName(e.target.value);
   const newArtistName = (e) => setArtistName(e.target.value);
   const newSongUrl = (e) => setSongUrl(e.target.value);
   const newImageUrl = (e) => setImageUrl(e.target.value);
+  // const newImageUrl = (e) => setImage(e.target.value);
+
   const newAlbumId = (e) => setAlumbId(e.target.value);
 
   const history = useHistory();
@@ -35,11 +39,17 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
     (album) => album.userId === userInfo.id
   );
 
+  // const postImage = async({image}) => {
+  //   const formData = new FormData()
+  //   formData.append("image",image)
+
+  //   const result =
+  // }
+
 
   const allSongs = useSelector((state) => state.songs.songs);
   const allSongsObjectArray = Object.values(allSongs);
   const allSongsObjectArrayFiltered = allSongsObjectArray.filter((album) => album?.userId === userInfo?.id);
-  console.log('here', allSongsObjectArrayFiltered, userInfo)
 
 
   useEffect(() => {
@@ -57,21 +67,28 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+console.log('image',image)
     const newSongPayload = {
       songName,
       artistName,
       songUrl,
       imageUrl,
+      // image,
       albumId,
       userId: userInfo.id,
     };
+    console.log(newSongPayload)
 
     const newSong = await dispatch(addSongThunk(newSongPayload));
     if (newSong) {
       setShowModal(false);
       history.push(`/Albums/${albumId}`);
     }
+  };
+
+  const updateImage = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
   };
   return (
     <>
@@ -103,6 +120,18 @@ export default function CreateSongForm({ userInfo, setShowModal }) {
             onChange={newArtistName}
             required
           />
+
+<label htmlFor="chooseFileInput" className="choose-file-button">
+            Picture Upload
+          </label>
+          <input
+            type="file"
+            id="chooseFileInput"
+            accept="image/*"
+            name="image"
+            onChange={updateImage}
+            // hidden='hidden'
+          ></input>
 
           {/* <label htmlFor="songUrlLabel">Song Url: </label>
           <input

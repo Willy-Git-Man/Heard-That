@@ -37,7 +37,6 @@ export default function AlbumSongs({ userInfo }) {
 
 
 
-  console.log(allAlbumAlbumsArray)
 
   const [playing, setPlaying] = useState("");
   const [index, setIndex] = useState(0)
@@ -47,8 +46,6 @@ export default function AlbumSongs({ userInfo }) {
     // allAlbumSongsArray.shift()
     setPlaying(playing)
   };
-  console.log('allSongs', allSongs)
-  console.log("playing", playing)
   return (
     <div className="albumMainPage">
 

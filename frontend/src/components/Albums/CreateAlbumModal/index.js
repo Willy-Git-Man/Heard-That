@@ -13,9 +13,13 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
     "https://i1.sndcdn.com/artworks-kpswMSYYQ4osELsK-jbOC2w-t500x500.jpg"
   );
   const [errors, setErrors] = useState([]);
+  const [image, setImage] = useState("")
+
 
   const newTitle = (e) => setTitle(e.target.value);
   const newAlbumImage = (e) => setImageUrl(e.target.value);
+  const newAlbumImageS3 = (e) => setImage(e.target.value);
+
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -72,7 +76,7 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
             onChange={newTitle}
             required
           />
-
+{/* 
           <input
             className="createSongInput"
             type="text"
@@ -82,7 +86,19 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
 
             onChange={newAlbumImage}
             required
-          />
+          /> */}
+
+<label htmlFor="chooseFileInput" className="choose-file-button">
+            Picture Upload
+          </label>
+          <input
+            type="file"
+            id="chooseFileInput"
+            accept="image/*"
+            name="image"
+            onChange={newAlbumImageS3}
+            // hidden='hidden'
+          ></input>
 
           <button className="createSongButton" type="submit">
             Create

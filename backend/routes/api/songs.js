@@ -3,8 +3,15 @@ const router = express.Router();
 const { User, Songs } = require("../../db/models");
 const asyncHandler = require("express-async-handler");
 
-var multer = require('multer')
-var upload = multer({dest:'uploads/'})
+// var multer = require('multer')
+// var upload = multer({dest:'uploads/'})
+const upload = require("../../common");
+const { uploadFile } = require("../../aws_s3");
+const fs = require("fs");
+const util = require("util");
+const unlinkFile = util.promisify(fs.unlink);
+
+// import  from '../../aws_s3'
 
 // const validateSongCreate = [
 
@@ -20,9 +27,6 @@ var upload = multer({dest:'uploads/'})
 //     handleValidationErrors
 //   ];
 
-router.post('/images', upload.single('image'), (req,res) => {
-  res.send('aws express working')
-})
 
 router.get(
   '/',
@@ -33,35 +37,66 @@ router.get(
     // res.json({ message: `The general get route for all songs is working!`})
     return res.json(
       getAllSongs,
+      );
+    })
     );
-  })
-);
 
-router.get('/:id(\\d+)',
-asyncHandler( async (req, res) => {
-  const id = parseInt(req.params.id)
-  const targetSong = await Songs.findByPk(id)
-  return res.json({targetSong})
-})
-)
+    router.get('/:id(\\d+)',
+    asyncHandler( async (req, res) => {
+      const id = parseInt(req.params.id)
+      const targetSong = await Songs.findByPk(id)
+      return res.json({targetSong})
+    })
+    )
 
 
 
-router.post(
-  '/',
-  // validateSongCreate,
-  asyncHandler(async (req, res) => {
-    // const { songName, password, username } = req.body;
+    router.post(
+      '/',
+      asyncHandler(async (req, res) => {
+        // const { songName, password, username } = req.body;
 
-    const createSong = await Songs.create(req.body);
+        const createSong = await Songs.create(req.body);
 
-    // res.json({ message: `${createSong.songName} had been successfully added!`})
-    return res.json({
-      createSong,
-    });
-  })
-);
-//I am getting the same error as put though it similarly is posting successfully
+        return res.json({
+          createSong,
+        });
+      })
+      );
+
+      // router.post('/', upload.single('image'), asyncHandler(async(req,res) => {
+      //   const file = req.file
+      //   console.log('$$$$$$$$$$$$$',file)
+
+      //   const createSong = await Songs.create(req.body);
+
+      //   res.send('aws express working')
+      //   return res.json({
+      //     createSong,
+      //   });
+      // })
+      // )
+
+
+      // router.post("/", upload.single("image"), asyncHandler(async (req, res) => {
+      //   // console.log('request',req);
+      //   // uploading to AWS S3
+      //   const result = await uploadFile(req.file);  // Calling above function in s3.js
+      //   console.log("S3 response", result);
+      //   // You may apply filter, resize image before sending to client
+      //   // Deleting from local if uploaded in S3 bucket
+      //   await unlinkFile(req.file.path);
+      //   const createSong = await Songs.create(req.body);
+
+      //   return res.json({
+      //     createSong,
+      //   });
+      //   res.send({
+      //     status: "success",
+      //     message: "File uploaded successfully",
+      //     data: req.file,
+      //   });
+      // }));
 
 
 router.put(

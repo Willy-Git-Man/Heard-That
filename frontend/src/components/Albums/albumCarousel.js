@@ -18,7 +18,6 @@ export default function AlbumCarousel({ userInfo }) {
     (album) => album.userId === userInfo.id || album.userId === 2
   );
 
-  console.log(userAlbums, allAlbumKeys)
 
   const length = userAlbums.length;
 

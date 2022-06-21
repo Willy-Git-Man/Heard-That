@@ -34,8 +34,6 @@ const SearchBar = ({ playing, setPlaying }) => {
       )
       return album;
   })
-  console.log(filteredAlbums)
-  console.log(filteredSongs)
 
   const handlePicture = (e) => {
     e.target.src =
