@@ -2,27 +2,42 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addAlbumThunk } from "../../../store/albums";
-import { FaRegPlusSquare } from "react-icons/fa";
-
-
 import "./CreateAlbumForm.css";
 
 export default function CreateAlbumForm({ userInfo, setShowModal }) {
+  const history = useHistory();
+  const dispatch = useDispatch();
+
   const [title, setTitle] = useState("Summer Vibes");
   const [imageUrl, setImageUrl] = useState(
     "https://i1.sndcdn.com/artworks-kpswMSYYQ4osELsK-jbOC2w-t500x500.jpg"
   );
-  const [errors, setErrors] = useState([]);
   const [image, setImage] = useState("")
+  const [file, setFile] = useState()
+  const [description, setDescription] = useState("")
+  const [images, setImages] = useState([])
+  const [errors, setErrors] = useState([]);
+  // const newTitle = (e) => setTitle(e.target.value);
 
+  const submit = async event => {
+    event.preventDefault()
+    const newAlbumPayload = { imageUrl: file.name, title: description, userId: userInfo.id }
 
-  const newTitle = (e) => setTitle(e.target.value);
-  const newAlbumImage = (e) => setImageUrl(e.target.value);
-  const newAlbumImageS3 = (e) => setImage(e.target.value);
+    const results = await dispatch(addAlbumThunk(newAlbumPayload))
 
+    if (results){
+      setImageUrl([results.image, ...images])
+      setShowModal(false)
+  }else{
+      const data = await results.json()
+      setErrors([data.errors])
+  }
+  }
 
-  const history = useHistory();
-  const dispatch = useDispatch();
+  const fileSelected = event => {
+    const file = event.target.files[0]
+    setFile(file)
+  }
 
   useEffect(() => {
     const validationErrors = [];
@@ -39,66 +54,21 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
     setErrors(validationErrors);
   }, [title, imageUrl]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const newAlbumPayload = {
-
-      title,
-      imageUrl,
-      userId: userInfo.id,
-    };
-
-    const newSong = await dispatch(addAlbumThunk(newAlbumPayload));
-    if (newSong) {
-      setShowModal(false);
-      history.push(`/Albums/${1}`);
-    }
-  };
   return (
+
     <>
       <div className="createAlbumFormDiv">
         <h3 className='createSongTitle'>
           Add Playlist</h3>
 
-        <form className="formDivAlbum" onSubmit={handleSubmit}>
+        <form className="formDivAlbum" onSubmit={submit}>
           <ul className="errors">
-            {errors.map((error) => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
-          <input
-            className="createSongInput"
-            type="text"
-            name="albumTitle"
-            // value={title}
-            placeholder="Playlist Title"
-            onChange={newTitle}
-            required
-          />
-{/* 
-          <input
-            className="createSongInput"
-            type="text"
-            name="albumImage"
-            // value={imageUrl}
-            placeholder="Image Url"
-
-            onChange={newAlbumImage}
-            required
-          /> */}
-
-<label htmlFor="chooseFileInput" className="choose-file-button">
-            Picture Upload
-          </label>
-          <input
-            type="file"
-            id="chooseFileInput"
-            accept="image/*"
-            name="image"
-            onChange={newAlbumImageS3}
-            // hidden='hidden'
-          ></input>
+                {errors.map((error) => (
+                  <li key={error}>{error}</li>
+                ))}
+              </ul>
+          <input onChange={fileSelected} type="file" accept="image/*" name="inputFile"></input>
+          <input value={description} onChange={e => setDescription(e.target.value)} type="text" placeholder="Playlist Title"></input>
 
           <button className="createSongButton" type="submit">
             Create
@@ -106,5 +76,7 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
         </form>
       </div>
     </>
+
   );
+
 }
