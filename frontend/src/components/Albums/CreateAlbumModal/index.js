@@ -36,9 +36,10 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
 
   const fileSelected = event => {
     const file = event.target.files[0]
+    console.log(file)
     setFile(file)
   }
-
+console.log(fileSelected)
   useEffect(() => {
     const validationErrors = [];
 
@@ -61,13 +62,13 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
         <h3 className='createSongTitle'>
           Add Playlist</h3>
 
-        <form className="formDivAlbum" onSubmit={submit}>
+        <form className="formDivAlbum" onSubmit={submit}  >
           <ul className="errors">
                 {errors.map((error) => (
                   <li key={error}>{error}</li>
                 ))}
               </ul>
-          <input onChange={fileSelected} type="file" accept="image/*" name="inputFile"></input>
+          <input onChange={fileSelected} type="file" accept="image/*" name="inputFile" multiple></input>
           <input value={description} onChange={e => setDescription(e.target.value)} type="text" placeholder="Playlist Title"></input>
 
           <button className="createSongButton" type="submit">

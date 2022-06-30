@@ -131,7 +131,6 @@ export default function AlbumCarousel({ userInfo }) {
             <NavLink
               className="mainAlbumsEachAlbumDivNavLink"
               to={`/Albums/${album.id}`}
-
             >
               <h1 className="albumCarouselTitle" style={{
                 backgroundImage: `url(${album?.imageUrl})`,
@@ -145,7 +144,6 @@ export default function AlbumCarousel({ userInfo }) {
             <NavLink
               className="mainAlbumsEachAlbumDivNavLink"
               to={`/Albums/${album.id}`}
-
             >
             </NavLink>
           </div>

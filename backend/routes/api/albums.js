@@ -4,7 +4,8 @@ const { Albums, Songs } = require("../../db/models");
 const asyncHandler = require("express-async-handler");
 
 
-const upload = require("../../aws_s3");
+// const upload = require("../../aws_s3");
+const upload = multer({dest:'uploads/'})
 const { uploadFile, getFileStream } = require("../../aws_s3");
 const fs = require("fs");
 const util = require("util");
@@ -50,42 +51,16 @@ router.get(
   })
 );
 
-router.get('/:key', (req, res) => {
-  console.log(req.params)
-  const key = req.params.key
-  const readStream = getFileStream(key)
+// router.get('/:key', (req, res) => {
+//   console.log(req.params)
+//   const key = req.params.key
+//   const readStream = getFileStream(key)
 
-  readStream.pipe(res)
-})
-
-
-// router.post('/', upload.single('image'), async (req, res) => {
-//   const file = req.file
-//   console.log('file',file)
-
-//   // apply filter
-//   // resize
-
-//   const result = await uploadFile(file)
-//   await unlinkFile(file.path)
-//   console.log(result)
-//   const description = req.body.description
-//   res.send({imagePath: `/images/${result.Key}`})
-// })
-
-// router.post('/', upload.single('imageUrl'), (req, res) => {
-//   if (!req.files) res.status(400).json({ error: 'No files were uploaded.' })
-
-//   res.status(201).json({
-//     // message: 'Successfully uploaded ' + req.files.length + ' files!',
-//     message: 'Successfully uploaded ' + req.files + ' files!',
-
-//     files: req.files
-//   })
+//   readStream.pipe(res)
 // })
 
 
-// router.post('/upload', upload.single('inputFile'), (req, res) => {
+// router.post('/',  (req, res) => {
 //   if (!req.files) res.status(400).json({ error: 'No files were uploaded.' })
 
 //   res.status(201).json({
@@ -94,15 +69,12 @@ router.get('/:key', (req, res) => {
 //   })
 // })
 
-
-
-
 router.post(
   "/",
   //  upload.single('inputFile'),
   asyncHandler(async (req, res) => {
     // console.log(req.body)
-    console.log('reqqqqqqqqqqqq',req.file)
+    console.log('%%%%%%%',req.files)
     const createAlbum = await Albums.create(req.body);
     console.log('create album $$$$$$$$$$$$$$$$',createAlbum)
     return res.json({ createAlbum });

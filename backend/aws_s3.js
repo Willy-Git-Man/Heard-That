@@ -41,7 +41,7 @@ const multerS3 = require('multer-s3')
 const s3 = new aws.S3({
   accessKeyId: process.env.AWS_ACCESS_KEY,
   secretAccessKey: process.env.AWS_SECRET_KEY,
-  // region: process.env.AWS_DEFAULT_REGION
+  region: process.env.AWS_DEFAULT_REGION
 })
 
 const upload = multer({
@@ -49,7 +49,7 @@ const upload = multer({
     s3: s3,
     bucket: process.env.AWS_BUCKET_NAME,
     contentType: multerS3.AUTO_CONTENT_TYPE,
-    // acl: 'public-read',
+    acl: 'public-read',
     metadata: (req, file, cb) => {
       cb(null, { fieldName: file.fieldname })
     },
