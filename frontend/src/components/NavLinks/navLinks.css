@@ -46,12 +46,28 @@
 .navigationLink {
   width: 100%;
   min-height: 200px;
+  /* height: 40vh; */
   margin-bottom: 50%;
   display: flex;
   margin: 0;
   flex-direction: column;
+  /* overflow-y: scroll; */
   /* padding-left: 2.5%; */
 
+}
+
+.navigationLink::-webkit-scrollbar {
+  display: none;
+}
+
+.navigationLinkInner {
+  width: 100%;
+  min-height: 200px;
+  /* height: 40vh; */
+  margin-bottom: 50%;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
 }
 
 .navAlbumNavLink {
@@ -130,7 +146,7 @@ padding-left: 5%;
 }
 
 .rhap_current-time {
- 
+
 }
 .rhap_progress-bar.rhap_progress-bar-show-download {
   opacity: .25;

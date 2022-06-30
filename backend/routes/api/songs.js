@@ -5,11 +5,11 @@ const asyncHandler = require("express-async-handler");
 
 // var multer = require('multer')
 // var upload = multer({dest:'uploads/'})
-const upload = require("../../common");
-const { uploadFile } = require("../../aws_s3");
-const fs = require("fs");
-const util = require("util");
-const unlinkFile = util.promisify(fs.unlink);
+// const upload = require("../../common");
+// const { uploadFile } = require("../../aws_s3");
+// const fs = require("fs");
+// const util = require("util");
+// const unlinkFile = util.promisify(fs.unlink);
 
 // import  from '../../aws_s3'
 

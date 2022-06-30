@@ -5,13 +5,13 @@ const asyncHandler = require("express-async-handler");
 
 
 // const upload = require("../../aws_s3");
-const upload = multer({dest:'uploads/'})
-const { uploadFile, getFileStream } = require("../../aws_s3");
-const fs = require("fs");
-const util = require("util");
-const unlinkFile = util.promisify(fs.unlink);
+// const upload = multer({dest:'uploads/'})
+// const { uploadFile, getFileStream } = require("../../aws_s3");
+// const fs = require("fs");
+// const util = require("util");
+// const unlinkFile = util.promisify(fs.unlink);
 
-const multer = require('multer')
+// const multer = require('multer')
 // const upload = multer({dest:'uploads/'})
 
 router.get(
@@ -74,9 +74,9 @@ router.post(
   //  upload.single('inputFile'),
   asyncHandler(async (req, res) => {
     // console.log(req.body)
-    console.log('%%%%%%%',req.files)
+    // console.log('%%%%%%%',req.files)
     const createAlbum = await Albums.create(req.body);
-    console.log('create album $$$$$$$$$$$$$$$$',createAlbum)
+    // console.log('create album $$$$$$$$$$$$$$$$',createAlbum)
     return res.json({ createAlbum });
   })
 );

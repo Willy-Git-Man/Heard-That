@@ -15,7 +15,7 @@ export default function AlbumNavLinks({ allAlbums }) {
 
   return (
     <div className="navigationLink">
-      <div className="navigationLink">
+      <div className="navigationLinkInner">
         {mainAlbums.map((album) => (
 
           <NavLink className="navAlbumNavLink" to={`/Albums/${+album + 1}`} key={album}>
