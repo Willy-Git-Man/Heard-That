@@ -121,7 +121,7 @@ console.log('image',image)
             required
           />
 
-<label htmlFor="chooseFileInput" className="choose-file-button">
+{/* <label htmlFor="chooseFileInput" className="choose-file-button">
             Picture Upload
           </label>
           <input
@@ -131,9 +131,9 @@ console.log('image',image)
             name="image"
             onChange={updateImage}
             // hidden='hidden'
-          ></input>
+          ></input> */}
 
-          {/* <label htmlFor="songUrlLabel">Song Url: </label>
+          <label htmlFor="songUrlLabel">Song Url: </label>
           <input
             className="createSongInput"
             type="text"
@@ -141,7 +141,7 @@ console.log('image',image)
             value={songUrl}
             onChange={newSongUrl}
             required
-          /> */}
+          />
 
           <select
             type="text"
