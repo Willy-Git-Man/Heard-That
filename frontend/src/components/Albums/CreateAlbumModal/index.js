@@ -21,7 +21,9 @@ export default function CreateAlbumForm({ userInfo, setShowModal }) {
 
   const submit = async event => {
     event.preventDefault()
-    const newAlbumPayload = { imageUrl: file.name, title: description, userId: userInfo.id }
+    // const newAlbumPayload = { imageUrl: file.name, title: description, userId: userInfo.id }
+    const newAlbumPayload = { imageUrl: image, title: description, userId: userInfo.id }
+
 
     const results = await dispatch(addAlbumThunk(newAlbumPayload))
 
@@ -68,7 +70,21 @@ console.log(fileSelected)
                   <li key={error}>{error}</li>
                 ))}
               </ul>
-          <input onChange={fileSelected} type="file" accept="image/*" name="inputFile" multiple></input>
+          {/* <input onChange={fileSelected} type="file" accept="image/*" name="inputFile" multiple></input> */}
+          {/* <input onChange={fileSelected} type="file" accept="image/*" name="inputFile" multiple></input> */}
+
+          {/* <label htmlFor="songUrlLabel">Album Image Url: </label> */}
+          <input
+            className="createSongInput"
+            type="text"
+            // name="songUrl"
+            placeholder="Album Image Url:"
+            value={image}
+            // onChange={setImage}
+            onChange={e => setImage(e.target.value)}
+            required
+          />
+
           <input value={description} onChange={e => setDescription(e.target.value)} type="text" placeholder="Playlist Title"></input>
 
           <button className="createSongButton" type="submit">
