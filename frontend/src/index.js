@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider, useSelector } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-
+import { ModalProvider } from "./context/Modal";
 import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
-
-import { ModalProvider } from "./context/Modal";
 
 import './index.css';
 
@@ -20,7 +18,6 @@ if (process.env.NODE_ENV !== 'production') {
   window.store = store;
 }
 function Root() {
-  // const userInfo = useSelector((state) => state.session.user);
   return (
     <Provider store={store}>
       <ModalProvider>
@@ -28,6 +25,7 @@ function Root() {
       <BrowserRouter>
         <App  />
       </BrowserRouter>
+
       </ModalProvider>
 
     </Provider>

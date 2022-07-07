@@ -19,7 +19,6 @@ function SongButtonDots({ user, allAlbumsIndex, songId }) {
     setShowMenu(false);
   };
 
-
   const deleteSubmit = (id) => {
     dispatch(deleteSongThunk(id));
     closeMenu();

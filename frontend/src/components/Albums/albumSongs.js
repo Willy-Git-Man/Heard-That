@@ -29,13 +29,8 @@ export default function AlbumSongs({ userInfo }) {
   const allSongs = useSelector((state) => state.songs.songs);
   const allAlbums = useSelector((state) => state.albums.albums);
 
-
-
   const allAlbumSongsArray = Object.values(allSongs).filter((song) => song.albumId === +id)
   const allAlbumAlbumsArray = Object.values(allAlbums).filter((song) => song.albumId === +id)
-
-
-
 
 
   const [playing, setPlaying] = useState("");
@@ -73,9 +68,7 @@ export default function AlbumSongs({ userInfo }) {
             </>
           )}
 
-
           <div className="aboveEverySongDiv" >
-
 
             <ul className="songTitleAndArtistDiv">
               <li className="songNumberAbove"># </li>
