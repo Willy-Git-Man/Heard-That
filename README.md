@@ -1,7 +1,4 @@
 # Heard-That
-
-
-# Heard-That
 https://heard-that.herokuapp.com/ |
 Heard-That is a take on sound cloud where users can upload and play their songs and create albums/playlists
 
